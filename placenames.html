@@ -1,0 +1,1663 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Place Names Ontology</title>
+    <link href="http://lode2.linked.data.gov.au/owl.css" rel="stylesheet" type="text/css">
+    <link href="http://lode2.linked.data.gov.au/Primer.css" rel="stylesheet" type="text/css">
+    <link href="http://lode2.linked.data.gov.au/rec.css" rel="stylesheet" type="text/css">
+    <link href="http://lode2.linked.data.gov.au/extra.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="http://lode2.linked.data.gov.au/favicon.ico">
+</head>
+<body>
+<div class="head">
+    <img src="ga-logo.jpg" style="width:200px;" alt="GA Logo" /><br />
+    <h1>Place Names Ontology</h1>
+    <dl>
+        <dt>
+            IRI:
+        </dt>
+        <dd>
+            http://linked.data.gov.au/def/placenames#
+        </dd>
+    </dl>
+    <dl>
+        <dt>
+            Authors:
+        </dt>
+        <dd>
+            Armin Haller
+        </dd>
+        <dd>
+            Irina Bastrakova
+        </dd>
+        <dt>
+            Contributors:
+        </dt>
+        <dd>
+            Nicholas Car
+        </dd>
+        <dd>
+            <a href="http://orcid.org/0000-0002-8742-7730">http://orcid.org/0000-0002-8742-7730</a>
+        </dd>
+    </dl>
+    <dl>
+        <dt>
+            Publisher:
+        </dt>
+        <dd>
+            Geoscience Australia
+        </dd>
+        <dd>
+            <a href="http://catalogue.linked.data.gov.au/org/O-000887">http://catalogue.linked.data.gov.au/org/O-000887</a>
+        </dd>
+    </dl>
+    <dl>
+        <dt>
+            Other visualisation:
+        </dt>
+        <dd>
+            <a href="http://lode2.linked.data.gov.au/uploadedFiles/placenames.ttl">Ontology source</a>
+        </dd>
+    </dl>
+    <div class="copyright">
+        <p>(c) Commonwealth of Australia (Geoscience Australia) 2018</p>
+    </div>
+</div>
+<hr>
+<h2>Abstract</h2>
+<p>This ontology describes Place names that are used in the Composite Gazetteer of Australia. Place names are natural and artificial features and are all represented by points. Actual Place names are managed by multiple jurisdictions around Australia, while this ontology provides a meta model to bring their data together in one Linked Data collection.</p>
+<div id="toc">
+    <h2>Table of Content</h2>
+    <ol>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#objectproperties">Object Properties</a></li>
+        <li><a href="#dataproperties">Data Properties</a></li>
+        <li><a href="#annotationproperties">Annotation Properties</a></li>
+        <li><a href="#namespacedeclarations">Namespace Declarations</a></li>
+    </ol>
+</div>
+<div id="diagram">
+    <a href="placenames.png"><img src="placenames.png" style="width:900px;" alt="ontology OWL diagram" /></a>
+</div>
+<div id="classes">
+    <h2>Classes</h2>
+    <ul class="hlist">
+        <li><a href="#AboriginalShire" title="http://linked.data.gov.au/def/placenames#AboriginalShire">Aboriginal Shire</a></li>
+        <li><a href="#Address" title="http://linked.data.gov.au/def/placenames#Address">Address</a></li>
+        <li><a href="#Agent" title="http://linked.data.gov.au/def/placenames#Agent">Agent</a></li>
+        <li><a href="#Area" title="http://linked.data.gov.au/def/placenames#Area">Area</a></li>
+        <li><a href="#ASGSAdministrativeBoundary" title="http://linked.data.gov.au/def/placenames#ASGSAdministrativeBoundary">ASGS Administrative Boundary</a></li>
+        <li><a href="#Borough" title="http://linked.data.gov.au/def/placenames#Borough">Borough</a></li>
+        <li><a href="#BoundingBox" title="http://linked.data.gov.au/def/placenames#BoundingBox">Bounding Box</a></li>
+        <li><a href="#City" title="http://linked.data.gov.au/def/placenames#City">City</a></li>
+        <li><a href="#CommunityGovernmentCouncil" title="http://linked.data.gov.au/def/placenames#CommunityGovernmentCouncil">Community Government Council</a></li>
+        <li><a href="#Council" title="http://linked.data.gov.au/def/placenames#Council">Council</a></li>
+        <li><a href="#Country" title="http://linked.data.gov.au/def/placenames#Country">Country</a></li>
+        <li><a href="#DistrictCouncil" title="http://linked.data.gov.au/def/placenames#DistrictCouncil">District Council</a></li>
+        <li><a href="#Feature" title="http://linked.data.gov.au/def/placenames#Feature">Feature</a></li>
+        <li><a href="#FeatureClassification" title="http://linked.data.gov.au/def/placenames#FeatureClassification">Feature Classification</a></li>
+        <li><a href="#Gazetteer" title="http://linked.data.gov.au/def/placenames#Gazetteer">Gazetteer</a></li>
+        <li><a href="#GeographicIdentifier" title="http://linked.data.gov.au/def/placenames#GeographicIdentifier">Geographic Identifier</a></li>
+        <li><a href="#Geometry" title="http://linked.data.gov.au/def/placenames#Geometry">Geometry</a></li>
+        <li><a href="#Group" title="http://linked.data.gov.au/def/placenames#Group">Group</a></li>
+        <li><a href="#IslandCouncil" title="http://linked.data.gov.au/def/placenames#IslandCouncil">Island Council</a></li>
+        <li><a href="#Jurisdiction" title="http://linked.data.gov.au/def/placenames#Jurisdiction">Jurisdiction</a></li>
+        <li><a href="#Line" title="http://linked.data.gov.au/def/placenames#Line">Line</a></li>
+        <li><a href="#Location" title="http://linked.data.gov.au/def/placenames#Location">Location</a></li>
+        <li><a href="#Municipality" title="http://linked.data.gov.au/def/placenames#Municipality">Municipality</a></li>
+        <li><a href="#Organisation" title="http://linked.data.gov.au/def/placenames#Organisation">Organisation</a></li>
+        <li><a href="#Person" title="http://linked.data.gov.au/def/placenames#Person">Person</a></li>
+        <li><a href="#Place" title="http://linked.data.gov.au/def/placenames#Place">Place</a></li>
+        <li><a href="#PlaceName" title="http://linked.data.gov.au/def/placenames#PlaceName">Place Name</a></li>
+        <li><a href="#Point" title="http://linked.data.gov.au/def/placenames#Point">Point</a></li>
+        <li><a href="#PointOfInterest" title="http://linked.data.gov.au/def/placenames#PointOfInterest">Point of Interest</a></li>
+        <li><a href="#Polygon" title="http://linked.data.gov.au/def/placenames#Polygon">Polygon</a></li>
+        <li><a href="#Region" title="http://linked.data.gov.au/def/placenames#Region">Region</a></li>
+        <li><a href="#RegionalCouncil" title="http://linked.data.gov.au/def/placenames#RegionalCouncil">Regional Council</a></li>
+        <li><a href="#RuralCity" title="http://linked.data.gov.au/def/placenames#RuralCity">Rural City</a></li>
+        <li><a href="#Shire" title="http://linked.data.gov.au/def/placenames#Shire">Shire</a></li>
+        <li><a href="#State" title="http://linked.data.gov.au/def/placenames#State">State</a></li>
+        <li><a href="#Territory" title="http://linked.data.gov.au/def/placenames#Territory">Territory</a></li>
+        <li><a href="#Town" title="http://linked.data.gov.au/def/placenames#Town">Town</a></li>
+        <li><a href="#UnincorporatedArea" title="http://linked.data.gov.au/def/placenames#UnincorporatedArea">Unincorporated Area</a></li>
+    </ul>
+    <div id="AboriginalShire" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#AboriginalShire"></a>
+        <h3>Aboriginal Shire<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#AboriginalShire</p>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Shire" title="http://linked.data.gov.au/def/placenames#Shire">Shire</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="Address" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#Address"></a>
+        <h3>Address<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#Address</p>
+        <div class="comment">
+            <p>The physical Address of a Place as defined by GNAF.</p>
+        </div>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Feature" title="http://linked.data.gov.au/def/placenames#Feature">Feature</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="Agent" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#Agent"></a>
+        <h3>Agent<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#Agent</p>
+        <dl class="description">
+            <dt>
+                has sub-classes
+            </dt>
+            <dd>
+                <a href="#Group" title="http://linked.data.gov.au/def/placenames#Group">Group</a>
+                <sup title="class" class="type-c">c</sup>,
+                <a href="#Organisation" title="http://linked.data.gov.au/def/placenames#Organisation">Organisation</a>
+                <sup title="class" class="type-c">c</sup>,
+                <a href="#Person" title="http://linked.data.gov.au/def/placenames#Person">Person</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="Area" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#Area"></a>
+        <h3>Area<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#Area</p>
+        <div class="comment">
+            <p>An Area, defined by a set of boundaries.</p>
+        </div>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Geometry" title="http://linked.data.gov.au/def/placenames#Geometry">Geometry</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#hasPoint" title="http://linked.data.gov.au/def/placenames#hasPoint">has Point</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">only</span>
+                <a href="#Point" title="http://linked.data.gov.au/def/placenames#Point">Point</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dt>
+                has sub-classes
+            </dt>
+            <dd>
+                <a href="#BoundingBox" title="http://linked.data.gov.au/def/placenames#BoundingBox">Bounding Box</a>
+                <sup title="class" class="type-c">c</sup>,
+                <a href="#Polygon" title="http://linked.data.gov.au/def/placenames#Polygon">Polygon</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="ASGSAdministrativeBoundary" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#ASGSAdministrativeBoundary"></a>
+        <h3>ASGS Administrative Boundary<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#ASGSAdministrativeBoundary</p>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#hasGeometry" title="http://linked.data.gov.au/def/placenames#hasGeometry">has Geometry</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">only</span>
+                <a href="#Geometry" title="http://linked.data.gov.au/def/placenames#Geometry">Geometry</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="Borough" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#Borough"></a>
+        <h3>Borough<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#Borough</p>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Jurisdiction" title="http://linked.data.gov.au/def/placenames#Jurisdiction">Jurisdiction</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="BoundingBox" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#BoundingBox"></a>
+        <h3>Bounding Box<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#BoundingBox</p>
+        <div class="comment">
+            <p>An area defined by two longitudes and two latitudes.</p>
+        </div>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Area" title="http://linked.data.gov.au/def/placenames#Area">Area</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#eastBoundingLong" title="http://linked.data.gov.au/def/placenames#eastBoundingLong">east bounding longitude</a>
+                <sup title="data property" class="type-dp">dp</sup>
+                <span class="logic">exactly</span> 1
+            </dd>
+            <dd>
+                <a href="#northBoundingLat" title="http://linked.data.gov.au/def/placenames#northBoundingLat">north bounding latitude</a>
+                <sup title="data property" class="type-dp">dp</sup>
+                <span class="logic">exactly</span> 1
+            </dd>
+            <dd>
+                <a href="#southBoundingLat" title="http://linked.data.gov.au/def/placenames#southBoundingLat">south bounding latitude</a>
+                <sup title="data property" class="type-dp">dp</sup>
+                <span class="logic">exactly</span> 1
+            </dd>
+            <dd>
+                <a href="#westBoundingLong" title="http://linked.data.gov.au/def/placenames#westBoundingLong">west bounding longitude</a>
+                <sup title="data property" class="type-dp">dp</sup>
+                <span class="logic">exactly</span> 1
+            </dd>
+        </dl>
+    </div>
+    <div id="City" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#City"></a>
+        <h3>City<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#City</p>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Jurisdiction" title="http://linked.data.gov.au/def/placenames#Jurisdiction">Jurisdiction</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dt>
+                has sub-classes
+            </dt>
+            <dd>
+                <a href="#RuralCity" title="http://linked.data.gov.au/def/placenames#RuralCity">Rural City</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="CommunityGovernmentCouncil" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#CommunityGovernmentCouncil"></a>
+        <h3>Community Government Council<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#CommunityGovernmentCouncil</p>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Council" title="http://linked.data.gov.au/def/placenames#Council">Council</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="Council" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#Council"></a>
+        <h3>Council<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#Council</p>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Jurisdiction" title="http://linked.data.gov.au/def/placenames#Jurisdiction">Jurisdiction</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dt>
+                has sub-classes
+            </dt>
+            <dd>
+                <a href="#CommunityGovernmentCouncil" title="http://linked.data.gov.au/def/placenames#CommunityGovernmentCouncil">Community Government Council</a>
+                <sup title="class" class="type-c">c</sup>,
+                <a href="#DistrictCouncil" title="http://linked.data.gov.au/def/placenames#DistrictCouncil">District Council</a>
+                <sup title="class" class="type-c">c</sup>,
+                <a href="#IslandCouncil" title="http://linked.data.gov.au/def/placenames#IslandCouncil">Island Council</a>
+                <sup title="class" class="type-c">c</sup>,
+                <a href="#RegionalCouncil" title="http://linked.data.gov.au/def/placenames#RegionalCouncil">Regional Council</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="Country" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#Country"></a>
+        <h3>Country<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#Country</p>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Jurisdiction" title="http://linked.data.gov.au/def/placenames#Jurisdiction">Jurisdiction</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="DistrictCouncil" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#DistrictCouncil"></a>
+        <h3>District Council<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#DistrictCouncil</p>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Council" title="http://linked.data.gov.au/def/placenames#Council">Council</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="Feature" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#Feature"></a>
+        <h3>Feature<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#Feature</p>
+        <div class="comment">
+            <p>A Feature is an abstraction of real world phenomena that share common geometry, either man-made or naturally-created. Natural geographical Features consist of landforms and ecosystems. Man-made Features include settlements or engineered constructs.</p>
+        </div>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#hasFeatureClassification" title="http://linked.data.gov.au/def/placenames#hasFeatureClassification">has Feature Classification</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">only</span>
+                <a href="#FeatureClassification" title="http://linked.data.gov.au/def/placenames#FeatureClassification">Feature Classification</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dt>
+                has sub-classes
+            </dt>
+            <dd>
+                <a href="#Address" title="http://linked.data.gov.au/def/placenames#Address">Address</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="FeatureClassification" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#FeatureClassification"></a>
+        <h3>Feature Classification<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#FeatureClassification</p>
+        <div class="comment">
+            <p>Feature type classification as of the ICSM Permanent Committee on Place Names classification scheme.</p>
+        </div>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#featureCode" title="http://linked.data.gov.au/def/placenames#featureCode">feature Code</a>
+                <sup title="data property" class="type-dp">dp</sup>
+                <span class="logic">some</span>
+                <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+        </dl>
+    </div>
+    <div id="Gazetteer" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#Gazetteer"></a>
+        <h3>Gazetteer<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#Gazetteer</p>
+        <div class="comment">
+            <p>A Gazetteer is a directory of instances of location types in a spatial reference system.</p>
+        </div>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#hasGeographicExtent" title="http://linked.data.gov.au/def/placenames#hasGeographicExtent">has Geographic Extent</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">some</span>
+                <a href="#Geometry" title="http://linked.data.gov.au/def/placenames#Geometry">Geometry</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#hasTemporalExtent" title="http://linked.data.gov.au/def/placenames#hasTemporalExtent">has Temporal Extent</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">some</span>
+                <span class="dotted" title="http://www.w3.org/2006/time#TemporalEntity">temporal entity</span>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#inJurisdiction" title="http://linked.data.gov.au/def/placenames#inJurisdiction">in Jurisdiction</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">some</span>
+                <a href="#Jurisdiction" title="http://linked.data.gov.au/def/placenames#Jurisdiction">Jurisdiction</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#hasPlace" title="http://linked.data.gov.au/def/placenames#hasPlace">has Place</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">only</span>
+                <a href="#Place" title="http://linked.data.gov.au/def/placenames#Place">Place</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#coordinateReferenceSystem" title="http://linked.data.gov.au/def/placenames#coordinateReferenceSystem">coordinate Reference System</a>
+                <sup title="data property" class="type-dp">dp</sup>
+                <span class="logic">exactly</span> 1
+            </dd>
+        </dl>
+    </div>
+    <div id="GeographicIdentifier" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#GeographicIdentifier"></a>
+        <h3>Geographic Identifier<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#GeographicIdentifier</p>
+        <div class="comment">
+            <p>A spatial reference in the form of a label or code that identifies a location.</p>
+        </div>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#identifier" title="http://linked.data.gov.au/def/placenames#identifier">identifier</a>
+                <sup title="data property" class="type-dp">dp</sup>
+                <span class="logic">only</span>
+                <span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</span>
+            </dd>
+        </dl>
+    </div>
+    <div id="Geometry" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#Geometry"></a>
+        <h3>Geometry<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#Geometry</p>
+        <div class="comment">
+            <p>A spatial object type (i.e. point, line, polygon).</p>
+        </div>
+        <dl class="description">
+            <dt>
+                has sub-classes
+            </dt>
+            <dd>
+                <a href="#Area" title="http://linked.data.gov.au/def/placenames#Area">Area</a>
+                <sup title="class" class="type-c">c</sup>,
+                <a href="#Line" title="http://linked.data.gov.au/def/placenames#Line">Line</a>
+                <sup title="class" class="type-c">c</sup>,
+                <a href="#Point" title="http://linked.data.gov.au/def/placenames#Point">Point</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="Group" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#Group"></a>
+        <h3>Group<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#Group</p>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Agent" title="http://linked.data.gov.au/def/placenames#Agent">Agent</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="IslandCouncil" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#IslandCouncil"></a>
+        <h3>Island Council<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#IslandCouncil</p>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Council" title="http://linked.data.gov.au/def/placenames#Council">Council</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="Jurisdiction" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#Jurisdiction"></a>
+        <h3>Jurisdiction<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#Jurisdiction</p>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#hasGeometry" title="http://linked.data.gov.au/def/placenames#hasGeometry">has Geometry</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">only</span>
+                <a href="#Geometry" title="http://linked.data.gov.au/def/placenames#Geometry">Geometry</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dt>
+                has sub-classes
+            </dt>
+            <dd>
+                <a href="#Borough" title="http://linked.data.gov.au/def/placenames#Borough">Borough</a>
+                <sup title="class" class="type-c">c</sup>,
+                <a href="#City" title="http://linked.data.gov.au/def/placenames#City">City</a>
+                <sup title="class" class="type-c">c</sup>,
+                <a href="#Council" title="http://linked.data.gov.au/def/placenames#Council">Council</a>
+                <sup title="class" class="type-c">c</sup>,
+                <a href="#Country" title="http://linked.data.gov.au/def/placenames#Country">Country</a>
+                <sup title="class" class="type-c">c</sup>,
+                <a href="#Municipality" title="http://linked.data.gov.au/def/placenames#Municipality">Municipality</a>
+                <sup title="class" class="type-c">c</sup>,
+                <a href="#Shire" title="http://linked.data.gov.au/def/placenames#Shire">Shire</a>
+                <sup title="class" class="type-c">c</sup>,
+                <a href="#State" title="http://linked.data.gov.au/def/placenames#State">State</a>
+                <sup title="class" class="type-c">c</sup>,
+                <a href="#Territory" title="http://linked.data.gov.au/def/placenames#Territory">Territory</a>
+                <sup title="class" class="type-c">c</sup>,
+                <a href="#Town" title="http://linked.data.gov.au/def/placenames#Town">Town</a>
+                <sup title="class" class="type-c">c</sup>,
+                <a href="#UnincorporatedArea" title="http://linked.data.gov.au/def/placenames#UnincorporatedArea">Unincorporated Area</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="Line" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#Line"></a>
+        <h3>Line<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#Line</p>
+        <div class="comment">
+            <p>A Line is a set of points whose coordinates satisfy a given linear equation.</p>
+        </div>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Geometry" title="http://linked.data.gov.au/def/placenames#Geometry">Geometry</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#hasPoint" title="http://linked.data.gov.au/def/placenames#hasPoint">has Point</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">only</span>
+                <a href="#Point" title="http://linked.data.gov.au/def/placenames#Point">Point</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="Location" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#Location"></a>
+        <h3>Location<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#Location</p>
+        <div class="comment">
+            <p>An identifiable geographic place.</p>
+        </div>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#hasGeographicExtent" title="http://linked.data.gov.au/def/placenames#hasGeographicExtent">has Geographic Extent</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">some</span>
+                <a href="#ASGSAdministrativeBoundary" title="http://linked.data.gov.au/def/placenames#ASGSAdministrativeBoundary">ASGS Administrative Boundary</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#inJurisdiction" title="http://linked.data.gov.au/def/placenames#inJurisdiction">in Jurisdiction</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">some</span>
+                <a href="#Jurisdiction" title="http://linked.data.gov.au/def/placenames#Jurisdiction">Jurisdiction</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#hasGeometry" title="http://linked.data.gov.au/def/placenames#hasGeometry">has Geometry</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">only</span>
+                <a href="#Geometry" title="http://linked.data.gov.au/def/placenames#Geometry">Geometry</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#nearbyLocation" title="http://linked.data.gov.au/def/placenames#nearbyLocation">nearby Location</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">only</span>
+                <a href="#Location" title="http://linked.data.gov.au/def/placenames#Location">Location</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#nearbyRegion" title="http://linked.data.gov.au/def/placenames#nearbyRegion">nearby Region</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">only</span>
+                <a href="#Region" title="http://linked.data.gov.au/def/placenames#Region">Region</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dt>
+                has sub-classes
+            </dt>
+            <dd>
+                <a href="#Place" title="http://linked.data.gov.au/def/placenames#Place">Place</a>
+                <sup title="class" class="type-c">c</sup>,
+                <a href="#PointOfInterest" title="http://linked.data.gov.au/def/placenames#PointOfInterest">Point of Interest</a>
+                <sup title="class" class="type-c">c</sup>,
+                <a href="#Region" title="http://linked.data.gov.au/def/placenames#Region">Region</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="Municipality" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#Municipality"></a>
+        <h3>Municipality<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#Municipality</p>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Jurisdiction" title="http://linked.data.gov.au/def/placenames#Jurisdiction">Jurisdiction</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="Organisation" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#Organisation"></a>
+        <h3>Organisation<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#Organisation</p>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Agent" title="http://linked.data.gov.au/def/placenames#Agent">Agent</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="Person" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#Person"></a>
+        <h3>Person<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#Person</p>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Agent" title="http://linked.data.gov.au/def/placenames#Agent">Agent</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="Place" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#Place"></a>
+        <h3>Place<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#Place</p>
+        <div class="comment">
+            <p>An identifiable geographic Place as defined by the Composite Gazetteer of Australia.</p>
+        </div>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Location" title="http://linked.data.gov.au/def/placenames#Location">Location</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#hasFeature" title="http://linked.data.gov.au/def/placenames#hasFeature">has Feature</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">some</span>
+                <a href="#Feature" title="http://linked.data.gov.au/def/placenames#Feature">Feature</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#hasGeographicIdentifier" title="http://linked.data.gov.au/def/placenames#hasGeographicIdentifier">has Geographic Identifier</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">some</span>
+                <a href="#GeographicIdentifier" title="http://linked.data.gov.au/def/placenames#GeographicIdentifier">Geographic Identifier</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#inJurisdiction" title="http://linked.data.gov.au/def/placenames#inJurisdiction">in Jurisdiction</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">some</span>
+                <a href="#Jurisdiction" title="http://linked.data.gov.au/def/placenames#Jurisdiction">Jurisdiction</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#isPlaceOf" title="http://linked.data.gov.au/def/placenames#isPlaceOf">is Place Of</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">some</span>
+                <a href="#Gazetteer" title="http://linked.data.gov.au/def/placenames#Gazetteer">Gazetteer</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#nearbyFeature" title="http://linked.data.gov.au/def/placenames#nearbyFeature">nearby Feature</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">some</span>
+                <a href="#Feature" title="http://linked.data.gov.au/def/placenames#Feature">Feature</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#neighbouringFeature" title="http://linked.data.gov.au/def/placenames#neighbouringFeature">neighbouring Feature</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">some</span>
+                <a href="#Feature" title="http://linked.data.gov.au/def/placenames#Feature">Feature</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#hasFeatureClassification" title="http://linked.data.gov.au/def/placenames#hasFeatureClassification">has Feature Classification</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">only</span>
+                <a href="#FeatureClassification" title="http://linked.data.gov.au/def/placenames#FeatureClassification">Feature Classification</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#hasNamingAuthority" title="http://linked.data.gov.au/def/placenames#hasNamingAuthority">has Naming Authority</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">only</span>
+                <a href="#Agent" title="http://linked.data.gov.au/def/placenames#Agent">Agent</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#hasPlaceName" title="http://linked.data.gov.au/def/placenames#hasPlaceName">has Place Name</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">exactly</span> 1
+                <a href="#PlaceName" title="http://linked.data.gov.au/def/placenames#PlaceName">Place Name</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="PlaceName" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#PlaceName"></a>
+        <h3>Place Name<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#PlaceName</p>
+        <div class="comment">
+            <p>The Name of a Place assigned by an official naming authority in the Composite Gazeteer of Australia.</p>
+        </div>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#namedBy" title="http://linked.data.gov.au/def/placenames#namedBy">named By</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">some</span>
+                <a href="#Agent" title="http://linked.data.gov.au/def/placenames#Agent">Agent</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#alternatePlaceName" title="http://linked.data.gov.au/def/placenames#alternatePlaceName">alternate Place Name</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">only</span>
+                <a href="#PlaceName" title="http://linked.data.gov.au/def/placenames#PlaceName">Place Name</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#historicalPlaceName" title="http://linked.data.gov.au/def/placenames#historicalPlaceName">historical Place Name</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">only</span>
+                <a href="#PlaceName" title="http://linked.data.gov.au/def/placenames#PlaceName">Place Name</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#alternateName" title="http://linked.data.gov.au/def/placenames#alternateName">alternate Name</a>
+                <sup title="data property" class="type-dp">dp</sup>
+                <span class="logic">some</span>
+                <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+            <dd>
+                <a href="#colloquialName" title="http://linked.data.gov.au/def/placenames#colloquialName">colloquial Name</a>
+                <sup title="data property" class="type-dp">dp</sup>
+                <span class="logic">some</span>
+                <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+            <dd>
+                <a href="#pronunciation" title="http://linked.data.gov.au/def/placenames#pronunciation">pronunciation</a>
+                <sup title="data property" class="type-dp">dp</sup>
+                <span class="logic">some</span>
+                <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+            <dd>
+                <a href="#status" title="http://linked.data.gov.au/def/placenames#status">status</a>
+                <sup title="data property" class="type-dp">dp</sup>
+                <span class="logic">some</span>
+                <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+            <dd>
+                <a href="#officialName" title="http://linked.data.gov.au/def/placenames#officialName">The official, authorative Name of a Place Name.</a>
+                <sup title="data property" class="type-dp">dp</sup>
+                <span class="logic">exactly</span> 1
+            </dd>
+            <dd>
+                <a href="#historicalBeginning" title="http://linked.data.gov.au/def/placenames#historicalBeginning">historical Beginning</a>
+                <sup title="data property" class="type-dp">dp</sup>
+                <span class="logic">max</span> 1
+            </dd>
+            <dd>
+                <a href="#historicalEnd" title="http://linked.data.gov.au/def/placenames#historicalEnd">historical End</a>
+                <sup title="data property" class="type-dp">dp</sup>
+                <span class="logic">max</span> 1
+            </dd>
+        </dl>
+    </div>
+    <div id="Point" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#Point"></a>
+        <h3>Point<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#Point</p>
+        <div class="comment">
+            <p>A Point is a unique location in Euclidean space.</p>
+        </div>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Geometry" title="http://linked.data.gov.au/def/placenames#Geometry">Geometry</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#lat" title="http://linked.data.gov.au/def/placenames#lat">latitude</a>
+                <sup title="data property" class="type-dp">dp</sup>
+                <span class="logic">exactly</span> 1
+            </dd>
+            <dd>
+                <a href="#long" title="http://linked.data.gov.au/def/placenames#long">longitude</a>
+                <sup title="data property" class="type-dp">dp</sup>
+                <span class="logic">exactly</span> 1
+            </dd>
+            <dd>
+                <a href="#elevation" title="http://linked.data.gov.au/def/placenames#elevation">elevation</a>
+                <sup title="data property" class="type-dp">dp</sup>
+                <span class="logic">max</span> 1
+            </dd>
+        </dl>
+    </div>
+    <div id="PointOfInterest" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#PointOfInterest"></a>
+        <h3>Point of Interest<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#PointOfInterest</p>
+        <div class="comment">
+            <p>A specific point Location that someone may find useful or interesting.</p>
+        </div>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Location" title="http://linked.data.gov.au/def/placenames#Location">Location</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#associatedWith" title="http://linked.data.gov.au/def/placenames#associatedWith">associated with</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">some</span>
+                <a href="#Place" title="http://linked.data.gov.au/def/placenames#Place">Place</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dd>
+                <a href="#namedBy" title="http://linked.data.gov.au/def/placenames#namedBy">named By</a>
+                <sup title="object property" class="type-op">op</sup>
+                <span class="logic">only</span>
+                <a href="#Agent" title="http://linked.data.gov.au/def/placenames#Agent">Agent</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="Polygon" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#Polygon"></a>
+        <h3>Polygon<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#Polygon</p>
+        <div class="comment">
+            <p>An Area defined as sequences of arcs.</p>
+        </div>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Area" title="http://linked.data.gov.au/def/placenames#Area">Area</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="Region" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#Region"></a>
+        <h3>Region<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#Region</p>
+        <div class="comment">
+            <p>A Region is an area of land that has common features.</p>
+        </div>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Location" title="http://linked.data.gov.au/def/placenames#Location">Location</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="RegionalCouncil" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#RegionalCouncil"></a>
+        <h3>Regional Council<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#RegionalCouncil</p>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Council" title="http://linked.data.gov.au/def/placenames#Council">Council</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="RuralCity" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#RuralCity"></a>
+        <h3>Rural City<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#RuralCity</p>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#City" title="http://linked.data.gov.au/def/placenames#City">City</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="Shire" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#Shire"></a>
+        <h3>Shire<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#Shire</p>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Jurisdiction" title="http://linked.data.gov.au/def/placenames#Jurisdiction">Jurisdiction</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+            <dt>
+                has sub-classes
+            </dt>
+            <dd>
+                <a href="#AboriginalShire" title="http://linked.data.gov.au/def/placenames#AboriginalShire">Aboriginal Shire</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="State" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#State"></a>
+        <h3>State<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#State</p>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Jurisdiction" title="http://linked.data.gov.au/def/placenames#Jurisdiction">Jurisdiction</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="Territory" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#Territory"></a>
+        <h3>Territory<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#Territory</p>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Jurisdiction" title="http://linked.data.gov.au/def/placenames#Jurisdiction">Jurisdiction</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="Town" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#Town"></a>
+        <h3>Town<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#Town</p>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Jurisdiction" title="http://linked.data.gov.au/def/placenames#Jurisdiction">Jurisdiction</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+    <div id="UnincorporatedArea" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#UnincorporatedArea"></a>
+        <h3>Unincorporated Area<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#UnincorporatedArea</p>
+        <dl class="description">
+            <dt>
+                has super-classes
+            </dt>
+            <dd>
+                <a href="#Jurisdiction" title="http://linked.data.gov.au/def/placenames#Jurisdiction">Jurisdiction</a>
+                <sup title="class" class="type-c">c</sup>
+            </dd>
+        </dl>
+    </div>
+</div>
+<div id="objectproperties">
+    <h2>Object Properties</h2>
+    <ul class="hlist">
+        <li><a href="#alternatePlaceName" title="http://linked.data.gov.au/def/placenames#alternatePlaceName">alternate Place Name</a></li>
+        <li><a href="#associatedWith" title="http://linked.data.gov.au/def/placenames#associatedWith">associated with</a></li>
+        <li><a href="#hasAboriginalPlaceName" title="http://linked.data.gov.au/def/placenames#hasAboriginalPlaceName">has Aboriginal Place Name</a></li>
+        <li><a href="#hasFeature" title="http://linked.data.gov.au/def/placenames#hasFeature">has Feature</a></li>
+        <li><a href="#hasFeatureClassification" title="http://linked.data.gov.au/def/placenames#hasFeatureClassification">has Feature Classification</a></li>
+        <li><a href="#hasGeographicExtent" title="http://linked.data.gov.au/def/placenames#hasGeographicExtent">has Geographic Extent</a></li>
+        <li><a href="#hasGeographicIdentifier" title="http://linked.data.gov.au/def/placenames#hasGeographicIdentifier">has Geographic Identifier</a></li>
+        <li><a href="#hasGeometry" title="http://linked.data.gov.au/def/placenames#hasGeometry">has Geometry</a></li>
+        <li><a href="#hasNamingAuthority" title="http://linked.data.gov.au/def/placenames#hasNamingAuthority">has Naming Authority</a></li>
+        <li><a href="#hasPlace" title="http://linked.data.gov.au/def/placenames#hasPlace">has Place</a></li>
+        <li><a href="#hasPlaceName" title="http://linked.data.gov.au/def/placenames#hasPlaceName">has Place Name</a></li>
+        <li><a href="#hasPoint" title="http://linked.data.gov.au/def/placenames#hasPoint">has Point</a></li>
+        <li><a href="#hasTemporalExtent" title="http://linked.data.gov.au/def/placenames#hasTemporalExtent">has Temporal Extent</a></li>
+        <li><a href="#historicalPlaceName" title="http://linked.data.gov.au/def/placenames#historicalPlaceName">historical Place Name</a></li>
+        <li><a href="#inJurisdiction" title="http://linked.data.gov.au/def/placenames#inJurisdiction">in Jurisdiction</a></li>
+        <li><a href="#isPlaceOf" title="http://linked.data.gov.au/def/placenames#isPlaceOf">is Place Of</a></li>
+        <li><a href="#namedBy" title="http://linked.data.gov.au/def/placenames#namedBy">named By</a></li>
+        <li><a href="#nearbyFeature" title="http://linked.data.gov.au/def/placenames#nearbyFeature">nearby Feature</a></li>
+        <li><a href="#nearbyLocation" title="http://linked.data.gov.au/def/placenames#nearbyLocation">nearby Location</a></li>
+        <li><a href="#nearbyPlace" title="http://linked.data.gov.au/def/placenames#nearbyPlace">nearby Place</a></li>
+        <li><a href="#nearbyRegion" title="http://linked.data.gov.au/def/placenames#nearbyRegion">nearby Region</a></li>
+        <li><a href="#neighbouringFeature" title="http://linked.data.gov.au/def/placenames#neighbouringFeature">neighbouring Feature</a></li>
+    </ul>
+    <div id="alternatePlaceName" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#alternatePlaceName"></a>
+        <h3>alternate Place Name<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#alternatePlaceName</p>
+        <div class="comment">
+            <p>A method to relate a Place Name to an alternate authorative Place Name for the same Place.</p>
+        </div>
+    </div>
+    <div id="associatedWith" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#associatedWith"></a>
+        <h3>associated with<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#associatedWith</p>
+        <div class="comment">
+            <p>A relation between a Point of Interest and a Place.</p>
+        </div>
+    </div>
+    <div id="hasAboriginalPlaceName" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#hasAboriginalPlaceName"></a>
+        <h3>has Aboriginal Place Name<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#hasAboriginalPlaceName</p>
+        <div class="comment">
+            <p>The relation that associates an Aboriginal Place Name to a Place.</p>
+        </div>
+        <div class="description">
+            <dl>
+                <dt>
+                    has super-properties
+                </dt>
+                <dd>
+                    <a href="#hasPlaceName" title="http://linked.data.gov.au/def/placenames#hasPlaceName">has Place Name</a>
+                    <sup title="object property" class="type-op">op</sup>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div id="hasFeature" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#hasFeature"></a>
+        <h3>has Feature<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#hasFeature</p>
+        <div class="comment">
+            <p>A relation between a Place and an abstraction of its real world phenomena, i.e. Feature.</p>
+        </div>
+    </div>
+    <div id="hasFeatureClassification" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#hasFeatureClassification"></a>
+        <h3>has Feature Classification<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#hasFeatureClassification</p>
+        <div class="comment">
+            <p>A relation between a Place and a classification of its real world phenomena.</p>
+        </div>
+    </div>
+    <div id="hasGeographicExtent" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#hasGeographicExtent"></a>
+        <h3>has Geographic Extent<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#hasGeographicExtent</p>
+        <div class="comment">
+            <p>A relation that defines the officially recognised geographic boundaries of a Location or a set of Locations (Gazeteer).</p>
+        </div>
+    </div>
+    <div id="hasGeographicIdentifier" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#hasGeographicIdentifier"></a>
+        <h3>has Geographic Identifier<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#hasGeographicIdentifier</p>
+        <div class="comment">
+            <p>A relation between a Place and a Geographic Identifier of that Place as defined in some Gazetteer.</p>
+        </div>
+    </div>
+    <div id="hasGeometry" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#hasGeometry"></a>
+        <h3>has Geometry<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#hasGeometry</p>
+        <div class="comment">
+            <p>A relation between a Location and its spatial object type.</p>
+        </div>
+    </div>
+    <div id="hasNamingAuthority" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#hasNamingAuthority"></a>
+        <h3>has Naming Authority<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#hasNamingAuthority</p>
+        <div class="comment">
+            <p>A relation definining the Naming Authority responsible for the naming of a Place.</p>
+        </div>
+    </div>
+    <div id="hasPlace" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#hasPlace"></a>
+        <h3>has Place<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#hasPlace</p>
+        <div class="comment">
+            <p>A relation that defines the membership of the Place in a Gazetteer.</p>
+        </div>
+        <div class="description">
+            <p><strong>has characteristics:</strong> transitive</p>
+            <dl>
+                <dt>
+                    is inverse of
+                </dt>
+                <dd>
+                    <a href="#isPlaceOf" title="http://linked.data.gov.au/def/placenames#isPlaceOf">is Place Of</a>
+                    <sup title="object property" class="type-op">op</sup>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div id="hasPlaceName" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#hasPlaceName"></a>
+        <h3>has Place Name<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#hasPlaceName</p>
+        <div class="comment">
+            <p>The relation that associates a qualified Place Name to a Place.</p>
+        </div>
+        <div class="description">
+            <p><strong>has characteristics:</strong> functional</p>
+            <dl>
+                <dt>
+                    has super-properties
+                </dt>
+                <dd>
+                    <span class="dotted" title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</span>
+                </dd>
+                <dt>
+                    has sub-properties
+                </dt>
+                <dd>
+                    <a href="#hasAboriginalPlaceName" title="http://linked.data.gov.au/def/placenames#hasAboriginalPlaceName">has Aboriginal Place Name</a>
+                    <sup title="object property" class="type-op">op</sup>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div id="hasPoint" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#hasPoint"></a>
+        <h3>has Point<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#hasPoint</p>
+        <div class="comment">
+            <p>A relation to associate a Point to an Area or Line.</p>
+        </div>
+    </div>
+    <div id="hasTemporalExtent" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#hasTemporalExtent"></a>
+        <h3>has Temporal Extent<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#hasTemporalExtent</p>
+        <div class="comment">
+            <p>The Temporal Extent over which the data within the Gazetteer was collected.</p>
+        </div>
+    </div>
+    <div id="historicalPlaceName" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#historicalPlaceName"></a>
+        <h3>historical Place Name<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#historicalPlaceName</p>
+        <div class="comment">
+            <p>A previous, deprecated official name for a Place.</p>
+        </div>
+    </div>
+    <div id="inJurisdiction" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#inJurisdiction"></a>
+        <h3>in Jurisdiction<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#inJurisdiction</p>
+        <div class="comment">
+            <p>A relation between a Location and the Jurisdiction it is located in.</p>
+        </div>
+    </div>
+    <div id="isPlaceOf" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#isPlaceOf"></a>
+        <h3>is Place Of<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#isPlaceOf</p>
+        <div class="description">
+            <p><strong>has characteristics:</strong> transitive</p>
+            <dl>
+                <dt>
+                    is inverse of
+                </dt>
+                <dd>
+                    <a href="#hasPlace" title="http://linked.data.gov.au/def/placenames#hasPlace">has Place</a>
+                    <sup title="object property" class="type-op">op</sup>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div id="namedBy" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#namedBy"></a>
+        <h3>named By<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#namedBy</p>
+        <div class="comment">
+            <p>A relation that states the Agent that named a Point of Interest or after whom a Point of Interest was named.</p>
+        </div>
+    </div>
+    <div id="nearbyFeature" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#nearbyFeature"></a>
+        <h3>nearby Feature<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#nearbyFeature</p>
+        <div class="comment">
+            <p>A way to relate a Feature to another nearby Feature.</p>
+        </div>
+    </div>
+    <div id="nearbyLocation" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#nearbyLocation"></a>
+        <h3>nearby Location<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#nearbyLocation</p>
+        <div class="comment">
+            <p>A way to relate a Location to a nearby Location.</p>
+        </div>
+        <div class="description">
+            <dl>
+                <dt>
+                    has sub-properties
+                </dt>
+                <dd>
+                    <a href="#nearbyPlace" title="http://linked.data.gov.au/def/placenames#nearbyPlace">nearby Place</a>
+                    <sup title="object property" class="type-op">op</sup>,
+                    <a href="#nearbyRegion" title="http://linked.data.gov.au/def/placenames#nearbyRegion">nearby Region</a>
+                    <sup title="object property" class="type-op">op</sup>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div id="nearbyPlace" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#nearbyPlace"></a>
+        <h3>nearby Place<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#nearbyPlace</p>
+        <div class="comment">
+            <p>A way to relate a Location to a nearby Place.</p>
+        </div>
+        <div class="description">
+            <dl>
+                <dt>
+                    has super-properties
+                </dt>
+                <dd>
+                    <a href="#nearbyLocation" title="http://linked.data.gov.au/def/placenames#nearbyLocation">nearby Location</a>
+                    <sup title="object property" class="type-op">op</sup>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div id="nearbyRegion" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#nearbyRegion"></a>
+        <h3>nearby Region<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#nearbyRegion</p>
+        <div class="comment">
+            <p>A way to relate a Location to a nearby Region.</p>
+        </div>
+        <div class="description">
+            <dl>
+                <dt>
+                    has super-properties
+                </dt>
+                <dd>
+                    <a href="#nearbyLocation" title="http://linked.data.gov.au/def/placenames#nearbyLocation">nearby Location</a>
+                    <sup title="object property" class="type-op">op</sup>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div id="neighbouringFeature" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#neighbouringFeature"></a>
+        <h3>neighbouring Feature<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#neighbouringFeature</p>
+        <div class="comment">
+            <p>A way to state the spatially Neighbouring Features of a Feature.</p>
+        </div>
+    </div>
+</div>
+<div id="dataproperties">
+    <h2>Data Properties</h2>
+    <ul class="hlist">
+        <li><a href="#alternateName" title="http://linked.data.gov.au/def/placenames#alternateName">alternate Name</a></li>
+        <li><a href="#colloquialName" title="http://linked.data.gov.au/def/placenames#colloquialName">colloquial Name</a></li>
+        <li><a href="#coordinateReferenceSystem" title="http://linked.data.gov.au/def/placenames#coordinateReferenceSystem">coordinate Reference System</a></li>
+        <li><a href="#eastBoundingLong" title="http://linked.data.gov.au/def/placenames#eastBoundingLong">east bounding longitude</a></li>
+        <li><a href="#elevation" title="http://linked.data.gov.au/def/placenames#elevation">elevation</a></li>
+        <li><a href="#featureCode" title="http://linked.data.gov.au/def/placenames#featureCode">feature Code</a></li>
+        <li><a href="#historicalBeginning" title="http://linked.data.gov.au/def/placenames#historicalBeginning">historical Beginning</a></li>
+        <li><a href="#historicalEnd" title="http://linked.data.gov.au/def/placenames#historicalEnd">historical End</a></li>
+        <li><a href="#identifier" title="http://linked.data.gov.au/def/placenames#identifier">identifier</a></li>
+        <li><a href="#lat" title="http://linked.data.gov.au/def/placenames#lat">latitude</a></li>
+        <li><a href="#long" title="http://linked.data.gov.au/def/placenames#long">longitude</a></li>
+        <li><a href="#northBoundingLat" title="http://linked.data.gov.au/def/placenames#northBoundingLat">north bounding latitude</a></li>
+        <li><a href="#pronunciation" title="http://linked.data.gov.au/def/placenames#pronunciation">pronunciation</a></li>
+        <li><a href="#southBoundingLat" title="http://linked.data.gov.au/def/placenames#southBoundingLat">south bounding latitude</a></li>
+        <li><a href="#status" title="http://linked.data.gov.au/def/placenames#status">status</a></li>
+        <li><a href="#officialName" title="http://linked.data.gov.au/def/placenames#officialName">The official, authorative Name of a Place Name.</a></li>
+        <li><a href="#westBoundingLong" title="http://linked.data.gov.au/def/placenames#westBoundingLong">west bounding longitude</a></li>
+    </ul>
+    <div id="alternateName" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#alternateName"></a>
+        <h3>alternate Name<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#alternateName</p>
+        <div class="comment">
+            <p>An alternate Name of a Place Name.</p>
+        </div>
+        <div class="description">
+            <dl>
+                <dt>
+                    has range
+                </dt>
+                <dd>
+                    <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div id="colloquialName" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#colloquialName"></a>
+        <h3>colloquial Name<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#colloquialName</p>
+        <div class="comment">
+            <p>A colloquial name of a Place Name.</p>
+        </div>
+        <div class="description">
+            <dl>
+                <dt>
+                    has range
+                </dt>
+                <dd>
+                    <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div id="coordinateReferenceSystem" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#coordinateReferenceSystem"></a>
+        <h3>coordinate Reference System<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#coordinateReferenceSystem</p>
+        <div class="comment">
+            <p>Reference to a CRS definition from an authoritative source such as the EPSG registry or the Open Geospatial Consortium CRS Register.</p>
+        </div>
+    </div>
+    <div id="eastBoundingLong" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#eastBoundingLong"></a>
+        <h3>east bounding longitude<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#eastBoundingLong</p>
+        <div class="description">
+            <dl>
+                <dt>
+                    has range
+                </dt>
+                <dd>
+                    <span class="dotted" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div id="elevation" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#elevation"></a>
+        <h3>elevation<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#elevation</p>
+        <div class="comment">
+            <p>The elevation of a Location above or below a fixed reference point.</p>
+        </div>
+    </div>
+    <div id="featureCode" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#featureCode"></a>
+        <h3>feature Code<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#featureCode</p>
+        <div class="comment">
+            <p>A code defined in the ICSM Permanent Committee on Place Names classification scheme.</p>
+        </div>
+    </div>
+    <div id="historicalBeginning" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#historicalBeginning"></a>
+        <h3>historical Beginning<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#historicalBeginning</p>
+        <div class="comment">
+            <p>The temporal beginning of the use of a Place Name.</p>
+        </div>
+    </div>
+    <div id="historicalEnd" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#historicalEnd"></a>
+        <h3>historical End<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#historicalEnd</p>
+        <div class="comment">
+            <p>The temporal end of the use of a Place Name.</p>
+        </div>
+    </div>
+    <div id="identifier" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#identifier"></a>
+        <h3>identifier<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#identifier</p>
+        <div class="comment">
+            <p>A reference to an unambiguous identifier conforming to a formal identification system in the given context.</p>
+        </div>
+    </div>
+    <div id="lat" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#lat"></a>
+        <h3>latitude<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#lat</p>
+        <div class="comment">
+            <p>The WGS84 latitude of a Location in decimal degrees.</p>
+        </div>
+        <div class="description">
+            <dl>
+                <dt>
+                    has range
+                </dt>
+                <dd>
+                    <span class="dotted" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div id="long" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#long"></a>
+        <h3>longitude<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#long</p>
+        <div class="comment">
+            <p>The WGS84 longitude of a Location in decimal degrees.</p>
+        </div>
+        <div class="description">
+            <dl>
+                <dt>
+                    has range
+                </dt>
+                <dd>
+                    <span class="dotted" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div id="northBoundingLat" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#northBoundingLat"></a>
+        <h3>north bounding latitude<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#northBoundingLat</p>
+        <div class="description">
+            <dl>
+                <dt>
+                    has range
+                </dt>
+                <dd>
+                    <span class="dotted" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div id="pronunciation" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#pronunciation"></a>
+        <h3>pronunciation<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#pronunciation</p>
+        <div class="comment">
+            <p>The pronunciation of a Place Name by means of a phonetic alphabet.</p>
+        </div>
+    </div>
+    <div id="southBoundingLat" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#southBoundingLat"></a>
+        <h3>south bounding latitude<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#southBoundingLat</p>
+        <div class="description">
+            <dl>
+                <dt>
+                    has range
+                </dt>
+                <dd>
+                    <span class="dotted" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div id="status" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#status"></a>
+        <h3>status<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#status</p>
+        <div class="comment">
+            <p>The status of a Place Name.</p>
+        </div>
+    </div>
+    <div id="officialName" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#officialName"></a>
+        <h3>The official, authorative Name of a Place Name.<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#officialName</p>
+        <div class="description">
+            <dl>
+                <dt>
+                    has range
+                </dt>
+                <dd>
+                    <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div id="westBoundingLong" class="entity">
+        <a name="http://linked.data.gov.au/def/placenames#westBoundingLong"></a>
+        <h3>west bounding longitude<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://linked.data.gov.au/def/placenames#westBoundingLong</p>
+        <div class="description">
+            <dl>
+                <dt>
+                    has range
+                </dt>
+                <dd>
+                    <span class="dotted" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<div id="annotationproperties">
+    <h2>Annotation Properties</h2>
+    <ul class="hlist">
+        <li><a href="#d4e42" title="http://purl.org/dc/elements/1.1/source"><span>source</span></a></li>
+        <li><a href="#d4e47" title="http://purl.org/dc/elements/1.1/title"><span>title</span></a></li>
+    </ul>
+    <div id="d4e42" class="entity">
+        <a name="http://purl.org/dc/elements/1.1/source"></a>
+        <h3>source<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/source</p>
+    </div>
+    <div id="d4e47" class="entity">
+        <a name="http://purl.org/dc/elements/1.1/title"></a>
+        <h3>title<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+        <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/title</p>
+    </div>
+</div>
+<div id="namespacedeclarations">
+    <h2>Namespace Declarations <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+    <dl>
+        <dt>
+            <em>default namespace</em>
+        </dt>
+        <dd>
+            http://linked.data.gov.au/def/placenames#
+        </dd>
+        <dt>
+            skos
+        </dt>
+        <dd>
+            http://www.w3.org/2004/02/skos/core#
+        </dd>
+        <dt>
+            dc
+        </dt>
+        <dd>
+            http://purl.org/dc/elements/1.1/
+        </dd>
+        <dt>
+            org
+        </dt>
+        <dd>
+            http://catalogue.linked.data.gov.au/org/
+        </dd>
+        <dt>
+            owl
+        </dt>
+        <dd>
+            http://www.w3.org/2002/07/owl#
+        </dd>
+        <dt>
+            rdf
+        </dt>
+        <dd>
+            http://www.w3.org/1999/02/22-rdf-syntax-ns#
+        </dd>
+        <dt>
+            rdfs
+        </dt>
+        <dd>
+            http://www.w3.org/2000/01/rdf-schema#
+        </dd>
+        <dt>
+            terms
+        </dt>
+        <dd>
+            http://purl.org/dc/terms/
+        </dd>
+        <dt>
+            time
+        </dt>
+        <dd>
+            http://www.w3.org/2006/time#
+        </dd>
+        <dt>
+            vann
+        </dt>
+        <dd>
+            http://purl.org/vocab/vann/
+        </dd>
+        <dt>
+            xsd
+        </dt>
+        <dd>
+            http://www.w3.org/2001/XMLSchema#
+        </dd>
+    </dl>
+</div>
+<p class="endnote">This HTML document was obtained by processing the OWL ontology source code through <a href="http://lode2.promsns.org">LODE 2</a>, <em>Live OWL Documentation Environment, v2</em>, originally developed by <a href="http://www.essepuntato.it">Silvio Peroni</a> and updated by <a href="http://www.edmondchuc.com">Edmond Chuc</a> at the <a href="http://www.csiro.au">CSIRO</a>.</p>
+</body>
+</html>
