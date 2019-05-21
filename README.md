@@ -6,7 +6,7 @@ Currently there is no detailed documentation of this profile, only the profile R
 Profile RDF:
 * [placenames.ttl](placenames.ttl)
 
-![](images/overview.svg)  
+![](images/Overview.svg)  
 **Figure 1**: a diagrammatic version of this profiles's model at a high level (not all details)
 
 
