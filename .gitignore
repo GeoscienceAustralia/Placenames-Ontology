@@ -1,0 +1,8 @@
+# Mac
+.DS_Store
+
+# JetBrains tools
+.idea/
+
+# Protege
+catalog-v001.xml
