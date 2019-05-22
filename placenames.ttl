@@ -29,7 +29,9 @@
     * ASGS Ontology - ASGS Features
     * GNAF Ontology - Addresses
     * schema.org - Agent subclasses and some Place Name annotations
-    * Time Ontology in OWL - for temporal extents"""@en ;
+    * Time Ontology in OWL - for temporal extents
+
+The firt version of this Place Names ontology is archived online at https://github.com/GeoscienceAustralia/Place-Names."""@en ;
                                             rdfs:label "Place Names Ontology"@en ;
                                             dc:publisher "Geoscience Australia" ;
                                             dct:creator <http://orcid.org/0000-0002-8742-7730> ;
@@ -43,15 +45,16 @@
                                             dct:rights "(c) Commonwealth of Australia (Geoscience Australia) 2019"@en .
 
 #################################################################
-#    Object Properties
+#    Annotation properties
 #################################################################
 
-###  http://linked.data.gov.au/def/placenames/alternatePlaceName
-:alternatePlaceName rdf:type owl:ObjectProperty ;
-                    rdfs:range :PlaceName ;
-                    rdfs:comment "A method to relate a Place Name to an alternate authoritative Place Name for the same Place."@en ;
-                    rdfs:label "alternate Place Name"@en .
+###  http://www.w3.org/2004/02/skos/core#scopeNote
+skos:scopeNote rdf:type owl:AnnotationProperty .
 
+
+#################################################################
+#    Object Properties
+#################################################################
 
 ###  http://linked.data.gov.au/def/placenames/associatedWith
 :associatedWith rdf:type owl:ObjectProperty ;
@@ -67,13 +70,27 @@
 :hasFeatureClassification rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf dcat:theme ;
                           rdfs:domain :Place ;
-                          rdfs:range :FeatureClassification ;
+                          rdfs:range :PlaceType ;
                           rdfs:comment "A relation between a Place and a classification of its real world phenomena."@en ;
                           rdfs:label "has feature classification" .
 
 
 ###  http://linked.data.gov.au/def/placenames/hasGeometry
 :hasGeometry rdf:type owl:ObjectProperty .
+
+
+###  http://linked.data.gov.au/def/placenames/hasName
+:hasName rdf:type owl:ObjectProperty ;
+         rdfs:range :PlaceName .
+
+
+###  http://linked.data.gov.au/def/placenames/hasNameFormality
+:hasNameFormality rdf:type owl:ObjectProperty ;
+                  rdfs:domain :PlaceName ;
+                  rdfs:range :NameFormality ;
+                  rdfs:comment "The formality of a Place Name"@en ;
+                  rdfs:label "has name formality"@en ;
+                  skos:scopeNote "Values for this property must be selected from the Name Formality vocabulary" .
 
 
 ###  http://linked.data.gov.au/def/placenames/hasNamingAuthority
@@ -86,18 +103,10 @@
 :hasPlace rdf:type owl:ObjectProperty .
 
 
-###  http://linked.data.gov.au/def/placenames/hasPlaceName
-:hasPlaceName rdf:type owl:ObjectProperty ;
-              rdfs:range :PlaceName ;
-              rdfs:label "has Place Name"@en .
-
-
-###  http://linked.data.gov.au/def/placenames/historicalPlaceName
-:historicalPlaceName rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf :alternatePlaceName ;
-                     rdfs:range :PlaceName ;
-                     rdfs:comment "A previous, deprecated official name for a Place."@en ;
-                     rdfs:label "historical Place Name"@en .
+###  http://linked.data.gov.au/def/placenames/hasPronunciation
+:hasPronunciation rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf skos:notation ;
+                  rdfs:domain :PlaceName .
 
 
 ###  http://linked.data.gov.au/def/placenames/inJurisdiction
@@ -114,10 +123,16 @@
 ###  http://linked.data.gov.au/def/placenames/wasNamedBy
 :wasNamedBy rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf prov:wasAttributedTo ;
-            rdfs:domain dct:Location ;
+            rdfs:domain :PlaceName ;
             rdfs:range prov:Agent ;
             rdfs:comment "A relation that states the Agent that named a Point of Interest or after whom a Point of Interest was named."@en ;
             rdfs:label "was named by"@en .
+
+
+###  http://purl.org/linked-data/registry#status
+reg:status rdf:type owl:ObjectProperty ;
+           rdfs:label "has status" ;
+           skos:scopeNote "This property is the generic Registry Ontology status property indicating the status of a RegisteredItem in a Registry but in this ontology it is used to indicate only the status of a Place Name in a Gazetteer."@en .
 
 
 ###  http://www.opengis.net/ont/geosparql#hasGeometry
@@ -128,8 +143,8 @@ geo:hasGeometry rdf:type owl:ObjectProperty ;
                 rdfs:label "has geometry" .
 
 
-###  http://www.w3.org/2006/time#hasTime
-time:hasTime rdf:type owl:ObjectProperty .
+###  http://www.w3.org/2004/02/skos/core#notation
+skos:notation rdf:type owl:ObjectProperty .
 
 
 ###  http://www.w3.org/2006/time#hastime
@@ -153,49 +168,12 @@ adms:identifier rdf:type owl:ObjectProperty .
 #    Data properties
 #################################################################
 
-###  http://linked.data.gov.au/def/placenames/hasColloquialName
-:hasColloquialName rdf:type owl:DatatypeProperty ;
-                   rdfs:subPropertyOf schema:alternateName ;
-                   rdfs:domain :PlaceName ;
-                   rdfs:range xsd:string ;
-                   rdfs:comment "Indicates a colloquial name of a Place Name."@en ;
-                   rdfs:label "colloquial name"@en .
-
-
-###  http://linked.data.gov.au/def/placenames/hasGeographicIdentifier
-:hasGeographicIdentifier rdf:type owl:DatatypeProperty ;
-                         rdfs:range xsd:string .
-
-
-###  http://linked.data.gov.au/def/placenames/hasOfficialName
-:hasOfficialName rdf:type owl:DatatypeProperty ;
-                 rdfs:subPropertyOf skos:prefLabel ;
-                 rdfs:domain :PlaceName ;
-                 rdfs:range xsd:string ;
-                 rdfs:comment "Indicates the official, authoritative name of a Place Name."@en ;
-                 rdfs:label "has official name"@en .
+###  http://linked.data.gov.au/def/placenames/hasName
+:hasName rdf:type owl:DatatypeProperty .
 
 
 ###  http://linked.data.gov.au/def/placenames/hasPronunciation
-:hasPronunciation rdf:type owl:DatatypeProperty ;
-                  rdfs:comment "The pronunciation of a Place Name by means of a phonetic alphabet."@en ;
-                  rdfs:label "pronunciation"@en .
-
-
-###  http://linked.data.gov.au/def/placenames/hasStatus
-:hasStatus rdf:type owl:DatatypeProperty ;
-           rdfs:comment "The status of a Place Name."@en ;
-           rdfs:label "status"@en .
-
-
-###  http://www.w3.org/2004/02/skos/core#prefLabel
-skos:prefLabel rdf:type owl:DatatypeProperty .
-
-
-###  https://schema.org/alternateName
-schema:alternateName rdf:type owl:DatatypeProperty ;
-                     rdfs:range xsd:string ;
-                     rdfs:label "alternate name" .
+:hasPronunciation rdf:type owl:DatatypeProperty .
 
 
 ###  https://schema.org/identifier
@@ -226,28 +204,15 @@ gnaf:Address rdf:type owl:Class ;
              rdfs:label "Address" .
 
 
-###  http://linked.data.gov.au/def/placenames/AboriginalShire
-:AboriginalShire rdf:type owl:Class ;
-                 rdfs:subClassOf :Shire ;
-                 rdfs:label "Aboriginal Shire"@en .
-
-
-###  http://linked.data.gov.au/def/placenames/Borough
-:Borough rdf:type owl:Class ;
-         rdfs:subClassOf :Jurisdiction ;
-         rdfs:label "Borough"@en .
-
-
-###  http://linked.data.gov.au/def/placenames/City
-:City rdf:type owl:Class ;
-      rdfs:subClassOf :Jurisdiction ;
-      rdfs:label "City"@en .
-
-
 ###  http://linked.data.gov.au/def/placenames/CommunityGovernmentCouncil
 :CommunityGovernmentCouncil rdf:type owl:Class ;
                             rdfs:subClassOf :Council ;
                             rdfs:label "Community Government Council" .
+
+
+###  http://linked.data.gov.au/def/placenames/ContractedCatchment
+:ContractedCatchment rdf:type owl:Class ;
+                     rdfs:subClassOf geo:Feature .
 
 
 ###  http://linked.data.gov.au/def/placenames/Council
@@ -260,17 +225,6 @@ gnaf:Address rdf:type owl:Class ;
 :DistrictCouncil rdf:type owl:Class ;
                  rdfs:subClassOf :Council ;
                  rdfs:label "District Council"@en .
-
-
-###  http://linked.data.gov.au/def/placenames/FeatureClassification
-:FeatureClassification rdf:type owl:Class ;
-                       rdfs:subClassOf skos:Concept ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty :featureCode ;
-                                         owl:someValuesFrom xsd:string
-                                       ] ;
-                       rdfs:comment "Feature type classification as of the ICSM Permanent Committee on Place Names classification scheme."@en ;
-                       rdfs:label "Feature Classification"@en .
 
 
 ###  http://linked.data.gov.au/def/placenames/Gazetteer
@@ -286,15 +240,16 @@ gnaf:Address rdf:type owl:Class ;
                              owl:someValuesFrom :Jurisdiction
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty time:hasTime ;
-                             owl:someValuesFrom time:TemporalEntity
-                           ] ,
-                           [ rdf:type owl:Restriction ;
                              owl:onProperty :hasPlace ;
                              owl:allValuesFrom :Place
                            ] ;
            rdfs:comment "A Gazetteer is a directory of instances of location types in a spatial reference system."@en ;
            rdfs:label "Gazetteer"@en .
+
+
+###  http://linked.data.gov.au/def/placenames/IndigenousCouncil
+:IndigenousCouncil rdf:type owl:Class ;
+                   rdfs:subClassOf :Council .
 
 
 ###  http://linked.data.gov.au/def/placenames/IslandCouncil
@@ -305,13 +260,13 @@ gnaf:Address rdf:type owl:Class ;
 
 ###  http://linked.data.gov.au/def/placenames/Jurisdiction
 :Jurisdiction rdf:type owl:Class ;
+              rdfs:subClassOf schema:Organization ;
               rdfs:label "Jurisdiction" .
 
 
-###  http://linked.data.gov.au/def/placenames/Municipality
-:Municipality rdf:type owl:Class ;
-              rdfs:subClassOf :Jurisdiction ;
-              rdfs:label "Municipality"@en .
+###  http://linked.data.gov.au/def/placenames/NameFormality
+:NameFormality rdf:type owl:Class ;
+               rdfs:subClassOf skos:Concept .
 
 
 ###  http://linked.data.gov.au/def/placenames/Place
@@ -332,16 +287,11 @@ gnaf:Address rdf:type owl:Class ;
                        ] ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :hasFeatureClassification ;
-                         owl:allValuesFrom :FeatureClassification
+                         owl:allValuesFrom :PlaceType
                        ] ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :hasNamingAuthority ;
                          owl:allValuesFrom prov:Agent
-                       ] ,
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasPlaceName ;
-                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                         owl:onClass :PlaceName
                        ] ;
        rdfs:comment "An identifiable geographic Place as defined by the Composite Gazetteer of Australia."@en ;
        rdfs:label "Place"@en .
@@ -350,40 +300,30 @@ gnaf:Address rdf:type owl:Class ;
 ###  http://linked.data.gov.au/def/placenames/PlaceName
 :PlaceName rdf:type owl:Class ;
            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :register ;
+                             owl:someValuesFrom :Gazetteer
+                           ] ,
+                           [ rdf:type owl:Restriction ;
                              owl:onProperty :wasNamedBy ;
                              owl:someValuesFrom prov:Agent
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty :alternatePlaceName ;
-                             owl:allValuesFrom :PlaceName
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty :historicalPlaceName ;
-                             owl:allValuesFrom :PlaceName
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty :hasColloquialName ;
-                             owl:someValuesFrom xsd:string
+                             owl:onProperty reg:status ;
+                             owl:someValuesFrom reg:Status
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :hasPronunciation ;
                              owl:someValuesFrom xsd:string
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty :hasStatus ;
-                             owl:someValuesFrom xsd:string
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty schema:alternateName ;
-                             owl:someValuesFrom xsd:string
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty :hasOfficialName ;
-                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                             owl:onDataRange xsd:string
                            ] ;
            rdfs:comment "The Name of a Place assigned by an official naming authority in the Composite Gazeteer of Australia."@en ;
            rdfs:label "Place Name"@en .
+
+
+###  http://linked.data.gov.au/def/placenames/PlaceType
+:PlaceType rdf:type owl:Class ;
+           rdfs:subClassOf skos:Concept ;
+           rdfs:comment "Place type classification as of the ICSM Permanent Committee on Place Names classification scheme."@en ;
+           rdfs:label "PlaceType"@en .
 
 
 ###  http://linked.data.gov.au/def/placenames/PointOfInterest
@@ -414,30 +354,6 @@ gnaf:Address rdf:type owl:Class ;
                  rdfs:label "Regional Council"@en .
 
 
-###  http://linked.data.gov.au/def/placenames/RuralCity
-:RuralCity rdf:type owl:Class ;
-           rdfs:subClassOf :City ;
-           rdfs:label "rural City"@en .
-
-
-###  http://linked.data.gov.au/def/placenames/Shire
-:Shire rdf:type owl:Class ;
-       rdfs:subClassOf :Jurisdiction ;
-       rdfs:label "Shire"@en .
-
-
-###  http://linked.data.gov.au/def/placenames/Town
-:Town rdf:type owl:Class ;
-      rdfs:subClassOf :Jurisdiction ;
-      rdfs:label "Town"@en .
-
-
-###  http://linked.data.gov.au/def/placenames/UnincorporatedArea
-:UnincorporatedArea rdf:type owl:Class ;
-                    rdfs:subClassOf :Jurisdiction ;
-                    rdfs:label "Unincorporated Area"@en .
-
-
 ###  http://purl.org/dc/terms/Location
 dct:Location rdf:type owl:Class ;
              rdfs:subClassOf geo:Feature ;
@@ -451,6 +367,12 @@ reg:Register rdf:type owl:Class .
 
 ###  http://purl.org/linked-data/registry#RegisteredItem
 reg:RegisteredItem rdf:type owl:Class .
+
+
+###  http://purl.org/linked-data/registry#Status
+reg:Status rdf:type owl:Class ;
+           rdfs:subClassOf skos:Concept ;
+           rdfs:label "Registry Status" .
 
 
 ###  http://www.opengis.net/ont/geosparql#Feature
@@ -502,8 +424,13 @@ adms:Identifier rdf:type owl:Class .
 #    Annotations
 #################################################################
 
-:featureCode rdfs:comment "A code defined in the ICSM Permanent Committee on Place Names classification scheme."@en ;
-             rdfs:label "feature code" .
+:hasName rdfs:comment "The Entity has a name (label) which is a text sting."@en ;
+         skos:scopeNote "All names indicated by hasName should have the role of the name indicated with a Name Type" ;
+         rdfs:label "has name"@en .
+
+
+:hasPronunciation rdfs:label "pronunciation"@en ;
+                  rdfs:comment "The pronunciation of a Place Name by means of a phonetic alphabet."@en .
 
 
 ###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
