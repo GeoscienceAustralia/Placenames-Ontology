@@ -266,13 +266,14 @@ gnaf:Address rdf:type owl:Class ;
 
 ###  http://linked.data.gov.au/def/placenames/NameFormality
 :NameFormality rdf:type owl:Class ;
-               rdfs:subClassOf skos:Concept .
+               rdfs:subClassOf skos:Concept ;
+               rdfs:comment "The formality of a name: is the name an official, historical, colloquilal one?"@en ;
+               rdfs:label "Name Formality"@en .
 
 
 ###  http://linked.data.gov.au/def/placenames/Place
 :Place rdf:type owl:Class ;
        rdfs:subClassOf dct:Location ,
-                       reg:RegisteredItem ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :inJurisdiction ;
                          owl:someValuesFrom :Jurisdiction
@@ -299,7 +300,8 @@ gnaf:Address rdf:type owl:Class ;
 
 ###  http://linked.data.gov.au/def/placenames/PlaceName
 :PlaceName rdf:type owl:Class ;
-           rdfs:subClassOf [ rdf:type owl:Restriction ;
+           rdfs:subClassOf reg:RegisteredItem ,
+                           [ rdf:type owl:Restriction ;
                              owl:onProperty :register ;
                              owl:someValuesFrom :Gazetteer
                            ] ,
@@ -322,8 +324,8 @@ gnaf:Address rdf:type owl:Class ;
 ###  http://linked.data.gov.au/def/placenames/PlaceType
 :PlaceType rdf:type owl:Class ;
            rdfs:subClassOf skos:Concept ;
-           rdfs:comment "Place type classification as of the ICSM Permanent Committee on Place Names classification scheme."@en ;
-           rdfs:label "PlaceType"@en .
+           rdfs:comment "The Place Type classification as of the ICSM Permanent Committee on Place Names classification scheme."@en ;
+           rdfs:label "Place Type"@en .
 
 
 ###  http://linked.data.gov.au/def/placenames/PointOfInterest
@@ -366,7 +368,8 @@ reg:Register rdf:type owl:Class .
 
 
 ###  http://purl.org/linked-data/registry#RegisteredItem
-reg:RegisteredItem rdf:type owl:Class .
+reg:RegisteredItem rdf:type owl:Class ;
+                   rdfs:label "Registered Item"@en .
 
 
 ###  http://purl.org/linked-data/registry#Status
@@ -377,6 +380,10 @@ reg:Status rdf:type owl:Class ;
 
 ###  http://www.opengis.net/ont/geosparql#Feature
 geo:Feature rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasName ;
+                              owl:someValuesFrom :PlaceName
+                            ] ;
             rdfs:comment "The GeoSPARQL Ontology's Feature Class"@en ;
             rdfs:label "Feature"@en .
 
@@ -392,7 +399,8 @@ skos:Concept rdf:type owl:Class .
 
 
 ###  http://www.w3.org/2006/time#TemporalEntity
-time:TemporalEntity rdf:type owl:Class .
+time:TemporalEntity rdf:type owl:Class ;
+                    rdfs:label "Temporal Entity"@en .
 
 
 ###  http://www.w3.org/ns/prov#Agent
