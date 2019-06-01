@@ -34,14 +34,15 @@
 The firt version of this Place Names ontology is archived online at https://github.com/GeoscienceAustralia/Place-Names."""@en ;
                                             rdfs:label "Place Names Ontology"@en ;
                                             dc:publisher "Geoscience Australia" ;
-                                            dct:creator <http://orcid.org/0000-0002-8742-7730> ;
-                                            dc:contributor "Armin Haller" ;
+                                            dct:creator [
+                                              schema:name "Nicholas Car" ;
+                                              schema:identifier <http://orcid.org/0000-0002-8742-7730> ;
+                                            ] ;
+                                            dc:contributor "Armin Haller" , "Irina Bastrakova";
                                             dct:created "2018-08-02"^^xsd:date ;
                                             dct:publisher <http://catalogue.linked.data.gov.au/org/ga> ;
                                             owl:versionInfo "2" ;
-                                            dc:creator "Nicholas Car" ;
                                             vann:preferredNamespaceUri "http://linked.data.gov.au/def/placenames/"^^xsd:string ;
-                                            dc:contributor "Irina Bastrakova" ;
                                             dct:rights "(c) Commonwealth of Australia (Geoscience Australia) 2019"@en .
 
 #################################################################
