@@ -20,11 +20,15 @@
 @base <http://linked.data.gov.au/def/placenames> .
 
 <http://linked.data.gov.au/def/placenames> rdf:type owl:Ontology ;
-                                            rdfs:comment "This ontology describes Place Names that are used in the Composite Gazetteer of Australia. Place Names are natural and artificial features and are all represented by points. Actual Place Names are managed by multiple jurisdictions around Australia, while this ontology provides a meta model to bring their data together in one Linked Data collection."@en ;
+					    rdfs:comment "This is an ontology that profiles several other ontologies. It describes Place Names that are used in the Place Names Gazetteer of Australia. Place Names are names given to natural and artificial geospatial features, such as admininstrative areas, political regions, mountain ranges, rivers, bays etc. Place Names are assigned and managed by multiple Jurisdictions around Australia and may have varying status: official, hostrical etc. This ontology provides a meta model to bring Place Name data together in one Semantic Web data collection." ;
                                             dct:modified "2019-06-01"^^xsd:date ;
                                             vann:preferredNamespaceUri "http://linked.data.gov.au/def/placenames/"^^xsd:anyURI ;
-                                            rdfs:label "Place Names Ontology"@en ;
-                                            dc:publisher "Geoscience Australia" ;
+                                            rdfs:label "Place Names Profile"@en ;
+                                            dct:publisher [
+						schema:name "Geoscience Australia" ;
+						schema:identifier "http://catalogue.linked.data.gov.au/org/ga" ;
+						rdfs:seeAlso <https://www.ga.gov.au> ;
+					    ] ;
                                             dc:contributor "Armin Haller" ;
                                             dct:created "2018-08-02"^^xsd:date ;
                                             skos:historyNote """This version of this ontology, 2, covers the same conceptual territory of the original ontology (see placenames-original.ttl) but is aligned with:
@@ -37,7 +41,6 @@
     * Time Ontology in OWL - for temporal extents
 
 The first version of this Place Names ontology is archived online at https://github.com/GeoscienceAustralia/Place-Names."""@en ;
-                                            dct:publisher <http://catalogue.linked.data.gov.au/org/ga> ;
                                             owl:versionInfo "2" ;
                                             dct:creator [ schema:identifier <http://orcid.org/0000-0002-8742-7730> ;
                                                           rdf:type schema:Person ;
@@ -243,7 +246,7 @@ gnaf:Address rdf:type owl:Class ;
 ###  http://linked.data.gov.au/def/placenames/IndigenousCouncil
 :IndigenousCouncil rdf:type owl:Class ;
                    rdfs:subClassOf :Council ;
-                   rdfs:label "Indigineous Council"@en .
+                   rdfs:label "Indigeneous Council"@en .
 
 
 ###  http://linked.data.gov.au/def/placenames/IslandCouncil

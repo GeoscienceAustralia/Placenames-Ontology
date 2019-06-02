@@ -1,23 +1,24 @@
 <html lang="en">
 <head>
-    <title>Place Names Ontology</title>
+    <title>Place Names Profile</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">pyLODE</a></div><h1>Place Names Ontology</h1>
+<div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">pyLODE</a></div>
+<img src="ga-logo.jpg" alt="GA Logo" style="height:150px;margin-bottom:10px;" />
+<h1>Place Names Profile</h1>
 <section id="metadata">
     <dl>
         <dt>IRI</dt>
         <dd><code>http://linked.data.gov.au/def/placenames</code></dd>
         <dt>Publisher(s)</dt>
         <dd>
-            Geoscience Australia<br/>
-            http://catalogue.linked.data.gov.au/org/ga<br/>
+            <a href="http://orcid.org/0000-0002-8742-7730">Geoscience Australia</a>
         </dd>
         <dt>Creator(s)</dt>
         <dd>
-            <a href="http://orcid.org/0000-0002-8742-7730">Nicholas Car</a><br/>
+            <a href="http://orcid.org/0000-0002-8742-7730">Nicholas Car</a>
         </dd>
         <dt>Contributors(s)</dt>
         <dd>
@@ -29,7 +30,11 @@
         <dt>Modified</dt>
         <dd>2019-06-01</dd>
         <dt>Description</dt>
-        <dd>This ontology describes Place Names that are used in the Composite Gazetteer of Australia. Place Names are natural and artificial features and are all represented by points. Actual Place Names are managed by multiple jurisdictions around Australia, while this ontology provides a meta model to bring their data together in one Linked Data collection.</dd>
+        <dd>This is an ontology that profiles several other ontologies. It describes Place Names that are used in the Place Names Gazetteer of Australia. Place Names are names given to natural and artificial geospatial features, such as admininstrative areas, political regions, mountain ranges, rivers, bays etc. Place Names are assigned and managed by multiple Jurisdictions around Australia and may have varying status: official, hostrical etc. This ontology provides a meta model to bring Place Name data together in one Semantic Web data collection.</dd>
+	<dt>Ontology source</td>
+	<dd><a href="http://linked.data.gov.au/def/placenames.ttl">RDF (turtle)</a> - also available at this URI via Content Negotiation</dd>
+	<dt>Code repository</dt>
+	<dd>This documentation, the RDF resource and other information is available in its <a href="https://github.com/CSIRO-enviro-informatics/placenames-profile/">Git code repository online</a>.
     </dl>
 </section>
 <section id="toc">
@@ -68,7 +73,7 @@
         <li><a href="#gazetteer">Gazetteer</a></li>
         <li><a href="#geometry">Geometry</a></li>
         <li><a href="#identifier">Identifier</a></li>
-        <li><a href="#indigineouscouncil">Indigineous Council</a></li>
+        <li><a href="#indigenouscouncil">Indigeneous Council</a></li>
         <li><a href="#islandcouncil">Island Council</a></li>
         <li><a href="#jurisdiction">Jurisdiction</a></li>
         <li><a href="#nameformality">Name Formality</a></li>
@@ -434,8 +439,8 @@
             </tr>
         </table>
     </div>
-    <div class="entity class" id="indigineouscouncil">
-        <h3>Indigineous Council<sup title="class" class="type-c">c</sup></h3>
+    <div class="entity class" id="indigeneouscouncil">
+        <h3>Indigeneous Council<sup title="class" class="type-c">c</sup></h3>
         <table>
             <tr>
                 <th>IRI</th>
