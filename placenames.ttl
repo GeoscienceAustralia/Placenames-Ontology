@@ -23,11 +23,7 @@
                                             rdfs:label "Place Names Profile"@en ;
                                             dct:modified "2019-06-01"^^xsd:date ;
                                             vann:preferredNamespaceUri "http://linked.data.gov.au/def/placenames/"^^xsd:anyURI ;
-                                            dct:creator [
-                                                          schema:identifier <http://orcid.org/0000-0002-8742-7730> ;
-                                                          schema:name "Nicholas Car"@en
-                                                        ] ;
-                                            rdfs:comment "This is an ontology that profiles several other ontologies. It describes Place Names that are used in the Place Names Gazetteer of Australia. Place Names are names given to natural and artificial geospatial features, such as admininstrative areas, political regions, mountain ranges, rivers, bays etc. Place Names are assigned and managed by multiple Jurisdictions around Australia and may have varying status: official, hostrical etc. This ontology provides a meta model to bring Place Name data together in one Semantic Web data collection." ;
+                                            rdfs:comment "This is an ontology that profiles several other ontologies. It describes Place Names that are used in the Place Names Gazetteer of Australia. Place Names are names given to natural and artificial geospatial features, such as administrative areas, political regions, mountain ranges, rivers, bays etc. Place Names are assigned and managed by multiple Jurisdictions around Australia and may have varying status: official, historical etc. This ontology provides a meta model to bring Place Name data together in one Semantic Web data collection." ;
                                             dc:contributor "Armin Haller" ;
                                             dct:created "2018-08-02"^^xsd:date ;
                                             skos:historyNote """This version of this ontology, 2, covers the same conceptual territory of the original ontology (see placenames-original.ttl) but is aligned with:
@@ -41,9 +37,12 @@
 
 The first version of this Place Names ontology is archived online at https://github.com/GeoscienceAustralia/Place-Names."""@en ;
                                             owl:versionInfo "2" ;
-                                            dct:publisher [ schema:name "Geoscience Australia" ;
+                                            dct:creator [ schema:identifier <http://orcid.org/0000-0002-8742-7730> ;
+                                                          schema:name "Nicholas Car"@en
+                                                        ] ;
+                                            dct:publisher [ rdfs:seeAlso <https://www.ga.gov.au> ;
                                                             schema:identifier "http://catalogue.linked.data.gov.au/org/ga" ;
-                                                            rdfs:seeAlso <https://www.ga.gov.au>
+                                                            schema:name "Geoscience Australia"
                                                           ] ;
                                             dc:contributor "Irina Bastrakova" ;
                                             dct:rights "(c) Commonwealth of Australia (Geoscience Australia) 2019"@en .
@@ -226,7 +225,7 @@ gnaf:Address rdf:type owl:Class ;
                              owl:onProperty reg:containedItemClass ;
                              owl:hasValue :PlaceName
                            ] ;
-           rdfs:comment "A Gazetteer is a directory of instances of location types in a spatial reference system."@en ;
+           rdfs:comment "A Gazetteer is a Register of Place Names created by a Jurisdiction"@en ;
            rdfs:label "Gazetteer"@en .
 
 
@@ -369,17 +368,26 @@ schema:Organization rdf:type owl:Class ;
                                "Organization" .
 
 
-###  https://schema.org/Person
-schema:Person rdf:type owl:Class ;
-              rdfs:subClassOf prov:Agent ;
-              rdfs:comment "Schema.org's Person Class" ;
-              rdfs:label "Person" .
-
-
 ###  https://www.w3.org/ns/adms#Identifier
 adms:Identifier rdf:type owl:Class .
 
 
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://linked.data.gov.au/def/placenames/PlaceName
+:PlaceName rdf:type owl:NamedIndividual .
+
+
+[ schema:identifier <http://orcid.org/0000-0002-8742-7730> ;
+  schema:name "Nicholas Car"@en
+] .
+
+[ schema:identifier "http://catalogue.linked.data.gov.au/org/ga" ;
+   rdfs:seeAlso <https://www.ga.gov.au> ;
+   schema:name "Geoscience Australia"
+ ] .
 
 #################################################################
 #    Annotations
