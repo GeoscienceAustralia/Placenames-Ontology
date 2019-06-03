@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Place Names Profile</title>
@@ -8,6 +9,7 @@
 <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">pyLODE</a></div>
 <h1>Place Names Profile</h1>
 <section id="metadata">
+    <h2 style="display:none;">Metadata</h2>
     <dl>
         <dt>IRI</dt>
         <dd><code>http://linked.data.gov.au/def/placenames</code></dd>
@@ -45,7 +47,7 @@
 <section id="overview">
     <h2>Overview</h2>
     <div class="figure" style="margin-bottom:10px;">
-        <a href="placenames.png"><img style="width:300px; margin-bottom: 10px;" src="placenames.png" /></a>
+        <a href="placenames.svg"><img style="width:900px; margin-bottom: 10px;" src="placenames.svg" /></a>
         <div class="caption"><strong>Figure 1:</strong> Diagrammatic overview of this ontology - not all details</div>
     </div>
 </section>
@@ -176,10 +178,10 @@ In the context of the Place Names Profile, Jurisdictions may select Place Names 
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://www.w3.org/ns/adms#identifier">adms:identifier</a> <span class="cardinality">some</span> <a href="https://www.w3.org/ns/adms#Identifier">adms:Identifier</a><br/>
-                    <a href="http://linked.data.gov.au/def/placenames/wasNamedBy">:wasNamedBy</a> <span class="cardinality">some</span> <a href="http://linked.data.gov.au/def/placenames/Jurisdiction">:Jurisdiction</a><br/>
-                    <a href="http://purl.org/linked-data/registry#status">reg:status</a> <span class="cardinality">some</span> <a href="http://purl.org/linked-data/registry#Status">reg:Status</a><br/>
                     <a href="http://linked.data.gov.au/def/placenames/hasPronunciation">:hasPronunciation</a> <span class="cardinality">some</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><br/>
+                    <a href="http://purl.org/linked-data/registry#status">reg:status</a> <span class="cardinality">some</span> <a href="http://purl.org/linked-data/registry#Status">reg:Status</a><br/>
+                    <a href="http://linked.data.gov.au/def/placenames/wasNamedBy">:wasNamedBy</a> <span class="cardinality">some</span> <a href="http://linked.data.gov.au/def/placenames/Jurisdiction">:Jurisdiction</a><br/>
+                    <a href="https://www.w3.org/ns/adms#identifier">adms:identifier</a> <span class="cardinality">some</span> <a href="https://www.w3.org/ns/adms#Identifier">adms:Identifier</a><br/>
                     <a href="http://linked.data.gov.au/def/placenames/register">:register</a> <span class="cardinality">some</span> <a href="http://linked.data.gov.au/def/placenames/Gazetteer">:Gazetteer</a><br/>
                 </td>
             </tr>
@@ -276,7 +278,6 @@ In the context of the Place Names Profile, Jurisdictions may select Place Names 
         </table>
     </div>
 </section>
-
 <section id="objectproperties">
     <h2>Object Properties</h2>
     <ul class="hlist">
@@ -297,7 +298,6 @@ In the context of the Place Names Profile, Jurisdictions may select Place Names 
                 <th>IRI</th>
                 <td><code>http://purl.org/linked-data/registry#containedItemClass</code></td>
             </tr>
-            <tr>
         </table>
     </div>
     <div class="entity property" id="hasfeatureclassification">
@@ -434,7 +434,6 @@ In the context of the Place Names Profile, Jurisdictions may select Place Names 
                 <td><code>http://purl.org/linked-data/registry#status</code></td>
             </tr>
             <tr>
-            <tr>
                 <th>Usage Note</th>
                 <td>
                     This property is the generic Registry Ontology status property indicating the status of a RegisteredItem in a Registry but in this ontology it is used to indicate only the status of a Place Name in a Gazetteer.
@@ -455,7 +454,6 @@ In the context of the Place Names Profile, Jurisdictions may select Place Names 
                 <th>IRI</th>
                 <td><code>http://linked.data.gov.au/def/placenames/placeNameOf</code></td>
             </tr>
-            <tr>
         </table>
     </div>
     <div class="entity property" id="pronunciation">
@@ -523,6 +521,8 @@ In the context of the Place Names Profile, Jurisdictions may select Place Names 
     <h2>Namespaces</h2>
     <dl>
         <dt><em>default (:)</em></dt>
+        <dd><code></code></dd>
+        <dt></dt>
         <dd><code>http://linked.data.gov.au/def/placenames/</code></dd>
         <dt>adms</dt>
         <dd><code>https://www.w3.org/ns/adms#</code></dd>
