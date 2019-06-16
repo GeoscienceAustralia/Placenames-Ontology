@@ -43,14 +43,30 @@ The first version of this Place Names ontology is archived online at https://git
                                                 schema:email <nicholas.car@csiro.au> ;
                                                 schema:memberOf [
                                                     schema:name "CSIRO" ;
-                                                    schema:identifier <http://catalogue.linked.data.gov.au/def/csiro> ;
+                                                    schema:identifier <http://catalogue.linked.data.gov.au/org/csiro> ;
                                                 ] ;
                                               ] ;
                                             dct:publisher [ rdfs:seeAlso <https://www.ga.gov.au> ;
                                                             schema:identifier "http://catalogue.linked.data.gov.au/org/ga" ;
                                                             schema:name "Geoscience Australia"
                                                           ] ;
-                                            dc:contributor "Irina Bastrakova" ;
+                                            dct:contributor [
+                                                schema:name "Irina Bastrakova"@en ;
+                                                schema:email <irina.bastrakova@ga.gov.au> ;
+                                                schema:memberOf [
+                                                    schema:name "Geoscience Australia" ;
+                                                    schema:identifier <http://catalogue.linked.data.gov.au/org/ga> ;
+                                                ] ;
+                                              ] ,
+                                            [
+                                                schema:name "Armin Haller"@en ;
+                                                schema:identifier <https://orcid.org/0000-0003-3425-0780> ;
+                                                schema:email <armin.haller@anu.edu.au> ;
+                                                schema:memberOf [
+                                                    schema:name "Australian National University" ;
+                                                    schema:identifier <http://catalogue.linked.data.gov.au/org/anu> ;
+                                                ] ;
+                                              ] ;
                                             dct:rights "(c) Commonwealth of Australia (Geoscience Australia) 2019"@en .
 
 #################################################################
