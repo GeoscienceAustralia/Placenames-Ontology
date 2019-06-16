@@ -24,9 +24,10 @@ There are other images documenting parts o the ontology too:
 ## Design choices
 This ontology makes several design choices to facilitate certain behaviour. Some of those choices are listed below:
 
-1. **Separation of spatiality from `Place Name`**
-  * the `Place Name` classes, unlike v1 of this profile/ontology, contains no spatial properties such as geometry.
-  * this is to ensure that all `Place Names` are made names of separately identified `Feature` class instances. This ensures that `Place Names` are always bound to other spatial Linked Data Datasets - perhaps specifically [Loc-I Datasets](http://linked.data.gov.au/def/loci#Dataset) which ensures that all `PlaceNames` integrated with other (Australian) spatial Linked Data systems
+1. **Separation of `Place Name` from spatial objects**
+  * the `Place Name` class, unlike in v1 of this profile/ontology, is not a spatial object and thus cannot be used with spatial properties such as geometry.
+  * all `Place Name`s are just *names* - with authority, language, time period in effect, pronunciation etc. - but that they are separate from the actual *features* that they are names of. This ensures that `Place Names` are always bound to objects in other spatial Linked Data Datasets - perhaps specifically [Loc-I Datasets](http://linked.data.gov.au/def/loci#Dataset) - which means that the Place Names dataset is both well connected to these (and them to this) and also that this dataset just concentrates on names and hands off complex spatial concerns to other, dedicated, spatial systems
+  * with this distinction, the Place Names dataset is a register (a catalogue of registered items), not a spatial dataset, first and foremost
 1. **Jurisdictions are `Agent`s only**
   * i.e. `Jurisdiction` has no spatial component (the area a Jurisdiction has jurisdiction over)
   * this is to again ensure that any notion of spatiality is linked to existing (Loc-I) spatial objects, such as `States or Territories` in the [ASGS 2016](https://asgsld.net/2016/stateorterritory/), rather than re-defining them within this Place Names Profile

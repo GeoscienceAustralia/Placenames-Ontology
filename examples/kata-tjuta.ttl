@@ -1,0 +1,37 @@
+@prefix pn: <http://linked.data.gov.au/def/placenames/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix pnstat: <http://linked.data.gov.au/dataset/placenames/status/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix sdo: <https://schema.org/> .
+@prefix ex: <http://example.org/> .
+
+
+<http://linked.data.gov.au/dataset/placename/katatjuta>
+    a                   pn:PlaceName ;
+    pn:hasPlaceName     "Kata Tjuṯa"@au-pit ;  # Pitjantjatjara planguage code to be supplied
+    reg:register        <http://linked.data.gov.au/dataset/placename/gazetteer/northernterritory> ;
+    reg:status          pnstat:official ;
+    pn:placeNameOf      ex:kt_feature ;
+.
+
+<http://linked.data.gov.au/dataset/placename/olgas>
+    a                   pn:PlaceName ;
+    pn:hasPlaceName     "Olgas"@en ;  # official name, in English. Cloud be now unofficial
+    reg:register        <http://linked.data.gov.au/dataset/placename/gazetteer/northernterritory> ;
+    reg:status          pnstat:official ;
+    pn:placeNameOf      ex:kt_feature ;
+.
+
+
+# a minimalistic geometry (a point) for Kata Tjuṯa
+ex:kt_feature
+    a                   geo:Feature ;
+    geo:hasGeometry     [
+        geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4283> POINT(130.733333 -25.3)"^^geo:wktLiteral ;
+    ] ;
+.
