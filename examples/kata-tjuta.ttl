@@ -13,7 +13,7 @@
 
 <http://linked.data.gov.au/dataset/placename/katatjuta>
     a                   pn:PlaceName ;
-    pn:hasPlaceName     "Kata Tjuṯa"@au-pit ;  # Pitjantjatjara planguage code to be supplied
+    pn:hasPlaceName     "Kata Tjuṯa"@au-pit ;  # Pitjantjatjara planguage code assumed, not implemented yet
     reg:register        <http://linked.data.gov.au/dataset/placename/gazetteer/northernterritory> ;
     reg:status          pnstat:official ;
     pn:placeNameOf      ex:kt_feature ;
@@ -21,7 +21,7 @@
 
 <http://linked.data.gov.au/dataset/placename/olgas>
     a                   pn:PlaceName ;
-    pn:hasPlaceName     "Olgas"@en ;  # official name, in English. Cloud be now unofficial
+    pn:hasPlaceName     "Olgas"@en ;  # official name, in English. Could be now unofficial
     reg:register        <http://linked.data.gov.au/dataset/placename/gazetteer/northernterritory> ;
     reg:status          pnstat:official ;
     pn:placeNameOf      ex:kt_feature ;
