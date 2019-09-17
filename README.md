@@ -1,7 +1,13 @@
-# Place Names Profile
-A data model for the Australian Place Names Gazetteer.
+# Place Names Ontology
+This ontology describes Place names that are used in the Composite Gazetteer of Australia. Place names are natural and artificial features and are all represented by points. Actual Place names are managed by multiple jurisdictions around Australia, while this ontology provides a meta model to bring their data together in one Linked Data collection.
 
-This is an ontology that profiles several other ontologies. It describes Place Names that are used in the Place Names Gazetteer of Australia. Place Names are names given to natural and artificial geospatial features, such as administrative areas, political regions, mountain ranges, rivers, bays etc. Place Names are assigned and managed by multiple Jurisdictions around Australia and may have varying status: official, historical etc. This ontology provides a meta model to bring Place Name data together in one Semantic Web data collection.
+This ontology will be published in two formats via an [Australian Government Linked Data Working Group](http://www.linked.data.gov.au) Persistent URI:
+  * <http://linked.data.gov.au/def/placenames> - ontology documentation in HTML
+  * <http://linked.data.gov.au/def/placenames.ttl> - ontology source in RDF (turtle)
+    * also available via content negotiation
+
+## Strategy for Place Names Ontology
+This ontology profiles several other ontologies. It describes Place Names that are used in the Place Names Gazetteer of Australia. Place Names are names given to natural and artificial geospatial features, such as administrative areas, political regions, mountain ranges, rivers, bays etc. Place Names are assigned and managed by multiple Jurisdictions around Australia and may have varying status: official, historical etc. This ontology provides a meta model to bring Place Name data together in one Semantic Web data collection.
 
 This profile is online at a persistent URI: <http://linked.data.gov.au/def/placenames>  
 
@@ -40,18 +46,30 @@ This ontology makes several design choices to facilitate certain behaviour. Some
 1. **Declaring `Gazetteer` to be a `Register`**
   * ...
 
+>>>>>>> master
 
 ## License
 The content of this API is licensed for use under the [Creative Commons 4.0 License](https://creativecommons.org/licenses/by/4.0/). See the [license deed](LICENSE) all details.
 
 
 ## Contacts
-*author*:  
+**Geoscience Australia**  
+*Publisher*  
+<http://www.ga.gov.au>  
+<clientservices@ga.gov.au>  
+
+**Irina Bastrakova**  
+*Ontology Author*  
+*product owner*:  
+Geoscience Australia, National Land Information  
+<irina.bastrakova@ga.gov.au>  
+
 **Nicholas Car**  
+*Ontology Author*
 CSIRO Land & Water, Environmental Informatics Group  
 <nicholas.car@csiro.au>  
 
-*product owner*:  
-**Irina Bastrakova**  
-Geoscience Australia, National Land Information  
-<irina.bastrakova@ga.gov.au>
+**Armin Haller**  
+*Ontology Author*  
+<armin.haller@anu.edu.au>  
+

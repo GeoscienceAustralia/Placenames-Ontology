@@ -1,0 +1,28 @@
+1. use LODE2 to convert ttl to HTML:
+    * <http://lode2.linked.data.gov.au>
+
+2. add in images:
+
+after:
+<div class="head">
+
+add:
+    <img src="ga-logo.jpg" style="width:200px;" alt="GA Logo" /><br />
+
+after:
+<div id="toc">
+    ...
+</div>
+
+add:
+<div id="diagram">
+    <a href="placenames.png"><img src="placenames.png" style="width:900px;" alt="ontology OWL diagram" /></a>
+</div>
+
+
+3. remove unwanted namespaces:
+    * ORCID and others
+
+4. find and replace all markdown <span>s:
+    * remove: <span class="markdown">
+    * replace </p> </span> with </p>
