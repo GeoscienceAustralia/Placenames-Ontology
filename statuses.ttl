@@ -1,0 +1,62 @@
+@prefix : <http://linked.data.gov.au/dataset/placenames/status/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg:  <http://purl.org/linked-data/registry#> .
+@prefix regstat: <http://linked.data.gov.au/def/reg-status/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://linked.data.gov.au/dataset/placenames/status/> a owl:Ontology ;
+    rdfs:label "Place Names Profile's Statuses" ;
+    rdfs:label "An ontology, also a SKOS vocabulary, of the statuses of Australian Place Names within the Place Names Gazetteer of Australia." ;
+    skos:scopeNote "This vocabulary of status codes is within, and for use with, Place Name objects within the Place Names Profile used by the Place Names Gazetteer of Australia." ;
+.
+
+:placeNameStatusScheme;
+    a skos:ConceptScheme ;
+    rdfs:label "Place Names Profile's Statuses Concept Scheme" ;
+    rdfs:comment "The vocabulary of Place Name statuses." ;
+.
+
+:official
+    a skos:Concept , reg:Status ;
+    skos:prefLabel "official"@en ;
+    skos:definition "A Place Name officially recognised by a naming authority."@en ;
+    skos:topConceptOf :placeNameStatusScheme ;
+    skos:broader  rstat:stable ;
+.
+
+rstat:retired
+    a reg:Status;
+    skos:prefLabel "retired"@en ;
+    skos:altlabel "withdrawn"@en ;
+    rdfs:comment "An entry that has been withdrawn from use. Corresponds to ISO 19135:2005 'retired'."@en ;
+    skos:inScheme :statusScheme ;
+    skos:broader  :deprecated ;
+    owl:sameAs reg:statusAccepted ;
+    skos:scopeNote "Use this status to indicate a Place Name that is no longer to be used but for which no replacement is offered (perhaps the Place is no longer recognised). Use 'superseded' for a Place Name that is no longer to be used but for which a replacement is offered." ;
+.
+
+rstat:superseded
+    a reg:Status ;
+    skos:prefLabel "superseded"@en ;
+    skos:altlabel "replaced" , "historical" ;
+    rdfs:comment "An entry that has been replaced by a new alternative which should be used instead. Corresponds to ISO 19135:2005 'superseded'."@en ;
+    skos:inScheme :statusScheme ;
+    skos:broader  :deprecated ;
+    owl:sameAs reg:statusAccepted ;
+    skos:scopeNote "Use this status to indicate a Place Name that is no longer to be used and for which a replacement is offered. Use 'retired' for a Place Name that is no longer to be used for which no replacement is offered." ;
+.
+
+:unofficial
+    a skos:Concept , reg:Status ;
+    skos:prefLabel "unofficial"@en ;
+    skos:definition "A Place Name in common, or at least some use, but which no naming authority has officially designated for use."@en ;
+    skos:topConceptOf :placeNameStatusScheme ;
+    skos:broader  rstat:experimental ;
+.
+
+
