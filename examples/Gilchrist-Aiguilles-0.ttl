@@ -1,0 +1,19 @@
+@prefix pn: <http://linked.data.gov.au/def/placename/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/placenames-dataset/placename/AAD_1> a pn:PlaceName ;
+    pn:ausPIX_DGGS "{'label': 'S6802122', 'uri': 'http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/ausPIX/S6802122'}"^^xsd:string ;
+    pn:featureType "{'label': 'PEAK', 'uri': 'http://vocabs.ands.org.au/repository/api/lda/ga/place-type/v1-0/resource?uri=http://pid.geoscience.gov.au/def/voc/ga/PlaceType/PEAK'}"^^xsd:string ;
+    pn:hasCategory "{'label': 'LANDFORM', 'uri': 'http://vocabs.ands.org.au/repository/api/lda/ga/place-type/v1-0/resource?uri=http://pid.geoscience.gov.au/def/voc/ga/PlaceType/LANDFORM'}"^^xsd:string ;
+    pn:hasGroup "{'label': 'TERRAIN', 'uri': 'http://vocabs.ands.org.au/repository/api/lda/ga/place-type/v1-0/resource?uri=http://pid.geoscience.gov.au/def/voc/ga/PlaceType/TERRAIN'}"^^xsd:string ;
+    pn:hasID "AAD_1"^^xsd:string ;
+    pn:hasName "Gilchrist Aiguilles (Peak)"^^xsd:string ;
+    pn:hasNameFormality "{'label': 'Official', 'uri': 'http://linked.data.gov.au/def/placenames/nameFormality/Official'}"^^xsd:string ;
+    pn:hasRegister "{'label': 'Australian Antarctic Place Names Gazetteer', 'uri': 'https://data.aad.gov.au/aadc/gaz/'}"^^xsd:string ;
+    pn:latitude "-53.01522222"^^xsd:float ;
+    pn:longitude "73.33641667"^^xsd:float ;
+    pn:supplyDate "2018-03-22 04:43:16"^^xsd:string .
+

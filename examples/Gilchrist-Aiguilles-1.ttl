@@ -1,0 +1,48 @@
+# baseURI: http://example.org/Place-Names/examples/Gilchrist-Aiguilles-1.ttl
+# imports: http://linked.data.gov.au/def/placenames
+
+@prefix myaws: <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pn: <http://linked.data.gov.au/def/placenames/> .
+@prefix pt: <http://pid.geoscience.gov.au/def/voc/ga/PlaceType/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/ausPIX/S6802122>
+  rdfs:label "S6802122" ;
+.
+<http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/placenames-dataset/placename/AAD_1>
+  a pn:PlaceName ;
+  pn:ausPIX_DGGS <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/ausPIX/S6802122> ;
+  pn:featureType pt:PEAK ;
+  pn:hasCategory pt:LANDFORM ;
+  pn:hasGroup pt:TERRAIN ;
+  pn:hasID "AAD_1" ;
+  pn:hasName "Gilchrist Aiguilles (Peak)" ;
+  pn:hasNameFormality <http://linked.data.gov.au/def/placenames/nameFormality/Official> ;
+  pn:hasRegister <https://data.aad.gov.au/aadc/gaz/> ;
+  pn:latitude -53.01522222 ;
+  pn:longitude 73.33641667 ;
+  pn:supplyDate "2018-03-22T04:43:16+10:00:00.00"^^xsd:dateTime ;
+.
+<http://example.org/Place-Names/examples/Gilchrist-Aiguilles-1.ttl>
+  a owl:Ontology ;
+  owl:imports <http://linked.data.gov.au/def/placenames> ;
+.
+<http://linked.data.gov.au/def/placenames/nameFormality/Official>
+  rdfs:label "Official" ;
+.
+pt:LANDFORM
+  rdfs:label "LANDFORM" ;
+.
+pt:PEAK
+  rdfs:label "PEAK" ;
+.
+pt:TERRAIN
+  rdfs:label "TERRAIN" ;
+.
+<https://data.aad.gov.au/aadc/gaz/>
+  rdfs:label "Australian Antarctic Place Names Gazetteer" ;
+.
