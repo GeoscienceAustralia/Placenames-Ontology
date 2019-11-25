@@ -1,0 +1,98 @@
+{
+  "@graph" : [ {
+    "@id" : "myaws:AusPIX-DGGS-dataset/ausPIX/S6802122",
+    "label" : "S6802122"
+  }, {
+    "@id" : "myaws:placenames-dataset/placename/AAD_1",
+    "@type" : "pn:PlaceName",
+    "ausPIX_DGGS" : "myaws:AusPIX-DGGS-dataset/ausPIX/S6802122",
+    "featureType" : "pt:PEAK",
+    "hasCategory" : "pt:LANDFORM",
+    "hasGroup" : "pt:TERRAIN",
+    "hasID" : "AAD_1",
+    "hasName" : "Gilchrist Aiguilles (Peak)",
+    "hasNameFormality" : "pn:nameFormality/Official",
+    "hasRegister" : "https://data.aad.gov.au/aadc/gaz/",
+    "latitude" : "-53.01522222",
+    "longitude" : "73.33641667",
+    "supplyDate" : "2018-03-22T04:43:16+10:00:00.00"
+  }, {
+    "@id" : "http://example.org/Place-Names/examples/Gilchrist-Aiguilles-1.ttl",
+    "@type" : "owl:Ontology",
+    "imports" : "http://linked.data.gov.au/def/placenames"
+  }, {
+    "@id" : "pn:nameFormality/Official",
+    "label" : "Official"
+  }, {
+    "@id" : "pt:LANDFORM",
+    "label" : "LANDFORM"
+  }, {
+    "@id" : "pt:PEAK",
+    "label" : "PEAK"
+  }, {
+    "@id" : "pt:TERRAIN",
+    "label" : "TERRAIN"
+  }, {
+    "@id" : "https://data.aad.gov.au/aadc/gaz/",
+    "label" : "Australian Antarctic Place Names Gazetteer"
+  } ],
+  "@context" : {
+    "imports" : {
+      "@id" : "http://www.w3.org/2002/07/owl#imports",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "supplyDate" : {
+      "@id" : "http://linked.data.gov.au/def/placenames/supplyDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "latitude" : {
+      "@id" : "http://linked.data.gov.au/def/placenames/latitude",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "hasNameFormality" : {
+      "@id" : "http://linked.data.gov.au/def/placenames/hasNameFormality",
+      "@type" : "@id"
+    },
+    "ausPIX_DGGS" : {
+      "@id" : "http://linked.data.gov.au/def/placenames/ausPIX_DGGS",
+      "@type" : "@id"
+    },
+    "featureType" : {
+      "@id" : "http://linked.data.gov.au/def/placenames/featureType",
+      "@type" : "@id"
+    },
+    "longitude" : {
+      "@id" : "http://linked.data.gov.au/def/placenames/longitude",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "hasID" : {
+      "@id" : "http://linked.data.gov.au/def/placenames/hasID"
+    },
+    "hasGroup" : {
+      "@id" : "http://linked.data.gov.au/def/placenames/hasGroup",
+      "@type" : "@id"
+    },
+    "hasName" : {
+      "@id" : "http://linked.data.gov.au/def/placenames/hasName"
+    },
+    "hasCategory" : {
+      "@id" : "http://linked.data.gov.au/def/placenames/hasCategory",
+      "@type" : "@id"
+    },
+    "hasRegister" : {
+      "@id" : "http://linked.data.gov.au/def/placenames/hasRegister",
+      "@type" : "@id"
+    },
+    "pt" : "http://pid.geoscience.gov.au/def/voc/ga/PlaceType/",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "owl" : "http://www.w3.org/2002/07/owl#",
+    "xml" : "http://www.w3.org/XML/1998/namespace",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "myaws" : "http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "pn" : "http://linked.data.gov.au/def/placenames/"
+  }
+}

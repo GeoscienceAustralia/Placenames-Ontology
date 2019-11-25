@@ -16,16 +16,40 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix pn-ext: <http://example.org/pn-ext/> .
 @prefix schema: <https://schema.org/> .
 @base <http://linked.data.gov.au/def/placenames> .
 
 <http://linked.data.gov.au/def/placenames> rdf:type owl:Ontology ;
-                                            rdfs:label "Place Names Profile"@en ;
-                                            dct:modified "2019-06-01"^^xsd:date ;
+                                            dct:contributor <https://orcid.org/0000-0002-3884-3420> ,
+                                                            [ schema:email <http://linked.data.gov.au/def/irina.bastrakova@ga.gov.au> ;
+                                                              schema:identifier <https://orcid.org/0000-0002-4643-7289> ;
+                                                              schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/ga> ;
+                                                                                schema:name "Geoscience Australia"
+                                                                              ] ;
+                                                              schema:name "Irina Bastrakova"@en
+                                                            ] ,
+                                                            [ schema:email <http://linked.data.gov.au/def/armin.haller@anu.edu.au> ;
+                                                              schema:identifier <https://orcid.org/0000-0003-3425-0780> ;
+                                                              schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/anu> ;
+                                                                                schema:name "Australian National University"
+                                                                              ] ;
+                                                              schema:name "Armin Haller"@en
+                                                            ] ;
+                                            dct:created "2018-08-02"^^xsd:date ;
+                                            dct:creator [ schema:identifier <http://orcid.org/0000-0002-8742-7730> ;
+                                                          schema:name "Nicholas Car"@en
+                                                        ] ;
+                                            dct:modified "2019-11-25"^^xsd:date ;
+                                            dct:publisher [ schema:identifier "http://catalogue.linked.data.gov.au/org/ga" ;
+                                                            rdfs:seeAlso <https://www.ga.gov.au> ;
+                                                            schema:name "Geoscience Australia"
+                                                          ] ;
+                                            dct:rights "(c) Commonwealth of Australia (Geoscience Australia) 2019"@en ;
                                             vann:preferredNamespaceUri "http://linked.data.gov.au/def/placenames/"^^xsd:anyURI ;
                                             rdfs:comment "This is an ontology that profiles several other ontologies. It describes Place Names that are used in the Place Names Gazetteer of Australia. Place Names are names given to natural and artificial geospatial features, such as administrative areas, political regions, mountain ranges, rivers, bays etc. Place Names are assigned and managed by multiple Jurisdictions around Australia and may have varying status: official, historical etc. This ontology provides a meta model to bring Place Name data together in one Semantic Web data collection." ;
-                                            dc:contributor "Armin Haller" ;
-                                            dct:created "2018-08-02"^^xsd:date ;
+                                            rdfs:label "Place Names Profile"@en ;
+                                            skos:changeNote "1. import GeoSPARQL" ;
                                             skos:historyNote """This version of this ontology, 2, covers the same conceptual territory of the original ontology (see placenames-original.ttl) but is aligned with:
 
     * GeoSPARQL ontology - Features & Geometries
@@ -35,46 +59,58 @@
     * schema.org - Agent subclasses and some Place Name annotations
     * Time Ontology in OWL - for temporal extents
 
-The first version of this Place Names ontology is archived online at https://github.com/GeoscienceAustralia/Place-Names."""@en ;
-                                            owl:versionInfo "2" ;
-                                            dct:creator [
-                                                schema:name "Nicholas Car"@en ;
-                                                schema:identifier <http://orcid.org/0000-0002-8742-7730> ;
-                                                schema:email <nicholas.car@csiro.au> ;
-                                                schema:memberOf [
-                                                    schema:name "CSIRO" ;
-                                                    schema:identifier <http://catalogue.linked.data.gov.au/org/csiro> ;
-                                                ] ;
-                                              ] ;
-                                            dct:publisher [ rdfs:seeAlso <https://www.ga.gov.au> ;
-                                                            schema:identifier "http://catalogue.linked.data.gov.au/org/ga" ;
-                                                            schema:name "Geoscience Australia"
-                                                          ] ;
-                                            dct:contributor [
-                                                schema:name "Irina Bastrakova"@en ;
-                                                schema:email <irina.bastrakova@ga.gov.au> ;
-                                                schema:memberOf [
-                                                    schema:name "Geoscience Australia" ;
-                                                    schema:identifier <http://catalogue.linked.data.gov.au/org/ga> ;
-                                                ] ;
-                                              ] ,
-                                            [
-                                                schema:name "Armin Haller"@en ;
-                                                schema:identifier <https://orcid.org/0000-0003-3425-0780> ;
-                                                schema:email <armin.haller@anu.edu.au> ;
-                                                schema:memberOf [
-                                                    schema:name "Australian National University" ;
-                                                    schema:identifier <http://catalogue.linked.data.gov.au/org/anu> ;
-                                                ] ;
-                                              ] ;
-                                            dct:rights "(c) Commonwealth of Australia (Geoscience Australia) 2019"@en .
+The first version of this Place Names ontology is archived online at https://github.com/GeoscienceAustralia/Place-Names."""@en .
 
 #################################################################
 #    Annotation properties
 #################################################################
 
+###  http://purl.org/dc/terms/contributor
+dct:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+dct:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dct:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dct:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+dct:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/rights
+dct:rights rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#changeNote
+skos:changeNote rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#historyNote
+skos:historyNote rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2004/02/skos/core#scopeNote
 skos:scopeNote rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/email
+schema:email rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/memberOf
+schema:memberOf rdf:type owl:AnnotationProperty .
 
 
 ###  https://schema.org/name
@@ -84,6 +120,17 @@ schema:name rdf:type owl:AnnotationProperty .
 #################################################################
 #    Object Properties
 #################################################################
+
+###  http://example.org/pn-ext/dggs-location
+pn-ext:dggs-location rdf:type owl:ObjectProperty ;
+                     rdfs:comment """Should this be rdfs:subPropertyOf geo:hasGeometry? 
+Which type shoudl this be associated with:
+- pn:PlaceName or
+- geo:Feature
+?""" ,
+                                  "The range of this property is a DGGS cell - the DGGS ontology has not been registered yet." ;
+                     rdfs:label "DGGS location" .
+
 
 ###  http://linked.data.gov.au/def/placenames/hasFeatureClassification
 :hasFeatureClassification rdf:type owl:ObjectProperty ;
@@ -95,7 +142,10 @@ schema:name rdf:type owl:AnnotationProperty .
 
 
 ###  http://linked.data.gov.au/def/placenames/hasGeometry
-:hasGeometry rdf:type owl:ObjectProperty .
+:hasGeometry rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf geo:hasGeometry ;
+             rdfs:comment """Is a geometry property in the pn: namespace actually required? 
+Geometry is a property of the associated geosparql:Feature, which uses the geosparql: geometry properties.""" .
 
 
 ###  http://linked.data.gov.au/def/placenames/hasPlaceName
@@ -139,6 +189,8 @@ schema:name rdf:type owl:AnnotationProperty .
 
 ###  http://linked.data.gov.au/def/placenames/register
 :register rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf [ owl:inverseOf rdfs:member
+                             ] ;
           rdfs:label "register" .
 
 
@@ -149,10 +201,6 @@ schema:name rdf:type owl:AnnotationProperty .
             rdfs:range :Jurisdiction ;
             rdfs:comment "A relation that states the Jurisdiction that named a Feature"@en ;
             rdfs:label "was named by"@en .
-
-
-###  http://purl.org/linked-data/registry#containedItemClass
-reg:containedItemClass rdf:type owl:ObjectProperty .
 
 
 ###  http://purl.org/linked-data/registry#status
@@ -168,6 +216,10 @@ geo:hasGeometry rdf:type owl:ObjectProperty ;
                 rdfs:range geo:Geometry ;
                 rdfs:comment "GeoSPARQL Ontology's hasGeometry property" ;
                 rdfs:label "has geometry" .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#member
+rdfs:member rdf:type owl:ObjectProperty .
 
 
 ###  http://www.w3.org/2004/02/skos/core#notation
@@ -242,13 +294,25 @@ gnaf:Address rdf:type owl:Class ;
 
 ###  http://linked.data.gov.au/def/placenames/Gazetteer
 :Gazetteer rdf:type owl:Class ;
-           rdfs:subClassOf reg:Register ,
+           rdfs:subClassOf rdf:Bag ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty reg:containedItemClass ;
-                             owl:hasValue :PlaceName
+                             owl:onProperty rdfs:member ;
+                             owl:allValuesFrom :PlaceName
                            ] ;
            rdfs:comment "A Gazetteer is a Register of Place Names created by a Jurisdiction"@en ;
-           rdfs:label "Gazetteer"@en .
+           rdfs:label "Gazetteer"@en ;
+           skos:changeNote """
+was- 
+  	rdfs:subClassOf reg:Register ;
+  	rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue :PlaceName ;
+      owl:onProperty reg:containedItemClass ;
+    ] ;
+But this is not appropriate - according to the Registry Ontology a reg:Register is a set of metadata records, not a set of Entities. 
+
+Use rdf:Bag and rdfs:member instead. 
+""" .
 
 
 ###  http://linked.data.gov.au/def/placenames/Jurisdiction
@@ -277,8 +341,7 @@ In the context of the Place Names Profile, Jurisdictions may select Place Names 
 
 ###  http://linked.data.gov.au/def/placenames/PlaceName
 :PlaceName rdf:type owl:Class ;
-           rdfs:subClassOf reg:RegisteredItem ,
-                           [ rdf:type owl:Restriction ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
                              owl:onProperty :hasPronunciation ;
                              owl:someValuesFrom xsd:string
                            ] ,
@@ -332,15 +395,6 @@ In the context of the Place Names Profile, Jurisdictions may select Place Names 
         rdfs:label "Region"@en .
 
 
-###  http://purl.org/linked-data/registry#Register
-reg:Register rdf:type owl:Class .
-
-
-###  http://purl.org/linked-data/registry#RegisteredItem
-reg:RegisteredItem rdf:type owl:Class ;
-                   rdfs:label "Registered Item"@en .
-
-
 ###  http://purl.org/linked-data/registry#Status
 reg:Status rdf:type owl:Class ;
            rdfs:subClassOf skos:Concept ;
@@ -361,6 +415,10 @@ geo:Feature rdf:type owl:Class ;
 geo:Geometry rdf:type owl:Class ;
              rdfs:comment "The GeoSPARQL Ontology's Geometry Class"@en ;
              rdfs:label "Geometry"@en .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag
+rdf:Bag rdf:type owl:Class .
 
 
 ###  http://www.w3.org/2001/XMLSchema#string
@@ -398,13 +456,159 @@ adms:Identifier rdf:type owl:Class .
 #    Individuals
 #################################################################
 
+###  http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/ausPIX/S6802122
+<http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/ausPIX/S6802122> rdf:type owl:NamedIndividual .
+
+
+###  http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/placenames-dataset/placename/AAD_1
+<http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/placenames-dataset/placename/AAD_1> rdf:type owl:NamedIndividual ;
+                                                                                                  pn-ext:dggs-location <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/ausPIX/S6802122> .
+
+
 ###  http://linked.data.gov.au/def/placenames/PlaceName
 :PlaceName rdf:type owl:NamedIndividual .
 
 
-[ schema:identifier <http://orcid.org/0000-0002-8742-7730> ;
-  schema:name "Nicholas Car"@en
+[ schema:email <http://linked.data.gov.au/def/irina.bastrakova@ga.gov.au> ;
+  schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/ga> ;
+                    schema:name "Geoscience Australia"
+                  ] ;
+  schema:name "Irina Bastrakova"@en
 ] .
+
+[ schema:email <http://linked.data.gov.au/def/irina.bastrakova@ga.gov.au> ;
+   schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/ga> ;
+                     schema:name "Geoscience Australia"
+                   ] ;
+   schema:name "Irina Bastrakova"@en
+ ] .
+
+[ schema:email <http://linked.data.gov.au/def/irina.bastrakova@ga.gov.au> ;
+   schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/ga> ;
+                     schema:name "Geoscience Australia"
+                   ] ;
+   schema:name "Irina Bastrakova"@en
+ ] .
+
+[ schema:email <http://linked.data.gov.au/def/armin.haller@anu.edu.au> ;
+   schema:identifier <https://orcid.org/0000-0003-3425-0780> ;
+   schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/anu> ;
+                     schema:name "Australian National University"
+                   ] ;
+   schema:name "Armin Haller"@en
+ ] .
+
+[ schema:email <http://linked.data.gov.au/def/armin.haller@anu.edu.au> ;
+   schema:identifier <https://orcid.org/0000-0003-3425-0780> ;
+   schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/anu> ;
+                     schema:name "Australian National University"
+                   ] ;
+   schema:name "Armin Haller"@en
+ ] .
+
+[ schema:email <http://linked.data.gov.au/def/nicholas.car@csiro.au> ;
+   schema:identifier <http://orcid.org/0000-0002-8742-7730> ;
+   schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/csiro> ;
+                     schema:name "CSIRO"
+                   ] ;
+   schema:name "Nicholas Car"@en
+ ] .
+
+[ schema:email <http://linked.data.gov.au/def/nicholas.car@csiro.au> ;
+   schema:identifier <http://orcid.org/0000-0002-8742-7730> ;
+   schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/csiro> ;
+                     schema:name "CSIRO"
+                   ] ;
+   schema:name "Nicholas Car"@en
+ ] .
+
+[ schema:email <http://linked.data.gov.au/def/nicholas.car@csiro.au> ;
+   schema:identifier <http://orcid.org/0000-0002-8742-7730> ;
+   schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/csiro> ;
+                     schema:name "CSIRO"
+                   ] ;
+   schema:name "Nicholas Car"@en
+ ] .
+
+[ schema:email <http://linked.data.gov.au/def/nicholas.car@csiro.au> ;
+   schema:identifier <http://orcid.org/0000-0002-8742-7730> ;
+   schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/csiro> ;
+                     schema:name "CSIRO"
+                   ] ;
+   schema:name "Nicholas Car"@en
+ ] .
+
+[ schema:email <http://linked.data.gov.au/def/irina.bastrakova@ga.gov.au> ;
+   schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/ga> ;
+                     schema:name "Geoscience Australia"
+                   ] ;
+   schema:name "Irina Bastrakova"@en
+ ] .
+
+[ schema:email <http://linked.data.gov.au/def/irina.bastrakova@ga.gov.au> ;
+   schema:identifier <https://orcid.org/0000-0002-4643-7289> ;
+   schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/ga> ;
+                     schema:name "Geoscience Australia"
+                   ] ;
+   schema:name "Irina Bastrakova"@en
+ ] .
+
+[ schema:email <http://linked.data.gov.au/def/armin.haller@anu.edu.au> ;
+   schema:identifier <https://orcid.org/0000-0003-3425-0780> ;
+   schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/anu> ;
+                     schema:name "Australian National University"
+                   ] ;
+   schema:name "Armin Haller"@en
+ ] .
+
+[ schema:identifier <http://orcid.org/0000-0002-8742-7730> ;
+   schema:name "Nicholas Car"@en
+ ] .
+
+[ schema:identifier "http://catalogue.linked.data.gov.au/org/ga" ;
+   rdfs:seeAlso <https://www.ga.gov.au> ;
+   schema:name "Geoscience Australia"
+ ] .
+
+[ schema:identifier <http://orcid.org/0000-0002-8742-7730> ;
+   schema:name "Nicholas Car"@en
+ ] .
+
+[ schema:identifier "http://catalogue.linked.data.gov.au/org/ga" ;
+   rdfs:seeAlso <https://www.ga.gov.au> ;
+   schema:name "Geoscience Australia"
+ ] .
+
+[ schema:identifier "http://catalogue.linked.data.gov.au/org/ga" ;
+   rdfs:seeAlso <https://www.ga.gov.au> ;
+   schema:name "Geoscience Australia"
+ ] .
+
+[ schema:identifier "http://catalogue.linked.data.gov.au/org/ga" ;
+   rdfs:seeAlso <https://www.ga.gov.au> ;
+   schema:name "Geoscience Australia"
+ ] .
+
+[ schema:identifier "http://catalogue.linked.data.gov.au/org/ga" ;
+   rdfs:seeAlso <https://www.ga.gov.au> ;
+   schema:name "Geoscience Australia"
+ ] .
+
+[ schema:email <http://linked.data.gov.au/def/armin.haller@anu.edu.au> ;
+   schema:identifier <https://orcid.org/0000-0003-3425-0780> ;
+   schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/anu> ;
+                     schema:name "Australian National University"
+                   ] ;
+   schema:name "Armin Haller"@en
+ ] .
+
+[ schema:email <http://linked.data.gov.au/def/armin.haller@anu.edu.au> ;
+   schema:identifier <https://orcid.org/0000-0003-3425-0780> ;
+   schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/anu> ;
+                     schema:name "Australian National University"
+                   ] ;
+   schema:name "Armin Haller"@en
+ ] .
 
 [ schema:identifier "http://catalogue.linked.data.gov.au/org/ga" ;
    rdfs:seeAlso <https://www.ga.gov.au> ;
@@ -416,6 +620,7 @@ adms:Identifier rdf:type owl:Class .
 #################################################################
 
 :PlaceName rdfs:comment "The name of a place, assigned by an official naming authority in the Place Names Gazeteer of Australia."@en ;
+            skos:changeNote "Removed subClassOf reg:RegisterItem axiom, because reg:RegisterItem is \"A metadata record for an entry in a register. \" and is not an Entity itself. " ;
             rdfs:label "Place Name"@en .
 
 
@@ -428,4 +633,4 @@ adms:Identifier rdf:type owl:Class .
                   rdfs:comment "The pronunciation of a Place Name, indicated by means of a phonetic alphabet string"@en .
 
 
-###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
