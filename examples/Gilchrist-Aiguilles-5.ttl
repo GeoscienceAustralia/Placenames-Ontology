@@ -15,30 +15,29 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://my.example.com/placenames-dataset/place/AAD_1>
-  a pn:Place ;
-  rdfs:label "Gilchrist Aiguilles" ;
-  pn-ext:dggs-location <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/ausPIX/S6802122> ;
-  pn:hasFeatureClassification pt:PEAK ;
-  pn:hasPlaceName <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/placenames-dataset/placename/AAD_1> ;
-  geo:hasGeometry [
-      a sf:Point ;
-      geo:asWKT "POINT(-53.01522222 73.33641667)"^^geo:wktLiteral ;
-    ] ;
-.
 <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/placenames-dataset/placename/AAD_1>
   a pn:PlaceName ;
-  rdfs:label "Gilchrist Aiguilles" ;
   pn:hasPlaceNameFormality <http://linked.data.gov.au/def/placenames/nameFormality/Official> ;
   pn:placeNameOf <http://my.example.com/placenames-dataset/place/AAD_1> ;
   pn:register <https://data.aad.gov.au/aadc/gaz/> ;
   dct:identifier "AAD_1" ;
   dct:issued "2018-03-22T04:43:16+10:00:00.00"^^xsd:dateTime ;
+  rdfs:label "Gilchrist Aiguilles" ;
 .
-
 <http://example.org/Place-Names/examples/Gilchrist-Aiguilles-5.ttl>
   a owl:Ontology ;
   rdfs:comment "This version inverts the feature and the place-name." ;
   owl:imports <http://linked.data.gov.au/def/placenames> ;
   owl:imports <http://www.opengis.net/ont/geosparql> ;
+.
+<http://my.example.com/placenames-dataset/place/AAD_1>
+  a pn:Place ;
+  pn-ext:dggs-location <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/ausPIX/S6802122> ;
+  pn:hasPlaceClassification pt:PEAK ;
+  pn:hasPlaceName <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/placenames-dataset/placename/AAD_1> ;
+  geo:hasGeometry [
+      a sf:Point ;
+      geo:asWKT "POINT(-53.01522222 73.33641667)"^^geo:wktLiteral ;
+    ] ;
+  rdfs:label "Gilchrist Aiguilles" ;
 .

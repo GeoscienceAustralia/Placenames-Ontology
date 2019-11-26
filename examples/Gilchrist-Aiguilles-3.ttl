@@ -23,7 +23,7 @@
       a pn:Place ;
       pn-ext:dggs-location <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/ausPIX/S6802122> ;
       pn:hasFeatureClassification pt:PEAK ;
-      pn:hasGeometry [
+      geo:hasGeometry [
           a sf:Point ;
           geo:asWKT "POINT(-53.01522222 73.33641667)"^^geo:wktLiteral ;
         ] ;
