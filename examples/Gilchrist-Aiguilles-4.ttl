@@ -21,7 +21,7 @@
   pn:hasPlaceClassification pt:PEAK ;
   pn:hasPlaceName [
       a pn:PlaceName ;
-      rdfs:label "Gilchrist Aiguilles (Peak)" ;
+      pn:name "Gilchrist Aiguilles (Peak)" ;
       pn:hasPlaceNameFormality <http://linked.data.gov.au/def/placenames/nameFormality/Official> ;
       pn:register <https://data.aad.gov.au/aadc/gaz/> ;
       dct:identifier "AAD_1" ;

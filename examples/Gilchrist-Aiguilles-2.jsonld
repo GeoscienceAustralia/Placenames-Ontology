@@ -12,8 +12,8 @@
     "dggs-location" : "myaws:AusPIX-DGGS-dataset/ausPIX/S6802122",
     "hasFeatureClassification" : [ "pt:TERRAIN", "pt:PEAK", "pt:LANDFORM" ],
     "hasGeometry" : "_:b0",
-    "hasPlaceName" : "Gilchrist Aiguilles (Peak)",
-    "hasPlaceNameFormality" : "pn:nameFormality/Official",
+    "hasPlaceNameFormality" : "name:Formality/Official",
+    "name" : "Gilchrist Aiguilles (Peak)",
     "register" : "https://data.aad.gov.au/aadc/gaz/",
     "identifier" : "AAD_1",
     "issued" : "2018-03-22T04:43:16+10:00:00.00"
@@ -26,7 +26,7 @@
     "@type" : "owl:ObjectProperty",
     "label" : "DGGS location"
   }, {
-    "@id" : "pn:nameFormality/Official",
+    "@id" : "name:Formality/Official",
     "label" : "Official"
   }, {
     "@id" : "pt:LANDFORM",
@@ -45,13 +45,12 @@
     "label" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
     },
-    "asWKT" : {
-      "@id" : "http://www.opengis.net/ont/geosparql#asWKT",
-      "@type" : "http://www.opengis.net/ont/geosparql#wktLiteral"
-    },
     "imports" : {
       "@id" : "http://www.w3.org/2002/07/owl#imports",
       "@type" : "@id"
+    },
+    "name" : {
+      "@id" : "http://linked.data.gov.au/def/placenames/name"
     },
     "hasFeatureClassification" : {
       "@id" : "http://linked.data.gov.au/def/placenames/hasFeatureClassification",
@@ -80,8 +79,9 @@
       "@id" : "http://linked.data.gov.au/def/placenames/hasGeometry",
       "@type" : "@id"
     },
-    "hasPlaceName" : {
-      "@id" : "http://linked.data.gov.au/def/placenames/hasPlaceName"
+    "asWKT" : {
+      "@id" : "http://www.opengis.net/ont/geosparql#asWKT",
+      "@type" : "http://www.opengis.net/ont/geosparql#wktLiteral"
     },
     "geo" : "http://www.opengis.net/ont/geosparql#",
     "pn-ext" : "http://example.org/pn-ext/",

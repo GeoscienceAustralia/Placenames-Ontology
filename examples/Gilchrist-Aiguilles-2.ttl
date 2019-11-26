@@ -28,7 +28,7 @@
       a sf:Point ;
       geo:asWKT "POINT(-53.01522222 73.33641667)"^^geo:wktLiteral ;
     ] ;
-  rdfs:label "Gilchrist Aiguilles (Peak)" ;
+  pn:name "Gilchrist Aiguilles (Peak)" ;
   pn:hasPlaceNameFormality <http://linked.data.gov.au/def/placenames/nameFormality/Official> ;
   pn:register <https://data.aad.gov.au/aadc/gaz/> ;
   dct:identifier "AAD_1" ;

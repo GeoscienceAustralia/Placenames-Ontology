@@ -22,7 +22,7 @@
   pn:register <https://data.aad.gov.au/aadc/gaz/> ;
   dct:identifier "AAD_1" ;
   dct:issued "2018-03-22T04:43:16+10:00:00.00"^^xsd:dateTime ;
-  rdfs:label "Gilchrist Aiguilles" ;
+  pn:name "Gilchrist Aiguilles" ;
 .
 <http://example.org/Place-Names/examples/Gilchrist-Aiguilles-5.ttl>
   a owl:Ontology ;
