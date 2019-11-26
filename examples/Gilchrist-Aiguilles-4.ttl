@@ -16,12 +16,12 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/placenames-dataset/placename/AAD_1>
-  a geo:Feature ;
+  a pn:Place ;
   pn-ext:dggs-location <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/ausPIX/S6802122> ;
   pn:hasFeatureClassification pt:PEAK ;
   pn:hasPlaceName [
       a pn:PlaceName ;
-      pn:hasPlaceName "Gilchrist Aiguilles (Peak)" ;
+      rdfs:label "Gilchrist Aiguilles (Peak)" ;
       pn:hasPlaceNameFormality <http://linked.data.gov.au/def/placenames/nameFormality/Official> ;
       pn:register <https://data.aad.gov.au/aadc/gaz/> ;
       dct:identifier "AAD_1" ;
