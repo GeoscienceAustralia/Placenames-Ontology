@@ -1,29 +1,49 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "geo:Feature",
-    "dggs-location" : "myaws:AusPIX-DGGS-dataset/ausPIX/S6802122",
-    "hasFeatureClassification" : "pt:PEAK",
-    "hasGeometry" : "_:b1"
-  }, {
-    "@id" : "_:b1",
     "@type" : "sf:Point",
     "asWKT" : "POINT(-53.01522222 73.33641667)"
   }, {
-    "@id" : "myaws:placenames-dataset/placename/AAD_1",
+    "@id" : "_:b1",
     "@type" : "pn:PlaceName",
-    "hasPlaceName" : "Gilchrist Aiguilles (Peak)",
+    "pn:hasPlaceName" : "Gilchrist Aiguilles (Peak)",
     "hasPlaceNameFormality" : "pn:nameFormality/Official",
-    "placeNameOf" : "_:b0",
     "register" : "https://data.aad.gov.au/aadc/gaz/",
     "identifier" : "AAD_1",
     "issued" : "2018-03-22T04:43:16+10:00:00.00"
   }, {
-    "@id" : "http://example.org/Place-Names/examples/Gilchrist-Aiguilles-3.ttl",
+    "@id" : "myaws:placenames-dataset/placename/AAD_1",
+    "@type" : "geo:Feature",
+    "dggs-location" : "myaws:AusPIX-DGGS-dataset/ausPIX/S6802122",
+    "hasFeatureClassification" : "pt:PEAK",
+    "hasPlaceName" : "_:b1",
+    "hasGeometry" : "_:b0"
+  }, {
+    "@id" : "http://example.org/Place-Names/examples/Gilchrist-Aiguilles-4.ttl",
     "@type" : "owl:Ontology",
+    "comment" : "This version inverts the feature and the place-name.",
     "imports" : [ "http://www.opengis.net/ont/geosparql", "http://linked.data.gov.au/def/placenames" ]
   } ],
   "@context" : {
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "imports" : {
+      "@id" : "http://www.w3.org/2002/07/owl#imports",
+      "@type" : "@id"
+    },
+    "asWKT" : {
+      "@id" : "http://www.opengis.net/ont/geosparql#asWKT",
+      "@type" : "http://www.opengis.net/ont/geosparql#wktLiteral"
+    },
+    "dggs-location" : {
+      "@id" : "http://example.org/pn-ext/dggs-location",
+      "@type" : "@id"
+    },
+    "hasPlaceName" : {
+      "@id" : "http://linked.data.gov.au/def/placenames/hasPlaceName",
+      "@type" : "@id"
+    },
     "hasGeometry" : {
       "@id" : "http://www.opengis.net/ont/geosparql#hasGeometry",
       "@type" : "@id"
@@ -32,17 +52,9 @@
       "@id" : "http://linked.data.gov.au/def/placenames/hasFeatureClassification",
       "@type" : "@id"
     },
-    "dggs-location" : {
-      "@id" : "http://example.org/pn-ext/dggs-location",
-      "@type" : "@id"
-    },
-    "imports" : {
-      "@id" : "http://www.w3.org/2002/07/owl#imports",
-      "@type" : "@id"
-    },
-    "placeNameOf" : {
-      "@id" : "http://linked.data.gov.au/def/placenames/placeNameOf",
-      "@type" : "@id"
+    "issued" : {
+      "@id" : "http://purl.org/dc/terms/issued",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
@@ -51,20 +63,9 @@
       "@id" : "http://linked.data.gov.au/def/placenames/register",
       "@type" : "@id"
     },
-    "issued" : {
-      "@id" : "http://purl.org/dc/terms/issued",
-      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
     "hasPlaceNameFormality" : {
       "@id" : "http://linked.data.gov.au/def/placenames/hasPlaceNameFormality",
       "@type" : "@id"
-    },
-    "hasPlaceName" : {
-      "@id" : "http://linked.data.gov.au/def/placenames/hasPlaceName"
-    },
-    "asWKT" : {
-      "@id" : "http://www.opengis.net/ont/geosparql#asWKT",
-      "@type" : "http://www.opengis.net/ont/geosparql#wktLiteral"
     },
     "geo" : "http://www.opengis.net/ont/geosparql#",
     "pn-ext" : "http://example.org/pn-ext/",

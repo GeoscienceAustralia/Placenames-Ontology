@@ -1,4 +1,4 @@
-# baseURI: http://example.org/Place-Names/examples/Gilchrist-Aiguilles-3.ttl
+# baseURI: http://example.org/Place-Names/examples/Gilchrist-Aiguilles-4.ttl
 # imports: http://linked.data.gov.au/def/placenames
 # imports: http://www.opengis.net/ont/geosparql
 
@@ -16,24 +16,25 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/placenames-dataset/placename/AAD_1>
-  a pn:PlaceName ;
-  pn:hasPlaceName "Gilchrist Aiguilles (Peak)" ;
-  pn:hasPlaceNameFormality <http://linked.data.gov.au/def/placenames/nameFormality/Official> ;
-  pn:placeNameOf [
-      a geo:Feature ;
-      pn-ext:dggs-location <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/ausPIX/S6802122> ;
-      pn:hasFeatureClassification pt:PEAK ;
-      geo:hasGeometry [
-          a sf:Point ;
-          geo:asWKT "POINT(-53.01522222 73.33641667)"^^geo:wktLiteral ;
-        ] ;
+  a geo:Feature ;
+  pn-ext:dggs-location <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/ausPIX/S6802122> ;
+  pn:hasFeatureClassification pt:PEAK ;
+  pn:hasPlaceName [
+      a pn:PlaceName ;
+      pn:hasPlaceName "Gilchrist Aiguilles (Peak)" ;
+      pn:hasPlaceNameFormality <http://linked.data.gov.au/def/placenames/nameFormality/Official> ;
+      pn:register <https://data.aad.gov.au/aadc/gaz/> ;
+      dct:identifier "AAD_1" ;
+      dct:issued "2018-03-22T04:43:16+10:00:00.00"^^xsd:dateTime ;
     ] ;
-  pn:register <https://data.aad.gov.au/aadc/gaz/> ;
-  dct:identifier "AAD_1" ;
-  dct:issued "2018-03-22T04:43:16+10:00:00.00"^^xsd:dateTime ;
+  geo:hasGeometry [
+      a sf:Point ;
+      geo:asWKT "POINT(-53.01522222 73.33641667)"^^geo:wktLiteral ;
+    ] ;
 .
-<http://example.org/Place-Names/examples/Gilchrist-Aiguilles-3.ttl>
+<http://example.org/Place-Names/examples/Gilchrist-Aiguilles-4.ttl>
   a owl:Ontology ;
+  rdfs:comment "This version inverts the feature and the place-name." ;
   owl:imports <http://linked.data.gov.au/def/placenames> ;
   owl:imports <http://www.opengis.net/ont/geosparql> ;
 .
