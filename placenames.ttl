@@ -371,7 +371,7 @@ In the context of the Place Names Profile, Jurisdictions may select Place Names 
 :PlaceName rdf:type owl:Class ;
            rdfs:subClassOf [ rdf:type owl:Restriction ;
                              owl:onProperty :placeNameOf ;
-                             owl:someValuesFrom :Place
+                             owl:someValuesFrom geo:Feature
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :register ;
