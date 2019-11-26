@@ -1,0 +1,40 @@
+# baseURI: http://example.org/Place-Names/examples/Gilchrist-Aiguilles-4.ttl
+# imports: http://linked.data.gov.au/def/placenames
+# imports: http://www.opengis.net/ont/geosparql
+
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix myaws: <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pn: <http://linked.data.gov.au/def/placenames/> .
+@prefix pn-ext: <http://example.org/pn-ext/> .
+@prefix pt: <http://pid.geoscience.gov.au/def/voc/ga/PlaceType/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/placenames-dataset/placename/AAD_1>
+  a pn:Place ;
+  pn-ext:dggs-location <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/ausPIX/S6802122> ;
+  pn:hasPlaceClassification pt:PEAK ;
+  pn:hasPlaceName [
+      a pn:PlaceName ;
+      pn:name "Gilchrist Aiguilles (Peak)" ;
+      pn:hasPlaceNameFormality <http://linked.data.gov.au/def/placenames/nameFormality/Official> ;
+      pn:register <https://data.aad.gov.au/aadc/gaz/> ;
+      dct:identifier "AAD_1" ;
+      dct:issued "2018-03-22T04:43:16+10:00:00.00"^^xsd:dateTime ;
+    ] ;
+  geo:hasGeometry [
+      a sf:Point ;
+      geo:asWKT "POINT(-53.01522222 73.33641667)"^^geo:wktLiteral ;
+    ] ;
+.
+<http://example.org/Place-Names/examples/Gilchrist-Aiguilles-4.ttl>
+  a owl:Ontology ;
+  rdfs:comment "This version inverts the feature and the place-name." ;
+  owl:imports <http://linked.data.gov.au/def/placenames> ;
+  owl:imports <http://www.opengis.net/ont/geosparql> ;
+.

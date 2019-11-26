@@ -1,37 +1,41 @@
-@prefix pn: <http://linked.data.gov.au/def/placenames/> .
+# baseURI: file:/C:/Users/cox075/dev/Place-Names/examples/kata-tjuta.ttl
+# imports: http://linked.data.gov.au/def/placenames
+
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix ex: <http://example.org/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix reg: <http://purl.org/linked-data/registry#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pn: <http://linked.data.gov.au/def/placenames/> .
 @prefix pnstat: <http://linked.data.gov.au/dataset/placenames/status/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix sdo: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix time: <http://www.w3.org/2006/time#> .
-@prefix sdo: <https://schema.org/> .
-@prefix ex: <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-
-<http://linked.data.gov.au/dataset/placename/katatjuta>
-    a                   pn:PlaceName ;
-    pn:hasPlaceName     "Kata Tjuṯa"@au-pit ;  # Pitjantjatjara planguage code assumed, not implemented yet
-    reg:register        <http://linked.data.gov.au/dataset/placename/gazetteer/northernterritory> ;
-    reg:status          pnstat:official ;
-    pn:placeNameOf      ex:kt_feature ;
+<file:/C:/Users/cox075/dev/Place-Names/examples/kata-tjuta.ttl>
+  a owl:Ontology ;
+  owl:imports <http://linked.data.gov.au/def/placenames> ;
 .
-
-<http://linked.data.gov.au/dataset/placename/olgas>
-    a                   pn:PlaceName ;
-    pn:hasPlaceName     "Olgas"@en ;  # official name, in English. Could be now unofficial
-    reg:register        <http://linked.data.gov.au/dataset/placename/gazetteer/northernterritory> ;
-    reg:status          pnstat:official ;
-    pn:placeNameOf      ex:kt_feature ;
-.
-
-
-# a minimalistic geometry (a point) for Kata Tjuṯa
 ex:kt_feature
-    a                   geo:Feature ;
-    geo:hasGeometry     [
-        geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4283> POINT(130.733333 -25.3)"^^geo:wktLiteral ;
+  a geo:Feature ;
+  geo:hasGeometry [
+      geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4283> POINT(130.733333 -25.3)"^^geo:wktLiteral ;
     ] ;
+.
+<http://linked.data.gov.au/dataset/placename/katatjuta>
+  a pn:PlaceName ;
+  pn:name "Kata Tjuṯa"@au-pit ;
+  pn:placeNameOf ex:kt_feature ;
+  pn:register <http://linked.data.gov.au/dataset/placename/gazetteer/northernterritory> ;
+  pn:status pnstat:official ;
+.
+<http://linked.data.gov.au/dataset/placename/olgas>
+  a pn:PlaceName ;
+  pn:name "Olgas"@en ;
+  pn:placeNameOf ex:kt_feature ;
+  pn:register <http://linked.data.gov.au/dataset/placename/gazetteer/northernterritory> ;
+  pn:status pnstat:official ;
 .
