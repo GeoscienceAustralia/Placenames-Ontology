@@ -22,14 +22,14 @@
 
 <http://linked.data.gov.au/def/placenames> rdf:type owl:Ontology ;
                                             dct:contributor <https://orcid.org/0000-0002-3884-3420> ,
-                                                            [ schema:email <http://linked.data.gov.au/def/irina.bastrakova@ga.gov.au> ;
+                                                            [ schema:email <mailto:irina.bastrakova@ga.gov.au> ;
                                                               schema:identifier <https://orcid.org/0000-0002-4643-7289> ;
                                                               schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/ga> ;
                                                                                 schema:name "Geoscience Australia"
                                                                               ] ;
                                                               schema:name "Irina Bastrakova"@en
                                                             ] ,
-                                                            [ schema:email <http://linked.data.gov.au/def/armin.haller@anu.edu.au> ;
+                                                            [ schema:email <mailto:armin.haller@anu.edu.au> ;
                                                               schema:identifier <https://orcid.org/0000-0003-3425-0780> ;
                                                               schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/anu> ;
                                                                                 schema:name "Australian National University"
@@ -38,11 +38,12 @@
                                                             ] ;
                                             dct:created "2018-08-02"^^xsd:date ;
                                             dct:creator [ schema:identifier <http://orcid.org/0000-0002-8742-7730> ;
-                                                          schema:name "Nicholas Car"@en
+                                                          schema:name "Nicholas Car"@en ;
+                                                          schema:email <mailto:nicholas.car@surroundaustralia.com> ;
                                                         ] ;
                                             dct:modified "2019-11-25"^^xsd:date ;
                                             dct:publisher [ rdfs:seeAlso <https://www.ga.gov.au> ;
-                                                            schema:identifier "http://catalogue.linked.data.gov.au/org/ga" ;
+                                                            schema:identifier <http://linked.data.gov.au/org/ga> ;
                                                             schema:name "Geoscience Australia"
                                                           ] ;
                                             dct:rights "(c) Commonwealth of Australia (Geoscience Australia) 2019"@en ;
