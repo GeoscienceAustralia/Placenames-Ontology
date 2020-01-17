@@ -10,6 +10,7 @@
 @prefix asgs: <http://linked.data.gov.au/def/asgs#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix gnaf: <http://linked.data.gov.au/def/gnaf#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -47,6 +48,7 @@
                                                               ] ;
                                             dcterms:rights "(c) Commonwealth of Australia (Geoscience Australia) 2019"@en ;
                                             vann:preferredNamespaceUri "http://linked.data.gov.au/def/placenames/"^^xsd:anyURI ;
+                                            vann:preferredNamespacePrefix "pn"^^xsd:token ;
                                             rdfs:comment "This is an ontology that profiles several other ontologies. It describes Place Names that are used in the Place Names Gazetteer of Australia. Place Names are names given to natural and artificial geospatial features, such as administrative areas, political regions, mountain ranges, rivers, bays etc. Place Names are assigned and managed by multiple Jurisdictions around Australia and may have varying status: official, historical etc. This ontology provides a meta model to bring Place Name data together in one Semantic Web data collection." ;
                                             rdfs:label "Place Names Profile"@en ;
                                             skos:historyNote """This version of this ontology covers the same conceptual territory of the original ontology (see placenames-original.ttl) but is aligned with:
@@ -57,7 +59,19 @@
     * GNAF Ontology - Addresses
     * PROV-O - Agent subclasses 
 
-The first version of this Place Names ontology is archived online at https://github.com/GeoscienceAustralia/Place-Names."""@en .
+The first version of this Place Names ontology is archived online at https://github.com/GeoscienceAustralia/Place-Names."""@en ;
+                                            prof:isProfileOf <http://www.opengis.net/doc/IS/geosparql/1.0> ;
+                                            prof:hasResource [
+                                                               prof:hasRole <http://www.w3.org/ns/dx/prof/role/specification> ;
+                                                               dct:format <https://w3id.org/mediatype/text/html> ;
+                                                               prof:hasArtifact <http://linked.data.gov.au/def/placenames> ;
+                                                             ] ,
+                                                             [
+                                                               prof:hasRole <http://www.w3.org/ns/dx/prof/role/schema> ;
+                                                               dct:format <https://w3id.org/mediatype/text/turtle> ;
+                                                               prof:hasArtifact <http://linked.data.gov.au/def/placenames.ttl> ;
+                                                             ] ;
+                                            prof:hasToken "pn"^^xsd:token .
 
 #################################################################
 #    Annotation properties
