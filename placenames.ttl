@@ -1,5 +1,6 @@
 @prefix : <http://linked.data.gov.au/def/placenames/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix loci: <http://linked.data.gov.au/def/loci#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix reg: <http://purl.org/linked-data/registry#> .
@@ -243,7 +244,7 @@ Use rdf:Bag and rdfs:member instead.
 ###  http://linked.data.gov.au/def/placenames/PlaceName
 :PlaceName rdf:type owl:Class ;
            rdfs:subClassOf [ rdf:type owl:Restriction ;
-                             owl:onProperty <http://linked.data.gov.au/def/loci#isMemberOf> ;
+                             owl:onProperty loci:isMemberOf ;
                              owl:someValuesFrom :Gazetteer
                            ] ,
                            [ rdf:type owl:Restriction ;

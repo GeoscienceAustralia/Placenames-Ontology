@@ -89,7 +89,7 @@ Property | Value
 --- | ---
 IRI | `http://linked.data.gov.au/def/placenames/PlaceName`
 Description | The name of a place, assigned by an official naming authority and included in the Place Names Gazeteer of Australia.
-Restrictions |<a href="http://linked.data.gov.au/def/loci#isMemberOf">http://linked.data.gov.au/def/loci#isMemberOf</a> <span class="cardinality">some</span> <a href="#Gazetteer">Gazetteer</a><sup class="sup-c" title="class">c</sup><br /><a href="#name">name</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br /><a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a> <span class="cardinality">min</span> 1<br /><a href="#hasstatus">status</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br />
+Restrictions |<a href="http://linked.data.gov.au/def/loci#isMemberOf">loci:isMemberOf</a> <span class="cardinality">some</span> <a href="#Gazetteer">Gazetteer</a><sup class="sup-c" title="class">c</sup><br /><a href="#name">name</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br /><a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a> <span class="cardinality">min</span> 1<br /><a href="#hasstatus">status</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br />
 In domain of |<a href="#pronunciation">hasPronunciation</a><sup class="sup-dp" title="datatype property">dp</sup><br /><a href="#hasplacenameformality">hasPlaceNameFormality</a><sup class="sup-op" title="object property">op</sup><br /><a href="#wasnamedby">wasNamedBy</a><sup class="sup-op" title="object property">op</sup><br /><a href="#hasplacenamingauthority">hasPlaceNamingAuthority</a><sup class="sup-op" title="object property">op</sup><br /><a href="#placenameof">placeNameOf</a><sup class="sup-op" title="object property">op</sup><br />
 In range of |<a href="#hasplacename">hasPlaceName</a><sup class="sup-op" title="object property">op</sup><br />
 ### Place Name Formality <sup>c</sup>
@@ -265,6 +265,8 @@ IRI | `https://schema.org/uri`
   * `http://purl.org/dc/terms/`
 * **geo**
   * `http://www.opengis.net/ont/geosparql#`
+  **loci**
+  * `http://linked.data.gov.au/def/loci#`
 * **owl**
   * `http://www.w3.org/2002/07/owl#`
 * **prof**
