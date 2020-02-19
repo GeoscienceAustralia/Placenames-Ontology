@@ -261,26 +261,12 @@ IRI | `https://schema.org/uri`
   * `http://linked.data.gov.au/def/placenames/`
 * **:**
   * `http://linked.data.gov.au/def/placenames/`
-* **adms**
-  * `https://www.w3.org/ns/adms#`
-* **asgs**
-  * `http://linked.data.gov.au/def/asgs#`
-* **dc**
-  * `http://purl.org/dc/elements/1.1/`
-* **dcat**
-  * `http://www.w3.org/ns/dcat#`
 * **dcterms**
   * `http://purl.org/dc/terms/`
 * **geo**
   * `http://www.opengis.net/ont/geosparql#`
-* **geofabric**
-  * `http://linked.data.gov.au/def/geofabric#`
-* **gnaf**
-  * `http://linked.data.gov.au/def/gnaf#`
 * **owl**
   * `http://www.w3.org/2002/07/owl#`
-* **pn-ext**
-  * `http://example.org/pn-ext/`
 * **prof**
   * `http://www.w3.org/ns/dx/prof/`
 * **prov**
@@ -289,14 +275,10 @@ IRI | `https://schema.org/uri`
   * `http://www.w3.org/1999/02/22-rdf-syntax-ns#`
 * **rdfs**
   * `http://www.w3.org/2000/01/rdf-schema#`
-* **reg**
-  * `http://purl.org/linked-data/registry#`
 * **schema**
   * `https://schema.org/`
 * **skos**
   * `http://www.w3.org/2004/02/skos/core#`
-* **time**
-  * `http://www.w3.org/2006/time#`
 * **vann**
   * `http://purl.org/vocab/vann/`
 * **xml**
