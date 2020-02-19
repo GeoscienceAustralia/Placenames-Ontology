@@ -1,3 +1,4 @@
+![GA logo](./ga-logo.jpg)
 # Place Names Ontology
 Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE)
 
