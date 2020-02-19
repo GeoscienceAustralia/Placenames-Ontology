@@ -112,7 +112,7 @@ Property | Value
 IRI | `http://linked.data.gov.au/def/placenames/PointOfInterest`
 Description | A specific point Location that someone may find useful or interesting.
 Super-classes |<a href="#Place">Place</a><sup class="sup-c" title="class">c</sup><br />
-Restrictions |<a href="#wasnamedby">wasNamedBy</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/ns/prov#Agent">prov:Agent</a><sup class="sup-c" title="class">c</sup><br />
+Restrictions |<a href="#wasnamedby">wasNamedBy</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="http://purl.org/dc/terms/Agent">dcterms:Agent</a><sup class="sup-c" title="class">c</sup><br />
 ### Region <sup>c</sup>
 Property | Value
 --- | ---
