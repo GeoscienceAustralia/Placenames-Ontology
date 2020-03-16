@@ -67,19 +67,21 @@
   dcterms:rights "(c) Commonwealth of Australia (Geoscience Australia) 2019, 2020"@en ;
   vann:preferredNamespacePrefix "pn"^^xsd:token ;
   vann:preferredNamespaceUri "http://linked.data.gov.au/def/placenames/"^^xsd:anyURI ;
-  rdfs:comment """Place Names is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features, typically collected in a Gazetteer. 
+  rdfs:comment """<p><b>Place Names</b> is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features, typically collected in a Gazetteer.</p> 
+<p>A place-name is a text string that</p>
+<ul>
+<li>is coined by an agent (person or organization)</li>
+<li>is authorized by a jurisidiction (national, state or local government) 
+<li>is a member item in a gazetteer
+<li>has lifecycle information (status, validity dates (TBD), formal identifier) 
+<li>denotes a natural or constructed geospatial feature with a specified classification (inhabited place, administrative area, mountain, school, station, park ...)
+</ul>
 
-A place-name is a text string, which 
-- is coined by an agent (person or organization)
-- is authorized by a jurisidiction (national, state or local government) 
-- is a member item in a gazetteer
-- has lifecycle information (status, validity dates, formal identifier) 
-- denotes a natural or constructed geospatial feature with a specified classification (inhabited place, administrative area, mountain, school, station, park ...)
-
-This ontology uses classes and properties from existing vocabularies, in particular 
-- Loc-I ontology
-- GeoSPARQL and GeoSPARQL-Extensions
-- SKOS, Dublin Core""" ;
+<p>This ontology uses classes and properties from existing vocabularies, in particular</p> 
+<ul>
+<li><a href="http://linked.data.gov.au/def/loci">Loc-I ontology</a></li>
+<li><a href="http://www.opengis.net/ont/geosparql">GeoSPARQL</a> and <a href="http://linked.data.gov.au/def/geox">GeoSPARQL-Extensions</a></li>
+<li><a href="http://www.w3.org/2004/02/skos/core">SKOS</a>, <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">Dublin Core</a></li></ul>"""^^rdf:HTML ;
   rdfs:label "Place Names Ontology"@en ;
   owl:imports <http://linked.data.gov.au/def/loci> ;
   prof:hasResource [
