@@ -1,73 +1,57 @@
-# baseURI: http://linked.data.gov.au/def/placenames
-# imports: http://linked.data.gov.au/def/loci
-
 @prefix : <http://linked.data.gov.au/def/placenames/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix loci: <http://linked.data.gov.au/def/loci#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix prof: <http://www.w3.org/ns/dx/prof/> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix pt: <http://linked.data.gov.au/def/placetype/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix reg: <http://purl.org/linked-data/registry#> .
-@prefix schema: <https://schema.org/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix loci: <http://linked.data.gov.au/def/loci#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix schema: <https://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://linked.data.gov.au/def/placenames> .
 
-<http://linked.data.gov.au/def/placenames>
-  a owl:NamedIndividual ;
-  a owl:Ontology ;
-  dcterms:contributor [
-      schema:email <mailto:armin.haller@anu.edu.au> ;
-      schema:identifier <https://orcid.org/0000-0003-3425-0780> ;
-      schema:memberOf [
-          schema:identifier <http://catalogue.linked.data.gov.au/org/anu> ;
-          schema:name "Australian National University" ;
-        ] ;
-      schema:name "Armin Haller"@en ;
-    ] ;
-  dcterms:contributor [
-      schema:email <mailto:irina.bastrakova@ga.gov.au> ;
-      schema:identifier <https://orcid.org/0000-0002-4643-7289> ;
-      schema:memberOf [
-          schema:identifier <http://catalogue.linked.data.gov.au/org/ga> ;
-          schema:name "Geoscience Australia" ;
-        ] ;
-      schema:name "Irina Bastrakova"@en ;
-    ] ;
-  dcterms:created "2018-08-02"^^xsd:date ;
-  dcterms:creator [
-      schema:email <mailto:nicholas.car@surroundaustralia.com> ;
-      schema:identifier <https://orcid.org/0000-0002-8742-7730> ;
-      schema:memberOf [
-          schema:name "Surround Australia" ;
-          schema:uri <https://surroundaustralia.com/> ;
-        ] ;
-      schema:name "Nicholas Car"@en ;
-    ] ;
-  dcterms:creator [
-      schema:email <mailto:simon.cox@csiro.au> ;
-      schema:identifier <https://orcid.org/0000-0002-3884-3420> ;
-      schema:memberOf [
-          schema:identifier <http://catalogue.linked.data.gov.au/org/csiro> ;
-          schema:name "CSIRO" ;
-        ] ;
-      schema:name "Simon J D Cox"@en ;
-    ] ;
-  dcterms:modified "2020-02-19"^^xsd:date ;
-  dcterms:publisher [
-      rdfs:seeAlso <https://www.ga.gov.au> ;
-      schema:identifier "http://catalogue.linked.data.gov.au/org/ga" ;
-      schema:name "Geoscience Australia" ;
-    ] ;
-  dcterms:rights "(c) Commonwealth of Australia (Geoscience Australia) 2019, 2020"@en ;
-  vann:preferredNamespacePrefix "pn"^^xsd:token ;
-  vann:preferredNamespaceUri "http://linked.data.gov.au/def/placenames/"^^xsd:anyURI ;
-  rdfs:comment """<p><b>Place Names</b> is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features, typically collected in a Gazetteer.</p> 
+<http://linked.data.gov.au/def/placenames> rdf:type owl:Ontology ;
+                                            owl:imports <http://linked.data.gov.au/def/loci> ;
+                                            dcterms:contributor [ schema:email <mailto:armin.haller@anu.edu.au> ;
+                                                                  schema:identifier <https://orcid.org/0000-0003-3425-0780> ;
+                                                                  schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/anu> ;
+                                                                                    schema:name "Australian National University"
+                                                                                  ] ;
+                                                                  schema:name "Armin Haller"@en
+                                                                ] ,
+                                                                [ schema:email <mailto:irina.bastrakova@ga.gov.au> ;
+                                                                  schema:identifier <https://orcid.org/0000-0002-4643-7289> ;
+                                                                  schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/ga> ;
+                                                                                    schema:name "Geoscience Australia"
+                                                                                  ] ;
+                                                                  schema:name "Irina Bastrakova"@en
+                                                                ] ;
+                                            dcterms:created "2018-08-02"^^xsd:date ;
+                                            dcterms:creator [ schema:email <mailto:simon.cox@csiro.au> ;
+                                                              schema:identifier <https://orcid.org/0000-0002-3884-3420> ;
+                                                              schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/csiro> ;
+                                                                                schema:name "CSIRO"
+                                                                              ] ;
+                                                              schema:name "Simon J D Cox"@en
+                                                            ] ,
+                                                            [ schema:email <mailto:nicholas.car@surroundaustralia.com> ;
+                                                              schema:identifier <https://orcid.org/0000-0002-8742-7730> ;
+                                                              schema:memberOf [ schema:name "Surround Australia" ;
+                                                                                schema:uri <https://surroundaustralia.com/>
+                                                                              ] ;
+                                                              schema:name "Nicholas Car"@en
+                                                            ] ;
+                                            dcterms:modified "2020-02-19"^^xsd:date ;
+                                            dcterms:rights "(c) Commonwealth of Australia (Geoscience Australia) 2019, 2020"@en ;
+                                            vann:preferredNamespacePrefix "pn"^^xsd:token ;
+                                            vann:preferredNamespaceUri "http://linked.data.gov.au/def/placenames/"^^xsd:anyURI ;
+                                            rdfs:comment """<p><b>Place Names</b> is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features, typically collected in a Gazetteer.</p> 
 <p>A place-name is a text string that</p>
 <ul>
 <li>is coined by an agent (person or organization)</li>
@@ -79,35 +63,153 @@
 
 <p>This ontology uses classes and properties from existing vocabularies, in particular</p> 
 <ul>
-<li><a href="http://linked.data.gov.au/def/loci">Loc-I ontology</a></li>
-<li><a href="http://www.opengis.net/ont/geosparql">GeoSPARQL</a> and <a href="http://linked.data.gov.au/def/geox">GeoSPARQL-Extensions</a></li>
-<li><a href="http://www.w3.org/2004/02/skos/core">SKOS</a>, <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">Dublin Core</a></li></ul>"""^^rdf:HTML ;
-  rdfs:label "Place Names Ontology"@en ;
-  owl:imports <http://linked.data.gov.au/def/loci> ;
-  prof:hasResource [
-      dcterms:format <https://w3id.org/mediatype/text/html> ;
-      prof:hasArtifact <http://linked.data.gov.au/def/placenames> ;
-      prof:hasRole <http://www.w3.org/ns/dx/prof/role/specification> ;
-    ] ;
-  prof:hasResource [
-      dcterms:format <https://w3id.org/mediatype/text/turtle> ;
-      prof:hasArtifact <http://linked.data.gov.au/def/placenames.ttl> ;
-      prof:hasRole <http://www.w3.org/ns/dx/prof/role/schema> ;
-    ] ;
-  prof:isProfileOf <http://www.opengis.net/doc/IS/geosparql/1.0> ;
-.
-:Gazetteer
-  a owl:Class ;
-  rdfs:comment "A Gazetteer is a list of Place Names"@en ;
-  rdfs:label "Gazetteer"@en ;
-  rdfs:subClassOf loci:Dataset ;
-  rdfs:subClassOf rdf:Bag ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom :PlaceName ;
-      owl:onProperty rdfs:member ;
-    ] ;
-  skos:changeNote """
+<li><a href=\"http://linked.data.gov.au/def/loci\">Loc-I ontology</a></li>
+<li><a href=\"http://www.opengis.net/ont/geosparql\">GeoSPARQL</a> and <a href=\"http://linked.data.gov.au/def/geox\">GeoSPARQL-Extensions</a></li>
+<li><a href=\"http://www.w3.org/2004/02/skos/core\">SKOS</a>, <a href=\"https://www.dublincore.org/specifications/dublin-core/dcmi-terms/\">Dublin Core</a></li></ul>"""^^rdf:HTML ;
+                                            rdfs:label "Place Names Ontology"@en ;
+                                            prof:hasResource _:genid9 ,
+                                                             _:genid10 ;
+                                            prof:isProfileOf <http://www.opengis.net/doc/IS/geosparql/1.0> .
+
+_:genid9 dcterms:format <https://w3id.org/mediatype/text/turtle> ;
+          prof:hasArtifact <http://linked.data.gov.au/def/placenames.ttl> ;
+          prof:hasRole <http://www.w3.org/ns/dx/prof/role/schema> .
+
+_:genid10 dcterms:format <https://w3id.org/mediatype/text/html> ;
+           prof:hasArtifact <http://linked.data.gov.au/def/placenames> ;
+           prof:hasRole <http://www.w3.org/ns/dx/prof/role/specification> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://linked.data.gov.au/def/placenames/hasPlaceClassification
+:hasPlaceClassification rdf:type owl:AnnotationProperty ;
+                        rdfs:subPropertyOf dcterms:type ;
+                        rdfs:range :PlaceType .
+
+
+###  http://purl.org/dc/terms/rights
+dcterms:rights rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altlabel
+skos:altlabel rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/email
+schema:email rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/identifier
+schema:identifier rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/memberOf
+schema:memberOf rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/name
+schema:name rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/uri
+schema:uri rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://linked.data.gov.au/def/placenames/hasPlaceClassification
+:hasPlaceClassification rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Place .
+
+
+###  http://linked.data.gov.au/def/placenames/hasPlaceName
+:hasPlaceName rdf:type owl:ObjectProperty ;
+              owl:inverseOf :placeNameOf ;
+              rdfs:domain geo:Feature ;
+              rdfs:range :PlaceName ;
+              rdfs:comment "The Feature has a place name (label) assigned to it"@en ;
+              rdfs:label "has place name"@en ;
+              skos:scopeNote "All PlaceName objects names indicated by hasPlaceName should have the role of the name indicated with a Name Type"@en .
+
+
+###  http://linked.data.gov.au/def/placenames/hasPlaceNameFormality
+:hasPlaceNameFormality rdf:type owl:ObjectProperty ;
+                       rdfs:domain :PlaceName ;
+                       rdfs:range :PlaceNameFormality ;
+                       rdfs:comment "The formality of a Place Name"@en ;
+                       rdfs:label "has place name formality"@en ;
+                       skos:scopeNote "Values for this property must be selected from the Place Name Formality vocabulary"@en .
+
+
+###  http://linked.data.gov.au/def/placenames/hasPlaceNamingAuthority
+:hasPlaceNamingAuthority rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf prov:wasAttributedTo ;
+                         rdfs:domain :PlaceName ;
+                         rdfs:range :Jurisdiction ;
+                         rdfs:comment "The authority (jurisdiction) responsible for formally gazetting the place name."@en ;
+                         rdfs:label "has place naming authority" .
+
+
+###  http://linked.data.gov.au/def/placenames/placeNameOf
+:placeNameOf rdf:type owl:ObjectProperty ;
+             rdfs:domain :PlaceName ;
+             rdfs:range geo:Feature ;
+             rdfs:label "place name of" .
+
+
+###  http://linked.data.gov.au/def/placenames/status
+:status rdf:type owl:ObjectProperty ;
+        rdfs:range :Status ;
+        rdfs:label "has status" ;
+        skos:scopeNote "This property indicates the status of a Place Name in a Gazetteer."@en .
+
+
+###  http://linked.data.gov.au/def/placenames/wasNamedBy
+:wasNamedBy rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf prov:wasAttributedTo ;
+            rdfs:domain :PlaceName ;
+            rdfs:range dcterms:Agent ;
+            rdfs:comment "The Agent (person, community, organization) that assigned the name to the Place"@en ;
+            rdfs:label "was named by"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://linked.data.gov.au/def/placenames/hasPronunciation
+:hasPronunciation rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :PlaceName ;
+                  rdfs:range xsd:string ;
+                  rdfs:comment "The pronunciation of a Place Name, indicated by means of a phonetic alphabet string"@en ;
+                  rdfs:label "pronunciation"@en .
+
+
+###  http://linked.data.gov.au/def/placenames/name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:range xsd:string ;
+      rdfs:label "name" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://linked.data.gov.au/def/placenames/Gazetteer
+:Gazetteer rdf:type owl:Class ;
+           rdfs:subClassOf loci:Dataset ,
+                           rdf:Bag ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty rdfs:member ;
+                             owl:allValuesFrom :PlaceName
+                           ] ;
+           rdfs:comment "A Gazetteer is a list of Place Names"@en ;
+           rdfs:label "Gazetteer"@en ;
+           skos:changeNote """
 was- 
   	rdfs:subClassOf reg:Register ;
   	rdfs:subClassOf [
@@ -118,387 +220,388 @@ was-
 But this is not appropriate - according to the Registry Ontology a reg:Register is a set of metadata records, not a set of Entities. 
 
 Use rdf:Bag and rdfs:member instead. 
-""" ;
-.
-:Historical
-  a :PlaceNameFormality ;
-  a owl:NamedIndividual ;
-  rdfs:label "Historical" ;
-  skos:prefLabel "Historical" ;
-.
-:Informal
-  a :PlaceNameFormality ;
-  a owl:NamedIndividual ;
-  rdfs:label "Informal" ;
-  skos:prefLabel "Informal" ;
-.
-:Jurisdiction
-  a owl:Class ;
-  rdfs:comment "Local, State, Territory or National (Commonwealth) Government that has authority to formally establish (i.e. gazette) place names within its jurisdictional area."@en ;
-  rdfs:label "Jurisdiction" ;
-  rdfs:subClassOf dcterms:Agent ;
-.
-:Official
-  a :PlaceNameFormality ;
-  a owl:NamedIndividual ;
-  rdfs:label "Official" ;
-  skos:prefLabel "Official" ;
-.
-:Place
-  a owl:Class ;
-  rdfs:comment "An identifiable geographic Place as defined by the Composite Gazetteer of Australia. A Place is classified according to an extensible set of types."@en ;
-  rdfs:label "Place"@en ;
-  rdfs:subClassOf geo:Feature ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty :hasPlaceClassification ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty geo:hasGeometry ;
-    ] ;
-.
-:PlaceName
-  a owl:Class ;
-  rdfs:comment "The name of a place, assigned by an official naming authority and included in the Place Names Gazeteer of Australia."@en ;
-  rdfs:label "Place Name"@en ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty :name ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty :status ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty dcterms:identifier ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:onProperty loci:isMemberOf ;
-      owl:someValuesFrom :Gazetteer ;
-    ] ;
-  skos:changeNote "Removed subClassOf reg:RegisterItem axiom, because reg:RegisterItem is \"A metadata record for an entry in a register. \" and is not an Entity itself. " ;
-.
-:PlaceNameFormality
-  a owl:Class ;
-  rdfs:comment "The formality of a Place Name: official, historical, informal"@en ;
-  rdfs:label "Place Name Formality"@en ;
-  rdfs:subClassOf skos:Concept ;
-.
-:PlaceType
-  a owl:Class ;
-  rdfs:comment "The classification of a place, from the ICSM Permanent Committee on Place Names classification scheme."@en ;
-  rdfs:label "Place Type"@en ;
-  rdfs:subClassOf skos:Concept ;
-.
-:PointOfInterest
-  a owl:Class ;
-  rdfs:comment "A specific point Location that someone may find useful or interesting."@en ;
-  rdfs:label "Point of Interest"@en ;
-  rdfs:subClassOf :Place ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:hasValue pt:PointOfInterest ;
-      owl:onProperty :hasPlaceClassification ;
-    ] ;
-.
-:Region
-  a owl:Class ;
-  rdfs:comment "A Region is an area of land that has common features."@en ;
-  rdfs:label "Region"@en ;
-  rdfs:subClassOf :Place ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:hasValue pt:Region ;
-      owl:onProperty :hasPlaceClassification ;
-    ] ;
-.
-:Status
-  a owl:Class ;
-  rdfs:label "Status " ;
-  rdfs:subClassOf skos:Concept ;
-.
-:StatusScheme
-  a owl:NamedIndividual ;
-.
-:hasPlaceClassification
-  a owl:AnnotationProperty ;
-  a owl:ObjectProperty ;
-  rdfs:comment "A relation between a Place and a classification of its real world phenomena."@en ;
-  rdfs:domain :Place ;
-  rdfs:label "has place classification" ;
-  rdfs:range :PlaceType ;
-  rdfs:subPropertyOf dcterms:type ;
-.
-:hasPlaceName
-  a owl:ObjectProperty ;
-  rdfs:comment "The Feature has a place name (label) assigned to it"@en ;
-  rdfs:domain geo:Feature ;
-  rdfs:label "has place name"@en ;
-  rdfs:range :PlaceName ;
-  owl:inverseOf :placeNameOf ;
-  skos:scopeNote "All PlaceName objects names indicated by hasPlaceName should have the role of the name indicated with a Name Type"@en ;
-.
-:hasPlaceNameFormality
-  a owl:ObjectProperty ;
-  rdfs:comment "The formality of a Place Name"@en ;
-  rdfs:domain :PlaceName ;
-  rdfs:label "has place name formality"@en ;
-  rdfs:range :PlaceNameFormality ;
-  skos:scopeNote "Values for this property must be selected from the Place Name Formality vocabulary"@en ;
-.
-:hasPlaceNamingAuthority
-  a owl:ObjectProperty ;
-  rdfs:comment "The authority (jurisdiction) responsible for formally gazetting the place name."@en ;
-  rdfs:domain :PlaceName ;
-  rdfs:label "has place naming authority" ;
-  rdfs:range :Jurisdiction ;
-  rdfs:subPropertyOf prov:wasAttributedTo ;
-.
-:hasPronunciation
-  a owl:DatatypeProperty ;
-  rdfs:comment "The pronunciation of a Place Name, indicated by means of a phonetic alphabet string"@en ;
-  rdfs:domain :PlaceName ;
-  rdfs:label "pronunciation"@en ;
-  rdfs:range xsd:string ;
-.
-:name
-  a owl:DatatypeProperty ;
-  rdfs:label "name" ;
-  rdfs:range xsd:string ;
-.
-:placeNameOf
-  a owl:ObjectProperty ;
-  rdfs:domain :PlaceName ;
-  rdfs:label "place name of" ;
-  rdfs:range geo:Feature ;
-.
-:status
-  a owl:ObjectProperty ;
-  rdfs:label "has status" ;
-  rdfs:range :Status ;
-  skos:scopeNote "This property indicates the status of a Place Name in a Gazetteer."@en ;
-.
-:statusAccepted
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry that has been accepted for use and is visible in the default register listing. Includes entries that have seen been retired or superseded."@en ;
-  skos:definition "An entry that has been accepted for use and is visible in the default register listing. Includes entries that have seen been retired or superseded."@en ;
-  skos:exactMatch reg:statusAccepted ;
-  skos:prefLabel "accepted"@en ;
-  skos:topConceptOf :StatusScheme ;
-.
-:statusDeprecated
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry that has been retired or replaced and is no longer to be used."@en ;
-  skos:broader :statusAccepted ;
-  skos:definition "An entry that has been retired or replaced and is no longer to be used."@en ;
-  skos:exactMatch reg:statusDeprecated ;
-  skos:inScheme :StatusScheme ;
-  skos:prefLabel "deprecated"@en ;
-.
-:statusExperimental
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry that has been accepted into the register temporarily and may be subject to change or withdrawal."@en ;
-  skos:altlabel "provisional"@en ;
-  skos:broader :statusValid ;
-  skos:definition "An entry that has been accepted into the register temporarily and may be subject to change or withdrawal."@en ;
-  skos:exactMatch reg:statusExperimental ;
-  skos:inScheme :StatusScheme ;
-  skos:prefLabel "experimental"@en ;
-.
-:statusInvalid
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry which has been invalidated due to serious flaws, distinct from retrirement. Corresponds to ISO 19135(redraft) 'invalid'"@en ;
-  skos:broader :statusNotAccepted ;
-  skos:definition "An entry which has been invalidated due to serious flaws, distinct from retrirement. Corresponds to ISO 19135(redraft) 'invalid'"@en ;
-  skos:exactMatch reg:statusInvalid ;
-  skos:inScheme :StatusScheme ;
-  skos:prefLabel "invalid"@en ;
-.
-:statusNotAccepted
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry that should not be visible in the default register listing. Corresponds to ISO 19135:2005 'notValid'"@en ;
-  skos:definition "An entry that should not be visible in the default register listing. Corresponds to ISO 19135:2005 'notValid'"@en ;
-  skos:exactMatch reg:statusNotAccepted ;
-  skos:prefLabel "notAccepted"@en ;
-  skos:topConceptOf :StatusScheme ;
-.
-:statusReserved
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "A reserved entry allocated for some as yet undetermined future use."@en ;
-  skos:broader :statusNotAccepted ;
-  skos:definition "A reserved entry allocated for some as yet undetermined future use."@en ;
-  skos:exactMatch reg:statusReserved ;
-  skos:inScheme :StatusScheme ;
-  skos:prefLabel "reserved"@en ;
-.
-:statusRetired
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry that has been withdrawn from use.  Corresponds to ISO 19135:2005 'retired'"@en ;
-  skos:altlabel "withdrawn"@en ;
-  skos:broader :statusDeprecated ;
-  skos:definition "An entry that has been withdrawn from use.  Corresponds to ISO 19135:2005 'retired'"@en ;
-  skos:exactMatch reg:statusRetired ;
-  skos:prefLabel "retired"@en ;
-.
-:statusStable
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry."@en ;
-  skos:broader :statusValid ;
-  skos:definition "An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry."@en ;
-  skos:exactMatch reg:statusStable ;
-  skos:inScheme :StatusScheme ;
-  skos:prefLabel "stable"@en ;
-.
-:statusSubmitted
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "A proposed entry which is not yet approved for use for use. Corresponds to ISO 19135:(redraft) 'submitted'"@en ;
-  skos:broader :statusNotAccepted ;
-  skos:definition "A proposed entry which is not yet approved for use for use. Corresponds to ISO 19135:(redraft) 'submitted'"@en ;
-  skos:exactMatch reg:statusSubmitted ;
-  skos:inScheme :StatusScheme ;
-  skos:prefLabel "submitted"@en ;
-.
-:statusSuperseded
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry that has been replaced by a new alternative which should be used instead.  Corresponds to ISO 19135:2005 'superseded'."@en ;
-  skos:altlabel "replaced"@en ;
-  skos:broader :statusDeprecated ;
-  skos:definition "An entry that has been replaced by a new alternative which should be used instead.  Corresponds to ISO 19135:2005 'superseded'."@en ;
-  skos:exactMatch reg:statusSuperseded ;
-  skos:inScheme :StatusScheme ;
-  skos:prefLabel "superseded"@en ;
-.
-:statusValid
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry that has been accepted into the register and is deemed fit for use. Corresponds to ISO 19135:2005 'valid'."@en ;
-  skos:broader :statusAccepted ;
-  skos:definition "An entry that has been accepted into the register and is deemed fit for use. Corresponds to ISO 19135:2005 'valid'."@en ;
-  skos:exactMatch reg:statusValid ;
-  skos:inScheme :StatusScheme ;
-  skos:prefLabel "valid"@en ;
-.
-:wasNamedBy
-  a owl:ObjectProperty ;
-  rdfs:comment "The Agent (person, community, organization) that assigned the name to the Place"@en ;
-  rdfs:domain :PlaceName ;
-  rdfs:label "was named by"@en ;
-  rdfs:range dcterms:Agent ;
-  rdfs:subPropertyOf prov:wasAttributedTo ;
-.
-pt:PointOfInterest
-  a :PlaceType ;
-  rdfs:label "Point of interest" ;
-.
-pt:Region
-  a :PlaceType ;
-  rdfs:label "Region" ;
-.
-dcterms:rights
-  a owl:AnnotationProperty ;
-.
-reg:statusAccepted
-  a owl:NamedIndividual ;
-.
-reg:statusDeprecated
-  a owl:NamedIndividual ;
-.
-reg:statusExperimental
-  a owl:NamedIndividual ;
-.
-reg:statusInvalid
-  a owl:NamedIndividual ;
-.
-reg:statusNotAccepted
-  a owl:NamedIndividual ;
-.
-reg:statusReserved
-  a owl:NamedIndividual ;
-.
-reg:statusRetired
-  a owl:NamedIndividual ;
-.
-reg:statusStable
-  a owl:NamedIndividual ;
-.
-reg:statusSubmitted
-  a owl:NamedIndividual ;
-.
-reg:statusSuperseded
-  a owl:NamedIndividual ;
-.
-reg:statusValid
-  a owl:NamedIndividual ;
-.
-skos:altlabel
-  a owl:AnnotationProperty ;
-.
-schema:email
-  a owl:AnnotationProperty ;
-.
-schema:identifier
-  a owl:AnnotationProperty ;
-.
-schema:memberOf
-  a owl:AnnotationProperty ;
-.
-schema:name
-  a owl:AnnotationProperty ;
-.
-schema:uri
-  a owl:AnnotationProperty ;
-.
-[
-  schema:email <mailto:armin.haller@anu.edu.au> ;
+""" .
+
+
+###  http://linked.data.gov.au/def/placenames/Jurisdiction
+:Jurisdiction rdf:type owl:Class ;
+              rdfs:subClassOf dcterms:Agent ;
+              rdfs:comment "Local, State, Territory or National (Commonwealth) Government that has authority to formally establish (i.e. gazette) place names within its jurisdictional area."@en ;
+              rdfs:label "Jurisdiction" .
+
+
+###  http://linked.data.gov.au/def/placenames/Place
+:Place rdf:type owl:Class ;
+       rdfs:subClassOf geo:Feature ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasPlaceClassification ;
+                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty geo:hasGeometry ;
+                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                       ] ;
+       rdfs:comment "An identifiable geographic Place as defined by the Composite Gazetteer of Australia. A Place is classified according to an extensible set of types."@en ;
+       rdfs:label "Place"@en .
+
+
+###  http://linked.data.gov.au/def/placenames/PlaceName
+:PlaceName rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty loci:isMemberOf ;
+                             owl:someValuesFrom :Gazetteer
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :status ;
+                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty dcterms:identifier ;
+                             owl:minCardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :name ;
+                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                           ] ;
+           rdfs:comment "The name of a place, assigned by an official naming authority and included in the Place Names Gazeteer of Australia."@en ;
+           rdfs:label "Place Name"@en ;
+           skos:changeNote "Removed subClassOf reg:RegisterItem axiom, because reg:RegisterItem is \"A metadata record for an entry in a register. \" and is not an Entity itself. " .
+
+
+###  http://linked.data.gov.au/def/placenames/PlaceNameFormality
+:PlaceNameFormality rdf:type owl:Class ;
+                    rdfs:subClassOf skos:Concept ;
+                    rdfs:comment "The formality of a Place Name: official, historical, informal"@en ;
+                    rdfs:label "Place Name Formality"@en .
+
+
+###  http://linked.data.gov.au/def/placenames/PlaceType
+:PlaceType rdf:type owl:Class ;
+           rdfs:subClassOf skos:Concept ;
+           rdfs:comment "The classification of a place, from the ICSM Permanent Committee on Place Names classification scheme."@en ;
+           rdfs:label "Place Type"@en .
+
+
+###  http://linked.data.gov.au/def/placenames/PointOfInterest
+:PointOfInterest rdf:type owl:Class ;
+                 rdfs:subClassOf :Place ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasPlaceClassification ;
+                                   owl:hasValue pt:PointOfInterest
+                                 ] ;
+                 rdfs:comment "A specific point Location that someone may find useful or interesting."@en ;
+                 rdfs:label "Point of Interest"@en .
+
+
+###  http://linked.data.gov.au/def/placenames/Region
+:Region rdf:type owl:Class ;
+        rdfs:subClassOf :Place ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasPlaceClassification ;
+                          owl:hasValue pt:Region
+                        ] ;
+        rdfs:comment "A Region is an area of land that has common features."@en ;
+        rdfs:label "Region"@en .
+
+
+###  http://linked.data.gov.au/def/placenames/Status
+:Status rdf:type owl:Class ;
+        rdfs:subClassOf skos:Concept ;
+        rdfs:label "Status " .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://linked.data.gov.au/def/placenames
+<http://linked.data.gov.au/def/placenames> rdf:type owl:NamedIndividual ;
+                                           dcterms:publisher [ rdfs:seeAlso <https://www.ga.gov.au> ;
+                                                               schema:identifier "http://catalogue.linked.data.gov.au/org/ga" ;
+                                                               schema:name "Geoscience Australia"
+                                                             ] .
+
+
+###  http://linked.data.gov.au/def/placenames/Historical
+:Historical rdf:type owl:NamedIndividual ,
+                     :PlaceNameFormality ;
+            rdfs:label "Historical" ;
+            skos:prefLabel "Historical" .
+
+
+###  http://linked.data.gov.au/def/placenames/Informal
+:Informal rdf:type owl:NamedIndividual ,
+                   :PlaceNameFormality ;
+          rdfs:label "Informal" ;
+          skos:prefLabel "Informal" .
+
+
+###  http://linked.data.gov.au/def/placenames/Official
+:Official rdf:type owl:NamedIndividual ,
+                   :PlaceNameFormality ;
+          rdfs:label "Official" ;
+          skos:prefLabel "Official" .
+
+
+###  http://linked.data.gov.au/def/placenames/StatusScheme
+:StatusScheme rdf:type owl:NamedIndividual .
+
+
+###  http://linked.data.gov.au/def/placenames/statusAccepted
+:statusAccepted rdf:type owl:NamedIndividual ,
+                         :Status ;
+                skos:exactMatch reg:statusAccepted ;
+                skos:topConceptOf :StatusScheme ;
+                rdfs:comment "An entry that has been accepted for use and is visible in the default register listing. Includes entries that have seen been retired or superseded."@en ;
+                skos:definition "An entry that has been accepted for use and is visible in the default register listing. Includes entries that have seen been retired or superseded."@en ;
+                skos:prefLabel "accepted"@en .
+
+
+###  http://linked.data.gov.au/def/placenames/statusDeprecated
+:statusDeprecated rdf:type owl:NamedIndividual ,
+                           :Status ;
+                  skos:broader :statusAccepted ;
+                  skos:exactMatch reg:statusDeprecated ;
+                  skos:inScheme :StatusScheme ;
+                  rdfs:comment "An entry that has been retired or replaced and is no longer to be used."@en ;
+                  skos:definition "An entry that has been retired or replaced and is no longer to be used."@en ;
+                  skos:prefLabel "deprecated"@en .
+
+
+###  http://linked.data.gov.au/def/placenames/statusExperimental
+:statusExperimental rdf:type owl:NamedIndividual ,
+                             :Status ;
+                    skos:broader :statusValid ;
+                    skos:exactMatch reg:statusExperimental ;
+                    skos:inScheme :StatusScheme ;
+                    rdfs:comment "An entry that has been accepted into the register temporarily and may be subject to change or withdrawal."@en ;
+                    skos:altlabel "provisional"@en ;
+                    skos:definition "An entry that has been accepted into the register temporarily and may be subject to change or withdrawal."@en ;
+                    skos:prefLabel "experimental"@en .
+
+
+###  http://linked.data.gov.au/def/placenames/statusInvalid
+:statusInvalid rdf:type owl:NamedIndividual ,
+                        :Status ;
+               skos:broader :statusNotAccepted ;
+               skos:exactMatch reg:statusInvalid ;
+               skos:inScheme :StatusScheme ;
+               rdfs:comment "An entry which has been invalidated due to serious flaws, distinct from retrirement. Corresponds to ISO 19135(redraft) 'invalid'"@en ;
+               skos:definition "An entry which has been invalidated due to serious flaws, distinct from retrirement. Corresponds to ISO 19135(redraft) 'invalid'"@en ;
+               skos:prefLabel "invalid"@en .
+
+
+###  http://linked.data.gov.au/def/placenames/statusNotAccepted
+:statusNotAccepted rdf:type owl:NamedIndividual ,
+                            :Status ;
+                   skos:exactMatch reg:statusNotAccepted ;
+                   skos:topConceptOf :StatusScheme ;
+                   rdfs:comment "An entry that should not be visible in the default register listing. Corresponds to ISO 19135:2005 'notValid'"@en ;
+                   skos:definition "An entry that should not be visible in the default register listing. Corresponds to ISO 19135:2005 'notValid'"@en ;
+                   skos:prefLabel "notAccepted"@en .
+
+
+###  http://linked.data.gov.au/def/placenames/statusReserved
+:statusReserved rdf:type owl:NamedIndividual ,
+                         :Status ;
+                skos:broader :statusNotAccepted ;
+                skos:exactMatch reg:statusReserved ;
+                skos:inScheme :StatusScheme ;
+                rdfs:comment "A reserved entry allocated for some as yet undetermined future use."@en ;
+                skos:definition "A reserved entry allocated for some as yet undetermined future use."@en ;
+                skos:prefLabel "reserved"@en .
+
+
+###  http://linked.data.gov.au/def/placenames/statusRetired
+:statusRetired rdf:type owl:NamedIndividual ,
+                        :Status ;
+               skos:broader :statusDeprecated ;
+               skos:exactMatch reg:statusRetired ;
+               rdfs:comment "An entry that has been withdrawn from use.  Corresponds to ISO 19135:2005 'retired'"@en ;
+               skos:altlabel "withdrawn"@en ;
+               skos:definition "An entry that has been withdrawn from use.  Corresponds to ISO 19135:2005 'retired'"@en ;
+               skos:prefLabel "retired"@en .
+
+
+###  http://linked.data.gov.au/def/placenames/statusStable
+:statusStable rdf:type owl:NamedIndividual ,
+                       :Status ;
+              skos:broader :statusValid ;
+              skos:exactMatch reg:statusStable ;
+              skos:inScheme :StatusScheme ;
+              rdfs:comment "An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry."@en ;
+              skos:definition "An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry."@en ;
+              skos:prefLabel "stable"@en .
+
+
+###  http://linked.data.gov.au/def/placenames/statusSubmitted
+:statusSubmitted rdf:type owl:NamedIndividual ,
+                          :Status ;
+                 skos:broader :statusNotAccepted ;
+                 skos:exactMatch reg:statusSubmitted ;
+                 skos:inScheme :StatusScheme ;
+                 rdfs:comment "A proposed entry which is not yet approved for use for use. Corresponds to ISO 19135:(redraft) 'submitted'"@en ;
+                 skos:definition "A proposed entry which is not yet approved for use for use. Corresponds to ISO 19135:(redraft) 'submitted'"@en ;
+                 skos:prefLabel "submitted"@en .
+
+
+###  http://linked.data.gov.au/def/placenames/statusSuperseded
+:statusSuperseded rdf:type owl:NamedIndividual ,
+                           :Status ;
+                  skos:broader :statusDeprecated ;
+                  skos:exactMatch reg:statusSuperseded ;
+                  skos:inScheme :StatusScheme ;
+                  rdfs:comment "An entry that has been replaced by a new alternative which should be used instead.  Corresponds to ISO 19135:2005 'superseded'."@en ;
+                  skos:altlabel "replaced"@en ;
+                  skos:definition "An entry that has been replaced by a new alternative which should be used instead.  Corresponds to ISO 19135:2005 'superseded'."@en ;
+                  skos:prefLabel "superseded"@en .
+
+
+###  http://linked.data.gov.au/def/placenames/statusValid
+:statusValid rdf:type owl:NamedIndividual ,
+                      :Status ;
+             skos:broader :statusAccepted ;
+             skos:exactMatch reg:statusValid ;
+             skos:inScheme :StatusScheme ;
+             rdfs:comment "An entry that has been accepted into the register and is deemed fit for use. Corresponds to ISO 19135:2005 'valid'."@en ;
+             skos:definition "An entry that has been accepted into the register and is deemed fit for use. Corresponds to ISO 19135:2005 'valid'."@en ;
+             skos:prefLabel "valid"@en .
+
+
+###  http://linked.data.gov.au/def/placetype/PointOfInterest
+pt:PointOfInterest rdf:type owl:NamedIndividual ,
+                            :PlaceType ;
+                   rdfs:label "Point of interest" .
+
+
+###  http://linked.data.gov.au/def/placetype/Region
+pt:Region rdf:type owl:NamedIndividual ,
+                   :PlaceType ;
+          rdfs:label "Region" .
+
+
+###  http://purl.org/linked-data/registry#statusAccepted
+reg:statusAccepted rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/linked-data/registry#statusDeprecated
+reg:statusDeprecated rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/linked-data/registry#statusExperimental
+reg:statusExperimental rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/linked-data/registry#statusInvalid
+reg:statusInvalid rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/linked-data/registry#statusNotAccepted
+reg:statusNotAccepted rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/linked-data/registry#statusReserved
+reg:statusReserved rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/linked-data/registry#statusRetired
+reg:statusRetired rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/linked-data/registry#statusStable
+reg:statusStable rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/linked-data/registry#statusSubmitted
+reg:statusSubmitted rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/linked-data/registry#statusSuperseded
+reg:statusSuperseded rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/linked-data/registry#statusValid
+reg:statusValid rdf:type owl:NamedIndividual .
+
+
+[ schema:email <mailto:armin.haller@anu.edu.au> ;
   schema:identifier <https://orcid.org/0000-0003-3425-0780> ;
-  schema:memberOf [
-      schema:identifier <http://catalogue.linked.data.gov.au/org/anu> ;
-      schema:name "Australian National University" ;
-    ] ;
-  schema:name "Armin Haller"@en ;
-].
-[
-  schema:email <mailto:irina.bastrakova@ga.gov.au> ;
-  schema:identifier <https://orcid.org/0000-0002-4643-7289> ;
-  schema:memberOf [
-      schema:identifier <http://catalogue.linked.data.gov.au/org/ga> ;
-      schema:name "Geoscience Australia" ;
-    ] ;
-  schema:name "Irina Bastrakova"@en ;
-].
-[
-  schema:email <mailto:nicholas.car@surroundaustralia.com> ;
-  schema:identifier <https://orcid.org/0000-0002-8742-7730> ;
-  schema:memberOf [
-      schema:name "Surround Australia" ;
-      schema:uri <https://surroundaustralia.com/> ;
-    ] ;
-  schema:name "Nicholas Car"@en ;
-].
-[
-  schema:email <mailto:simon.cox@csiro.au> ;
-  schema:identifier <https://orcid.org/0000-0002-3884-3420> ;
-  schema:memberOf [
-      schema:identifier <http://catalogue.linked.data.gov.au/org/csiro> ;
-      schema:name "CSIRO" ;
-    ] ;
-  schema:name "Simon J D Cox"@en ;
-].
+  schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/anu> ;
+                    schema:name "Australian National University"
+                  ] ;
+  schema:name "Armin Haller"@en
+] .
+
+[ schema:email <mailto:irina.bastrakova@ga.gov.au> ;
+   schema:identifier <https://orcid.org/0000-0002-4643-7289> ;
+   schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/ga> ;
+                     schema:name "Geoscience Australia"
+                   ] ;
+   schema:name "Irina Bastrakova"@en
+ ] .
+
+[ schema:email <mailto:simon.cox@csiro.au> ;
+   schema:identifier <https://orcid.org/0000-0002-3884-3420> ;
+   schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/csiro> ;
+                     schema:name "CSIRO"
+                   ] ;
+   schema:name "Simon J D Cox"@en
+ ] .
+
+[ schema:email <mailto:nicholas.car@surroundaustralia.com> ;
+   schema:identifier <https://orcid.org/0000-0002-8742-7730> ;
+   schema:memberOf [ schema:name "Surround Australia" ;
+                     schema:uri <https://surroundaustralia.com/>
+                   ] ;
+   schema:name "Nicholas Car"@en
+ ] .
+
+_:genid9 dcterms:format <https://w3id.org/mediatype/text/turtle> ;
+          prof:hasArtifact <http://linked.data.gov.au/def/placenames.ttl> ;
+          prof:hasRole <http://www.w3.org/ns/dx/prof/role/schema> .
+
+_:genid10 dcterms:format <https://w3id.org/mediatype/text/html> ;
+           prof:hasArtifact <http://linked.data.gov.au/def/placenames> ;
+           prof:hasRole <http://www.w3.org/ns/dx/prof/role/specification> .
+
+[ schema:email <mailto:armin.haller@anu.edu.au> ;
+   schema:identifier <https://orcid.org/0000-0003-3425-0780> ;
+   schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/anu> ;
+                     schema:name "Australian National University"
+                   ] ;
+   schema:name "Armin Haller"@en
+ ] .
+
+[ schema:email <mailto:nicholas.car@surroundaustralia.com> ;
+   schema:identifier <https://orcid.org/0000-0002-8742-7730> ;
+   schema:memberOf [ schema:name "Surround Australia" ;
+                     schema:uri <https://surroundaustralia.com/>
+                   ] ;
+   schema:name "Nicholas Car"@en
+ ] .
+
+[ schema:email <mailto:irina.bastrakova@ga.gov.au> ;
+   schema:identifier <https://orcid.org/0000-0002-4643-7289> ;
+   schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/ga> ;
+                     schema:name "Geoscience Australia"
+                   ] ;
+   schema:name "Irina Bastrakova"@en
+ ] .
+
+[ schema:email <mailto:simon.cox@csiro.au> ;
+   schema:identifier <https://orcid.org/0000-0002-3884-3420> ;
+   schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/csiro> ;
+                     schema:name "CSIRO"
+                   ] ;
+   schema:name "Simon J D Cox"@en
+ ] .
+
+#################################################################
+#    Annotations
+#################################################################
+
+:hasPlaceClassification rdfs:comment "A relation between a Place and a classification of its real world phenomena."@en ;
+                         rdfs:label "has place classification" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
