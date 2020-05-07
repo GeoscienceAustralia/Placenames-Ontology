@@ -17,76 +17,36 @@
 @base <http://linked.data.gov.au/def/placenames> .
 
 <http://linked.data.gov.au/def/placenames> rdf:type owl:Ontology ;
-                                            owl:imports <http://linked.data.gov.au/def/loci> ;
-                                            dcterms:contributor [ schema:email <mailto:armin.haller@anu.edu.au> ;
-                                                                  schema:identifier <https://orcid.org/0000-0003-3425-0780> ;
-                                                                  schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/anu> ;
-                                                                                    schema:name "Australian National University"
-                                                                                  ] ;
-                                                                  schema:name "Armin Haller"@en
-                                                                ] ,
-                                                                [ schema:email <mailto:irina.bastrakova@ga.gov.au> ;
-                                                                  schema:identifier <https://orcid.org/0000-0002-4643-7289> ;
-                                                                  schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/ga> ;
-                                                                                    schema:name "Geoscience Australia"
-                                                                                  ] ;
-                                                                  schema:name "Irina Bastrakova"@en
-                                                                ] ;
-                                            dcterms:created "2018-08-02"^^xsd:date ;
-                                            dcterms:creator [ schema:email <mailto:simon.cox@csiro.au> ;
-                                                              schema:identifier <https://orcid.org/0000-0002-3884-3420> ;
-                                                              schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/csiro> ;
-                                                                                schema:name "CSIRO"
-                                                                              ] ;
-                                                              schema:name "Simon J D Cox"@en
-                                                            ] ,
-                                                            [ schema:email <mailto:nicholas.car@surroundaustralia.com> ;
-                                                              schema:identifier <https://orcid.org/0000-0002-8742-7730> ;
-                                                              schema:memberOf [ schema:name "Surround Australia" ;
-                                                                                schema:uri <https://surroundaustralia.com/>
-                                                                              ] ;
-                                                              schema:name "Nicholas Car"@en
-                                                            ] ;
-                                            dcterms:modified "2020-02-19"^^xsd:date ;
-                                            dcterms:rights "(c) Commonwealth of Australia (Geoscience Australia) 2019, 2020"@en ;
-                                            vann:preferredNamespacePrefix "pn"^^xsd:token ;
-                                            vann:preferredNamespaceUri "http://linked.data.gov.au/def/placenames/"^^xsd:anyURI ;
-                                            rdfs:comment """<p><b>Place Names</b> is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features, typically collected in a Gazetteer.</p> 
-<p>A place-name is a text string that</p>
-<ul>
-<li>is coined by an agent (person or organization)</li>
-<li>is authorized by a jurisidiction (national, state or local government) 
-<li>is a member item in a gazetteer
-<li>has lifecycle information (status, validity dates (TBD), formal identifier) 
-<li>denotes a natural or constructed geospatial feature with a specified classification (inhabited place, administrative area, mountain, school, station, park ...)
-</ul>
+                                            owl:imports <http://www.opengis.net/ont/geosparql> ;
+                                            dcterms:rights "(c) Commonwealth of Australia (Geoscience Australia) 2019, 2020" ;
+                                            rdfs:comment """**Place Names** is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features, typically collected in a Gazetteer.
 
-<p>This ontology uses classes and properties from existing vocabularies, in particular</p> 
-<ul>
-<li><a href=\"http://linked.data.gov.au/def/loci\">Loc-I ontology</a></li>
-<li><a href=\"http://www.opengis.net/ont/geosparql\">GeoSPARQL</a> and <a href=\"http://linked.data.gov.au/def/geox\">GeoSPARQL-Extensions</a></li>
-<li><a href=\"http://www.w3.org/2004/02/skos/core\">SKOS</a>, <a href=\"https://www.dublincore.org/specifications/dublin-core/dcmi-terms/\">Dublin Core</a></li></ul>"""^^rdf:HTML ;
-                                            rdfs:label "Place Names Ontology"@en ;
-                                            prof:hasResource _:genid9 ,
-                                                             _:genid10 ;
-                                            prof:isProfileOf <http://www.opengis.net/doc/IS/geosparql/1.0> .
+A place-name is a text string that
 
-_:genid9 dcterms:format <https://w3id.org/mediatype/text/turtle> ;
-          prof:hasArtifact <http://linked.data.gov.au/def/placenames.ttl> ;
-          prof:hasRole <http://www.w3.org/ns/dx/prof/role/schema> .
+- is coined by an agent (person or organization)
+- is authorized by a jurisidiction (national, state or local government) 
+- is a member item in a gazetteer
+- has lifecycle information (status, validity dates (TBD), formal identifier) 
+- denotes a natural or constructed geospatial feature with a specified classification (inhabited place, administrative area, mountain, school, station, park ...)
 
-_:genid10 dcterms:format <https://w3id.org/mediatype/text/html> ;
-           prof:hasArtifact <http://linked.data.gov.au/def/placenames> ;
-           prof:hasRole <http://www.w3.org/ns/dx/prof/role/specification> .
+
+This ontology uses classes and properties from existing vocabularies, in particular
+
+- [GeoSPARQL](http://www.opengis.net/ont/geosparql)
+- [SKOS](http://www.w3.org/2004/02/skos/core) 
+- [Dublin Core](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/)""" ;
+                                            rdfs:label "Place Names Ontology"@en .
 
 #################################################################
 #    Annotation properties
 #################################################################
 
-###  http://linked.data.gov.au/def/placenames/hasPlaceClassification
-:hasPlaceClassification rdf:type owl:AnnotationProperty ;
-                        rdfs:subPropertyOf dcterms:type ;
-                        rdfs:range :PlaceType .
+###  http://purl.org/dc/terms/format
+dcterms:format rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/identifier
+dcterms:identifier rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/rights
@@ -95,6 +55,10 @@ dcterms:rights rdf:type owl:AnnotationProperty .
 
 ###  http://www.w3.org/2004/02/skos/core#altlabel
 skos:altlabel rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/affiliation
+schema:affiliation rdf:type owl:AnnotationProperty .
 
 
 ###  https://schema.org/email
@@ -121,15 +85,23 @@ schema:uri rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  http://linked.data.gov.au/def/loci#isMemberOf
+loci:isMemberOf rdf:type owl:ObjectProperty .
+
+
 ###  http://linked.data.gov.au/def/placenames/hasPlaceClassification
 :hasPlaceClassification rdf:type owl:ObjectProperty ;
-                        rdfs:domain :Place .
+                        rdfs:subPropertyOf dcterms:type ;
+                        rdfs:domain :Place ;
+                        rdfs:range :PlaceType ;
+                        rdfs:comment "A relation between a Place and a classification of its real world phenomena."@en ;
+                        rdfs:label "has place classification" .
 
 
 ###  http://linked.data.gov.au/def/placenames/hasPlaceName
 :hasPlaceName rdf:type owl:ObjectProperty ;
               owl:inverseOf :placeNameOf ;
-              rdfs:domain geo:Feature ;
+              rdfs:domain :Place ;
               rdfs:range :PlaceName ;
               rdfs:comment "The Feature has a place name (label) assigned to it"@en ;
               rdfs:label "has place name"@en ;
@@ -157,12 +129,13 @@ schema:uri rdf:type owl:AnnotationProperty .
 ###  http://linked.data.gov.au/def/placenames/placeNameOf
 :placeNameOf rdf:type owl:ObjectProperty ;
              rdfs:domain :PlaceName ;
-             rdfs:range geo:Feature ;
+             rdfs:range :Place ;
              rdfs:label "place name of" .
 
 
 ###  http://linked.data.gov.au/def/placenames/status
 :status rdf:type owl:ObjectProperty ;
+        rdfs:domain :PlaceName ;
         rdfs:range :Status ;
         rdfs:label "has status" ;
         skos:scopeNote "This property indicates the status of a Place Name in a Gazetteer."@en .
@@ -175,6 +148,62 @@ schema:uri rdf:type owl:AnnotationProperty .
             rdfs:range dcterms:Agent ;
             rdfs:comment "The Agent (person, community, organization) that assigned the name to the Place"@en ;
             rdfs:label "was named by"@en .
+
+
+###  http://purl.org/dc/terms/contributor
+dcterms:contributor rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+dcterms:publisher rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/dc/terms/type
+dcterms:type rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#member
+rdfs:member rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#broader
+skos:broader rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#exactMatch
+skos:exactMatch rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+skos:inScheme rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#topConceptOf
+skos:topConceptOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/dx/prof/hasArtifact
+prof:hasArtifact rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/dx/prof/hasResource
+prof:hasResource rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/dx/prof/hasRole
+prof:hasRole rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/dx/prof/isProfileOf
+prof:isProfileOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/prov#wasAttributedTo
+prov:wasAttributedTo rdf:type owl:ObjectProperty .
 
 
 #################################################################
@@ -191,13 +220,30 @@ schema:uri rdf:type owl:AnnotationProperty .
 
 ###  http://linked.data.gov.au/def/placenames/name
 :name rdf:type owl:DatatypeProperty ;
+      rdfs:domain :PlaceName ;
       rdfs:range xsd:string ;
       rdfs:label "name" .
+
+
+###  http://purl.org/dc/terms/created
+dcterms:created rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/terms/identifier
+dcterms:identifier rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dcterms:modified rdf:type owl:DatatypeProperty .
 
 
 #################################################################
 #    Classes
 #################################################################
+
+###  http://linked.data.gov.au/def/loci#Dataset
+loci:Dataset rdf:type owl:Class .
+
 
 ###  http://linked.data.gov.au/def/placenames/Gazetteer
 :Gazetteer rdf:type owl:Class ;
@@ -211,15 +257,17 @@ schema:uri rdf:type owl:AnnotationProperty .
            rdfs:label "Gazetteer"@en ;
            skos:changeNote """
 was- 
+```
   	rdfs:subClassOf reg:Register ;
   	rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:hasValue :PlaceName ;
       owl:onProperty reg:containedItemClass ;
     ] ;
+```
 But this is not appropriate - according to the Registry Ontology a reg:Register is a set of metadata records, not a set of Entities. 
 
-Use rdf:Bag and rdfs:member instead. 
+Use `rdf:Bag` and `rdfs:member` instead. 
 """ .
 
 
@@ -234,11 +282,20 @@ Use rdf:Bag and rdfs:member instead.
 :Place rdf:type owl:Class ;
        rdfs:subClassOf geo:Feature ,
                        [ rdf:type owl:Restriction ;
+                         owl:onProperty loci:isMemberOf ;
+                         owl:someValuesFrom :Gazetteer
+                       ] ,
+                       [ rdf:type owl:Restriction ;
                          owl:onProperty :hasPlaceClassification ;
                          owl:minCardinality "1"^^xsd:nonNegativeInteger
                        ] ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty geo:hasGeometry ;
+                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass geo:Geometry
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty dcterms:identifier ;
                          owl:minCardinality "1"^^xsd:nonNegativeInteger
                        ] ;
        rdfs:comment "An identifiable geographic Place as defined by the Composite Gazetteer of Australia. A Place is classified according to an extensible set of types."@en ;
@@ -250,6 +307,14 @@ Use rdf:Bag and rdfs:member instead.
            rdfs:subClassOf [ rdf:type owl:Restriction ;
                              owl:onProperty loci:isMemberOf ;
                              owl:someValuesFrom :Gazetteer
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :placeNameOf ;
+                             owl:minCardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasPlaceNamingAuthority ;
+                             owl:cardinality "1"^^xsd:nonNegativeInteger
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :status ;
@@ -310,16 +375,49 @@ Use rdf:Bag and rdfs:member instead.
         rdfs:label "Status " .
 
 
+###  http://purl.org/dc/terms/Agent
+dcterms:Agent rdf:type owl:Class .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag
+rdf:Bag rdf:type owl:Class .
+
+
+###  https://schema.org/Person
+schema:Person rdf:type owl:Class .
+
+
 #################################################################
 #    Individuals
 #################################################################
 
 ###  http://linked.data.gov.au/def/placenames
 <http://linked.data.gov.au/def/placenames> rdf:type owl:NamedIndividual ;
+                                           dcterms:contributor <https://orcid.org/0000-0002-4643-7289> ,
+                                                               <https://orcid.org/0000-0003-3425-0780> ;
+                                           dcterms:creator <https://orcid.org/0000-0002-3884-3420> ,
+                                                           <https://orcid.org/0000-0002-8742-7730> ;
                                            dcterms:publisher [ rdfs:seeAlso <https://www.ga.gov.au> ;
                                                                schema:identifier "http://catalogue.linked.data.gov.au/org/ga" ;
                                                                schema:name "Geoscience Australia"
-                                                             ] .
+                                                             ] ;
+                                           prof:hasResource _:genid15 ,
+                                                            _:genid16 ;
+                                           prof:isProfileOf <http://www.opengis.net/doc/IS/geosparql/1.0> ;
+                                           dcterms:created "2018-08-02"^^xsd:date ;
+                                           dcterms:modified "2020-02-19"^^xsd:date .
+
+_:genid15 prof:hasArtifact <http://linked.data.gov.au/def/placenames> ;
+           prof:hasRole <http://www.w3.org/ns/dx/prof/role/specification> ;
+           dcterms:format <https://w3id.org/mediatype/text/html> .
+
+_:genid16 prof:hasArtifact <http://linked.data.gov.au/def/placenames.ttl> ;
+           prof:hasRole <http://www.w3.org/ns/dx/prof/role/schema> ;
+           dcterms:format <https://w3id.org/mediatype/text/turtle> .
+
+
+###  http://linked.data.gov.au/def/placenames.ttl
+<http://linked.data.gov.au/def/placenames.ttl> rdf:type owl:NamedIndividual .
 
 
 ###  http://linked.data.gov.au/def/placenames/Historical
@@ -344,7 +442,8 @@ Use rdf:Bag and rdfs:member instead.
 
 
 ###  http://linked.data.gov.au/def/placenames/StatusScheme
-:StatusScheme rdf:type owl:NamedIndividual .
+:StatusScheme rdf:type owl:NamedIndividual ,
+                       skos:ConceptScheme .
 
 
 ###  http://linked.data.gov.au/def/placenames/statusAccepted
@@ -524,84 +623,71 @@ reg:statusSuperseded rdf:type owl:NamedIndividual .
 reg:statusValid rdf:type owl:NamedIndividual .
 
 
-[ schema:email <mailto:armin.haller@anu.edu.au> ;
-  schema:identifier <https://orcid.org/0000-0003-3425-0780> ;
-  schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/anu> ;
-                    schema:name "Australian National University"
-                  ] ;
-  schema:name "Armin Haller"@en
-] .
+###  http://www.opengis.net/doc/IS/geosparql/1.0
+<http://www.opengis.net/doc/IS/geosparql/1.0> rdf:type owl:NamedIndividual .
 
-[ schema:email <mailto:irina.bastrakova@ga.gov.au> ;
-   schema:identifier <https://orcid.org/0000-0002-4643-7289> ;
-   schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/ga> ;
-                     schema:name "Geoscience Australia"
-                   ] ;
-   schema:name "Irina Bastrakova"@en
- ] .
 
-[ schema:email <mailto:simon.cox@csiro.au> ;
-   schema:identifier <https://orcid.org/0000-0002-3884-3420> ;
-   schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/csiro> ;
-                     schema:name "CSIRO"
-                   ] ;
-   schema:name "Simon J D Cox"@en
- ] .
+###  http://www.w3.org/ns/dx/prof/role/schema
+<http://www.w3.org/ns/dx/prof/role/schema> rdf:type owl:NamedIndividual .
 
-[ schema:email <mailto:nicholas.car@surroundaustralia.com> ;
-   schema:identifier <https://orcid.org/0000-0002-8742-7730> ;
-   schema:memberOf [ schema:name "Surround Australia" ;
-                     schema:uri <https://surroundaustralia.com/>
-                   ] ;
-   schema:name "Nicholas Car"@en
- ] .
 
-_:genid9 dcterms:format <https://w3id.org/mediatype/text/turtle> ;
-          prof:hasArtifact <http://linked.data.gov.au/def/placenames.ttl> ;
-          prof:hasRole <http://www.w3.org/ns/dx/prof/role/schema> .
+###  http://www.w3.org/ns/dx/prof/role/specification
+<http://www.w3.org/ns/dx/prof/role/specification> rdf:type owl:NamedIndividual .
 
-_:genid10 dcterms:format <https://w3id.org/mediatype/text/html> ;
-           prof:hasArtifact <http://linked.data.gov.au/def/placenames> ;
-           prof:hasRole <http://www.w3.org/ns/dx/prof/role/specification> .
 
-[ schema:email <mailto:armin.haller@anu.edu.au> ;
-   schema:identifier <https://orcid.org/0000-0003-3425-0780> ;
-   schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/anu> ;
-                     schema:name "Australian National University"
-                   ] ;
-   schema:name "Armin Haller"@en
- ] .
+###  https://orcid.org/0000-0002-3884-3420
+<https://orcid.org/0000-0002-3884-3420> rdf:type owl:NamedIndividual ,
+                                                 schema:Person ;
+                                        schema:affiliation [ schema:identifier "http://catalogue.linked.data.gov.au/org/csiro"^^xsd:anyURI ;
+                                                             schema:name "CSIRO"
+                                                           ] ;
+                                        schema:email <mailto:simon.cox@csiro.au> ;
+                                        schema:identifier "https://orcid.org/0000-0002-3884-3420"^^xsd:anyURI ;
+                                        schema:name "Simon J D Cox"@en .
 
-[ schema:email <mailto:nicholas.car@surroundaustralia.com> ;
-   schema:identifier <https://orcid.org/0000-0002-8742-7730> ;
-   schema:memberOf [ schema:name "Surround Australia" ;
-                     schema:uri <https://surroundaustralia.com/>
-                   ] ;
-   schema:name "Nicholas Car"@en
- ] .
 
-[ schema:email <mailto:irina.bastrakova@ga.gov.au> ;
-   schema:identifier <https://orcid.org/0000-0002-4643-7289> ;
-   schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/ga> ;
-                     schema:name "Geoscience Australia"
-                   ] ;
-   schema:name "Irina Bastrakova"@en
- ] .
+###  https://orcid.org/0000-0002-4643-7289
+<https://orcid.org/0000-0002-4643-7289> rdf:type owl:NamedIndividual ,
+                                                 schema:Person ;
+                                        schema:affiliation [ schema:identifier "http://catalogue.linked.data.gov.au/org/ga"^^xsd:anyURI ;
+                                                             schema:name "Geoscience Australia"
+                                                           ] ;
+                                        schema:email <mailto:irina.bastrakova@ga.gov.au> ;
+                                        schema:identifier "https://orcid.org/0000-0002-4643-7289"^^xsd:anyURI ;
+                                        schema:name "Irina Bastrakova"@en .
 
-[ schema:email <mailto:simon.cox@csiro.au> ;
-   schema:identifier <https://orcid.org/0000-0002-3884-3420> ;
-   schema:memberOf [ schema:identifier <http://catalogue.linked.data.gov.au/org/csiro> ;
-                     schema:name "CSIRO"
-                   ] ;
-   schema:name "Simon J D Cox"@en
- ] .
 
-#################################################################
-#    Annotations
-#################################################################
+###  https://orcid.org/0000-0002-8742-7730
+<https://orcid.org/0000-0002-8742-7730> rdf:type owl:NamedIndividual ,
+                                                 schema:Person ;
+                                        schema:affiliation [ schema:name "Surround Australia" ;
+                                                             schema:uri <https://surroundaustralia.com/>
+                                                           ] ;
+                                        schema:email <mailto:nicholas.car@surroundaustralia.com> ;
+                                        schema:identifier "https://orcid.org/0000-0002-8742-7730"^^xsd:anyURI ;
+                                        schema:name "Nicholas Car"@en .
 
-:hasPlaceClassification rdfs:comment "A relation between a Place and a classification of its real world phenomena."@en ;
-                         rdfs:label "has place classification" .
 
+###  https://orcid.org/0000-0003-3425-0780
+<https://orcid.org/0000-0003-3425-0780> rdf:type owl:NamedIndividual ,
+                                                 schema:Person ;
+                                        schema:affiliation [ schema:identifier "http://catalogue.linked.data.gov.au/org/anu"^^xsd:anyURI ;
+                                                             schema:name "Australian National University"
+                                                           ] ,
+                                                           [ schema:identifier "http://catalogue.linked.data.gov.au/org/anu"^^xsd:anyURI ;
+                                                             schema:name "Australian National University"
+                                                           ] ;
+                                        schema:email <mailto:armin.haller@anu.edu.au> ;
+                                        schema:identifier "https://orcid.org/0000-0003-3425-0780"^^xsd:anyURI ;
+                                        schema:name "Armin Haller"@en .
+
+
+_:genid22 prof:hasArtifact <http://linked.data.gov.au/def/placenames.ttl> ;
+          prof:hasRole <http://www.w3.org/ns/dx/prof/role/schema> ;
+          dcterms:format <https://w3id.org/mediatype/text/turtle> .
+
+_:genid23 prof:hasArtifact <http://linked.data.gov.au/def/placenames> ;
+           prof:hasRole <http://www.w3.org/ns/dx/prof/role/specification> ;
+           dcterms:format <https://w3id.org/mediatype/text/html> .
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
