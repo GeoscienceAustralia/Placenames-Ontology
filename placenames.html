@@ -174,7 +174,7 @@ code {
     ],
     "https://schema.org/description": [
       {
-        "@value": "<p>Place Names is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features, typically collected in a Gazetteer. </p>\n<p>A place-name is a text string, which \n- is coined by an agent (person or organization)\n- is authorized by a jurisidiction (national, state or local government) \n- is a member item in a gazetteer\n- has lifecycle information (status, validity dates, formal identifier) \n- denotes a natural or constructed geospatial feature with a specified classification (inhabited place, administrative area, mountain, school, station, park ...)</p>\n<p>This ontology uses classes and properties from existing vocabularies, in particular \n- Loc-I ontology\n- GeoSPARQL and GeoSPARQL-Extensions\n- SKOS, Dublin Core</p>"
+        "@value": "<p><strong>Place Names</strong> is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features, typically collected in a Gazetteer.</p>\n<p>A place-name is a text string that</p>\n<ul>\n<li>is coined by an agent (person or organization)</li>\n<li>is authorized by a jurisidiction (national, state or local government) </li>\n<li>is a member item in a gazetteer</li>\n<li>has lifecycle information (status, validity dates (TBD), formal identifier) </li>\n<li>denotes a natural or constructed geospatial feature with a specified classification (inhabited place, administrative area, mountain, school, station, park ...)</li>\n</ul>\n<p>This ontology uses classes and properties from existing vocabularies, in particular</p>\n<ul>\n<li><a href=\"http://www.opengis.net/ont/geosparql\">GeoSPARQL</a></li>\n<li><a href=\"http://www.w3.org/2004/02/skos/core\">SKOS</a> </li>\n<li><a href=\"https://www.dublincore.org/specifications/dublin-core/dcmi-terms/\">Dublin Core</a></li>\n</ul>\n<p><img alt=\"\" src=\"./images/placename-details.png\" /></p>"
       }
     ],
     "https://schema.org/name": [
@@ -193,7 +193,6 @@ code {
 </head>
 <body>
 <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">pyLODE</a></div>
-<img src="./images/ga-logo.jpg" alt="GA's logo" style="height:150px;" />
 <h1>Place Names Ontology</h1>
 <section id="metadata">
     <h2 style="display:none;">Metadata</h2>
@@ -206,8 +205,8 @@ code {
         </dd>
         <dt>Creator(s)</dt>
         <dd>
-            <a href="https://orcid.org/0000-0002-8742-7730">Nicholas Car</a> (<a href="mailto:nicholas.car@surroundaustralia.com">nicholas.car@surroundaustralia.com</a>) of Surround Australia<br/>
             <a href="https://orcid.org/0000-0002-3884-3420">Simon J D Cox</a> (<a href="mailto:simon.cox@csiro.au">simon.cox@csiro.au</a>) of <a href="http://catalogue.linked.data.gov.au/org/csiro">CSIRO</a><br/>
+            <a href="https://orcid.org/0000-0002-8742-7730">Nicholas Car</a> (<a href="mailto:nicholas.car@surroundaustralia.com">nicholas.car@surroundaustralia.com</a>) of Surround Australia<br/>
         </dd>
         <dt>Contributors(s)</dt>
         <dd>
@@ -217,35 +216,34 @@ code {
         <dt>Created</dt>
         <dd>2018-08-02</dd>
         <dt>Modified</dt>
-        <dd>2020-02-19</dd>
+        <dd>2020-05-07</dd>
         <dt>Imports</dt>
         <dd>
-            <a href="http://linked.data.gov.au/def/loci">http://linked.data.gov.au/def/loci</a><br/>
+            <a href="http://www.opengis.net/ont/geosparql">http://www.opengis.net/ont/geosparql</a><br/>
         </dd>
         <dt>Rights</dt>
         <dd>(c) Commonwealth of Australia (Geoscience Australia) 2019, 2020</dd>
-        <dt>Ontology Source</dt>
+        <dt>Ontology RDF</dt>
         <dd><a href="placenames.ttl">RDF (turtle)</a></dd>
     </dl>
     <h2>Description</h2>
     <div id="description">
-        <p><b>Place Names</b> is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features, typically collected in a Gazetteer.</p> 
+        <p><strong>Place Names</strong> is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features, typically collected in a Gazetteer.</p>
 <p>A place-name is a text string that</p>
 <ul>
 <li>is coined by an agent (person or organization)</li>
-<li>is authorized by a jurisidiction (national, state or local government) 
-<li>is a member item in a gazetteer
-<li>has lifecycle information (status, validity dates (TBD), formal identifier) 
-<li>denotes a natural or constructed geospatial feature with a specified classification (inhabited place, administrative area, mountain, school, station, park ...)
+<li>is authorized by a jurisidiction (national, state or local government) </li>
+<li>is a member item in a gazetteer</li>
+<li>has lifecycle information (status, validity dates (TBD), formal identifier) </li>
+<li>denotes a natural or constructed geospatial feature with a specified classification (inhabited place, administrative area, mountain, school, station, park ...)</li>
 </ul>
-
-<p>This ontology uses classes and properties from existing vocabularies, in particular</p> 
+<p>This ontology uses classes and properties from existing vocabularies, in particular</p>
 <ul>
-    <li><a href="http://linked.data.gov.au/def/loci">Loc-I ontology</a></li>
-    <li><a href="http://www.opengis.net/ont/geosparql">GeoSPARQL</a> and <a href="http://linked.data.gov.au/def/geox">GeoSPARQL-Extensions</a></li>
-    <li><a href="http://www.w3.org/2004/02/skos/core">SKOS</a>, <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">Dublin Core</a></li>
+<li><a href="http://www.opengis.net/ont/geosparql">GeoSPARQL</a></li>
+<li><a href="http://www.w3.org/2004/02/skos/core">SKOS</a> </li>
+<li><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">Dublin Core</a></li>
 </ul>
-</div>
+    </div>
 </section>
 <section id="toc">
     <h2>Table of Contents</h2>
@@ -261,15 +259,19 @@ code {
 <section id="overview">
     <h2>Overview</h2>
     <div class="figure">
-        <div style="width:80%; "><img src="./images/overview.png"/></div>
+        <p><img alt="" src="./images/placename-details.png" /></p>
         <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
     </div>
 </section>
 <section id="classes">
     <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
+        <li><a href="#Agent">Agent</a></li>
+        <li><a href="#Bag">Bag</a></li>
+        <li><a href="#Dataset">Dataset</a></li>
         <li><a href="#Gazetteer">Gazetteer</a></li>
         <li><a href="#Jurisdiction">Jurisdiction</a></li>
+        <li><a href="#Person">Person</a></li>
         <li><a href="#Place">Place</a></li>
         <li><a href="#PlaceName">Place Name</a></li>
         <li><a href="#PlaceNameFormality">Place Name Formality</a></li>
@@ -278,6 +280,21 @@ code {
         <li><a href="#Region">Region</a></li>
         <li><a href="#Status">Status </a></li>
     </ul>
+    <div class="entity class" id="Dataset">
+        <h3>Dataset<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/loci#Dataset</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#Gazetteer">Gazetteer</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
     <div class="entity class" id="Gazetteer">
         <h3>Gazetteer<sup title="class" class="sup-c">c</sup></h3>
         <table>
@@ -301,7 +318,7 @@ code {
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="http://www.w3.org/2000/01/rdf-schema#member">rdfs:member</a> <span class="cardinality">only</span> <a href="#PlaceName">PlaceName</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#member">rdfs:member</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#PlaceName">PlaceName</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -355,8 +372,9 @@ code {
             <tr>
                 <th>Restrictions</th>
                 <td>
+                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a> <span class="cardinality">min</span> 1 <a href="http://www.opengis.net/ont/geosparql#Geometry">geo:Geometry</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 1<br/>
                     <a href="#hasplaceclassification">hasPlaceClassification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
-                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a> <span class="cardinality">min</span> 1<br/>
                 </td>
             </tr>
             <tr>
@@ -370,6 +388,13 @@ code {
                 <th>In domain of</th>
                 <td>
                     <a href="#hasplaceclassification">hasPlaceClassification</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasplacename">hasPlaceName</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#placenameof">placeNameOf</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
@@ -390,20 +415,24 @@ code {
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="http://linked.data.gov.au/def/loci#isMemberOf">loci:isMemberOf</a> <span class="cardinality">some</span> <a href="#Gazetteer">Gazetteer</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#name">name</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 1<br/>
                     <a href="#hasstatus">status</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a> <span class="cardinality">min</span> 1<br/>
+                    <a href="#hasplacenamingauthority">hasPlaceNamingAuthority</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://linked.data.gov.au/def/loci#isMemberOf">loci:isMemberOf</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Gazetteer">Gazetteer</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#placenameof">placeNameOf</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="#name">name</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#pronunciation">hasPronunciation</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#hasplacenamingauthority">hasPlaceNamingAuthority</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#wasnamedby">wasNamedBy</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#hasplacenameformality">hasPlaceNameFormality</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#placenameof">placeNameOf</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#pronunciation">hasPronunciation</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#name">name</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#hasstatus">status</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasplacenamingauthority">hasPlaceNamingAuthority</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasplacenameformality">hasPlaceNameFormality</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#wasnamedby">wasNamedBy</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -543,10 +572,56 @@ code {
             </tr>
         </table>
     </div>
+    <div class="entity class" id="Agent">
+        <h3>Agent<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://purl.org/dc/terms/Agent</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#Jurisdiction">Jurisdiction</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#wasnamedby">wasNamedBy</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Bag">
+        <h3>Bag<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#Gazetteer">Gazetteer</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Person">
+        <h3>Person<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://schema.org/Person</code></td>
+            </tr>
+        </table>
+    </div>
 </section>
 <section id="objectproperties">
     <h2>Object Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
+        <li><a href="#isMemberOf">isMemberOf</a></li>
         <li><a href="#hasplaceclassification">has place classification</a></li>
         <li><a href="#hasplacename">has place name</a></li>
         <li><a href="#hasplacenameformality">has place name formality</a></li>
@@ -554,7 +629,30 @@ code {
         <li><a href="#placenameof">place name of</a></li>
         <li><a href="#hasstatus">has status</a></li>
         <li><a href="#wasnamedby">was named by</a></li>
+        <li><a href="#contributor">contributor</a></li>
+        <li><a href="#creator">creator</a></li>
+        <li><a href="#publisher">publisher</a></li>
+        <li><a href="#type">type</a></li>
+        <li><a href="#member">member</a></li>
+        <li><a href="#broader">broader</a></li>
+        <li><a href="#exactMatch">exactMatch</a></li>
+        <li><a href="#inScheme">inScheme</a></li>
+        <li><a href="#topConceptOf">topConceptOf</a></li>
+        <li><a href="#hasArtifact">hasArtifact</a></li>
+        <li><a href="#hasResource">hasResource</a></li>
+        <li><a href="#hasRole">hasRole</a></li>
+        <li><a href="#isProfileOf">isProfileOf</a></li>
+        <li><a href="#wasAttributedTo">wasAttributedTo</a></li>
     </ul>
+    <div class="entity property" id="isMemberOf">
+        <h3>isMemberOf<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/loci#isMemberOf</code></td>
+            </tr>
+        </table>
+    </div>
     <div class="entity property" id="hasplaceclassification">
         <h3>has place classification<sup title="object property" class="sup-op">op</sup></h3>
         <table>
@@ -571,7 +669,7 @@ code {
             <tr>
                 <th>Super-properties</th>
                 <td>
-                    <a href="http://purl.org/dc/terms/type">dcterms:type</a>
+                    <a href="http://purl.org/dc/terms/type">dcterms:type</a><sup class="sup-op" title="object property">op</sup>
                 </td>
             </tr>
             <tr>
@@ -608,9 +706,15 @@ code {
                 </td>
             </tr>
             <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="#placenameof">placeNameOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Place">Place</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -670,7 +774,7 @@ code {
             <tr>
                 <th>Super-properties</th>
                 <td>
-                    <a href="http://www.w3.org/ns/prov#wasAttributedTo">prov:wasAttributedTo</a>
+                    <a href="http://www.w3.org/ns/prov#wasAttributedTo">prov:wasAttributedTo</a><sup class="sup-op" title="object property">op</sup>
                 </td>
             </tr>
             <tr>
@@ -703,7 +807,7 @@ code {
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Place">Place</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
@@ -719,6 +823,12 @@ code {
                 <th>Usage Note</th>
                 <td>
                     This property indicates the status of a Place Name in a Gazetteer.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#PlaceName">PlaceName</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -745,7 +855,7 @@ code {
             <tr>
                 <th>Super-properties</th>
                 <td>
-                    <a href="http://www.w3.org/ns/prov#wasAttributedTo">prov:wasAttributedTo</a>
+                    <a href="http://www.w3.org/ns/prov#wasAttributedTo">prov:wasAttributedTo</a><sup class="sup-op" title="object property">op</sup>
                 </td>
             </tr>
             <tr>
@@ -762,6 +872,132 @@ code {
             </tr>
         </table>
     </div>
+    <div class="entity property" id="contributor">
+        <h3>contributor<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://purl.org/dc/terms/contributor</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="creator">
+        <h3>creator<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://purl.org/dc/terms/creator</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="publisher">
+        <h3>publisher<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://purl.org/dc/terms/publisher</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="type">
+        <h3>type<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://purl.org/dc/terms/type</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="member">
+        <h3>member<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.w3.org/2000/01/rdf-schema#member</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="broader">
+        <h3>broader<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.w3.org/2004/02/skos/core#broader</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="exactMatch">
+        <h3>exactMatch<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.w3.org/2004/02/skos/core#exactMatch</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="inScheme">
+        <h3>inScheme<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.w3.org/2004/02/skos/core#inScheme</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="topConceptOf">
+        <h3>topConceptOf<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.w3.org/2004/02/skos/core#topConceptOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasArtifact">
+        <h3>hasArtifact<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.w3.org/ns/dx/prof/hasArtifact</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasResource">
+        <h3>hasResource<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.w3.org/ns/dx/prof/hasResource</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasRole">
+        <h3>hasRole<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.w3.org/ns/dx/prof/hasRole</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="isProfileOf">
+        <h3>isProfileOf<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.w3.org/ns/dx/prof/isProfileOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="wasAttributedTo">
+        <h3>wasAttributedTo<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.w3.org/ns/prov#wasAttributedTo</code></td>
+            </tr>
+        </table>
+    </div>
 </section>
 
 <section id="datatypeproperties">
@@ -769,6 +1005,9 @@ code {
     <ul class="hlist">
         <li><a href="#pronunciation">pronunciation</a></li>
         <li><a href="#name">name</a></li>
+        <li><a href="#created">created</a></li>
+        <li><a href="#identifier">identifier</a></li>
+        <li><a href="#modified">modified</a></li>
     </ul>
     <div class="entity property" id="pronunciation">
         <h3>pronunciation<sup title="datatype property" class="sup-dp">dp</sup></h3>
@@ -805,10 +1044,43 @@ code {
                 <td><code>http://linked.data.gov.au/def/placenames/name</code></td>
             </tr>
             <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#PlaceName">PlaceName</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
                 <th>Range(s)</th>
                 <td>
                     <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
                 </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="created">
+        <h3>created<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://purl.org/dc/terms/created</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="identifier">
+        <h3>identifier<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://purl.org/dc/terms/identifier</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="modified">
+        <h3>modified<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://purl.org/dc/terms/modified</code></td>
             </tr>
         </table>
     </div>
@@ -817,14 +1089,25 @@ code {
 <section id="annotationproperties">
     <h2>Annotation Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
+        <li><a href="#format">format</a></li>
         <li><a href="#rights">rights</a></li>
         <li><a href="#altlabel">altlabel</a></li>
+        <li><a href="#affiliation">affiliation</a></li>
         <li><a href="#email">email</a></li>
-        <li><a href="#identifier">identifier</a></li>
+        <li><a href="#identifier1">identifier</a></li>
         <li><a href="#memberOf">memberOf</a></li>
         <li><a href="#name1">name</a></li>
         <li><a href="#uri">uri</a></li>
     </ul>
+    <div class="entity property" id="format">
+        <h3>format<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://purl.org/dc/terms/format</code></td>
+            </tr>
+        </table>
+    </div>
     <div class="entity property" id="rights">
         <h3>rights<sup title="annotation property" class="sup-ap">ap</sup></h3>
         <table>
@@ -843,6 +1126,15 @@ code {
             </tr>
         </table>
     </div>
+    <div class="entity property" id="affiliation">
+        <h3>affiliation<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://schema.org/affiliation</code></td>
+            </tr>
+        </table>
+    </div>
     <div class="entity property" id="email">
         <h3>email<sup title="annotation property" class="sup-ap">ap</sup></h3>
         <table>
@@ -852,7 +1144,7 @@ code {
             </tr>
         </table>
     </div>
-    <div class="entity property" id="identifier">
+    <div class="entity property" id="identifier1">
         <h3>identifier<sup title="annotation property" class="sup-ap">ap</sup></h3>
         <table>
             <tr>
