@@ -116,7 +116,7 @@ Use `rdf:Bag` and `rdfs:member` instead.
   a owl:Class ;
   rdfs:comment "Local, State, Territory or National (Commonwealth) Government that has authority to formally establish (i.e. gazette) place names within its jurisdictional area."@en ;
   rdfs:label "Jurisdiction" ;
-  rdfs:subClassOf dcterms:Agent ;
+  rdfs:subClassOf :PlaceNamingAuthority ;
 .
 :Official
   a :PlaceNameFormality ;
@@ -188,6 +188,12 @@ Use `rdf:Bag` and `rdfs:member` instead.
   rdfs:label "Place Name Formality"@en ;
   rdfs:subClassOf skos:Concept ;
 .
+:PlaceNamingAuthority
+  a owl:Class ;
+  rdfs:comment "Agency or organization that has authority to formally establish place names within its scope."@en ;
+  rdfs:label "Naming Authority" ;
+  rdfs:subClassOf dcterms:Agent ;
+.
 :PlaceType
   a owl:Class ;
   rdfs:comment "The classification of a place, from the ICSM Permanent Committee on Place Names classification scheme."@en ;
@@ -255,7 +261,7 @@ Use `rdf:Bag` and `rdfs:member` instead.
   rdfs:comment "The authority (jurisdiction) responsible for formally gazetting the place name."@en ;
   rdfs:domain :PlaceName ;
   rdfs:label "has place naming authority" ;
-  rdfs:range :Jurisdiction ;
+  rdfs:range :PlaceNamingAuthority ;
   rdfs:subPropertyOf prov:wasAttributedTo ;
 .
 :hasPronunciation
