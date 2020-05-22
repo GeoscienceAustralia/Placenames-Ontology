@@ -79,32 +79,17 @@ This ontology uses classes and properties from existing vocabularies, in particu
   rdfs:comment "A Gazetteer is a list of Place Names"@en ;
   rdfs:label "Gazetteer"@en ;
   rdfs:subClassOf loci:Dataset ;
-  rdfs:subClassOf rdf:Bag ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom :PlaceName ;
       owl:onProperty rdfs:member ;
     ] ;
-  skos:changeNote """
-was- 
-```
-  	rdfs:subClassOf reg:Register ;
-  	rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:hasValue :PlaceName ;
-      owl:onProperty reg:containedItemClass ;
-    ] ;
-```
-But this is not appropriate - according to the Registry Ontology a reg:Register is a set of metadata records, not a set of Entities. 
-
-Use `rdf:Bag` and `rdfs:member` instead. 
-""" ;
 .
 :Jurisdiction
   a owl:Class ;
   rdfs:comment "Local, State, Territory or National (Commonwealth) Government that has authority to formally establish (i.e. gazette) place names within its jurisdictional area."@en ;
   rdfs:label "Jurisdiction" ;
-  rdfs:subClassOf dcterms:Agent ;
+  rdfs:subClassOf :PlaceNamingAuthority ;
 .
 :OfficialPlaceName
   a owl:Class ;
@@ -112,7 +97,7 @@ Use `rdf:Bag` and `rdfs:member` instead.
   rdfs:subClassOf :PlaceName ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom :Jurisdiction ;
+      owl:allValuesFrom :PlaceNamingAuthority ;
       owl:onProperty :wasNamedBy ;
     ] ;
   rdfs:subClassOf [
@@ -188,6 +173,12 @@ Use `rdf:Bag` and `rdfs:member` instead.
       owl:someValuesFrom :Gazetteer ;
     ] ;
   skos:changeNote "Removed subClassOf reg:RegisterItem axiom, because reg:RegisterItem is \"A metadata record for an entry in a register. \" and is not an Entity itself. " ;
+.
+:PlaceNamingAuthority
+  a owl:Class ;
+  rdfs:comment "Agency or organization that has authority to formally establish place names within its scope."@en ;
+  rdfs:label "Naming Authority" ;
+  rdfs:subClassOf dcterms:Agent ;
 .
 :PlaceType
   a owl:Class ;
@@ -314,115 +305,6 @@ Use `rdf:Bag` and `rdfs:member` instead.
   rdfs:range dcterms:Agent ;
   rdfs:subPropertyOf prov:wasAttributedTo ;
 .
-dcterms:Agent
-  a owl:Class ;
-.
-dcterms:contributor
-  a owl:ObjectProperty ;
-.
-dcterms:created
-  a owl:DatatypeProperty ;
-.
-dcterms:creator
-  a owl:ObjectProperty ;
-.
-dcterms:format
-  a owl:AnnotationProperty ;
-.
-dcterms:identifier
-  a owl:AnnotationProperty ;
-  a owl:DatatypeProperty ;
-.
-dcterms:modified
-  a owl:DatatypeProperty ;
-.
-dcterms:publisher
-  a owl:ObjectProperty ;
-.
-dcterms:rights
-  a owl:AnnotationProperty ;
-.
-dcterms:type
-  a owl:ObjectProperty ;
-.
-reg:statusAccepted
-  a owl:NamedIndividual ;
-.
-reg:statusDeprecated
-  a owl:NamedIndividual ;
-.
-reg:statusExperimental
-  a owl:NamedIndividual ;
-.
-reg:statusInvalid
-  a owl:NamedIndividual ;
-.
-reg:statusNotAccepted
-  a owl:NamedIndividual ;
-.
-reg:statusReserved
-  a owl:NamedIndividual ;
-.
-reg:statusRetired
-  a owl:NamedIndividual ;
-.
-reg:statusStable
-  a owl:NamedIndividual ;
-.
-reg:statusSubmitted
-  a owl:NamedIndividual ;
-.
-reg:statusSuperseded
-  a owl:NamedIndividual ;
-.
-reg:statusValid
-  a owl:NamedIndividual ;
-.
-<http://www.opengis.net/doc/IS/geosparql/1.0>
-  a owl:NamedIndividual ;
-.
-rdf:Bag
-  a owl:Class ;
-.
-rdfs:member
-  a owl:ObjectProperty ;
-.
-skos:altlabel
-  a owl:AnnotationProperty ;
-.
-skos:broader
-  a owl:ObjectProperty ;
-.
-skos:exactMatch
-  a owl:ObjectProperty ;
-.
-skos:inScheme
-  a owl:ObjectProperty ;
-.
-skos:topConceptOf
-  a owl:ObjectProperty ;
-.
-prof:hasArtifact
-  a owl:ObjectProperty ;
-.
-prof:hasResource
-  a owl:ObjectProperty ;
-.
-prof:hasRole
-  a owl:ObjectProperty ;
-.
-prof:isProfileOf
-  a owl:ObjectProperty ;
-.
-<http://www.w3.org/ns/dx/prof/role/schema>
-  a owl:NamedIndividual ;
-.
-<http://www.w3.org/ns/dx/prof/role/specification>
-  a owl:NamedIndividual ;
-.
-prov:wasAttributedTo
-  a owl:ObjectProperty ;
-.
 <https://orcid.org/0000-0002-3884-3420>
   a owl:NamedIndividual ;
   a schema:Person ;
@@ -470,27 +352,6 @@ prov:wasAttributedTo
   schema:email <mailto:armin.haller@anu.edu.au> ;
   schema:identifier "https://orcid.org/0000-0003-3425-0780"^^xsd:anyURI ;
   schema:name "Armin Haller"@en ;
-.
-schema:Person
-  a owl:Class ;
-.
-schema:affiliation
-  a owl:AnnotationProperty ;
-.
-schema:email
-  a owl:AnnotationProperty ;
-.
-schema:identifier
-  a owl:AnnotationProperty ;
-.
-schema:memberOf
-  a owl:AnnotationProperty ;
-.
-schema:name
-  a owl:AnnotationProperty ;
-.
-schema:uri
-  a owl:AnnotationProperty ;
 .
 [
   dcterms:format <https://w3id.org/mediatype/text/html> ;
