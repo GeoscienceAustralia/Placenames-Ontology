@@ -29,6 +29,7 @@ ex:Ayers-Rock
   :placeNameOf ex:NT_10532 ;
   :status :retired ;
   :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
+  rdfs:comment "NOTE: EXAMPLE ONLY DETAILS MAY BE INCORRECT" ;
   rdfs:label "Ayers Rock" ;
 .
 ex:Ayers-Rock-Uluru
@@ -40,6 +41,7 @@ ex:Ayers-Rock-Uluru
   :placeNameOf ex:NT_10532 ;
   :status :retired ;
   :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
+  rdfs:comment "NOTE: EXAMPLE ONLY DETAILS MAY BE INCORRECT" ;
   rdfs:label "Ayers Rock (Uluru)" ;
 .
 ex:NT_10532
@@ -66,6 +68,7 @@ ex:Uluru-Ayers-Rock
   :placeNameOf ex:NT_10532 ;
   :status :gazetted ;
   :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
+  rdfs:comment "NOTE: EXAMPLE ONLY DETAILS MAY BE INCORRECT" ;
   rdfs:label "Uluru (Ayers Rock)" ;
 .
 loci:Dataset
