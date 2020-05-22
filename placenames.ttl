@@ -100,29 +100,46 @@ But this is not appropriate - according to the Registry Ontology a reg:Register 
 Use `rdf:Bag` and `rdfs:member` instead. 
 """ ;
 .
-:Historical
-  a :PlaceNameFormality ;
-  a owl:NamedIndividual ;
-  rdfs:label "Historical" ;
-  skos:prefLabel "Historical" ;
-.
-:Informal
-  a :PlaceNameFormality ;
-  a owl:NamedIndividual ;
-  rdfs:label "Informal" ;
-  skos:prefLabel "Informal" ;
-.
 :Jurisdiction
   a owl:Class ;
   rdfs:comment "Local, State, Territory or National (Commonwealth) Government that has authority to formally establish (i.e. gazette) place names within its jurisdictional area."@en ;
   rdfs:label "Jurisdiction" ;
   rdfs:subClassOf dcterms:Agent ;
 .
-:Official
-  a :PlaceNameFormality ;
-  a owl:NamedIndividual ;
-  rdfs:label "Official" ;
-  skos:prefLabel "Official" ;
+:OfficialPlaceName
+  a owl:Class ;
+  rdfs:label "Official place-name" ;
+  rdfs:subClassOf :PlaceName ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom :Jurisdiction ;
+      owl:onProperty :wasNamedBy ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty :dateGazetted ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty :status ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty :datePublished ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty :dateReleased ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty :dateRetired ;
+    ] ;
 .
 :Place
   a owl:Class ;
@@ -153,17 +170,7 @@ Use `rdf:Bag` and `rdfs:member` instead.
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty :hasPlaceNamingAuthority ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty :name ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty :status ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -182,48 +189,53 @@ Use `rdf:Bag` and `rdfs:member` instead.
     ] ;
   skos:changeNote "Removed subClassOf reg:RegisterItem axiom, because reg:RegisterItem is \"A metadata record for an entry in a register. \" and is not an Entity itself. " ;
 .
-:PlaceNameFormality
-  a owl:Class ;
-  rdfs:comment "The formality of a Place Name: official, historical, informal"@en ;
-  rdfs:label "Place Name Formality"@en ;
-  rdfs:subClassOf skos:Concept ;
-.
 :PlaceType
   a owl:Class ;
   rdfs:comment "The classification of a place, from the ICSM Permanent Committee on Place Names classification scheme."@en ;
   rdfs:label "Place Type"@en ;
   rdfs:subClassOf skos:Concept ;
 .
-:PointOfInterest
-  a owl:Class ;
-  rdfs:comment "A specific point Location that someone may find useful or interesting."@en ;
-  rdfs:label "Point of Interest"@en ;
-  rdfs:subClassOf :Place ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:hasValue pt:PointOfInterest ;
-      owl:onProperty :hasPlaceClassification ;
-    ] ;
-.
-:Region
-  a owl:Class ;
-  rdfs:comment "A Region is an area of land that has common features."@en ;
-  rdfs:label "Region"@en ;
-  rdfs:subClassOf :Place ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:hasValue pt:Region ;
-      owl:onProperty :hasPlaceClassification ;
-    ] ;
-.
 :Status
   a owl:Class ;
   rdfs:label "Status " ;
   rdfs:subClassOf skos:Concept ;
 .
-:StatusScheme
-  a owl:NamedIndividual ;
-  a skos:ConceptScheme ;
+:dateGazetted
+  a owl:DatatypeProperty ;
+  rdfs:comment "Date that the item was gazetted" ;
+  rdfs:domain :OfficialPlaceName ;
+  rdfs:label "date gazetted" ;
+  rdfs:range xsd:date ;
+  rdfs:subPropertyOf dcterms:date ;
+.
+:datePublished
+  a owl:DatatypeProperty ;
+  rdfs:comment "Date that the item was published" ;
+  rdfs:domain :OfficialPlaceName ;
+  rdfs:label "date published" ;
+  rdfs:range xsd:date ;
+  rdfs:subPropertyOf dcterms:date ;
+.
+:dateReleased
+  a owl:DatatypeProperty ;
+  rdfs:comment "Date that the item was released" ;
+  rdfs:domain :OfficialPlaceName ;
+  rdfs:label "date released" ;
+  rdfs:range xsd:date ;
+  rdfs:subPropertyOf dcterms:date ;
+.
+:dateRetired
+  a owl:DatatypeProperty ;
+  rdfs:comment "Date that the item was retired" ;
+  rdfs:domain :OfficialPlaceName ;
+  rdfs:label "date retired" ;
+  rdfs:range xsd:date ;
+  rdfs:subPropertyOf dcterms:date ;
+.
+:gazetted
+  a :Status ;
+  rdfs:label "gazetted" ;
+  skos:prefLabel "gazetted" ;
 .
 :hasPlaceClassification
   a owl:ObjectProperty ;
@@ -242,28 +254,17 @@ Use `rdf:Bag` and `rdfs:member` instead.
   owl:inverseOf :placeNameOf ;
   skos:scopeNote "All PlaceName objects names indicated by hasPlaceName should have the role of the name indicated with a Name Type"@en ;
 .
-:hasPlaceNameFormality
-  a owl:ObjectProperty ;
-  rdfs:comment "The formality of a Place Name"@en ;
-  rdfs:domain :PlaceName ;
-  rdfs:label "has place name formality"@en ;
-  rdfs:range :PlaceNameFormality ;
-  skos:scopeNote "Values for this property must be selected from the Place Name Formality vocabulary"@en ;
-.
-:hasPlaceNamingAuthority
-  a owl:ObjectProperty ;
-  rdfs:comment "The authority (jurisdiction) responsible for formally gazetting the place name."@en ;
-  rdfs:domain :PlaceName ;
-  rdfs:label "has place naming authority" ;
-  rdfs:range :Jurisdiction ;
-  rdfs:subPropertyOf prov:wasAttributedTo ;
-.
 :hasPronunciation
   a owl:DatatypeProperty ;
   rdfs:comment "The pronunciation of a Place Name, indicated by means of a phonetic alphabet string"@en ;
   rdfs:domain :PlaceName ;
   rdfs:label "pronunciation"@en ;
   rdfs:range xsd:string ;
+.
+:informal
+  a :Status ;
+  rdfs:label "informal" ;
+  skos:prefLabel "Informal" ;
 .
 :isIndigenous
   a owl:DatatypeProperty ;
@@ -283,122 +284,27 @@ Use `rdf:Bag` and `rdfs:member` instead.
   rdfs:label "place name of" ;
   rdfs:range :Place ;
 .
+:published
+  a :Status ;
+  rdfs:label "published" ;
+  skos:prefLabel "published" ;
+.
+:released
+  a :Status ;
+  rdfs:label "released" ;
+  skos:prefLabel "released" ;
+.
+:retired
+  a :Status ;
+  rdfs:label "retired" ;
+  skos:altLabel "historical" ;
+  skos:prefLabel "retired" ;
+.
 :status
   a owl:ObjectProperty ;
-  rdfs:domain :PlaceName ;
   rdfs:label "has status" ;
   rdfs:range :Status ;
-  skos:scopeNote "This property indicates the status of a Place Name in a Gazetteer."@en ;
-.
-:statusAccepted
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry that has been accepted for use and is visible in the default register listing. Includes entries that have seen been retired or superseded."@en ;
-  skos:definition "An entry that has been accepted for use and is visible in the default register listing. Includes entries that have seen been retired or superseded."@en ;
-  skos:exactMatch reg:statusAccepted ;
-  skos:prefLabel "accepted"@en ;
-  skos:topConceptOf :StatusScheme ;
-.
-:statusDeprecated
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry that has been retired or replaced and is no longer to be used."@en ;
-  skos:broader :statusAccepted ;
-  skos:definition "An entry that has been retired or replaced and is no longer to be used."@en ;
-  skos:exactMatch reg:statusDeprecated ;
-  skos:inScheme :StatusScheme ;
-  skos:prefLabel "deprecated"@en ;
-.
-:statusExperimental
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry that has been accepted into the register temporarily and may be subject to change or withdrawal."@en ;
-  skos:altlabel "provisional"@en ;
-  skos:broader :statusValid ;
-  skos:definition "An entry that has been accepted into the register temporarily and may be subject to change or withdrawal."@en ;
-  skos:exactMatch reg:statusExperimental ;
-  skos:inScheme :StatusScheme ;
-  skos:prefLabel "experimental"@en ;
-.
-:statusInvalid
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry which has been invalidated due to serious flaws, distinct from retrirement. Corresponds to ISO 19135(redraft) 'invalid'"@en ;
-  skos:broader :statusNotAccepted ;
-  skos:definition "An entry which has been invalidated due to serious flaws, distinct from retrirement. Corresponds to ISO 19135(redraft) 'invalid'"@en ;
-  skos:exactMatch reg:statusInvalid ;
-  skos:inScheme :StatusScheme ;
-  skos:prefLabel "invalid"@en ;
-.
-:statusNotAccepted
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry that should not be visible in the default register listing. Corresponds to ISO 19135:2005 'notValid'"@en ;
-  skos:definition "An entry that should not be visible in the default register listing. Corresponds to ISO 19135:2005 'notValid'"@en ;
-  skos:exactMatch reg:statusNotAccepted ;
-  skos:prefLabel "notAccepted"@en ;
-  skos:topConceptOf :StatusScheme ;
-.
-:statusReserved
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "A reserved entry allocated for some as yet undetermined future use."@en ;
-  skos:broader :statusNotAccepted ;
-  skos:definition "A reserved entry allocated for some as yet undetermined future use."@en ;
-  skos:exactMatch reg:statusReserved ;
-  skos:inScheme :StatusScheme ;
-  skos:prefLabel "reserved"@en ;
-.
-:statusRetired
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry that has been withdrawn from use.  Corresponds to ISO 19135:2005 'retired'"@en ;
-  skos:altlabel "withdrawn"@en ;
-  skos:broader :statusDeprecated ;
-  skos:definition "An entry that has been withdrawn from use.  Corresponds to ISO 19135:2005 'retired'"@en ;
-  skos:exactMatch reg:statusRetired ;
-  skos:prefLabel "retired"@en ;
-.
-:statusStable
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry."@en ;
-  skos:broader :statusValid ;
-  skos:definition "An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry."@en ;
-  skos:exactMatch reg:statusStable ;
-  skos:inScheme :StatusScheme ;
-  skos:prefLabel "stable"@en ;
-.
-:statusSubmitted
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "A proposed entry which is not yet approved for use for use. Corresponds to ISO 19135:(redraft) 'submitted'"@en ;
-  skos:broader :statusNotAccepted ;
-  skos:definition "A proposed entry which is not yet approved for use for use. Corresponds to ISO 19135:(redraft) 'submitted'"@en ;
-  skos:exactMatch reg:statusSubmitted ;
-  skos:inScheme :StatusScheme ;
-  skos:prefLabel "submitted"@en ;
-.
-:statusSuperseded
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry that has been replaced by a new alternative which should be used instead.  Corresponds to ISO 19135:2005 'superseded'."@en ;
-  skos:altlabel "replaced"@en ;
-  skos:broader :statusDeprecated ;
-  skos:definition "An entry that has been replaced by a new alternative which should be used instead.  Corresponds to ISO 19135:2005 'superseded'."@en ;
-  skos:exactMatch reg:statusSuperseded ;
-  skos:inScheme :StatusScheme ;
-  skos:prefLabel "superseded"@en ;
-.
-:statusValid
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry that has been accepted into the register and is deemed fit for use. Corresponds to ISO 19135:2005 'valid'."@en ;
-  skos:broader :statusAccepted ;
-  skos:definition "An entry that has been accepted into the register and is deemed fit for use. Corresponds to ISO 19135:2005 'valid'."@en ;
-  skos:exactMatch reg:statusValid ;
-  skos:inScheme :StatusScheme ;
-  skos:prefLabel "valid"@en ;
+  skos:scopeNote "This property indicates the status of a Place Name."@en ;
 .
 :wasNamedBy
   a owl:ObjectProperty ;
@@ -407,16 +313,6 @@ Use `rdf:Bag` and `rdfs:member` instead.
   rdfs:label "was named by"@en ;
   rdfs:range dcterms:Agent ;
   rdfs:subPropertyOf prov:wasAttributedTo ;
-.
-pt:PointOfInterest
-  a :PlaceType ;
-  a owl:NamedIndividual ;
-  rdfs:label "Point of interest" ;
-.
-pt:Region
-  a :PlaceType ;
-  a owl:NamedIndividual ;
-  rdfs:label "Region" ;
 .
 dcterms:Agent
   a owl:Class ;

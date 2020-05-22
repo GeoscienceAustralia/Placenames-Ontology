@@ -11,19 +11,6 @@
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >36</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >173</cd:width>
-        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >138</cd:y>
-        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >22</cd:x>
-        <cd:class rdf:resource="http://linked.data.gov.au/def/placenames/PlaceNameFormality"/>
-      </cd:URINode>
-    </cd:nodes>
-    <cd:nodes>
-      <cd:URINode>
-        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >36</cd:height>
-        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >95</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >138</cd:y>
@@ -37,12 +24,12 @@
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >36</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >134</cd:width>
+        >173</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >28</cd:y>
+        >138</cd:y>
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >175</cd:x>
-        <cd:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        >22</cd:x>
+        <cd:class rdf:resource="http://linked.data.gov.au/def/placenames/PlaceNameFormality"/>
       </cd:URINode>
     </cd:nodes>
     <cd:nodes>
@@ -58,61 +45,35 @@
         <cd:class rdf:resource="http://linked.data.gov.au/def/placenames/PlaceType"/>
       </cd:URINode>
     </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >36</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >134</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >28</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >175</cd:x>
+        <cd:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      </cd:URINode>
+    </cd:nodes>
     <cd:selectedResource rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
     <rdfs:label>Concept Diagram</rdfs:label>
   </cd:Diagram>
   <cd:Diagram>
-    <cd:nodes>
-      <cd:URINode>
-        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >36</cd:height>
-        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >163</cd:width>
-        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >447</cd:y>
-        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >86</cd:x>
-        <cd:class rdf:resource="http://linked.data.gov.au/def/placenames/PlaceNameFormality"/>
-      </cd:URINode>
-    </cd:nodes>
-    <cd:nodes>
-      <cd:URINode>
-        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >36</cd:height>
-        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >131</cd:width>
-        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >65</cd:y>
-        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >45</cd:x>
-        <cd:class rdf:resource="http://purl.org/dc/terms/Agent"/>
-      </cd:URINode>
-    </cd:nodes>
     <rdfs:label>Overview</rdfs:label>
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >36</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >113</cd:width>
+        >124</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >155</cd:y>
+        >33</cd:y>
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >57</cd:x>
-        <cd:class rdf:resource="http://linked.data.gov.au/def/placenames/Jurisdiction"/>
-      </cd:URINode>
-    </cd:nodes>
-    <cd:nodes>
-      <cd:URINode>
-        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >156</cd:height>
-        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >228</cd:width>
-        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >437</cd:y>
-        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >758</cd:x>
-        <cd:class rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+        >319</cd:x>
+        <cd:class rdf:resource="http://linked.data.gov.au/def/loci#Dataset"/>
       </cd:URINode>
     </cd:nodes>
     <cd:nodes>
@@ -120,25 +81,25 @@
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >60</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >231</cd:width>
+        >241</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >407</cd:y>
+        >375</cd:y>
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >469</cd:x>
+        >588</cd:x>
         <cd:class rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
       </cd:URINode>
     </cd:nodes>
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >44</cd:height>
+        >140</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >182</cd:width>
+        >232</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >124</cd:y>
+        >208</cd:y>
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >286</cd:x>
-        <cd:class rdf:resource="http://linked.data.gov.au/def/placenames/Gazetteer"/>
+        >278</cd:x>
+        <cd:class rdf:resource="http://linked.data.gov.au/def/placenames/PlaceName"/>
       </cd:URINode>
     </cd:nodes>
     <cd:nodes>
@@ -157,20 +118,20 @@
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >36</cd:height>
+        >156</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >114</cd:width>
+        >228</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >33</cd:y>
+        >477</cd:y>
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >319</cd:x>
-        <cd:class rdf:resource="http://linked.data.gov.au/def/loci#Dataset"/>
+        >760</cd:x>
+        <cd:class rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
       </cd:URINode>
     </cd:nodes>
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >95</cd:height>
+        >92</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >341</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
@@ -184,14 +145,53 @@
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >180</cd:height>
+        >36</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >292</cd:width>
+        >206</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >215</cd:y>
+        >124</cd:y>
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >227</cd:x>
-        <cd:class rdf:resource="http://linked.data.gov.au/def/placenames/PlaceName"/>
+        >286</cd:x>
+        <cd:class rdf:resource="http://linked.data.gov.au/def/placenames/Gazetteer"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >126</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >176</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >431</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >305</cd:x>
+        <cd:class rdf:resource="http://linked.data.gov.au/def/placenames/OfficialPlaceName"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >36</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >141</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >65</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >33</cd:x>
+        <cd:class rdf:resource="http://purl.org/dc/terms/Agent"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >36</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >123</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >233</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >43</cd:x>
+        <cd:class rdf:resource="http://linked.data.gov.au/def/placenames/Jurisdiction"/>
       </cd:URINode>
     </cd:nodes>
   </cd:Diagram>
