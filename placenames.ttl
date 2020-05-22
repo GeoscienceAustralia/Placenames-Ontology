@@ -3,6 +3,7 @@
 
 @prefix : <http://linked.data.gov.au/def/placenames/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ex: <http://linked.data.gov.au/dataset/placename/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix loci: <http://linked.data.gov.au/def/loci#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -13,11 +14,60 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix reg: <http://purl.org/linked-data/registry#> .
 @prefix schema: <https://schema.org/> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+ex:Ayers-Rock
+  a :OfficialPlaceName ;
+  loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
+  :dateGazetted "1850-01-01"^^xsd:date ;
+  :dateRetired "1989-12-31"^^xsd:date ;
+  :name "Ayers Rock" ;
+  :placeNameOf ex:NT_10532 ;
+  :status :retired ;
+  :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
+  rdfs:label "Ayers Rock" ;
+.
+ex:Ayers-Rock-Uluru
+  a :OfficialPlaceName ;
+  loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
+  :dateGazetted "1990-01-01"^^xsd:date ;
+  :dateRetired "2005-12-31"^^xsd:date ;
+  :name "Ayers Rock (Uluru)" ;
+  :placeNameOf ex:NT_10532 ;
+  :status :retired ;
+  :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
+  rdfs:label "Ayers Rock (Uluru)" ;
+.
+ex:NT_10532
+  a :Place ;
+  :hasPlaceClassification <http://pid.geoscience.gov.au/def/voc/ga/PlaceType/MOUNTAIN> ;
+  :hasPlaceName ex:Ayers-Rock ;
+  :hasPlaceName ex:Ayers-Rock-Uluru ;
+  :hasPlaceName ex:Uluru-Ayers-Rock ;
+  dcterms:identifier "NT_10532" ;
+  geo:hasGeometry [
+      a <http://linked.data.gov.au/def/auspix#Geometry> ;
+      rdfs:member <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/ausPIX/R7430551> ;
+    ] ;
+  geo:hasGeometry [
+      a sf:Point ;
+      geo:asWKT "POINT(-25.3415 131.0354)"^^geo:wktLiteral ;
+    ] ;
+.
+ex:Uluru-Ayers-Rock
+  a :OfficialPlaceName ;
+  loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
+  :dateGazetted "2006-01-01"^^xsd:date ;
+  :name "Uluru (Ayers Rock)" ;
+  :placeNameOf ex:NT_10532 ;
+  :status :gazetted ;
+  :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
+  rdfs:label "Uluru (Ayers Rock)" ;
+.
 loci:Dataset
   a owl:Class ;
 .
@@ -125,6 +175,42 @@ This ontology uses classes and properties from existing vocabularies, in particu
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty :dateRetired ;
     ] ;
+  skos:example """
+ex:Ayers-Rock
+  rdf:type :OfficialPlaceName ;
+  loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
+  :dateGazetted \"1850-01-01\"^^xsd:date ;
+  :dateRetired \"1989-12-31\"^^xsd:date ;
+  :name \"Ayers Rock\" ;
+  :placeNameOf ex:Uluru ;
+  :status :retired ;
+  :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
+  rdfs:label \"Ayers Rock\" ;
+.
+
+ex:Ayers-Rock-Uluru
+  rdf:type :OfficialPlaceName ;
+  loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
+  :dateGazetted \"1990-01-01\"^^xsd:date ;
+  :dateRetired \"2005-12-31\"^^xsd:date ;
+  :name \"Ayers Rock (Uluru)\" ;
+  :placeNameOf ex:Uluru ;
+  :status :retired ;
+  :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
+  rdfs:label \"Ayers Rock (Uluru)\" ;
+.
+
+ex:Uluru-Ayers-Rock
+  rdf:type :OfficialPlaceName ;
+  loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
+  :dateGazetted \"2006-01-01\"^^xsd:date ;
+  :name \"Uluru (Ayers Rock)\" ;
+  :placeNameOf ex:Uluru ;
+  :status :gazetted ;
+  :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
+  rdfs:label \"Uluru (Ayers Rock)\" ;
+.
+""" ;
 .
 :Place
   a owl:Class ;
@@ -147,6 +233,24 @@ This ontology uses classes and properties from existing vocabularies, in particu
       owl:onClass geo:Geometry ;
       owl:onProperty geo:hasGeometry ;
     ] ;
+  skos:example """
+ex:NT_10532
+  rdf:type :Place ;
+  :hasPlaceClassification <http://pid.geoscience.gov.au/def/voc/ga/PlaceType/MOUNTAIN> ;
+  :hasPlaceName ex:Ayers-Rock ;
+  :hasPlaceName ex:Ayers-Rock-Uluru ;
+  :hasPlaceName ex:Uluru-Ayers-Rock ;
+  dcterms:identifier \"NT_10532\" ;
+  geo:hasGeometry [
+      rdf:type <http://linked.data.gov.au/def/auspix#Geometry> ;
+      rdfs:member <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/ausPIX/R7430551> ;
+    ] ;
+  geo:hasGeometry [
+      rdf:type sf:Point ;
+      geo:asWKT \"POINT(-25.3415 131.0354)\"^^geo:wktLiteral ;
+    ] ;
+.
+""" ;
 .
 :PlaceName
   a owl:Class ;
@@ -172,7 +276,6 @@ This ontology uses classes and properties from existing vocabularies, in particu
       owl:onProperty loci:isMemberOf ;
       owl:someValuesFrom :Gazetteer ;
     ] ;
-  skos:changeNote "Removed subClassOf reg:RegisterItem axiom, because reg:RegisterItem is \"A metadata record for an entry in a register. \" and is not an Entity itself. " ;
 .
 :PlaceNamingAuthority
   a owl:Class ;
@@ -188,7 +291,7 @@ This ontology uses classes and properties from existing vocabularies, in particu
 .
 :Status
   a owl:Class ;
-  rdfs:label "Status " ;
+  rdfs:label "Status" ;
   rdfs:subClassOf skos:Concept ;
 .
 :dateGazetted
