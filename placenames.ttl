@@ -278,7 +278,7 @@ ex:NT_10532
   :hasPlaceName ex:Uluru-Ayers-Rock ;
   dcterms:identifier \"NT_10532\" ;
   geo:hasGeometry [
-      rdf:type geo:Geometry> ;
+      rdf:type geo:Geometry ;
       geo:asDGGS \"R7430551\"^^geox:dggsLiteral ;
     ] ;
   geo:hasGeometry [
@@ -370,6 +370,7 @@ ex:DH
 .
 :gazetted
   a :Status ;
+  a owl:NamedIndividual ;
   rdfs:label "gazetted" ;
   skos:prefLabel "gazetted" ;
 .
@@ -399,6 +400,7 @@ ex:DH
 .
 :informal
   a :Status ;
+  a owl:NamedIndividual ;
   rdfs:label "informal" ;
   skos:prefLabel "Informal" ;
 .
@@ -422,16 +424,19 @@ ex:DH
 .
 :published
   a :Status ;
+  a owl:NamedIndividual ;
   rdfs:label "published" ;
   skos:prefLabel "published" ;
 .
 :released
   a :Status ;
+  a owl:NamedIndividual ;
   rdfs:label "released" ;
   skos:prefLabel "released" ;
 .
 :retired
   a :Status ;
+  a owl:NamedIndividual ;
   rdfs:label "retired" ;
   skos:altLabel "historical" ;
   skos:prefLabel "retired" ;

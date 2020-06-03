@@ -338,6 +338,13 @@
         <li><a href="#legend">Legend</a></li>
     </ol>
 </section>
+<section id="overview">
+    <h2>Overview</h2>
+    <div class="figure">
+        <div style="width:500px; height:50px; background-color: lightgrey; border:solid 2px grey; padding:10px;margin-bottom:5px; text-align:center;">Pictures say 1,000 words</div>
+        <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
+    </div>
+</section>
 <section id="classes">
     <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
@@ -479,22 +486,22 @@ ex:Uluru-Ayers-Rock
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#hasstatus">status</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="#datereleased">dateReleased</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
-                    <a href="http://linked.data.gov.au/def/loci#isMemberOf">loci:isMemberOf</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Gazetteer">Gazetteer</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#dategazetted">dateGazetted</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="#datepublished">datePublished</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
-                    <a href="#wasnamedby">wasNamedBy</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#NamingAuthority">PlaceNamingAuthority</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#hasstatus">status</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
                     <a href="#dateretired">dateRetired</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="#wasnamedby">wasNamedBy</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#NamingAuthority">PlaceNamingAuthority</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#datepublished">datePublished</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="http://linked.data.gov.au/def/loci#isMemberOf">loci:isMemberOf</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Gazetteer">Gazetteer</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#datereleased">dateReleased</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#dategazetted">dateGazetted</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#datepublished">datePublished</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#dateretired">dateRetired</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#dategazetted">dateGazetted</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#datereleased">dateReleased</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#datepublished">datePublished</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                 </td>
             </tr>
         </table>
@@ -525,7 +532,7 @@ ex:NT_10532
   :hasPlaceName ex:Uluru-Ayers-Rock ;
   dcterms:identifier "NT_10532" ;
   geo:hasGeometry [
-      rdf:type geo:Geometry; ;
+      rdf:type geo:Geometry ;
       geo:asDGGS "R7430551"^^geox:dggsLiteral ;
     ] ;
   geo:hasGeometry [
@@ -547,15 +554,15 @@ ex:NT_10532
                 <th>Restrictions</th>
                 <td>
                     <a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a> <span class="cardinality">min</span> 1<br/>
-                    <a href="#hasplaceclassification">hasPlaceClassification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
                     <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a> <span class="cardinality">min</span> 1 <a href="http://www.opengis.net/ont/geosparql#Geometry">geo:Geometry</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#hasplaceclassification">hasPlaceClassification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#hasplaceclassification">hasPlaceClassification</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#hasplacename">hasPlaceName</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasplaceclassification">hasPlaceClassification</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -577,7 +584,7 @@ ex:NT_10532
                 <th>Description</th>
                 <td>
                     <p>A name associated with a geospatial place or feature. </p>
-<p>Additional properties are specified for  the sub-class OfficialPlaceName which shoudl be used for formal names</p>
+<p><i>Additional properties are specified for the sub-class OfficialPlaceName which shoudl be used for formal names</i></p>
                 </td>
             </tr>
             <tr>
@@ -598,9 +605,9 @@ ex:DH
             <tr>
                 <th>Restrictions</th>
                 <td>
+                    <a href="#placenameof">placeNameOf</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
                     <a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a> <span class="cardinality">min</span> 1<br/>
                     <a href="#name">name</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="#placenameof">placeNameOf</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
                 </td>
             </tr>
             <tr>
@@ -612,11 +619,11 @@ ex:DH
             <tr>
                 <th>In domain of</th>
                 <td>
+                    <a href="#nameisindigenous">isIndigenous</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#pronunciation">hasPronunciation</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#placenameof">placeNameOf</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#wasnamedby">wasNamedBy</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#name">name</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#placenameof">placeNameOf</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#nameisindigenous">isIndigenous</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -1091,7 +1098,12 @@ ex:DH
         <li><a href="#0000-0002-8742-7730">0000-0002-8742-7730</a></li>
         <li><a href="#0000-0003-3425-0780">0000-0003-3425-0780</a></li>
         <li><a href="#PlaceNamesOntology">Place Names Ontology</a></li>
+        <li><a href="#gazetted">gazetted</a></li>
+        <li><a href="#informal">informal</a></li>
         <li><a href="#placenames.ttl">placenames.ttl</a></li>
+        <li><a href="#published">published</a></li>
+        <li><a href="#released">released</a></li>
+        <li><a href="#retired">retired</a></li>
     </ul>
     <div class="entity named_individual" id="PlaceNamesOntology">
         <h3>Place Names Ontology<sup title="named individual" class="sup-ni">ni</sup></h3>
@@ -1143,6 +1155,96 @@ This ontology uses classes and properties from existing vocabularies, in particu
                   </code>
                 </td>
             </tr>
+        </table>
+    </div>
+    <div class="entity named_individual" id="gazetted">
+        <h3>gazetted<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td>
+                  <code>
+                      http://linked.data.gov.au/def/placenames/gazetted
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://linked.data.gov.au/def/placenames/Status">Status</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="informal">
+        <h3>informal<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td>
+                  <code>
+                      http://linked.data.gov.au/def/placenames/informal
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://linked.data.gov.au/def/placenames/Status">Status</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="published">
+        <h3>published<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td>
+                  <code>
+                      http://linked.data.gov.au/def/placenames/published
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://linked.data.gov.au/def/placenames/Status">Status</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="released">
+        <h3>released<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td>
+                  <code>
+                      http://linked.data.gov.au/def/placenames/released
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://linked.data.gov.au/def/placenames/Status">Status</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="retired">
+        <h3>retired<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td>
+                  <code>
+                      http://linked.data.gov.au/def/placenames/retired
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://linked.data.gov.au/def/placenames/Status">Status</a><br/>
+            </dd>
         </table>
     </div>
     <div class="entity named_individual" id="0000-0002-3884-3420">
