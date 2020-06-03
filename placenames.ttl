@@ -59,6 +59,7 @@ ex:NT_10532
       a sf:Point ;
       geo:asWKT "POINT(-25.3415 131.0354)"^^geo:wktLiteral ;
     ] ;
+  rdfs:seeAlso <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/placenames-dataset/placename/NT_10532> ;
 .
 ex:Uluru-Ayers-Rock
   a :OfficialPlaceName ;
@@ -245,13 +246,14 @@ ex:NT_10532
   :hasPlaceName ex:Uluru-Ayers-Rock ;
   dcterms:identifier \"NT_10532\" ;
   geo:hasGeometry [
-      rdf:type <http://linked.data.gov.au/def/auspix#Geometry> ;
-      rdfs:member <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/ausPIX/R7430551> ;
+      rdf:type geo:Geometry> ;
+      geo:asDGGS \"R7430551\"^^geox:dggsLiteral ;
     ] ;
   geo:hasGeometry [
       rdf:type sf:Point ;
       geo:asWKT \"POINT(-25.3415 131.0354)\"^^geo:wktLiteral ;
     ] ;
+  rdfs:seeAlso <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/placenames-dataset/placename/NT_10532> ;
 .
 """ ;
 .
@@ -447,10 +449,6 @@ ex:NT_10532
 <https://orcid.org/0000-0003-3425-0780>
   a owl:NamedIndividual ;
   a schema:Person ;
-  schema:affiliation [
-      schema:identifier "http://catalogue.linked.data.gov.au/org/anu"^^xsd:anyURI ;
-      schema:name "Australian National University" ;
-    ] ;
   schema:affiliation [
       schema:identifier "http://catalogue.linked.data.gov.au/org/anu"^^xsd:anyURI ;
       schema:name "Australian National University" ;
