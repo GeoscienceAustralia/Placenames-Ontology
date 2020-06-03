@@ -44,6 +44,24 @@ ex:Ayers-Rock-Uluru
   rdfs:comment "NOTE: EXAMPLE ONLY DETAILS MAY BE INCORRECT" ;
   rdfs:label "Ayers Rock (Uluru)" ;
 .
+ex:DH
+  a :PlaceName ;
+  :name "The cubby house" ;
+  :placeNameOf ex:INF9987234 ;
+  :status :informal ;
+  :wasNamedBy <https://people.example.org/fagin> ;
+  rdfs:comment "NOTE: EXAMPLE ONLY " ;
+  rdfs:label "The cubby house" ;
+.
+ex:INF9987234
+  a :Place ;
+  dcterms:identifier "INF9987234" ;
+  dcterms:type <http://pid.geoscience.gov.au/def/voc/ga/PlaceType/UNCLASSIFIED> ;
+  geo:hasGeometry [
+      a sf:Point ;
+      geo:asWKT "POINT (145.029494308 -37.907730551)"^^geo:wktLiteral ;
+    ] ;
+.
 ex:NT_10532
   a :Place ;
   :hasPlaceClassification <http://pid.geoscience.gov.au/def/voc/ga/PlaceType/MOUNTAIN> ;
@@ -96,11 +114,16 @@ loci:isMemberOf
   dcterms:title "Place Names Ontology"@en ;
   rdfs:comment """**Place Names** is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features, typically collected in a Gazetteer.
 
-A place-name is a text string that
+A place-name is a text string that is 
 
-- is coined by an agent (person or organization)
-- is authorized by a jurisidiction (national, state or local government) 
-- is a member item in a gazetteer
+- assigned by an agent (person or organization)
+- denotes a natural or constructed geospatial feature with a specified classification
+- assigned a designated 'status' - default=\"informal\"
+
+An **official** place-name is a placename that is 
+
+- authorized by a jurisidiction (national, state or local government) 
+- a member item in a gazetteer
 - has lifecycle information (status, validity dates (TBD), formal identifier) 
 - denotes a natural or constructed geospatial feature with a specified classification (inhabited place, administrative area, mountain, school, station, park ...)
 
@@ -147,6 +170,7 @@ This ontology uses classes and properties from existing vocabularies, in particu
 .
 :OfficialPlaceName
   a owl:Class ;
+  rdfs:comment "The name of a place, assigned by an official naming authority and included in the Place Names Gazeteer of Australia."@en ;
   rdfs:label "Official place-name" ;
   rdfs:subClassOf :PlaceName ;
   rdfs:subClassOf [
@@ -179,8 +203,14 @@ This ontology uses classes and properties from existing vocabularies, in particu
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty :dateRetired ;
     ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onProperty loci:isMemberOf ;
+      owl:someValuesFrom :Gazetteer ;
+    ] ;
   skos:example """
 ex:Ayers-Rock
+  rdf:type :PlaceName ;
   rdf:type :OfficialPlaceName ;
   loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
   :dateGazetted \"1850-01-01\"^^xsd:date ;
@@ -193,6 +223,7 @@ ex:Ayers-Rock
 .
 
 ex:Ayers-Rock-Uluru
+  rdf:type :PlaceName ;
   rdf:type :OfficialPlaceName ;
   loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
   :dateGazetted \"1990-01-01\"^^xsd:date ;
@@ -205,6 +236,7 @@ ex:Ayers-Rock-Uluru
 .
 
 ex:Uluru-Ayers-Rock
+  rdf:type :PlaceName ;
   rdf:type :OfficialPlaceName ;
   loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
   :dateGazetted \"2006-01-01\"^^xsd:date ;
@@ -259,7 +291,9 @@ ex:NT_10532
 .
 :PlaceName
   a owl:Class ;
-  rdfs:comment "The name of a place, assigned by an official naming authority and included in the Place Names Gazeteer of Australia."@en ;
+  rdfs:comment """A name associated with a geospatial place or feature. 
+
+Additional properties are specified for  the sub-class OfficialPlaceName which shoudl be used for formal names"""@en ;
   rdfs:label "Place Name"@en ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -276,11 +310,14 @@ ex:NT_10532
       owl:minCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty dcterms:identifier ;
     ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:onProperty loci:isMemberOf ;
-      owl:someValuesFrom :Gazetteer ;
-    ] ;
+  skos:example """
+ex:DH
+  rdf:type :PlaceName ;
+  :name \"The cubby house\" ;
+  :placeNameOf ex:INF9987234 ;
+  :status :informal ;
+  :wasNamedBy <https://people.example.org/fagin> ;
+.""" ;
 .
 :PlaceNamingAuthority
   a owl:Class ;
