@@ -3,6 +3,7 @@
 
 @prefix : <http://linked.data.gov.au/def/placenames/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ex: <http://linked.data.gov.au/dataset/placename/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix loci: <http://linked.data.gov.au/def/loci#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -13,11 +14,82 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix reg: <http://purl.org/linked-data/registry#> .
 @prefix schema: <https://schema.org/> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+ex:Ayers-Rock
+  a :OfficialPlaceName ;
+  loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
+  :dateGazetted "1850-01-01"^^xsd:date ;
+  :dateRetired "1989-12-31"^^xsd:date ;
+  :name "Ayers Rock" ;
+  :placeNameOf ex:NT_10532 ;
+  :status :retired ;
+  :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
+  rdfs:comment "NOTE: EXAMPLE ONLY DETAILS MAY BE INCORRECT" ;
+  rdfs:label "Ayers Rock" ;
+.
+ex:Ayers-Rock-Uluru
+  a :OfficialPlaceName ;
+  loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
+  :dateGazetted "1990-01-01"^^xsd:date ;
+  :dateRetired "2005-12-31"^^xsd:date ;
+  :name "Ayers Rock (Uluru)" ;
+  :placeNameOf ex:NT_10532 ;
+  :status :retired ;
+  :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
+  rdfs:comment "NOTE: EXAMPLE ONLY DETAILS MAY BE INCORRECT" ;
+  rdfs:label "Ayers Rock (Uluru)" ;
+.
+ex:DH
+  a :PlaceName ;
+  :name "The cubby house" ;
+  :placeNameOf ex:INF9987234 ;
+  :status :informal ;
+  :wasNamedBy <https://people.example.org/fagin> ;
+  rdfs:comment "NOTE: EXAMPLE ONLY " ;
+  rdfs:label "The cubby house" ;
+.
+ex:INF9987234
+  a :Place ;
+  dcterms:identifier "INF9987234" ;
+  dcterms:type <http://pid.geoscience.gov.au/def/voc/ga/PlaceType/UNCLASSIFIED> ;
+  geo:hasGeometry [
+      a sf:Point ;
+      geo:asWKT "POINT (145.029494308 -37.907730551)"^^geo:wktLiteral ;
+    ] ;
+.
+ex:NT_10532
+  a :Place ;
+  :hasPlaceClassification <http://pid.geoscience.gov.au/def/voc/ga/PlaceType/MOUNTAIN> ;
+  :hasPlaceName ex:Ayers-Rock ;
+  :hasPlaceName ex:Ayers-Rock-Uluru ;
+  :hasPlaceName ex:Uluru-Ayers-Rock ;
+  dcterms:identifier "NT_10532" ;
+  geo:hasGeometry [
+      a <http://linked.data.gov.au/def/auspix#Geometry> ;
+      rdfs:member <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/ausPIX/R7430551> ;
+    ] ;
+  geo:hasGeometry [
+      a sf:Point ;
+      geo:asWKT "POINT(-25.3415 131.0354)"^^geo:wktLiteral ;
+    ] ;
+  rdfs:seeAlso <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/placenames-dataset/placename/NT_10532> ;
+.
+ex:Uluru-Ayers-Rock
+  a :OfficialPlaceName ;
+  loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
+  :dateGazetted "2006-01-01"^^xsd:date ;
+  :name "Uluru (Ayers Rock)" ;
+  :placeNameOf ex:NT_10532 ;
+  :status :gazetted ;
+  :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
+  rdfs:comment "NOTE: EXAMPLE ONLY DETAILS MAY BE INCORRECT" ;
+  rdfs:label "Uluru (Ayers Rock)" ;
+.
 loci:Dataset
   a owl:Class ;
 .
@@ -42,11 +114,16 @@ loci:isMemberOf
   dcterms:title "Place Names Ontology"@en ;
   rdfs:comment """**Place Names** is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features, typically collected in a Gazetteer.
 
-A place-name is a text string that
+A place-name is a text string that is 
 
-- is coined by an agent (person or organization)
-- is authorized by a jurisidiction (national, state or local government) 
-- is a member item in a gazetteer
+- assigned by an agent (person or organization)
+- denotes a natural or constructed geospatial feature with a specified classification
+- assigned a designated 'status' - default=\"informal\"
+
+An **official** place-name is a placename that is 
+
+- authorized by a jurisidiction (national, state or local government) 
+- a member item in a gazetteer
 - has lifecycle information (status, validity dates (TBD), formal identifier) 
 - denotes a natural or constructed geospatial feature with a specified classification (inhabited place, administrative area, mountain, school, station, park ...)
 
@@ -79,38 +156,11 @@ This ontology uses classes and properties from existing vocabularies, in particu
   rdfs:comment "A Gazetteer is a list of Place Names"@en ;
   rdfs:label "Gazetteer"@en ;
   rdfs:subClassOf loci:Dataset ;
-  rdfs:subClassOf rdf:Bag ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom :PlaceName ;
       owl:onProperty rdfs:member ;
     ] ;
-  skos:changeNote """
-was- 
-```
-  	rdfs:subClassOf reg:Register ;
-  	rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:hasValue :PlaceName ;
-      owl:onProperty reg:containedItemClass ;
-    ] ;
-```
-But this is not appropriate - according to the Registry Ontology a reg:Register is a set of metadata records, not a set of Entities. 
-
-Use `rdf:Bag` and `rdfs:member` instead. 
-""" ;
-.
-:Historical
-  a :PlaceNameFormality ;
-  a owl:NamedIndividual ;
-  rdfs:label "Historical" ;
-  skos:prefLabel "Historical" ;
-.
-:Informal
-  a :PlaceNameFormality ;
-  a owl:NamedIndividual ;
-  rdfs:label "Informal" ;
-  skos:prefLabel "Informal" ;
 .
 :Jurisdiction
   a owl:Class ;
@@ -118,11 +168,93 @@ Use `rdf:Bag` and `rdfs:member` instead.
   rdfs:label "Jurisdiction" ;
   rdfs:subClassOf :PlaceNamingAuthority ;
 .
-:Official
-  a :PlaceNameFormality ;
-  a owl:NamedIndividual ;
-  rdfs:label "Official" ;
-  skos:prefLabel "Official" ;
+:OfficialPlaceName
+  a owl:Class ;
+  rdfs:comment "The name of a place, assigned by an official naming authority and included in the Place Names Gazeteer of Australia."@en ;
+  rdfs:label "Official place-name" ;
+  rdfs:subClassOf :PlaceName ;
+  rdfs:subClassOf [
+      a owl:Class ;
+      owl:complementOf [
+          a owl:Restriction ;
+          owl:hasValue :informal ;
+          owl:onProperty :status ;
+        ] ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom :PlaceNamingAuthority ;
+      owl:onProperty :wasNamedBy ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty :dateGazetted ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty :status ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty :datePublished ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty :dateReleased ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty :dateRetired ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onProperty loci:isMemberOf ;
+      owl:someValuesFrom :Gazetteer ;
+    ] ;
+  skos:example """
+ex:Ayers-Rock
+  rdf:type :PlaceName ;
+  rdf:type :OfficialPlaceName ;
+  loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
+  :dateGazetted \"1850-01-01\"^^xsd:date ;
+  :dateRetired \"1989-12-31\"^^xsd:date ;
+  :name \"Ayers Rock\" ;
+  :placeNameOf ex:Uluru ;
+  :status :retired ;
+  :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
+  rdfs:label \"Ayers Rock\" ;
+.
+
+ex:Ayers-Rock-Uluru
+  rdf:type :PlaceName ;
+  rdf:type :OfficialPlaceName ;
+  loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
+  :dateGazetted \"1990-01-01\"^^xsd:date ;
+  :dateRetired \"2005-12-31\"^^xsd:date ;
+  :name \"Ayers Rock (Uluru)\" ;
+  :placeNameOf ex:Uluru ;
+  :status :retired ;
+  :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
+  rdfs:label \"Ayers Rock (Uluru)\" ;
+.
+
+ex:Uluru-Ayers-Rock
+  rdf:type :PlaceName ;
+  rdf:type :OfficialPlaceName ;
+  loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
+  :dateGazetted \"2006-01-01\"^^xsd:date ;
+  :name \"Uluru (Ayers Rock)\" ;
+  :placeNameOf ex:Uluru ;
+  :status :gazetted ;
+  :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
+  rdfs:label \"Uluru (Ayers Rock)\" ;
+.
+""" ;
 .
 :Place
   a owl:Class ;
@@ -145,25 +277,36 @@ Use `rdf:Bag` and `rdfs:member` instead.
       owl:onClass geo:Geometry ;
       owl:onProperty geo:hasGeometry ;
     ] ;
+  skos:example """
+ex:NT_10532
+  rdf:type :Place ;
+  :hasPlaceClassification <http://pid.geoscience.gov.au/def/voc/ga/PlaceType/MOUNTAIN> ;
+  :hasPlaceName ex:Ayers-Rock ;
+  :hasPlaceName ex:Ayers-Rock-Uluru ;
+  :hasPlaceName ex:Uluru-Ayers-Rock ;
+  dcterms:identifier \"NT_10532\" ;
+  geo:hasGeometry [
+      rdf:type geo:Geometry ;
+      geo:asDGGS \"R7430551\"^^geox:dggsLiteral ;
+    ] ;
+  geo:hasGeometry [
+      rdf:type sf:Point ;
+      geo:asWKT \"POINT(-25.3415 131.0354)\"^^geo:wktLiteral ;
+    ] ;
+  rdfs:seeAlso <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/placenames-dataset/placename/NT_10532> ;
+.
+""" ;
 .
 :PlaceName
   a owl:Class ;
-  rdfs:comment "The name of a place, assigned by an official naming authority and included in the Place Names Gazeteer of Australia."@en ;
+  rdfs:comment """A name associated with a geospatial place or feature. 
+
+Additional properties are specified for  the sub-class OfficialPlaceName which should be used for formal names"""@en ;
   rdfs:label "Place Name"@en ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty :hasPlaceNamingAuthority ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty :name ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty :status ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -175,18 +318,14 @@ Use `rdf:Bag` and `rdfs:member` instead.
       owl:minCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty dcterms:identifier ;
     ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:onProperty loci:isMemberOf ;
-      owl:someValuesFrom :Gazetteer ;
-    ] ;
-  skos:changeNote "Removed subClassOf reg:RegisterItem axiom, because reg:RegisterItem is \"A metadata record for an entry in a register. \" and is not an Entity itself. " ;
-.
-:PlaceNameFormality
-  a owl:Class ;
-  rdfs:comment "The formality of a Place Name: official, historical, informal"@en ;
-  rdfs:label "Place Name Formality"@en ;
-  rdfs:subClassOf skos:Concept ;
+  skos:example """
+ex:DH
+  rdf:type :PlaceName ;
+  :name \"The cubby house\" ;
+  :placeNameOf ex:INF9987234 ;
+  :status :informal ;
+  :wasNamedBy <https://people.example.org/fagin> ;
+.""" ;
 .
 :PlaceNamingAuthority
   a owl:Class ;
@@ -200,36 +339,51 @@ Use `rdf:Bag` and `rdfs:member` instead.
   rdfs:label "Place Type"@en ;
   rdfs:subClassOf skos:Concept ;
 .
-:PointOfInterest
-  a owl:Class ;
-  rdfs:comment "A specific point Location that someone may find useful or interesting."@en ;
-  rdfs:label "Point of Interest"@en ;
-  rdfs:subClassOf :Place ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:hasValue pt:PointOfInterest ;
-      owl:onProperty :hasPlaceClassification ;
-    ] ;
-.
-:Region
-  a owl:Class ;
-  rdfs:comment "A Region is an area of land that has common features."@en ;
-  rdfs:label "Region"@en ;
-  rdfs:subClassOf :Place ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:hasValue pt:Region ;
-      owl:onProperty :hasPlaceClassification ;
-    ] ;
-.
 :Status
   a owl:Class ;
-  rdfs:label "Status " ;
+  rdfs:comment """Status of resource, in context of a standard lifecycle: informal, official, gazetted, released, published, retired
+
+![](./images/status.png)""" ;
+  rdfs:label "Status" ;
   rdfs:subClassOf skos:Concept ;
 .
-:StatusScheme
+:dateGazetted
+  a owl:DatatypeProperty ;
+  rdfs:comment "Date that the item was gazetted" ;
+  rdfs:domain :OfficialPlaceName ;
+  rdfs:label "date gazetted" ;
+  rdfs:range xsd:date ;
+  rdfs:subPropertyOf dcterms:date ;
+.
+:datePublished
+  a owl:DatatypeProperty ;
+  rdfs:comment "Date that the item was published" ;
+  rdfs:domain :OfficialPlaceName ;
+  rdfs:label "date published" ;
+  rdfs:range xsd:date ;
+  rdfs:subPropertyOf dcterms:date ;
+.
+:dateReleased
+  a owl:DatatypeProperty ;
+  rdfs:comment "Date that the item was released" ;
+  rdfs:domain :OfficialPlaceName ;
+  rdfs:label "date released" ;
+  rdfs:range xsd:date ;
+  rdfs:subPropertyOf dcterms:date ;
+.
+:dateRetired
+  a owl:DatatypeProperty ;
+  rdfs:comment "Date that the item was retired" ;
+  rdfs:domain :OfficialPlaceName ;
+  rdfs:label "date retired" ;
+  rdfs:range xsd:date ;
+  rdfs:subPropertyOf dcterms:date ;
+.
+:gazetted
+  a :Status ;
   a owl:NamedIndividual ;
-  a skos:ConceptScheme ;
+  rdfs:label "gazetted" ;
+  skos:prefLabel "gazetted" ;
 .
 :hasPlaceClassification
   a owl:ObjectProperty ;
@@ -248,28 +402,18 @@ Use `rdf:Bag` and `rdfs:member` instead.
   owl:inverseOf :placeNameOf ;
   skos:scopeNote "All PlaceName objects names indicated by hasPlaceName should have the role of the name indicated with a Name Type"@en ;
 .
-:hasPlaceNameFormality
-  a owl:ObjectProperty ;
-  rdfs:comment "The formality of a Place Name"@en ;
-  rdfs:domain :PlaceName ;
-  rdfs:label "has place name formality"@en ;
-  rdfs:range :PlaceNameFormality ;
-  skos:scopeNote "Values for this property must be selected from the Place Name Formality vocabulary"@en ;
-.
-:hasPlaceNamingAuthority
-  a owl:ObjectProperty ;
-  rdfs:comment "The authority (jurisdiction) responsible for formally gazetting the place name."@en ;
-  rdfs:domain :PlaceName ;
-  rdfs:label "has place naming authority" ;
-  rdfs:range :PlaceNamingAuthority ;
-  rdfs:subPropertyOf prov:wasAttributedTo ;
-.
 :hasPronunciation
   a owl:DatatypeProperty ;
   rdfs:comment "The pronunciation of a Place Name, indicated by means of a phonetic alphabet string"@en ;
   rdfs:domain :PlaceName ;
   rdfs:label "pronunciation"@en ;
   rdfs:range xsd:string ;
+.
+:informal
+  a :Status ;
+  a owl:NamedIndividual ;
+  rdfs:label "informal" ;
+  skos:prefLabel "Informal" ;
 .
 :isIndigenous
   a owl:DatatypeProperty ;
@@ -283,128 +427,46 @@ Use `rdf:Bag` and `rdfs:member` instead.
   rdfs:label "name" ;
   rdfs:range xsd:string ;
 .
+:official
+  a :Status ;
+  a owl:NamedIndividual ;
+  rdfs:label "official" ;
+  skos:narrower :gazetted ;
+  skos:narrower :published ;
+  skos:narrower :released ;
+  skos:narrower :retired ;
+  skos:prefLabel "official" ;
+.
 :placeNameOf
   a owl:ObjectProperty ;
   rdfs:domain :PlaceName ;
   rdfs:label "place name of" ;
   rdfs:range :Place ;
 .
+:published
+  a :Status ;
+  a owl:NamedIndividual ;
+  rdfs:label "published" ;
+  skos:prefLabel "published" ;
+.
+:released
+  a :Status ;
+  a owl:NamedIndividual ;
+  rdfs:label "released" ;
+  skos:prefLabel "released" ;
+.
+:retired
+  a :Status ;
+  a owl:NamedIndividual ;
+  rdfs:label "retired" ;
+  skos:altLabel "historical" ;
+  skos:prefLabel "retired" ;
+.
 :status
   a owl:ObjectProperty ;
-  rdfs:domain :PlaceName ;
   rdfs:label "has status" ;
   rdfs:range :Status ;
-  skos:scopeNote "This property indicates the status of a Place Name in a Gazetteer."@en ;
-.
-:statusAccepted
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry that has been accepted for use and is visible in the default register listing. Includes entries that have seen been retired or superseded."@en ;
-  skos:definition "An entry that has been accepted for use and is visible in the default register listing. Includes entries that have seen been retired or superseded."@en ;
-  skos:exactMatch reg:statusAccepted ;
-  skos:prefLabel "accepted"@en ;
-  skos:topConceptOf :StatusScheme ;
-.
-:statusDeprecated
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry that has been retired or replaced and is no longer to be used."@en ;
-  skos:broader :statusAccepted ;
-  skos:definition "An entry that has been retired or replaced and is no longer to be used."@en ;
-  skos:exactMatch reg:statusDeprecated ;
-  skos:inScheme :StatusScheme ;
-  skos:prefLabel "deprecated"@en ;
-.
-:statusExperimental
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry that has been accepted into the register temporarily and may be subject to change or withdrawal."@en ;
-  skos:altlabel "provisional"@en ;
-  skos:broader :statusValid ;
-  skos:definition "An entry that has been accepted into the register temporarily and may be subject to change or withdrawal."@en ;
-  skos:exactMatch reg:statusExperimental ;
-  skos:inScheme :StatusScheme ;
-  skos:prefLabel "experimental"@en ;
-.
-:statusInvalid
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry which has been invalidated due to serious flaws, distinct from retrirement. Corresponds to ISO 19135(redraft) 'invalid'"@en ;
-  skos:broader :statusNotAccepted ;
-  skos:definition "An entry which has been invalidated due to serious flaws, distinct from retrirement. Corresponds to ISO 19135(redraft) 'invalid'"@en ;
-  skos:exactMatch reg:statusInvalid ;
-  skos:inScheme :StatusScheme ;
-  skos:prefLabel "invalid"@en ;
-.
-:statusNotAccepted
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry that should not be visible in the default register listing. Corresponds to ISO 19135:2005 'notValid'"@en ;
-  skos:definition "An entry that should not be visible in the default register listing. Corresponds to ISO 19135:2005 'notValid'"@en ;
-  skos:exactMatch reg:statusNotAccepted ;
-  skos:prefLabel "notAccepted"@en ;
-  skos:topConceptOf :StatusScheme ;
-.
-:statusReserved
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "A reserved entry allocated for some as yet undetermined future use."@en ;
-  skos:broader :statusNotAccepted ;
-  skos:definition "A reserved entry allocated for some as yet undetermined future use."@en ;
-  skos:exactMatch reg:statusReserved ;
-  skos:inScheme :StatusScheme ;
-  skos:prefLabel "reserved"@en ;
-.
-:statusRetired
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry that has been withdrawn from use.  Corresponds to ISO 19135:2005 'retired'"@en ;
-  skos:altlabel "withdrawn"@en ;
-  skos:broader :statusDeprecated ;
-  skos:definition "An entry that has been withdrawn from use.  Corresponds to ISO 19135:2005 'retired'"@en ;
-  skos:exactMatch reg:statusRetired ;
-  skos:prefLabel "retired"@en ;
-.
-:statusStable
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry."@en ;
-  skos:broader :statusValid ;
-  skos:definition "An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry."@en ;
-  skos:exactMatch reg:statusStable ;
-  skos:inScheme :StatusScheme ;
-  skos:prefLabel "stable"@en ;
-.
-:statusSubmitted
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "A proposed entry which is not yet approved for use for use. Corresponds to ISO 19135:(redraft) 'submitted'"@en ;
-  skos:broader :statusNotAccepted ;
-  skos:definition "A proposed entry which is not yet approved for use for use. Corresponds to ISO 19135:(redraft) 'submitted'"@en ;
-  skos:exactMatch reg:statusSubmitted ;
-  skos:inScheme :StatusScheme ;
-  skos:prefLabel "submitted"@en ;
-.
-:statusSuperseded
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry that has been replaced by a new alternative which should be used instead.  Corresponds to ISO 19135:2005 'superseded'."@en ;
-  skos:altlabel "replaced"@en ;
-  skos:broader :statusDeprecated ;
-  skos:definition "An entry that has been replaced by a new alternative which should be used instead.  Corresponds to ISO 19135:2005 'superseded'."@en ;
-  skos:exactMatch reg:statusSuperseded ;
-  skos:inScheme :StatusScheme ;
-  skos:prefLabel "superseded"@en ;
-.
-:statusValid
-  a :Status ;
-  a owl:NamedIndividual ;
-  rdfs:comment "An entry that has been accepted into the register and is deemed fit for use. Corresponds to ISO 19135:2005 'valid'."@en ;
-  skos:broader :statusAccepted ;
-  skos:definition "An entry that has been accepted into the register and is deemed fit for use. Corresponds to ISO 19135:2005 'valid'."@en ;
-  skos:exactMatch reg:statusValid ;
-  skos:inScheme :StatusScheme ;
-  skos:prefLabel "valid"@en ;
+  skos:scopeNote "This property indicates the status of a Place Name."@en ;
 .
 :wasNamedBy
   a owl:ObjectProperty ;
@@ -413,125 +475,6 @@ Use `rdf:Bag` and `rdfs:member` instead.
   rdfs:label "was named by"@en ;
   rdfs:range dcterms:Agent ;
   rdfs:subPropertyOf prov:wasAttributedTo ;
-.
-pt:PointOfInterest
-  a :PlaceType ;
-  a owl:NamedIndividual ;
-  rdfs:label "Point of interest" ;
-.
-pt:Region
-  a :PlaceType ;
-  a owl:NamedIndividual ;
-  rdfs:label "Region" ;
-.
-dcterms:Agent
-  a owl:Class ;
-.
-dcterms:contributor
-  a owl:ObjectProperty ;
-.
-dcterms:created
-  a owl:DatatypeProperty ;
-.
-dcterms:creator
-  a owl:ObjectProperty ;
-.
-dcterms:format
-  a owl:AnnotationProperty ;
-.
-dcterms:identifier
-  a owl:AnnotationProperty ;
-  a owl:DatatypeProperty ;
-.
-dcterms:modified
-  a owl:DatatypeProperty ;
-.
-dcterms:publisher
-  a owl:ObjectProperty ;
-.
-dcterms:rights
-  a owl:AnnotationProperty ;
-.
-dcterms:type
-  a owl:ObjectProperty ;
-.
-reg:statusAccepted
-  a owl:NamedIndividual ;
-.
-reg:statusDeprecated
-  a owl:NamedIndividual ;
-.
-reg:statusExperimental
-  a owl:NamedIndividual ;
-.
-reg:statusInvalid
-  a owl:NamedIndividual ;
-.
-reg:statusNotAccepted
-  a owl:NamedIndividual ;
-.
-reg:statusReserved
-  a owl:NamedIndividual ;
-.
-reg:statusRetired
-  a owl:NamedIndividual ;
-.
-reg:statusStable
-  a owl:NamedIndividual ;
-.
-reg:statusSubmitted
-  a owl:NamedIndividual ;
-.
-reg:statusSuperseded
-  a owl:NamedIndividual ;
-.
-reg:statusValid
-  a owl:NamedIndividual ;
-.
-<http://www.opengis.net/doc/IS/geosparql/1.0>
-  a owl:NamedIndividual ;
-.
-rdf:Bag
-  a owl:Class ;
-.
-rdfs:member
-  a owl:ObjectProperty ;
-.
-skos:altlabel
-  a owl:AnnotationProperty ;
-.
-skos:broader
-  a owl:ObjectProperty ;
-.
-skos:exactMatch
-  a owl:ObjectProperty ;
-.
-skos:inScheme
-  a owl:ObjectProperty ;
-.
-skos:topConceptOf
-  a owl:ObjectProperty ;
-.
-prof:hasArtifact
-  a owl:ObjectProperty ;
-.
-prof:hasResource
-  a owl:ObjectProperty ;
-.
-prof:hasRole
-  a owl:ObjectProperty ;
-.
-prof:isProfileOf
-  a owl:ObjectProperty ;
-.
-<http://www.w3.org/ns/dx/prof/role/schema>
-  a owl:NamedIndividual ;
-.
-<http://www.w3.org/ns/dx/prof/role/specification>
-  a owl:NamedIndividual ;
-.
-prov:wasAttributedTo
-  a owl:ObjectProperty ;
 .
 <https://orcid.org/0000-0002-3884-3420>
   a owl:NamedIndividual ;
@@ -573,34 +516,9 @@ prov:wasAttributedTo
       schema:identifier "http://catalogue.linked.data.gov.au/org/anu"^^xsd:anyURI ;
       schema:name "Australian National University" ;
     ] ;
-  schema:affiliation [
-      schema:identifier "http://catalogue.linked.data.gov.au/org/anu"^^xsd:anyURI ;
-      schema:name "Australian National University" ;
-    ] ;
   schema:email <mailto:armin.haller@anu.edu.au> ;
   schema:identifier "https://orcid.org/0000-0003-3425-0780"^^xsd:anyURI ;
   schema:name "Armin Haller"@en ;
-.
-schema:Person
-  a owl:Class ;
-.
-schema:affiliation
-  a owl:AnnotationProperty ;
-.
-schema:email
-  a owl:AnnotationProperty ;
-.
-schema:identifier
-  a owl:AnnotationProperty ;
-.
-schema:memberOf
-  a owl:AnnotationProperty ;
-.
-schema:name
-  a owl:AnnotationProperty ;
-.
-schema:uri
-  a owl:AnnotationProperty ;
 .
 [
   dcterms:format <https://w3id.org/mediatype/text/html> ;
