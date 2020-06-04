@@ -22,60 +22,48 @@
         #pylode a:hover {
             color: #333;
         }
-
         .cardinality {
             font-style: italic;
             color: #aa00aa;
         }
-
         dt {
             font-weight: bold;
             padding: 5px 0 5px 0;
         }
-
         ul.hlist {
             list-style-type: none;
             border: 1px solid navy;
             padding:5px;
             background-color: #F4FFFF;
         }
-
         ul.hierarchy {
             border: 1px solid navy;
             padding: 5px 25px 5px 25px;
             background-color: #F4FFFF;
         }
-
-
         ul.hlist li {
             display: inline;
             margin-right: 10px;
         }
-
         .entity {
             border: 1px solid navy;
             margin:5px 0 5px 0;
             padding: 5px;
         }
-
         .entity th {
             width: 150px;
             vertical-align: top;
         }
-
         .entity th,
         .entity td {
             padding-bottom: 20px;
         }
-
         .entity table th {
             text-align: left;
         }
-
         section#overview img {
             max-width: 1000px;
         }
-
         h1, h2, h3, h4, h5, h6 {
             text-align: left
         }
@@ -99,8 +87,6 @@
         h4 { font: bold 100% sans-serif }
         h5 { font: italic 100% sans-serif }
         h6 { font: small-caps 100% sans-serif }
-
-
         body {
             padding: 2em 70px 2em 70px;
             margin: 0;
@@ -112,19 +98,15 @@
             background-repeat: no-repeat;
             text-align: justify;
         }
-
         section {
             max-width: 1500px;
         }
-
         .figure {
             margin-bottom: 20px;
         }
-
         :link { color: #00C; background: transparent }
         :visited { color: #609; background: transparent }
         a:active { color: #C00; background: transparent }
-
         .sup-c,
         .sup-op,
         .sup-fp,
@@ -137,48 +119,37 @@
             cursor:help;
             margin-left: 3px;
         }
-
         .sup-c {
             color:orange;
         }
-
         .sup-op {
             color:navy;
         }
-
         .sup-fp {
             color:lightskyblue;
         }
-
         .sup-dp {
             color:green;
         }
-
         .sup-ap {
             color:darkred;
         }
-
         .sup-p {
             color:black;
         }
-
         .sup-ni {
             color:brown;
         }
-
         .sup-cp {
             color:orange;
         }
-
         .sup-cl {
             color:darkred;
         }
-
         code {
             font-size: large;
             color: darkred;
         }
-
     </style>
     
     <script type="application/ld+json">
@@ -321,7 +292,7 @@
         <dt>Created</dt>
         <dd>2018-08-02</dd>
         <dt>Modified</dt>
-        <dd>2020-05-21</dd>
+        <dd>2020-06-04</dd>
         <dt>Imports</dt>
         <dd>
             <a href="http://www.opengis.net/ont/geosparql">http://www.opengis.net/ont/geosparql</a><br/>
@@ -366,13 +337,6 @@
         <li><a href="#namespaces">Namespaces</a></li>
         <li><a href="#legend">Legend</a></li>
     </ol>
-</section>
-<section id="overview">
-    <h2>Overview</h2>
-    <div class="figure">
-        <div style="width:500px; height:50px; background-color: lightgrey; border:solid 2px grey; padding:10px;margin-bottom:5px; text-align:center;">Pictures say 1,000 words</div>
-        <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
-    </div>
 </section>
 <section id="classes">
     <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
@@ -467,45 +431,42 @@
                 <th>Example</th>
                 <td>
                     <pre>
-                      
-ex:Ayers-Rock
-  rdf:type :PlaceName ;
-  rdf:type :OfficialPlaceName ;
-  loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
-  :dateGazetted "1850-01-01"^^xsd:date ;
-  :dateRetired "1989-12-31"^^xsd:date ;
-  :name "Ayers Rock" ;
-  :placeNameOf ex:Uluru ;
-  :status :retired ;
-  :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
-  rdfs:label "Ayers Rock" ;
-.
-
-ex:Ayers-Rock-Uluru
-  rdf:type :PlaceName ;
-  rdf:type :OfficialPlaceName ;
-  loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
-  :dateGazetted "1990-01-01"^^xsd:date ;
-  :dateRetired "2005-12-31"^^xsd:date ;
-  :name "Ayers Rock (Uluru)" ;
-  :placeNameOf ex:Uluru ;
-  :status :retired ;
-  :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
-  rdfs:label "Ayers Rock (Uluru)" ;
-.
-
-ex:Uluru-Ayers-Rock
-  rdf:type :PlaceName ;
-  rdf:type :OfficialPlaceName ;
-  loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
-  :dateGazetted "2006-01-01"^^xsd:date ;
-  :name "Uluru (Ayers Rock)" ;
-  :placeNameOf ex:Uluru ;
-  :status :gazetted ;
-  :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
-  rdfs:label "Uluru (Ayers Rock)" ;
-.
-
+                      
+ex:Ayers-Rock
+  rdf:type :PlaceName ;
+  rdf:type :OfficialPlaceName ;
+  loci:isMemberOf &lt;https://www.ntlis.nt.gov.au/placenames/&gt; ;
+  :dateGazetted "1850-01-01"^^xsd:date ;
+  :dateRetired "1989-12-31"^^xsd:date ;
+  :name "Ayers Rock" ;
+  :placeNameOf ex:Uluru ;
+  :status :retired ;
+  :wasNamedBy &lt;https://www.ntlis.nt.gov.au/placenames/&gt; ;
+  rdfs:label "Ayers Rock" ;
+.
+ex:Ayers-Rock-Uluru
+  rdf:type :PlaceName ;
+  rdf:type :OfficialPlaceName ;
+  loci:isMemberOf &lt;https://www.ntlis.nt.gov.au/placenames/&gt; ;
+  :dateGazetted "1990-01-01"^^xsd:date ;
+  :dateRetired "2005-12-31"^^xsd:date ;
+  :name "Ayers Rock (Uluru)" ;
+  :placeNameOf ex:Uluru ;
+  :status :retired ;
+  :wasNamedBy &lt;https://www.ntlis.nt.gov.au/placenames/&gt; ;
+  rdfs:label "Ayers Rock (Uluru)" ;
+.
+ex:Uluru-Ayers-Rock
+  rdf:type :PlaceName ;
+  rdf:type :OfficialPlaceName ;
+  loci:isMemberOf &lt;https://www.ntlis.nt.gov.au/placenames/&gt; ;
+  :dateGazetted "2006-01-01"^^xsd:date ;
+  :name "Uluru (Ayers Rock)" ;
+  :placeNameOf ex:Uluru ;
+  :status :gazetted ;
+  :wasNamedBy &lt;https://www.ntlis.nt.gov.au/placenames/&gt; ;
+  rdfs:label "Uluru (Ayers Rock)" ;
+.
                     </pre>
                 </td>
             </tr>
@@ -556,25 +517,24 @@ ex:Uluru-Ayers-Rock
                 <th>Example</th>
                 <td>
                     <pre>
-                      
-ex:NT_10532
-  rdf:type :Place ;
-  :hasPlaceClassification <http://pid.geoscience.gov.au/def/voc/ga/PlaceType/MOUNTAIN> ;
-  :hasPlaceName ex:Ayers-Rock ;
-  :hasPlaceName ex:Ayers-Rock-Uluru ;
-  :hasPlaceName ex:Uluru-Ayers-Rock ;
-  dcterms:identifier "NT_10532" ;
-  geo:hasGeometry [
-      rdf:type geo:Geometry ;
-      geo:asDGGS "R7430551"^^geox:dggsLiteral ;
-    ] ;
-  geo:hasGeometry [
-      rdf:type sf:Point ;
-      geo:asWKT "POINT(-25.3415 131.0354)"^^geo:wktLiteral ;
-    ] ;
-  rdfs:seeAlso <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/placenames-dataset/placename/NT_10532> ;
-.
-
+                      
+ex:NT_10532
+  rdf:type :Place ;
+  :hasPlaceClassification &lt;http://pid.geoscience.gov.au/def/voc/ga/PlaceType/MOUNTAIN&gt; ;
+  :hasPlaceName ex:Ayers-Rock ;
+  :hasPlaceName ex:Ayers-Rock-Uluru ;
+  :hasPlaceName ex:Uluru-Ayers-Rock ;
+  dcterms:identifier "NT_10532" ;
+  geo:hasGeometry [
+      rdf:type geo:Geometry ;
+      geo:asDGGS "R7430551"^^geox:dggsLiteral ;
+    ] ;
+  geo:hasGeometry [
+      rdf:type sf:Point ;
+      geo:asWKT "POINT(-25.3415 131.0354)"^^geo:wktLiteral ;
+    ] ;
+  rdfs:seeAlso &lt;http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/placenames-dataset/placename/NT_10532&gt; ;
+.
                     </pre>
                 </td>
             </tr>
@@ -625,13 +585,13 @@ ex:NT_10532
                 <th>Example</th>
                 <td>
                     <pre>
-                      
-ex:DH
-  rdf:type :PlaceName ;
-  :name "The cubby house" ;
-  :placeNameOf ex:INF9987234 ;
-  :status :informal ;
-  :wasNamedBy <https://people.example.org/fagin> ;
+                      
+ex:DH
+  rdf:type :PlaceName ;
+  :name "The cubby house" ;
+  :placeNameOf ex:INF9987234 ;
+  :status :informal ;
+  :wasNamedBy &lt;https://people.example.org/fagin&gt; ;
 .
                     </pre>
                 </td>
@@ -733,7 +693,7 @@ ex:DH
                 <th>Description</th>
                 <td>
                     <p>Status of resource, in context of a standard lifecycle: informal, official, gazetted, released, published, retired</p>
-<p><img alt="" src="../images/status.png" /></p>
+<p><img alt="" src="./images/status.png" /></p>
                 </td>
             </tr>
             <tr>
@@ -918,7 +878,6 @@ ex:DH
         </table>
     </div>
 </section>
-
 <section id="datatypeproperties">
     <h2>Datatype Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
@@ -1132,8 +1091,6 @@ ex:DH
         </table>
     </div>
 </section>
-
-
 <section id="namedindividuals">
     <h2>Named Individuals <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
@@ -1169,27 +1126,20 @@ ex:DH
             <tr>
                 <th>Description</th>
                 <td>
-                    **Place Names** is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features, typically collected in a Gazetteer.
-
-A place-name is a text string that is 
-
-- assigned by an agent (person or organization)
-- denotes a natural or constructed geospatial feature with a specified classification
-- assigned a designated 'status' - default="informal"
-
-An **official** place-name is a placename that is 
-
-- authorized by a jurisidiction (national, state or local government) 
-- a member item in a gazetteer
-- has lifecycle information (status, validity dates (TBD), formal identifier) 
-- denotes a natural or constructed geospatial feature with a specified classification (inhabited place, administrative area, mountain, school, station, park ...)
-
-This ontology uses classes and properties from existing vocabularies, in particular
-
-- [GeoSPARQL](http://www.opengis.net/ont/geosparql)
-- [SKOS](http://www.w3.org/2004/02/skos/core) 
-- [Dublin Core](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/)
-
+                    **Place Names** is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features, typically collected in a Gazetteer.
+A place-name is a text string that is 
+- assigned by an agent (person or organization)
+- denotes a natural or constructed geospatial feature with a specified classification
+- assigned a designated 'status' - default="informal"
+An **official** place-name is a placename that is 
+- authorized by a jurisidiction (national, state or local government) 
+- a member item in a gazetteer
+- has lifecycle information (status, validity dates (TBD), formal identifier) 
+- denotes a natural or constructed geospatial feature with a specified classification (inhabited place, administrative area, mountain, school, station, park ...)
+This ontology uses classes and properties from existing vocabularies, in particular
+- [GeoSPARQL](http://www.opengis.net/ont/geosparql)
+- [SKOS](http://www.w3.org/2004/02/skos/core) 
+- [Dublin Core](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/)
 ![](./images/placename-details.png)
                 </td>
             </tr>
@@ -1390,7 +1340,6 @@ This ontology uses classes and properties from existing vocabularies, in particu
         </table>
     </div>
 </section>
-
 <section id="namespaces">
     <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <dl>
