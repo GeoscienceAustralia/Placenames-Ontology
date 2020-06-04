@@ -301,7 +301,7 @@ ex:NT_10532
   a owl:Class ;
   rdfs:comment """A name associated with a geospatial place or feature. 
 
-Additional properties are specified for  the sub-class OfficialPlaceName which shoudl be used for formal names"""@en ;
+Additional properties are specified for  the sub-class OfficialPlaceName which should be used for formal names"""@en ;
   rdfs:label "Place Name"@en ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -341,7 +341,9 @@ ex:DH
 .
 :Status
   a owl:Class ;
-  rdfs:comment "Status of resource, in context of a standard lifecycle: informal, gazetted, released, published, retired" ;
+  rdfs:comment """Status of resource, in context of a standard lifecycle: informal, official, gazetted, released, published, retired
+
+![](./images/status.png)""" ;
   rdfs:label "Status" ;
   rdfs:subClassOf skos:Concept ;
 .
@@ -424,6 +426,16 @@ ex:DH
   rdfs:domain :PlaceName ;
   rdfs:label "name" ;
   rdfs:range xsd:string ;
+.
+:official
+  a :Status ;
+  a owl:NamedIndividual ;
+  rdfs:label "official" ;
+  skos:narrower :gazetted ;
+  skos:narrower :published ;
+  skos:narrower :released ;
+  skos:narrower :retired ;
+  skos:prefLabel "official" ;
 .
 :placeNameOf
   a owl:ObjectProperty ;
