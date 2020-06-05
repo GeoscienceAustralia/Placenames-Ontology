@@ -114,16 +114,16 @@ loci:isMemberOf
   dcterms:title "Place Names Ontology"@en ;
   rdfs:comment """**Place Names** is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features, typically collected in a Gazetteer.
 
-A place-name is a text string that is 
+A **place-name** is a text string that is 
 
 - assigned by an agent (person or organization)
 - denotes a natural or constructed geospatial feature with a specified classification
 - assigned a designated 'status' - default=\"informal\"
 
-An **official** place-name is a placename that is 
+An **official place-name** is a place-name that 
 
-- authorized by a jurisidiction (national, state or local government) 
-- a member item in a gazetteer
+- is authorized by a place-naming-authority, often a jurisidiction (national, state or local government) 
+- is a member item in a gazetteer
 - has lifecycle information (status, validity dates (TBD), formal identifier) 
 - denotes a natural or constructed geospatial feature with a specified classification (inhabited place, administrative area, mountain, school, station, park ...)
 
