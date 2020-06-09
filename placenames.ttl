@@ -117,14 +117,14 @@ loci:isMemberOf
 A **place-name** is a text string that is 
 
 - assigned by an agent (person or organization)
-- denotes a natural or constructed geospatial feature with a specified classification
-- assigned a designated 'status' - default=\"informal\"
+- assigned a designated 'status', with default=\"informal\"
+- denotes a natural or constructed geospatial feature 
 
 An **official place-name** is a place-name that 
 
 - is authorized by a place-naming-authority, often a jurisidiction (national, state or local government) 
 - is a member item in a gazetteer
-- has lifecycle information (status, validity dates (TBD), formal identifier) 
+- has lifecycle information (status, dates) 
 - denotes a natural or constructed geospatial feature with a specified classification (inhabited place, administrative area, mountain, school, station, park ...)
 
 This ontology uses classes and properties from existing vocabularies, in particular
@@ -183,8 +183,9 @@ This ontology uses classes and properties from existing vocabularies, in particu
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom :PlaceNamingAuthority ;
+      rdfs:comment "An official placename must be associated with a place-naming-authority. Additional attributions may also be attached." ;
       owl:onProperty :wasNamedBy ;
+      owl:someValuesFrom :PlaceNamingAuthority ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;

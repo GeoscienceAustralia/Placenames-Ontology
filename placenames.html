@@ -308,14 +308,14 @@
 <p>A <strong>place-name</strong> is a text string that is </p>
 <ul>
 <li>assigned by an agent (person or organization)</li>
-<li>denotes a natural or constructed geospatial feature with a specified classification</li>
-<li>assigned a designated 'status' - default="informal"</li>
+<li>assigned a designated 'status', with default="informal"</li>
+<li>denotes a natural or constructed geospatial feature</li>
 </ul>
 <p>An <strong>official place-name</strong> is a place-name that </p>
 <ul>
 <li>is authorized by a place-naming-authority, often a jurisidiction (national, state or local government) </li>
 <li>is a member item in a gazetteer</li>
-<li>has lifecycle information (status, validity dates (TBD), formal identifier) </li>
+<li>has lifecycle information (status, dates) </li>
 <li>denotes a natural or constructed geospatial feature with a specified classification (inhabited place, administrative area, mountain, school, station, park ...)</li>
 </ul>
 <p>This ontology uses classes and properties from existing vocabularies, in particular</p>
@@ -483,7 +483,7 @@ ex:Uluru-Ayers-Rock
                     <a href="#dategazetted">dateGazetted</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
                     <a href="http://linked.data.gov.au/def/loci#isMemberOf">loci:isMemberOf</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Gazetteer">Gazetteer</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#datereleased">dateReleased</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
-                    <a href="#wasnamedby">wasNamedBy</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#NamingAuthority">PlaceNamingAuthority</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#wasnamedby">wasNamedBy</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#NamingAuthority">PlaceNamingAuthority</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#hasstatus">status</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
                     <a href="#dateretired">dateRetired</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
                     <a href="#datepublished">datePublished</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
