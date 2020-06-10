@@ -7,7 +7,7 @@
     <style>
         #pylode {
             position: fixed;
-            top: 80px;
+            top: 130px;
             left: -60px;
             font-size: small;
             transform: rotate(-90deg);
@@ -161,7 +161,7 @@
     ],
     "https://schema.org/description": [
       {
-        "@value": "<p><strong>Place Names</strong> is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features, typically collected in a Gazetteer.</p>\n<p>A place-name is a text string that is </p>\n<ul>\n<li>assigned by an agent (person or organization)</li>\n<li>denotes a natural or constructed geospatial feature with a specified classification</li>\n<li>assigned a designated 'status' - default=\"informal\"</li>\n</ul>\n<p>An <strong>official</strong> place-name is a placename that is </p>\n<ul>\n<li>authorized by a jurisidiction (national, state or local government) </li>\n<li>a member item in a gazetteer</li>\n<li>has lifecycle information (status, validity dates (TBD), formal identifier) </li>\n<li>denotes a natural or constructed geospatial feature with a specified classification (inhabited place, administrative area, mountain, school, station, park ...)</li>\n</ul>\n<p>This ontology uses classes and properties from existing vocabularies, in particular</p>\n<ul>\n<li><a href=\"http://www.opengis.net/ont/geosparql\">GeoSPARQL</a></li>\n<li><a href=\"http://www.w3.org/2004/02/skos/core\">SKOS</a> </li>\n<li><a href=\"https://www.dublincore.org/specifications/dublin-core/dcmi-terms/\">Dublin Core</a></li>\n</ul>\n<p><img alt=\"\" src=\"./images/placename-details.png\" /></p>"
+        "@value": "<p><strong>Place Names</strong> is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features, typically collected in a Gazetteer.</p>\n<p>A <strong>place-name</strong> is a text string that is </p>\n<ul>\n<li>assigned by an agent (person or organization)</li>\n<li>assigned a designated 'status', with default=\"informal\"</li>\n<li>denotes a natural or constructed geospatial feature </li>\n</ul>\n<p>An <strong>official place-name</strong> is a place-name that </p>\n<ul>\n<li>is authorized by a place-naming-authority, often a jurisidiction (national, state or local government) </li>\n<li>is a member item in a gazetteer</li>\n<li>has lifecycle information (status, dates) </li>\n<li>denotes a natural or constructed geospatial feature with a specified classification (inhabited place, administrative area, mountain, school, station, park ...)</li>\n</ul>\n<p>This ontology uses classes and properties from existing vocabularies, in particular</p>\n<ul>\n<li><a href=\"http://www.opengis.net/ont/geosparql\">GeoSPARQL</a></li>\n<li><a href=\"http://www.w3.org/2004/02/skos/core\">SKOS</a> </li>\n<li><a href=\"https://www.dublincore.org/specifications/dublin-core/dcmi-terms/\">Dublin Core</a></li>\n</ul>\n<p><img alt=\"\" src=\"./images/placename-details.png\" /></p>"
       }
     ],
     "https://schema.org/name": [
@@ -179,8 +179,11 @@
     </script>
 </head>
 <body>
-<div id="pylode">made by <a href="http://github.com/rdflib/pyLODE"><span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a></div>
-<h1>Place Names Ontology</h1>
+  <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
+    <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
+    <span style="font-size:smaller;">2.4</span>
+  </div>
+  <h1>Place Names Ontology</h1>
 <section id="metadata">
     <h2 style="display:none;">Metadata</h2>
     <dl>
@@ -309,7 +312,7 @@
 <ul>
 <li>assigned by an agent (person or organization)</li>
 <li>assigned a designated 'status', with default="informal"</li>
-<li>denotes a natural or constructed geospatial feature</li>
+<li>denotes a natural or constructed geospatial feature </li>
 </ul>
 <p>An <strong>official place-name</strong> is a place-name that </p>
 <ul>
@@ -473,20 +476,20 @@ ex:Uluru-Ayers-Rock
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    ()<br/>
                     <a href="#PlaceName">PlaceName</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
+                    <a href="#datepublished">datePublished</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="#wasnamedby">wasNamedBy</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#NamingAuthority">PlaceNamingAuthority</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#dategazetted">dateGazetted</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#dateretired">dateRetired</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
                     <a href="http://linked.data.gov.au/def/loci#isMemberOf">loci:isMemberOf</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Gazetteer">Gazetteer</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#datereleased">dateReleased</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
-                    <a href="#wasnamedby">wasNamedBy</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#NamingAuthority">PlaceNamingAuthority</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#hasstatus">status</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="#dateretired">dateRetired</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
-                    <a href="#datepublished">datePublished</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
+                    <span class="cardinality">not</span> (<a href="#hasstatus">status</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">value</span> <a href="#informal">informal</a><sup class="sup-ni" title="named individual">ni</sup>)<br/>
                 </td>
             </tr>
             <tr>
@@ -494,8 +497,8 @@ ex:Uluru-Ayers-Rock
                 <td>
                     <a href="#datepublished">datePublished</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#dateretired">dateRetired</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#datereleased">dateReleased</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#dategazetted">dateGazetted</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#datereleased">dateReleased</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                 </td>
             </tr>
         </table>
@@ -547,9 +550,9 @@ ex:NT_10532
             <tr>
                 <th>Restrictions</th>
                 <td>
+                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a> <span class="cardinality">min</span> 1 <a href="http://www.opengis.net/ont/geosparql#Geometry">geo:Geometry</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a> <span class="cardinality">min</span> 1<br/>
                     <a href="#hasplaceclassification">hasPlaceClassification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
-                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a> <span class="cardinality">min</span> 1 <a href="http://www.opengis.net/ont/geosparql#Geometry">geo:Geometry</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -599,9 +602,9 @@ ex:DH
             <tr>
                 <th>Restrictions</th>
                 <td>
+                    <a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a> <span class="cardinality">min</span> 1<br/>
                     <a href="#name">name</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
                     <a href="#placenameof">placeNameOf</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
-                    <a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a> <span class="cardinality">min</span> 1<br/>
                 </td>
             </tr>
             <tr>
@@ -613,10 +616,10 @@ ex:DH
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#pronunciation">hasPronunciation</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#nameisindigenous">isIndigenous</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#placenameof">placeNameOf</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#pronunciation">hasPronunciation</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#name">name</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#placenameof">placeNameOf</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#wasnamedby">wasNamedBy</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
@@ -1091,7 +1094,8 @@ ex:DH
         </table>
     </div>
 </section>
-<section id="namedindividuals">
+  
+  <section id="namedindividuals">
     <h2>Named Individuals <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
         <li><a href="#0000-0002-3884-3420">0000-0002-3884-3420</a></li>
@@ -1127,14 +1131,14 @@ ex:DH
                 <th>Description</th>
                 <td>
                     **Place Names** is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features, typically collected in a Gazetteer.
-A place-name is a text string that is 
+A **place-name** is a text string that is 
 - assigned by an agent (person or organization)
-- denotes a natural or constructed geospatial feature with a specified classification
-- assigned a designated 'status' - default="informal"
-An **official** place-name is a placename that is 
-- authorized by a jurisidiction (national, state or local government) 
-- a member item in a gazetteer
-- has lifecycle information (status, validity dates (TBD), formal identifier) 
+- assigned a designated 'status', with default="informal"
+- denotes a natural or constructed geospatial feature 
+An **official place-name** is a place-name that 
+- is authorized by a place-naming-authority, often a jurisidiction (national, state or local government) 
+- is a member item in a gazetteer
+- has lifecycle information (status, dates) 
 - denotes a natural or constructed geospatial feature with a specified classification (inhabited place, administrative area, mountain, school, station, park ...)
 This ontology uses classes and properties from existing vocabularies, in particular
 - [GeoSPARQL](http://www.opengis.net/ont/geosparql)
@@ -1340,7 +1344,8 @@ This ontology uses classes and properties from existing vocabularies, in particu
         </table>
     </div>
 </section>
-<section id="namespaces">
+  
+  <section id="namespaces">
     <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <dl>
         <dt><em>default (:)</em></dt>
@@ -1383,17 +1388,17 @@ This ontology uses classes and properties from existing vocabularies, in particu
         <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
     </dl>
 </section>
-<section id="legend">
-    <h2>Legend</h2>
-    <table class="entity">
-        <tr><td><sup class="sup-c" title="Classes">c</sup></td><td>Classes</td></tr>
-        <tr><td><sup class="sup-op" title="Object Properties">op</sup></td><td>Object Properties</td></tr>
-        <tr><td><sup class="sup-fp" title="Functional Properties">fp</sup></td><td>Functional Properties</td></tr>
-        <tr><td><sup class="sup-dp" title="Data Properties">dp</sup></td><td>Data Properties</td></tr>
-        <tr><td><sup class="sup-ap" title="Annotation Properties">dp</sup></td><td>Annotation Properties</td></tr>
-        <tr><td><sup class="sup-p" title="Properties">p</sup></td><td>Properties</td></tr>
-        <tr><td><sup class="sup-ni" title="Named Individuals">ni</sup></td><td>Named Individuals</td></tr>
-    </table>
-</section>
+  <section id="legend">
+      <h2>Legend</h2>
+      <table class="entity">
+          <tr><td><sup class="sup-c" title="Classes">c</sup></td><td>Classes</td></tr>
+          <tr><td><sup class="sup-op" title="Object Properties">op</sup></td><td>Object Properties</td></tr>
+          <tr><td><sup class="sup-fp" title="Functional Properties">fp</sup></td><td>Functional Properties</td></tr>
+          <tr><td><sup class="sup-dp" title="Data Properties">dp</sup></td><td>Data Properties</td></tr>
+          <tr><td><sup class="sup-ap" title="Annotation Properties">dp</sup></td><td>Annotation Properties</td></tr>
+          <tr><td><sup class="sup-p" title="Properties">p</sup></td><td>Properties</td></tr>
+          <tr><td><sup class="sup-ni" title="Named Individuals">ni</sup></td><td>Named Individuals</td></tr>
+      </table>
+  </section>
 </body>
 </html>
