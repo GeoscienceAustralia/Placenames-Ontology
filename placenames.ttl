@@ -274,8 +274,7 @@ ex:Uluru-Ayers-Rock
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass geo:Geometry ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty geo:hasGeometry ;
     ] ;
   skos:example """
