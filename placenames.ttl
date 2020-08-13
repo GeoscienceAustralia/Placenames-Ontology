@@ -225,7 +225,7 @@ ex:Ayers-Rock
   :dateGazetted \"1850-01-01\"^^xsd:date ;
   :dateRetired \"1989-12-31\"^^xsd:date ;
   :name \"Ayers Rock\" ;
-  :placeNameOf ex:Uluru ;
+  :placeNameOf ex:NT_10532 ;
   :status :retired ;
   :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
   rdfs:label \"Ayers Rock\" ;
@@ -238,7 +238,7 @@ ex:Ayers-Rock-Uluru
   :dateGazetted \"1990-01-01\"^^xsd:date ;
   :dateRetired \"2005-12-31\"^^xsd:date ;
   :name \"Ayers Rock (Uluru)\" ;
-  :placeNameOf ex:Uluru ;
+  :placeNameOf ex:NT_10532 ;
   :status :retired ;
   :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
   rdfs:label \"Ayers Rock (Uluru)\" ;
@@ -250,7 +250,7 @@ ex:Uluru-Ayers-Rock
   loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
   :dateGazetted \"2006-01-01\"^^xsd:date ;
   :name \"Uluru (Ayers Rock)\" ;
-  :placeNameOf ex:Uluru ;
+  :placeNameOf ex:NT_10532 ;
   :status :gazetted ;
   :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
   rdfs:label \"Uluru (Ayers Rock)\" ;
