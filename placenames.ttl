@@ -170,7 +170,7 @@ This ontology uses classes and properties from existing vocabularies, in particu
 .
 :OfficialPlaceName
   a owl:Class ;
-  rdfs:comment "The name of a place, assigned by an official naming authority and included in the Place Names Gazeteer of Australia."@en ;
+  rdfs:comment "The name of a place, assigned by an official naming authority and included in the Place Names Gazetteer of Australia."@en ;
   rdfs:label "Official place-name" ;
   rdfs:subClassOf :PlaceName ;
   rdfs:subClassOf [
@@ -419,6 +419,7 @@ ex:DH
 .
 :isIndigenous
   a owl:DatatypeProperty ;
+  rdfs:comment "Flag to indicate if the name is indigenous" ;
   rdfs:domain :PlaceName ;
   rdfs:label "name is indigenous" ;
   rdfs:range xsd:boolean ;
