@@ -25,7 +25,7 @@ ex:Ayers-Rock
   loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
   :dateGazetted "1850-01-01"^^xsd:date ;
   :dateRetired "1989-12-31"^^xsd:date ;
-  :name "Ayers Rock" ;
+  :name "Ayers Rock"^^rdf:langString ;
   :placeNameOf ex:NT_10532 ;
   :status :retired ;
   :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
@@ -37,7 +37,7 @@ ex:Ayers-Rock-Uluru
   loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
   :dateGazetted "1990-01-01"^^xsd:date ;
   :dateRetired "2005-12-31"^^xsd:date ;
-  :name "Ayers Rock (Uluru)" ;
+  :name "Ayers Rock (Uluru)"^^rdf:langString ;
   :placeNameOf ex:NT_10532 ;
   :status :retired ;
   :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
@@ -46,7 +46,7 @@ ex:Ayers-Rock-Uluru
 .
 ex:DH
   a :PlaceName ;
-  :name "The cubby house" ;
+  :name "The cubby house"^^rdf:langString ;
   :placeNameOf ex:INF9987234 ;
   :status :informal ;
   :wasNamedBy <https://people.example.org/fagin> ;
@@ -83,7 +83,7 @@ ex:Uluru-Ayers-Rock
   a :OfficialPlaceName ;
   loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
   :dateGazetted "2006-01-01"^^xsd:date ;
-  :name "Uluru (Ayers Rock)" ;
+  :name "Uluru (Ayers Rock)"^^rdf:langString ;
   :placeNameOf ex:NT_10532 ;
   :status :gazetted ;
   :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
@@ -104,7 +104,7 @@ loci:isMemberOf
   dcterms:created "2018-08-02"^^xsd:date ;
   dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
   dcterms:creator <https://orcid.org/0000-0002-8742-7730> ;
-  dcterms:modified "2020-06-04"^^xsd:date ;
+  dcterms:modified "2020-08-27"^^xsd:date ;
   dcterms:publisher [
       rdfs:seeAlso <https://www.ga.gov.au> ;
       schema:identifier "http://catalogue.linked.data.gov.au/org/ga" ;
@@ -224,11 +224,11 @@ ex:Ayers-Rock
   loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
   :dateGazetted \"1850-01-01\"^^xsd:date ;
   :dateRetired \"1989-12-31\"^^xsd:date ;
-  :name \"Ayers Rock\" ;
+  :name \"Ayers Rock\"@en-AU ;
   :placeNameOf ex:NT_10532 ;
   :status :retired ;
   :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
-  rdfs:label \"Ayers Rock\" ;
+  rdfs:label \"Ayers Rock\"@en ;
 .
 
 ex:Ayers-Rock-Uluru
@@ -237,7 +237,7 @@ ex:Ayers-Rock-Uluru
   loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
   :dateGazetted \"1990-01-01\"^^xsd:date ;
   :dateRetired \"2005-12-31\"^^xsd:date ;
-  :name \"Ayers Rock / Uluru\" ;
+  :name \"Ayers Rock / Uluru\"@en-AU ;
   :placeNameOf ex:NT_10532 ;
   :status :retired ;
   :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
@@ -249,7 +249,8 @@ ex:Uluru-Ayers-Rock
   rdf:type :OfficialPlaceName ;
   loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
   :dateGazetted \"2006-01-01\"^^xsd:date ;
-  :name \"Uluru / Ayers Rock\" ;
+  :isIndigenous true ;
+  :name \"Uluru / Ayers Rock\"@pjt ;
   :placeNameOf ex:NT_10532 ;
   :status :gazetted ;
   :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
@@ -321,7 +322,8 @@ Additional properties are specified for  the sub-class OfficialPlaceName which s
   skos:example """
 ex:DH
   rdf:type :PlaceName ;
-  :name \"The cubby house\" ;
+  :isIndigenous false ;
+  :name \"The cubby house\"@en ;
   :placeNameOf ex:INF9987234 ;
   :status :informal ;
   :wasNamedBy <https://people.example.org/fagin> ;
@@ -423,9 +425,19 @@ ex:DH
 .
 :name
   a owl:DatatypeProperty ;
+  rdfs:comment """It is recommended to include the language tag on the name value. This will be the IETF code @en-AU for most official names. 
+
+For indigenous names, many of the Australian indigenous languages catalogued by AUSTLANG have official ISO 639-3 codes which may be used as the language tag. 
+The ISO 639 codes are available from https://iso639-3.sil.org/about 
+
+For example
+- wbv Wajarri https://iso639-3.sil.org/code/wbv
+- wdj Wadjiginy  https://iso639-3.sil.org/code/wdj 
+- wdu Wadjigu  https://iso639-3.sil.org/code/wdu 
+- wgg Wangkangurru https://iso639-3.sil.org/code/wgg """ ;
   rdfs:domain :PlaceName ;
   rdfs:label "name" ;
-  rdfs:range xsd:string ;
+  rdfs:range rdf:langString ;
 .
 :official
   a :Status ;

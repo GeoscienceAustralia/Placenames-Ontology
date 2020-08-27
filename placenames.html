@@ -183,6 +183,7 @@
     <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
     <span style="font-size:smaller;">2.4</span>
   </div>
+  <img src="images/ga-logo.jpg" alt="Geoscience Australia logo"/>
   <h1>Place Names Ontology</h1>
 <section id="metadata">
     <h2 style="display:none;">Metadata</h2>
@@ -341,7 +342,14 @@
         <li><a href="#legend">Legend</a></li>
     </ol>
 </section>
-<section id="classes">
+<section id="overview">
+    <h2>Overview</h2>
+    <div class="figure">
+        <div style="width:500px; height:50px; background-color: lightgrey; border:solid 2px grey; padding:10px;margin-bottom:5px; text-align:center;">Pictures say 1,000 words</div>
+        <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
+    </div>
+</section>
+  <section id="classes">
     <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
         <li><a href="#Dataset">Dataset</a></li>
@@ -441,30 +449,33 @@ ex:Ayers-Rock
   loci:isMemberOf &lt;https://www.ntlis.nt.gov.au/placenames/&gt; ;
   :dateGazetted "1850-01-01"^^xsd:date ;
   :dateRetired "1989-12-31"^^xsd:date ;
-  :name "Ayers Rock" ;
+  :name "Ayers Rock"@en-AU ;
   :placeNameOf ex:NT_10532 ;
   :status :retired ;
   :wasNamedBy &lt;https://www.ntlis.nt.gov.au/placenames/&gt; ;
   rdfs:label "Ayers Rock" ;
 .
+
 ex:Ayers-Rock-Uluru
   rdf:type :PlaceName ;
   rdf:type :OfficialPlaceName ;
   loci:isMemberOf &lt;https://www.ntlis.nt.gov.au/placenames/&gt; ;
   :dateGazetted "1990-01-01"^^xsd:date ;
   :dateRetired "2005-12-31"^^xsd:date ;
-  :name "Ayers Rock / Uluru" ;
+  :name "Ayers Rock / Uluru"@en-AU ;
   :placeNameOf ex:NT_10532 ;
   :status :retired ;
   :wasNamedBy &lt;https://www.ntlis.nt.gov.au/placenames/&gt; ;
   rdfs:label "Ayers Rock / Uluru" ;
 .
+
 ex:Uluru-Ayers-Rock
   rdf:type :PlaceName ;
   rdf:type :OfficialPlaceName ;
   loci:isMemberOf &lt;https://www.ntlis.nt.gov.au/placenames/&gt; ;
   :dateGazetted "2006-01-01"^^xsd:date ;
-  :name "Uluru / Ayers Rock" ;
+  :isIndigenous true ;
+  :name "Uluru / Ayers Rock"@pjt ;
   :placeNameOf ex:NT_10532 ;
   :status :gazetted ;
   :wasNamedBy &lt;https://www.ntlis.nt.gov.au/placenames/&gt; ;
@@ -476,20 +487,20 @@ ex:Uluru-Ayers-Rock
             <tr>
                 <th>Super-classes</th>
                 <td>
+                    ()<br/>
                     <a href="#PlaceName">PlaceName</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#datepublished">datePublished</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
-                    <a href="#wasnamedby">wasNamedBy</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#NamingAuthority">PlaceNamingAuthority</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#dategazetted">dateGazetted</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="#dateretired">dateRetired</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
-                    <a href="http://linked.data.gov.au/def/loci#isMemberOf">loci:isMemberOf</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Gazetteer">Gazetteer</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#datereleased">dateReleased</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="#wasnamedby">wasNamedBy</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#NamingAuthority">PlaceNamingAuthority</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#datepublished">datePublished</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="http://linked.data.gov.au/def/loci#isMemberOf">loci:isMemberOf</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Gazetteer">Gazetteer</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#dateretired">dateRetired</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
                     <a href="#hasstatus">status</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <span class="cardinality">not</span> (<a href="#hasstatus">status</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">value</span> <a href="#informal">informal</a><sup class="sup-ni" title="named individual">ni</sup>)<br/>
                 </td>
             </tr>
             <tr>
@@ -497,8 +508,8 @@ ex:Uluru-Ayers-Rock
                 <td>
                     <a href="#datepublished">datePublished</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#dateretired">dateRetired</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#dategazetted">dateGazetted</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#datereleased">dateReleased</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#dategazetted">dateGazetted</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                 </td>
             </tr>
         </table>
@@ -550,16 +561,16 @@ ex:NT_10532
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a> <span class="cardinality">min</span> 1<br/>
-                    <a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a> <span class="cardinality">min</span> 1<br/>
                     <a href="#hasplaceclassification">hasPlaceClassification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a> <span class="cardinality">min</span> 1<br/>
+                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a> <span class="cardinality">min</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#hasplaceclassification">hasPlaceClassification</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#hasplacename">hasPlaceName</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasplaceclassification">hasPlaceClassification</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -591,7 +602,8 @@ ex:NT_10532
                       
 ex:DH
   rdf:type :PlaceName ;
-  :name "The cubby house" ;
+  :isIndigenous false ;
+  :name "The cubby house"@en ;
   :placeNameOf ex:INF9987234 ;
   :status :informal ;
   :wasNamedBy &lt;https://people.example.org/fagin&gt; ;
@@ -616,11 +628,11 @@ ex:DH
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#nameisindigenous">isIndigenous</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#pronunciation">hasPronunciation</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#name">name</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#placenameof">placeNameOf</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#nameisindigenous">isIndigenous</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#wasnamedby">wasNamedBy</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#pronunciation">hasPronunciation</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#placenameof">placeNameOf</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -1080,6 +1092,19 @@ ex:DH
                 <td><code>http://linked.data.gov.au/def/placenames/name</code></td>
             </tr>
             <tr>
+                <th>Description</th>
+                <td>
+                    It is recommended to include the language tag on the name value. This will be the IETF code @en-AU for most official names. 
+For indigenous names, many of the Australian indigenous languages catalogued by AUSTLANG have official ISO 639-3 codes which may be used as the language tag. 
+The ISO 639 codes are available from https://iso639-3.sil.org/about 
+For example
+- wbv Wajarri https://iso639-3.sil.org/code/wbv
+- wdj Wadjiginy  https://iso639-3.sil.org/code/wdj 
+- wdu Wadjigu  https://iso639-3.sil.org/code/wdu 
+- wgg Wangkangurru https://iso639-3.sil.org/code/wgg 
+                </td>
+            </tr>
+            <tr>
                 <th>Domain(s)</th>
                 <td>
                     <a href="#PlaceName">PlaceName</a><sup class="sup-c" title="class">c</sup>
@@ -1088,7 +1113,7 @@ ex:DH
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
