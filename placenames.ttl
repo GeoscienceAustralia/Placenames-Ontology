@@ -83,7 +83,7 @@ ex:Uluru-Ayers-Rock
   a :OfficialPlaceName ;
   loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
   :dateGazetted "2006-01-01"^^xsd:date ;
-  :name "Uluru / Ayers Rock (@pjt}" ;
+  :name "Uluru / Ayers Rock"@pjt ;
   :placeNameOf ex:NT_10532 ;
   :status :gazetted ;
   :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
