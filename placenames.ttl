@@ -25,7 +25,7 @@ ex:Ayers-Rock
   loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
   :dateGazetted "1850-01-01"^^xsd:date ;
   :dateRetired "1989-12-31"^^xsd:date ;
-  :name "Ayers Rock"^^rdf:langString ;
+  :name "Ayers Rock"@en ;
   :placeNameOf ex:NT_10532 ;
   :status :retired ;
   :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
@@ -37,7 +37,7 @@ ex:Ayers-Rock-Uluru
   loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
   :dateGazetted "1990-01-01"^^xsd:date ;
   :dateRetired "2005-12-31"^^xsd:date ;
-  :name "Ayers Rock (Uluru)"^^rdf:langString ;
+  :name "Ayers Rock / Uluru"@en ;
   :placeNameOf ex:NT_10532 ;
   :status :retired ;
   :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
@@ -46,7 +46,7 @@ ex:Ayers-Rock-Uluru
 .
 ex:DH
   a :PlaceName ;
-  :name "The cubby house"^^rdf:langString ;
+  :name "The cubby house"@en ;
   :placeNameOf ex:INF9987234 ;
   :status :informal ;
   :wasNamedBy <https://people.example.org/fagin> ;
@@ -83,7 +83,7 @@ ex:Uluru-Ayers-Rock
   a :OfficialPlaceName ;
   loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
   :dateGazetted "2006-01-01"^^xsd:date ;
-  :name "Uluru (Ayers Rock)"^^rdf:langString ;
+  :name "Uluru / Ayers Rock (@pjt}" ;
   :placeNameOf ex:NT_10532 ;
   :status :gazetted ;
   :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
