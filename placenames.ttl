@@ -29,6 +29,8 @@ ex:Ayers-Rock
   :placeNameOf ex:NT_10532 ;
   :status :retired ;
   :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
+  dcterms:identifier "10532"^^:ID-AUTH ;
+  dcterms:identifier "NT_10532"^^:ID-GAZ ;
   rdfs:comment "NOTE: EXAMPLE ONLY DETAILS MAY BE INCORRECT" ;
   rdfs:label "Ayers Rock" ;
 .
@@ -41,6 +43,8 @@ ex:Ayers-Rock-Uluru
   :placeNameOf ex:NT_10532 ;
   :status :retired ;
   :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
+  dcterms:identifier "10532"^^:ID-AUTH ;
+  dcterms:identifier "NT_10532"^^:ID-GAZ ;
   rdfs:comment "NOTE: EXAMPLE ONLY DETAILS MAY BE INCORRECT" ;
   rdfs:label "Ayers Rock (Uluru)" ;
 .
@@ -68,7 +72,8 @@ ex:NT_10532
   :hasPlaceName ex:Ayers-Rock ;
   :hasPlaceName ex:Ayers-Rock-Uluru ;
   :hasPlaceName ex:Uluru-Ayers-Rock ;
-  dcterms:identifier "NT_10532" ;
+  dcterms:identifier "10532"^^:ID-AUTH ;
+  dcterms:identifier "NT_10532"^^:ID-GAZ ;
   geo:hasGeometry [
       a <http://linked.data.gov.au/def/auspix#Geometry> ;
       rdfs:member <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/ausPIX/R7430551> ;
@@ -87,6 +92,8 @@ ex:Uluru-Ayers-Rock
   :placeNameOf ex:NT_10532 ;
   :status :gazetted ;
   :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
+  dcterms:identifier "10532"^^:ID-AUTH ;
+  dcterms:identifier "NT_10532"^^:ID-GAZ ;
   rdfs:comment "NOTE: EXAMPLE ONLY DETAILS MAY BE INCORRECT" ;
   rdfs:label "Uluru (Ayers Rock)" ;
 .
@@ -162,6 +169,38 @@ This ontology uses classes and properties from existing vocabularies, in particu
       owl:onProperty rdfs:member ;
     ] ;
 .
+:ID-AUTH
+  a rdfs:Datatype ;
+  rdfs:comment """ID assigned by the naming authority
+
+Examples provided imply that the standard ID pattern is a string of digits. If this is incorrect, then the pattern must be adjusted. """ ;
+  rdfs:label "AUTH_ID" ;
+  owl:equivalentClass [
+      a rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+      owl:withRestrictions (
+          [
+            xsd:pattern "[0-9]+" ;
+          ]
+        ) ;
+    ] ;
+.
+:ID-GAZ
+  a rdfs:Datatype ;
+  rdfs:comment """ID assigned for the Gazetteer
+
+Examples provided imply that the standard ID pattern is a string of upper-case letters to indicate the authority, followed by an underscore and a string of digits. If this is incorrect, then the pattern must be adjusted. """ ;
+  rdfs:label "GAZ ID" ;
+  owl:equivalentClass [
+      a rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+      owl:withRestrictions (
+          [
+            xsd:pattern "[A-Z]{1,3}_[0-9]+" ;
+          ]
+        ) ;
+    ] ;
+.
 :Jurisdiction
   a owl:Class ;
   rdfs:comment "Local, State, Territory or National (Commonwealth) Government that has authority to formally establish (i.e. gazette) place names within its jurisdictional area."@en ;
@@ -217,8 +256,17 @@ This ontology uses classes and properties from existing vocabularies, in particu
       owl:onProperty loci:isMemberOf ;
       owl:someValuesFrom :Gazetteer ;
     ] ;
-  skos:example """
-ex:Ayers-Rock
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onProperty dcterms:identifier ;
+      owl:someValuesFrom :ID-AUTH ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onProperty dcterms:identifier ;
+      owl:someValuesFrom :ID-GAZ ;
+    ] ;
+  skos:example """ex:Ayers-Rock
   rdf:type :PlaceName ;
   rdf:type :OfficialPlaceName ;
   loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
@@ -255,8 +303,7 @@ ex:Uluru-Ayers-Rock
   :status :gazetted ;
   :wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
   rdfs:label \"Uluru / Ayers Rock\" ;
-.
-""" ;
+.""" ;
 .
 :Place
   a owl:Class ;
