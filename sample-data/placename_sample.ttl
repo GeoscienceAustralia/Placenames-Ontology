@@ -1,0 +1,92 @@
+# baseURI: http://linked.data.gov.au/dataset/placenames/placename_sample
+# imports: http://linked.data.gov.au/def/placenames
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix place: <http://linked.data.gov.au/dataset/placenames/place/> .
+@prefix pn: <http://linked.data.gov.au/def/placenames/> .
+@prefix pname: <http://linked.data.gov.au/dataset/placenames/placename/> .
+@prefix ptype: <http://pid.geoscience.gov.au/def/voc/ga/PlaceType/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+place:VIC_16610
+  a pn:Place ;
+  pn:hasPlaceClassification ptype:ADMINISTRATION ;
+  pn:hasPlaceClassification ptype:NEIGHBOURHOOD ;
+  pn:hasPlaceClassification ptype:POPULATED_PLACE ;
+  pn:hasPlaceName pname:VIC_16610 ;
+  dcterms:identifier "16610"^^pn:ID-AUTH ;
+  dcterms:identifier "VIC_16610"^^pn:ID-GAZ ;
+  geo:hasGeometry [
+      a sf:Point ;
+      geo:asWKT "POINT(-37.08597 141.11486)"^^geo:wktLiteral ;
+    ] ;
+.
+place:VIC_17674
+  a pn:Place ;
+  pn:hasPlaceClassification ptype:ADMINISTRATION ;
+  pn:hasPlaceClassification ptype:ADMINISTRATIVE_AREA ;
+  pn:hasPlaceClassification ptype:PARISH ;
+  pn:hasPlaceName pname:VIC_17674 ;
+  dcterms:identifier "17674"^^pn:ID-AUTH ;
+  dcterms:identifier "VIC_17674"^^pn:ID-GAZ ;
+  geo:hasGeometry [
+      a sf:Point ;
+      geo:asWKT "POINT(-36.79819 141.28708)"^^geo:wktLiteral ;
+    ] ;
+.
+place:VIC_19023
+  a pn:Place ;
+  pn:hasPlaceClassification ptype:ADMINISTRATION ;
+  pn:hasPlaceClassification ptype:ADMINISTRATIVE_AREA ;
+  pn:hasPlaceClassification ptype:PARISH ;
+  pn:hasPlaceName pname:VIC_19023 ;
+  dcterms:identifier "19023"^^pn:ID-AUTH ;
+  dcterms:identifier "VIC_19023"^^pn:ID-GAZ ;
+  geo:hasGeometry [
+      a sf:Point ;
+      geo:asWKT "POINT(-37.03014 141.12597)"^^geo:wktLiteral ;
+    ] ;
+.
+pname:VIC_16610
+  a pn:OfficialPlaceName ;
+  pn:name "MEEREEK"@en-AU ;
+  pn:placeNameOf place:VIC_16610 ;
+  pn:wasNamedBy <https://vic.gov.au/> ;
+  dcterms:identifier "16610"^^pn:ID-AUTH ;
+  dcterms:identifier "VIC_16610"^^pn:ID-GAZ ;
+  dcterms:issued "2020-03-05T22:16:40"^^xsd:dateTime ;
+  rdfs:label "MEEREEK" ;
+.
+pname:VIC_17674
+  a pn:OfficialPlaceName ;
+  pn:name "MOREA"@en-AU ;
+  pn:placeNameOf place:VIC_17674 ;
+  pn:wasNamedBy <https://vic.gov.au/> ;
+  dcterms:identifier "17674"^^pn:ID-AUTH ;
+  dcterms:identifier "VIC_17674"^^pn:ID-GAZ ;
+  dcterms:issued "2020-03-05T22:16:40"^^xsd:dateTime ;
+  rdfs:label "MOREA" ;
+.
+pname:VIC_19023
+  a pn:OfficialPlaceName ;
+  pn:name "MURRANDARRA"@en-AU ;
+  pn:placeNameOf place:VIC_19023 ;
+  pn:wasNamedBy <https://vic.gov.au/> ;
+  dcterms:identifier "19023"^^pn:ID-AUTH ;
+  dcterms:identifier "VIC_19023"^^pn:ID-GAZ ;
+  dcterms:issued "2020-03-05T22:16:40"^^xsd:dateTime ;
+  rdfs:label "MURRANDARRA" ;
+.
+<http://linked.data.gov.au/dataset/placenames/placename_sample>
+  a owl:Ontology ;
+  dcterms:created "2020-09-07"^^xsd:date ;
+  dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
+  dcterms:description "sample data converted manually from CSV provided by Tina Yang" ;
+  dcterms:isFormatOf "placename_sample.csv" ;
+  owl:imports <http://linked.data.gov.au/def/placenames> ;
+.
