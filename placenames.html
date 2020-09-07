@@ -41,6 +41,7 @@
             padding: 5px 25px 5px 25px;
             background-color: #F4FFFF;
         }
+
         ul.hlist li {
             display: inline;
             margin-right: 10px;
@@ -87,6 +88,7 @@
         h4 { font: bold 100% sans-serif }
         h5 { font: italic 100% sans-serif }
         h6 { font: small-caps 100% sans-serif }
+
         body {
             padding: 2em 70px 2em 70px;
             margin: 0;
@@ -161,7 +163,7 @@
     ],
     "https://schema.org/description": [
       {
-        "@value": "<p><strong>Place Names</strong> is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features, typically collected in a Gazetteer.</p>\n<p>A <strong>place-name</strong> is a text string that is </p>\n<ul>\n<li>assigned by an agent (person or organization)</li>\n<li>assigned a designated 'status', with default=\"informal\"</li>\n<li>denotes a natural or constructed geospatial feature </li>\n</ul>\n<p>An <strong>official place-name</strong> is a place-name that </p>\n<ul>\n<li>is authorized by a place-naming-authority, often a jurisidiction (national, state or local government) </li>\n<li>is a member item in a gazetteer</li>\n<li>has lifecycle information (status, dates) </li>\n<li>denotes a natural or constructed geospatial feature with a specified classification (inhabited place, administrative area, mountain, school, station, park ...)</li>\n</ul>\n<p>This ontology uses classes and properties from existing vocabularies, in particular</p>\n<ul>\n<li><a href=\"http://www.opengis.net/ont/geosparql\">GeoSPARQL</a></li>\n<li><a href=\"http://www.w3.org/2004/02/skos/core\">SKOS</a> </li>\n<li><a href=\"https://www.dublincore.org/specifications/dublin-core/dcmi-terms/\">Dublin Core</a></li>\n</ul>\n<p><img alt=\"\" src=\"./images/placename-details.png\" /></p>"
+        "@value": "<p><strong>Place Names</strong> is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features (locations).</p>\n<p>A <strong>place-name</strong> is a text string in a specified language that is </p>\n<ul>\n<li>assigned by an agent (person or organization)</li>\n<li>assigned a designated 'status', with default=\"informal\"</li>\n<li>denotes a natural or constructed location </li>\n</ul>\n<p>An <strong>official-place-name</strong> is a <strong>place-name</strong> that also </p>\n<ul>\n<li>is authorized by a place-naming-authority, often a jurisidiction (national, state or local government) </li>\n<li>is a member item in a gazetteer</li>\n<li>has lifecycle information (status, dates) </li>\n</ul>\n<p>Each individual place-name or official-place-name is associated with one <strong>place</strong>. </p>\n<p>A <strong>place</strong> is </p>\n<ul>\n<li>a location with at least a point geometry</li>\n<li>which has a specified classification (inhabited place, administrative area, mountain, school, station, park ...). </li>\n<li>with one or more names associated with each individual place. </li>\n</ul>\n<p>This ontology uses classes and properties from existing vocabularies, in particular</p>\n<ul>\n<li><a href=\"http://www.opengis.net/ont/geosparql\">GeoSPARQL</a></li>\n<li><a href=\"http://www.w3.org/2004/02/skos/core\">SKOS</a> </li>\n<li><a href=\"https://www.dublincore.org/specifications/dublin-core/dcmi-terms/\">Dublin Core</a></li>\n</ul>\n<p><img alt=\"\" src=\"./images/placename-details.png\" /></p>"
       }
     ],
     "https://schema.org/name": [
@@ -296,9 +298,10 @@
         <dt>Created</dt>
         <dd>2018-08-02</dd>
         <dt>Modified</dt>
-        <dd>2020-08-27</dd>
+        <dd>2020-09-07</dd>
         <dt>Imports</dt>
         <dd>
+            <a href="http://linked.data.gov.au/def/geox">http://linked.data.gov.au/def/geox</a><br/>
             <a href="http://www.opengis.net/ont/geosparql">http://www.opengis.net/ont/geosparql</a><br/>
         </dd>
         <dt>Rights</dt>
@@ -308,19 +311,25 @@
     </dl>
     <h2>Description</h2>
     <div id="description">
-        <p><strong>Place Names</strong> is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features, typically collected in a Gazetteer.</p>
-<p>A <strong>place-name</strong> is a text string that is </p>
+        <p><strong>Place Names</strong> is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features (locations).</p>
+<p>A <strong>place-name</strong> is a text string in a specified language that is </p>
 <ul>
 <li>assigned by an agent (person or organization)</li>
 <li>assigned a designated 'status', with default="informal"</li>
-<li>denotes a natural or constructed geospatial feature </li>
+<li>denotes a natural or constructed location </li>
 </ul>
-<p>An <strong>official place-name</strong> is a place-name that </p>
+<p>An <strong>official-place-name</strong> is a <strong>place-name</strong> that also </p>
 <ul>
 <li>is authorized by a place-naming-authority, often a jurisidiction (national, state or local government) </li>
 <li>is a member item in a gazetteer</li>
 <li>has lifecycle information (status, dates) </li>
-<li>denotes a natural or constructed geospatial feature with a specified classification (inhabited place, administrative area, mountain, school, station, park ...)</li>
+</ul>
+<p>Each individual place-name or official-place-name is associated with one <strong>place</strong>. </p>
+<p>A <strong>place</strong> is </p>
+<ul>
+<li>a location with at least a point geometry</li>
+<li>which has a specified classification (inhabited place, administrative area, mountain, school, station, park ...). </li>
+<li>with one or more names associated with each individual place. </li>
 </ul>
 <p>This ontology uses classes and properties from existing vocabularies, in particular</p>
 <ul>
@@ -435,7 +444,6 @@
                 <th>Example</th>
                 <td>
                     <pre>
-                      
 ex:Ayers-Rock
   rdf:type :PlaceName ;
   rdf:type :OfficialPlaceName ;
@@ -446,7 +454,7 @@ ex:Ayers-Rock
   :placeNameOf ex:NT_10532 ;
   :status :retired ;
   :wasNamedBy &lt;https://www.ntlis.nt.gov.au/placenames/&gt; ;
-  rdfs:label "Ayers Rock" ;
+  rdfs:label "Ayers Rock"@en ;
 .
 
 ex:Ayers-Rock-Uluru
@@ -487,22 +495,24 @@ ex:Uluru-Ayers-Rock
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#dategazetted">dateGazetted</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a> <span class="cardinality">some</span> <a href="http://linked.data.gov.au/def/placenames/ID-GAZ">ID-GAZ</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#datereleased">dateReleased</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
-                    <a href="#wasnamedby">wasNamedBy</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#NamingAuthority">PlaceNamingAuthority</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#datepublished">datePublished</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
                     <a href="http://linked.data.gov.au/def/loci#isMemberOf">loci:isMemberOf</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Gazetteer">Gazetteer</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#dateretired">dateRetired</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="#dategazetted">dateGazetted</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a> <span class="cardinality">some</span> <a href="http://linked.data.gov.au/def/placenames/ID-AUTH">ID-AUTH</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#datepublished">datePublished</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
                     <a href="#hasstatus">status</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#dateretired">dateRetired</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="#wasnamedby">wasNamedBy</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#NamingAuthority">PlaceNamingAuthority</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
                     <a href="#datepublished">datePublished</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#dateretired">dateRetired</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#datereleased">dateReleased</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#dategazetted">dateGazetted</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#dateretired">dateRetired</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                 </td>
             </tr>
         </table>
@@ -524,17 +534,19 @@ ex:Uluru-Ayers-Rock
                 <th>Example</th>
                 <td>
                     <pre>
-                      
 ex:NT_10532
+  rdf:type :Place ex:NT_10532
   rdf:type :Place ;
   :hasPlaceClassification &lt;http://pid.geoscience.gov.au/def/voc/ga/PlaceType/MOUNTAIN&gt; ;
   :hasPlaceName ex:Ayers-Rock ;
   :hasPlaceName ex:Ayers-Rock-Uluru ;
   :hasPlaceName ex:Uluru-Ayers-Rock ;
-  dcterms:identifier "NT_10532" ;
+  dcterms:identifier "10532"^^:ID-AUTH ;
+  dcterms:identifier "NT_10532"^^:ID-GAZ ;
   geo:hasGeometry [
-      rdf:type geo:Geometry ;
-      geo:asDGGS "R7430551"^^geox:dggsLiteral ;
+      rdf:type &lt;http://linked.data.gov.au/def/auspix#Geometry&gt; ;
+      geox:asDGGS "R7430551"^^geox:dggsLiteral ;
+      rdfs:seeAlso &lt;http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/ausPIX/R7430551&gt; ;
     ] ;
   geo:hasGeometry [
       rdf:type sf:Point ;
@@ -554,9 +566,9 @@ ex:NT_10532
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#hasplaceclassification">hasPlaceClassification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
                     <a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a> <span class="cardinality">min</span> 1<br/>
                     <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a> <span class="cardinality">min</span> 1<br/>
+                    <a href="#hasplaceclassification">hasPlaceClassification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
                 </td>
             </tr>
             <tr>
@@ -591,8 +603,7 @@ ex:NT_10532
             <tr>
                 <th>Example</th>
                 <td>
-                    <pre>
-                      
+                    <pre>     
 ex:DH
   rdf:type :PlaceName ;
   :isIndigenous false ;
@@ -607,9 +618,9 @@ ex:DH
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a> <span class="cardinality">min</span> 1<br/>
-                    <a href="#name">name</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
                     <a href="#placenameof">placeNameOf</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="#name">name</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a> <span class="cardinality">min</span> 1<br/>
                 </td>
             </tr>
             <tr>
@@ -621,11 +632,11 @@ ex:DH
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#name">name</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#nameisindigenous">isIndigenous</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#wasnamedby">wasNamedBy</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#pronunciation">hasPronunciation</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#placenameof">placeNameOf</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#nameisindigenous">isIndigenous</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#name">name</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -1094,8 +1105,10 @@ ex:DH
                 <th>Description</th>
                 <td>
                     It is recommended to include the language tag on the name value. This will be the IETF code @en-AU for most official names. 
+
 For indigenous names, many of the Australian indigenous languages catalogued by AUSTLANG have official ISO 639-3 codes which may be used as the language tag. 
 The ISO 639 codes are available from https://iso639-3.sil.org/about 
+
 For example
 - wbv Wajarri https://iso639-3.sil.org/code/wbv
 - wdj Wadjiginy  https://iso639-3.sil.org/code/wdj 
@@ -1154,20 +1167,34 @@ For example
             <tr>
                 <th>Description</th>
                 <td>
-                    **Place Names** is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features, typically collected in a Gazetteer.
-A **place-name** is a text string that is 
+                    **Place Names** is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features (locations).
+
+A **place-name** is a text string in a specified language that is 
+
 - assigned by an agent (person or organization)
 - assigned a designated 'status', with default="informal"
-- denotes a natural or constructed geospatial feature 
-An **official place-name** is a place-name that 
+- denotes a natural or constructed location 
+
+An **official-place-name** is a **place-name** that also 
+
 - is authorized by a place-naming-authority, often a jurisidiction (national, state or local government) 
 - is a member item in a gazetteer
 - has lifecycle information (status, dates) 
-- denotes a natural or constructed geospatial feature with a specified classification (inhabited place, administrative area, mountain, school, station, park ...)
+
+Each individual place-name or official-place-name is associated with one **place**. 
+
+A **place** is 
+
+- a location with at least a point geometry
+- which has a specified classification (inhabited place, administrative area, mountain, school, station, park ...). 
+- with one or more names associated with each individual place. 
+
 This ontology uses classes and properties from existing vocabularies, in particular
+
 - [GeoSPARQL](http://www.opengis.net/ont/geosparql)
 - [SKOS](http://www.w3.org/2004/02/skos/core) 
 - [Dublin Core](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/)
+
 ![](./images/placename-details.png)
                 </td>
             </tr>
@@ -1382,6 +1409,8 @@ This ontology uses classes and properties from existing vocabularies, in particu
         <dd><code>http://linked.data.gov.au/dataset/placename/</code></dd>
         <dt>geo</dt>
         <dd><code>http://www.opengis.net/ont/geosparql#</code></dd>
+        <dt>geox</dt>
+        <dd><code>http://linked.data.gov.au/def/geox#</code></dd>
         <dt>loci</dt>
         <dd><code>http://linked.data.gov.au/def/loci#</code></dd>
         <dt>owl</dt>

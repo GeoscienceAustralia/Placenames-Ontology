@@ -1,10 +1,12 @@
 # baseURI: http://linked.data.gov.au/def/placenames
+# imports: http://linked.data.gov.au/def/geox
 # imports: http://www.opengis.net/ont/geosparql
 
 @prefix : <http://linked.data.gov.au/def/placenames/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ex: <http://linked.data.gov.au/dataset/placename/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix geox: <http://linked.data.gov.au/def/geox#> .
 @prefix loci: <http://linked.data.gov.au/def/loci#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prof: <http://www.w3.org/ns/dx/prof/> .
@@ -25,6 +27,7 @@ ex:Ayers-Rock
   loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
   :dateGazetted "1850-01-01"^^xsd:date ;
   :dateRetired "1989-12-31"^^xsd:date ;
+  :isIndigenous false ;
   :name "Ayers Rock"@en ;
   :placeNameOf ex:NT_10532 ;
   :status :retired ;
@@ -39,6 +42,7 @@ ex:Ayers-Rock-Uluru
   loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
   :dateGazetted "1990-01-01"^^xsd:date ;
   :dateRetired "2005-12-31"^^xsd:date ;
+  :isIndigenous false ;
   :name "Ayers Rock / Uluru"@en ;
   :placeNameOf ex:NT_10532 ;
   :status :retired ;
@@ -76,7 +80,8 @@ ex:NT_10532
   dcterms:identifier "NT_10532"^^:ID-GAZ ;
   geo:hasGeometry [
       a <http://linked.data.gov.au/def/auspix#Geometry> ;
-      rdfs:member <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/ausPIX/R7430551> ;
+      geox:asDGGS "R7430551"^^geox:dggsLiteral ;
+      rdfs:seeAlso <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/ausPIX/R7430551> ;
     ] ;
   geo:hasGeometry [
       a sf:Point ;
@@ -88,6 +93,7 @@ ex:Uluru-Ayers-Rock
   a :OfficialPlaceName ;
   loci:isMemberOf <https://www.ntlis.nt.gov.au/placenames/> ;
   :dateGazetted "2006-01-01"^^xsd:date ;
+  :isIndigenous true ;
   :name "Uluru / Ayers Rock"@pjt ;
   :placeNameOf ex:NT_10532 ;
   :status :gazetted ;
@@ -111,7 +117,7 @@ loci:isMemberOf
   dcterms:created "2018-08-02"^^xsd:date ;
   dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
   dcterms:creator <https://orcid.org/0000-0002-8742-7730> ;
-  dcterms:modified "2020-08-27"^^xsd:date ;
+  dcterms:modified "2020-09-07"^^xsd:date ;
   dcterms:publisher [
       rdfs:seeAlso <https://www.ga.gov.au> ;
       schema:identifier "http://catalogue.linked.data.gov.au/org/ga" ;
@@ -119,20 +125,27 @@ loci:isMemberOf
     ] ;
   dcterms:rights "(c) Commonwealth of Australia (Geoscience Australia) 2019, 2020" ;
   dcterms:title "Place Names Ontology"@en ;
-  rdfs:comment """**Place Names** is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features, typically collected in a Gazetteer.
+  rdfs:comment """**Place Names** is an RDF/OWL Ontology to define the structure and relationship of the names of geospatial features (locations).
 
-A **place-name** is a text string that is 
+A **place-name** is a text string in a specified language that is 
 
 - assigned by an agent (person or organization)
 - assigned a designated 'status', with default=\"informal\"
-- denotes a natural or constructed geospatial feature 
+- denotes a natural or constructed location 
 
-An **official place-name** is a place-name that 
+An **official-place-name** is a **place-name** that also 
 
 - is authorized by a place-naming-authority, often a jurisidiction (national, state or local government) 
 - is a member item in a gazetteer
 - has lifecycle information (status, dates) 
-- denotes a natural or constructed geospatial feature with a specified classification (inhabited place, administrative area, mountain, school, station, park ...)
+
+Each individual place-name or official-place-name is associated with one **place**. 
+
+A **place** is 
+
+- a location with at least a point geometry
+- which has a specified classification (inhabited place, administrative area, mountain, school, station, park ...). 
+- with one or more names associated with each individual place. 
 
 This ontology uses classes and properties from existing vocabularies, in particular
 
@@ -142,6 +155,7 @@ This ontology uses classes and properties from existing vocabularies, in particu
 
 ![](./images/placename-details.png)""" ;
   rdfs:label "Place Names Ontology"@en ;
+  owl:imports <http://linked.data.gov.au/def/geox> ;
   owl:imports <http://www.opengis.net/ont/geosparql> ;
   prof:hasResource [
       dcterms:format <https://w3id.org/mediatype/text/html> ;
@@ -325,25 +339,26 @@ ex:Uluru-Ayers-Rock
       owl:minCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty geo:hasGeometry ;
     ] ;
-  skos:example """
-ex:NT_10532
+  skos:example """ex:NT_10532
+  rdf:type :Place ex:NT_10532
   rdf:type :Place ;
   :hasPlaceClassification <http://pid.geoscience.gov.au/def/voc/ga/PlaceType/MOUNTAIN> ;
   :hasPlaceName ex:Ayers-Rock ;
   :hasPlaceName ex:Ayers-Rock-Uluru ;
   :hasPlaceName ex:Uluru-Ayers-Rock ;
-  dcterms:identifier \"NT_10532\" ;
+  dcterms:identifier \"10532\"^^:ID-AUTH ;
+  dcterms:identifier \"NT_10532\"^^:ID-GAZ ;
   geo:hasGeometry [
-      rdf:type geo:Geometry ;
-      geo:asDGGS \"R7430551\"^^geox:dggsLiteral ;
+      rdf:type <http://linked.data.gov.au/def/auspix#Geometry> ;
+      geox:asDGGS \"R7430551\"^^geox:dggsLiteral ;
+      rdfs:seeAlso <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/ausPIX/R7430551> ;
     ] ;
   geo:hasGeometry [
       rdf:type sf:Point ;
       geo:asWKT \"POINT(-25.3415 131.0354)\"^^geo:wktLiteral ;
     ] ;
   rdfs:seeAlso <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/placenames-dataset/placename/NT_10532> ;
-.
-""" ;
+.""" ;
 .
 :PlaceName
   a owl:Class ;
