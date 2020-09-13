@@ -168,6 +168,7 @@ This ontology uses classes and properties from existing vocabularies, in particu
       prof:hasRole <http://www.w3.org/ns/dx/prof/role/schema> ;
     ] ;
   prof:isProfileOf <http://www.opengis.net/doc/IS/geosparql/1.0> ;
+  schema:codeRepository <https://github.com/GeoscienceAustralia/Placenames-Ontology> ;
 .
 <http://linked.data.gov.au/def/placenames.ttl>
   a owl:NamedIndividual ;
