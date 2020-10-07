@@ -27,7 +27,7 @@ ex:kt_feature
 .
 <http://linked.data.gov.au/dataset/placename/katatjuta>
   a pn:PlaceName ;
-  pn:name "Kata Tjuṯa"@au-pit ;
+  pn:name "Kata Tjuṯa"@pjt ;
   pn:placeNameOf ex:kt_feature ;
   pn:register <http://linked.data.gov.au/dataset/placename/gazetteer/northernterritory> ;
   pn:status pnstat:official ;
