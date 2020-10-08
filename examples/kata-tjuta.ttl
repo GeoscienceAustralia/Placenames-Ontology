@@ -4,6 +4,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ex: <http://example.org/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix loci: <http://linked.data.gov.au/def/loci#>
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pn: <http://linked.data.gov.au/def/placenames/> .
 @prefix pnstat: <http://linked.data.gov.au/dataset/placenames/status/> .
