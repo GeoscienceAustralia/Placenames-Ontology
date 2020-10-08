@@ -20,22 +20,52 @@
   owl:imports <http://linked.data.gov.au/def/placenames> ;
 .
 ex:kt_feature
-  a geo:Feature ;
+  a geo:Feature , pn:Place ;
+  pn:hasPlaceClassification <http://pid.geoscience.gov.au/def/voc/ga/PlaceType/MOUNTAIN> ;
+  dct:identifier "15673"^^pn:ID-AUTH ;
+  dct:identifier "NT_15673"^^pn:ID-GAZ ;
+  dct:source <http://www.ntlis.nt.gov.au/placenames/view.jsp?id=15673> ;
   geo:hasGeometry [
       geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4283> POINT(130.733333 -25.3)"^^geo:wktLiteral ;
     ] ;
 .
 <http://linked.data.gov.au/dataset/placename/katatjuta>
-  a pn:PlaceName ;
+  a pn:PlaceName , pn:OfficialPlaceName ;
+  loci:isMemberOf <http://linked.data.gov.au/dataset/placename/gazetteer/northernterritory> ;
+  pn:dateGazetted "1993-12-15"^^xsd:date ;
+  pn:isIndigenous true ;
   pn:name "Kata Tjuṯa"@pjt ;
   pn:placeNameOf ex:kt_feature ;
-  pn:register <http://linked.data.gov.au/dataset/placename/gazetteer/northernterritory> ;
-  pn:status pnstat:official ;
+  pn:status pn:gazetted ;
+  pn:wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
 .
 <http://linked.data.gov.au/dataset/placename/olgas>
-  a pn:PlaceName ;
-  pn:name "Olgas"@en ;
+  a pn:PlaceName , pn:OfficialPlaceName ;
+  loci:isMemberOf <http://linked.data.gov.au/dataset/placename/gazetteer/northernterritory> ;
+  pn:dateGazetted "1993-12-15"^^xsd:date ;
+  pn:name "Mount Olga"@en ;
   pn:placeNameOf ex:kt_feature ;
-  pn:register <http://linked.data.gov.au/dataset/placename/gazetteer/northernterritory> ;
-  pn:status pnstat:official ;
+  pn:status pn:gazetted ;
+  pn:wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
+.
+<http://linked.data.gov.au/dataset/placename/katatjuta-olga>
+  a pn:PlaceName , pn:OfficialPlaceName ;
+  loci:isMemberOf <http://linked.data.gov.au/dataset/placename/gazetteer/northernterritory> ;
+  pn:dateGazetted "2002-11-06"^^xsd:date ;
+  pn:isIndigenous true ;
+  pn:name "Kata Tjuṯa / Mount Olga"@en-AU ;
+  pn:placeNameOf ex:kt_feature ;
+  pn:status pn:gazetted ;
+  pn:wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
+.
+<http://linked.data.gov.au/dataset/placename/olga-katatjuta>
+  a pn:PlaceName , pn:OfficialPlaceName ;
+  loci:isMemberOf <http://linked.data.gov.au/dataset/placename/gazetteer/northernterritory> ;
+  pn:dateGazetted "1993-12-15"^^xsd:date ;
+  pn:dateRetired "2002-11-06"^^xsd:date ;
+  pn:isIndigenous true ;
+  pn:name "Mount Olga / Kata Tjuṯa"@en-AU ;
+  pn:placeNameOf ex:kt_feature ;
+  pn:status pn:retired ;
+  pn:wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
 .
