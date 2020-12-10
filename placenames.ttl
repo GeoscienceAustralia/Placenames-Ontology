@@ -117,6 +117,7 @@ loci:isMemberOf
   dcterms:created "2018-08-02"^^xsd:date ;
   dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
   dcterms:creator <https://orcid.org/0000-0002-8742-7730> ;
+  dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
   dcterms:modified "2020-09-07"^^xsd:date ;
   dcterms:publisher [
       rdfs:seeAlso <https://www.ga.gov.au> ;
