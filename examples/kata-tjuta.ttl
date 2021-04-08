@@ -1,13 +1,13 @@
 # baseURI: file:/C:/Users/cox075/dev/Place-Names/examples/kata-tjuta.ttl
-# imports: http://linked.data.gov.au/def/placenames
+# imports: https://linked.data.gov.au/def/placenames
 
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ex: <http://example.org/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix loci: <http://linked.data.gov.au/def/loci#>
+@prefix loci: <https://linked.data.gov.au/def/loci#>
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix pn: <http://linked.data.gov.au/def/placenames/> .
-@prefix pnstat: <http://linked.data.gov.au/dataset/placenames/status/> .
+@prefix pn: <https://linked.data.gov.au/def/placenames/> .
+@prefix pnstat: <https://linked.data.gov.au/dataset/placenames/status/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix reg: <http://purl.org/linked-data/registry#> .
@@ -18,7 +18,7 @@
 
 <file:/C:/Users/cox075/dev/Place-Names/examples/kata-tjuta.ttl>
   a owl:Ontology ;
-  owl:imports <http://linked.data.gov.au/def/placenames> ;
+  owl:imports <https://linked.data.gov.au/def/placenames> ;
 .
 ex:kt_feature
   a geo:Feature , pn:Place ;
@@ -30,9 +30,9 @@ ex:kt_feature
       geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4283> POINT(130.733333 -25.3)"^^geo:wktLiteral ;
     ] ;
 .
-<http://linked.data.gov.au/dataset/placename/katatjuta>
+<https://linked.data.gov.au/dataset/placename/katatjuta>
   a pn:PlaceName , pn:OfficialPlaceName ;
-  loci:isMemberOf <http://linked.data.gov.au/dataset/placename/gazetteer/northernterritory> ;
+  loci:isMemberOf <https://linked.data.gov.au/dataset/placename/gazetteer/northernterritory> ;
   pn:dateGazetted "1993-12-15"^^xsd:date ;
   pn:isIndigenous true ;
   pn:name "Kata Tjuṯa"@pjt ;
@@ -40,18 +40,18 @@ ex:kt_feature
   pn:status pn:gazetted ;
   pn:wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
 .
-<http://linked.data.gov.au/dataset/placename/olgas>
+<https://linked.data.gov.au/dataset/placename/olgas>
   a pn:PlaceName , pn:OfficialPlaceName ;
-  loci:isMemberOf <http://linked.data.gov.au/dataset/placename/gazetteer/northernterritory> ;
+  loci:isMemberOf <https://linked.data.gov.au/dataset/placename/gazetteer/northernterritory> ;
   pn:dateGazetted "1993-12-15"^^xsd:date ;
   pn:name "Mount Olga"@en ;
   pn:placeNameOf ex:kt_feature ;
   pn:status pn:gazetted ;
   pn:wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
 .
-<http://linked.data.gov.au/dataset/placename/katatjuta-olga>
+<https://linked.data.gov.au/dataset/placename/katatjuta-olga>
   a pn:PlaceName , pn:OfficialPlaceName ;
-  loci:isMemberOf <http://linked.data.gov.au/dataset/placename/gazetteer/northernterritory> ;
+  loci:isMemberOf <https://linked.data.gov.au/dataset/placename/gazetteer/northernterritory> ;
   pn:dateGazetted "2002-11-06"^^xsd:date ;
   pn:isIndigenous true ;
   pn:name "Kata Tjuṯa / Mount Olga"@en-AU ;
@@ -59,9 +59,9 @@ ex:kt_feature
   pn:status pn:gazetted ;
   pn:wasNamedBy <https://www.ntlis.nt.gov.au/placenames/> ;
 .
-<http://linked.data.gov.au/dataset/placename/olga-katatjuta>
+<https://linked.data.gov.au/dataset/placename/olga-katatjuta>
   a pn:PlaceName , pn:OfficialPlaceName ;
-  loci:isMemberOf <http://linked.data.gov.au/dataset/placename/gazetteer/northernterritory> ;
+  loci:isMemberOf <https://linked.data.gov.au/dataset/placename/gazetteer/northernterritory> ;
   pn:dateGazetted "1993-12-15"^^xsd:date ;
   pn:dateRetired "2002-11-06"^^xsd:date ;
   pn:isIndigenous true ;

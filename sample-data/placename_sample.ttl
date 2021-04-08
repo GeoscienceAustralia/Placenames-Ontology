@@ -1,12 +1,12 @@
-# baseURI: http://linked.data.gov.au/dataset/placenames/placename_sample
-# imports: http://linked.data.gov.au/def/placenames
+# baseURI: https://linked.data.gov.au/dataset/placenames/placename_sample
+# imports: https://linked.data.gov.au/def/placenames
 
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix place: <http://linked.data.gov.au/dataset/placenames/place/> .
-@prefix pn: <http://linked.data.gov.au/def/placenames/> .
-@prefix pname: <http://linked.data.gov.au/dataset/placenames/placename/> .
+@prefix place: <https://linked.data.gov.au/dataset/placenames/place/> .
+@prefix pn: <https://linked.data.gov.au/def/placenames/> .
+@prefix pname: <https://linked.data.gov.au/dataset/placenames/placename/> .
 @prefix ptype: <http://pid.geoscience.gov.au/def/voc/ga/PlaceType/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -82,11 +82,11 @@ pname:VIC_19023
   dcterms:issued "2020-03-05T22:16:40"^^xsd:dateTime ;
   rdfs:label "MURRANDARRA" ;
 .
-<http://linked.data.gov.au/dataset/placenames/placename_sample>
+<https://linked.data.gov.au/dataset/placenames/placename_sample>
   a owl:Ontology ;
   dcterms:created "2020-09-07"^^xsd:date ;
   dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
   dcterms:description "sample data converted manually from CSV provided by Tina Yang" ;
   dcterms:isFormatOf "placename_sample.csv" ;
-  owl:imports <http://linked.data.gov.au/def/placenames> ;
+  owl:imports <https://linked.data.gov.au/def/placenames> ;
 .

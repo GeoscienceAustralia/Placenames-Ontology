@@ -20,7 +20,7 @@
   }, {
     "@id" : "http://example.org/Place-Names/examples/Gilchrist-Aiguilles-2.ttl",
     "@type" : "owl:Ontology",
-    "imports" : [ "http://www.opengis.net/ont/geosparql", "http://linked.data.gov.au/def/placenames" ]
+    "imports" : [ "http://www.opengis.net/ont/geosparql", "https://linked.data.gov.au/def/placenames" ]
   }, {
     "@id" : "pn-ext:dggs-location",
     "@type" : "owl:ObjectProperty",
@@ -50,21 +50,21 @@
       "@type" : "@id"
     },
     "name" : {
-      "@id" : "http://linked.data.gov.au/def/placenames/name"
+      "@id" : "https://linked.data.gov.au/def/placenames/name"
     },
     "hasFeatureClassification" : {
-      "@id" : "http://linked.data.gov.au/def/placenames/hasFeatureClassification",
+      "@id" : "https://linked.data.gov.au/def/placenames/hasFeatureClassification",
       "@type" : "@id"
     },
     "register" : {
-      "@id" : "http://linked.data.gov.au/def/placenames/register",
+      "@id" : "https://linked.data.gov.au/def/placenames/register",
       "@type" : "@id"
     },
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
     "hasPlaceNameFormality" : {
-      "@id" : "http://linked.data.gov.au/def/placenames/hasPlaceNameFormality",
+      "@id" : "https://linked.data.gov.au/def/placenames/hasPlaceNameFormality",
       "@type" : "@id"
     },
     "issued" : {
@@ -76,7 +76,7 @@
       "@type" : "@id"
     },
     "hasGeometry" : {
-      "@id" : "http://linked.data.gov.au/def/placenames/hasGeometry",
+      "@id" : "https://linked.data.gov.au/def/placenames/hasGeometry",
       "@type" : "@id"
     },
     "asWKT" : {
@@ -94,6 +94,6 @@
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "myaws" : "http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/",
     "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
-    "pn" : "http://linked.data.gov.au/def/placenames/"
+    "pn" : "https://linked.data.gov.au/def/placenames/"
   }
 }

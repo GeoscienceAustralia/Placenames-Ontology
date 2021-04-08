@@ -1,15 +1,15 @@
-@prefix : <http://linked.data.gov.au/dataset/placenames/status/> .
+@prefix : <https://linked.data.gov.au/dataset/placenames/status/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix reg:  <http://purl.org/linked-data/registry#> .
-@prefix regstat: <http://linked.data.gov.au/def/reg-status/> .
+@prefix regstat: <https://linked.data.gov.au/def/reg-status/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://linked.data.gov.au/dataset/placenames/status/> a owl:Ontology ;
+<https://linked.data.gov.au/dataset/placenames/status/> a owl:Ontology ;
     rdfs:label "Place Names Profile's Statuses" ;
     rdfs:label "An ontology, also a SKOS vocabulary, of the statuses of Australian Place Names within the Place Names Gazetteer of Australia." ;
     skos:scopeNote "This vocabulary of status codes is within, and for use with, Place Name objects within the Place Names Profile used by the Place Names Gazetteer of Australia." ;

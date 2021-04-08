@@ -1,4 +1,4 @@
-@prefix pn: <http://linked.data.gov.au/def/placename/> .
+@prefix pn: <https://linked.data.gov.au/def/placename/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -11,7 +11,7 @@
     pn:hasGroup "{'label': 'TERRAIN', 'uri': 'http://vocabs.ands.org.au/repository/api/lda/ga/place-type/v1-0/resource?uri=http://pid.geoscience.gov.au/def/voc/ga/PlaceType/TERRAIN'}"^^xsd:string ;
     pn:hasID "AAD_1"^^xsd:string ;
     pn:hasName "Gilchrist Aiguilles (Peak)"^^xsd:string ;
-    pn:hasNameFormality "{'label': 'Official', 'uri': 'http://linked.data.gov.au/def/placenames/nameFormality/Official'}"^^xsd:string ;
+    pn:hasNameFormality "{'label': 'Official', 'uri': 'https://linked.data.gov.au/def/placenames/nameFormality/Official'}"^^xsd:string ;
     pn:hasRegister "{'label': 'Australian Antarctic Place Names Gazetteer', 'uri': 'https://data.aad.gov.au/aadc/gaz/'}"^^xsd:string ;
     pn:latitude "-53.01522222"^^xsd:float ;
     pn:longitude "73.33641667"^^xsd:float ;
