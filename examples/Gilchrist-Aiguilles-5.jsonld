@@ -16,7 +16,7 @@
     "@id" : "http://example.org/Place-Names/examples/Gilchrist-Aiguilles-5.ttl",
     "@type" : "owl:Ontology",
     "comment" : "This version inverts the feature and the place-name.",
-    "imports" : [ "http://www.opengis.net/ont/geosparql", "http://linked.data.gov.au/def/placenames" ]
+    "imports" : [ "http://www.opengis.net/ont/geosparql", "https://linked.data.gov.au/def/placenames" ]
   }, {
     "@id" : "http://my.example.com/placenames-dataset/place/AAD_1",
     "@type" : "pn:Place",
@@ -35,11 +35,11 @@
       "@type" : "@id"
     },
     "hasPlaceName" : {
-      "@id" : "http://linked.data.gov.au/def/placenames/hasPlaceName",
+      "@id" : "https://linked.data.gov.au/def/placenames/hasPlaceName",
       "@type" : "@id"
     },
     "hasPlaceClassification" : {
-      "@id" : "http://linked.data.gov.au/def/placenames/hasPlaceClassification",
+      "@id" : "https://linked.data.gov.au/def/placenames/hasPlaceClassification",
       "@type" : "@id"
     },
     "dggs-location" : {
@@ -54,7 +54,7 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
     },
     "name" : {
-      "@id" : "http://linked.data.gov.au/def/placenames/name"
+      "@id" : "https://linked.data.gov.au/def/placenames/name"
     },
     "issued" : {
       "@id" : "http://purl.org/dc/terms/issued",
@@ -64,15 +64,15 @@
       "@id" : "http://purl.org/dc/terms/identifier"
     },
     "register" : {
-      "@id" : "http://linked.data.gov.au/def/placenames/register",
+      "@id" : "https://linked.data.gov.au/def/placenames/register",
       "@type" : "@id"
     },
     "placeNameOf" : {
-      "@id" : "http://linked.data.gov.au/def/placenames/placeNameOf",
+      "@id" : "https://linked.data.gov.au/def/placenames/placeNameOf",
       "@type" : "@id"
     },
     "hasPlaceNameFormality" : {
-      "@id" : "http://linked.data.gov.au/def/placenames/hasPlaceNameFormality",
+      "@id" : "https://linked.data.gov.au/def/placenames/hasPlaceNameFormality",
       "@type" : "@id"
     },
     "asWKT" : {
@@ -90,6 +90,6 @@
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "myaws" : "http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/",
     "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
-    "pn" : "http://linked.data.gov.au/def/placenames/"
+    "pn" : "https://linked.data.gov.au/def/placenames/"
   }
 }

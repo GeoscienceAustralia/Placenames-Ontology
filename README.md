@@ -2,14 +2,14 @@
 This ontology describes Place names that are used in the Composite Gazetteer of Australia. Place names are natural and artificial features and are all represented by points. Actual Place names are managed by multiple jurisdictions around Australia, while this ontology provides a meta model to bring their data together in one Linked Data collection.
 
 This ontology will be published in two formats via an [Australian Government Linked Data Working Group](http://www.linked.data.gov.au) Persistent URI:
-  * <http://linked.data.gov.au/def/placenames> - ontology documentation in HTML
-  * <http://linked.data.gov.au/def/placenames.ttl> - ontology source in RDF (turtle)
+  * <https://linked.data.gov.au/def/placenames> - ontology documentation in HTML
+  * <https://linked.data.gov.au/def/placenames.ttl> - ontology source in RDF (turtle)
     * also available via content negotiation
 
 ## Strategy for Place Names Ontology
 This ontology profiles several other ontologies. It describes Place Names that are used in the Place Names Gazetteer of Australia. Place Names are names given to natural and artificial geospatial features, such as administrative areas, political regions, mountain ranges, rivers, bays etc. Place Names are assigned and managed by multiple Jurisdictions around Australia and may have varying status: official, historical etc. This ontology provides a meta model to bring Place Name data together in one Semantic Web data collection.
 
-This profile is online at a persistent URI: <http://linked.data.gov.au/def/placenames>  
+This profile is online at a persistent URI: <https://linked.data.gov.au/def/placenames>  
 
 
 ## Documentation
@@ -32,7 +32,7 @@ This ontology makes several design choices to facilitate certain behaviour. Some
 
 1. **Separation of `Place Name` from spatial objects**
   * the `Place Name` class, unlike in v1 of this profile/ontology, is not a spatial object and thus cannot be used with spatial properties such as geometry.
-  * all `Place Name`s are just *names* - with authority, language, time period in effect, pronunciation etc. - but that they are separate from the actual *features* that they are names of. This ensures that `Place Names` are always bound to objects in other spatial Linked Data Datasets - perhaps specifically [Loc-I Datasets](http://linked.data.gov.au/def/loci#Dataset) - which means that the Place Names dataset is both well connected to these (and them to this) and also that this dataset just concentrates on names and hands off complex spatial concerns to other, dedicated, spatial systems
+  * all `Place Name`s are just *names* - with authority, language, time period in effect, pronunciation etc. - but that they are separate from the actual *features* that they are names of. This ensures that `Place Names` are always bound to objects in other spatial Linked Data Datasets - perhaps specifically [Loc-I Datasets](https://linked.data.gov.au/def/loci#Dataset) - which means that the Place Names dataset is both well connected to these (and them to this) and also that this dataset just concentrates on names and hands off complex spatial concerns to other, dedicated, spatial systems
   * with this distinction, the Place Names dataset is a register (a catalogue of registered items), not a spatial dataset, first and foremost
 1. **Jurisdictions are `Agent`s only**
   * i.e. `Jurisdiction` has no spatial component (the area a Jurisdiction has jurisdiction over)

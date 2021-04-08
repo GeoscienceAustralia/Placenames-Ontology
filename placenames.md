@@ -5,7 +5,7 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE)
 
 ## Metadata
 * **IRI**
-  * `http://linked.data.gov.au/def/placenames`
+  * `https://linked.data.gov.au/def/placenames`
 * **Publisher(s)**
   * <a href="http://catalogue.linked.data.gov.au/org/ga">Geoscience Australia</a>
 * **Creators(s)**
@@ -19,7 +19,7 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE)
 * **Modified**
   * 2020-02-19
 * **Imports**
-  * <a href="http://linked.data.gov.au/def/loci">http://linked.data.gov.au/def/loci</a>
+  * <a href="https://linked.data.gov.au/def/loci">https://linked.data.gov.au/def/loci</a>
 * **Rights**
   * (c) Commonwealth of Australia (Geoscience Australia) 2019, 2020
 * **Ontology Source**
@@ -62,14 +62,14 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE)
 ### Gazetteer <sup>c</sup>
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/placenames/Gazetteer`
+IRI | `https://linked.data.gov.au/def/placenames/Gazetteer`
 Description | A Gazetteer is a list of Place Names
 Super-classes |<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag">rdf:Bag</a><sup class="sup-c" title="class">c</sup><br />
 Restrictions |<a href="http://www.w3.org/2000/01/rdf-schema#member">rdfs:member</a> <span class="cardinality">only</span> <a href="#PlaceName">PlaceName</a><sup class="sup-c" title="class">c</sup><br />
 ### Jurisdiction <sup>c</sup>
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/placenames/Jurisdiction`
+IRI | `https://linked.data.gov.au/def/placenames/Jurisdiction`
 Description | Local, State, Territory or National (Commonwealth) Government that has authority to formally establish (i.e. gazette) place names within its jurisdictional area.
 Super-classes |<a href="http://purl.org/dc/terms/Agent">dcterms:Agent</a><sup class="sup-c" title="class">c</sup><br />
 In range of |<a href="#hasplacenamingauthority">hasPlaceNamingAuthority</a><sup class="sup-op" title="object property">op</sup><br />
@@ -77,7 +77,7 @@ In range of |<a href="#hasplacenamingauthority">hasPlaceNamingAuthority</a><sup 
 ![Place class](./images/place.png)
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/placenames/Place`
+IRI | `https://linked.data.gov.au/def/placenames/Place`
 Description | An identifiable geographic Place as defined by the Composite Gazetteer of Australia. A Place is classified according to an extensible set of types.
 Super-classes |<a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br />
 Restrictions |<a href="#hasplaceclassification">hasPlaceClassification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br /><a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a> <span class="cardinality">min</span> 1<br />
@@ -87,42 +87,42 @@ In domain of |<a href="#hasplaceclassification">hasPlaceClassification</a><sup c
 ![Place class](./images/placename-details.png)
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/placenames/PlaceName`
+IRI | `https://linked.data.gov.au/def/placenames/PlaceName`
 Description | The name of a place, assigned by an official naming authority and included in the Place Names Gazeteer of Australia.
-Restrictions |<a href="http://linked.data.gov.au/def/loci#isMemberOf">loci:isMemberOf</a> <span class="cardinality">some</span> <a href="#Gazetteer">Gazetteer</a><sup class="sup-c" title="class">c</sup><br /><a href="#name">name</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br /><a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a> <span class="cardinality">min</span> 1<br /><a href="#hasstatus">status</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br />
+Restrictions |<a href="https://linked.data.gov.au/def/loci#isMemberOf">loci:isMemberOf</a> <span class="cardinality">some</span> <a href="#Gazetteer">Gazetteer</a><sup class="sup-c" title="class">c</sup><br /><a href="#name">name</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br /><a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a> <span class="cardinality">min</span> 1<br /><a href="#hasstatus">status</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br />
 In domain of |<a href="#pronunciation">hasPronunciation</a><sup class="sup-dp" title="datatype property">dp</sup><br /><a href="#hasplacenameformality">hasPlaceNameFormality</a><sup class="sup-op" title="object property">op</sup><br /><a href="#wasnamedby">wasNamedBy</a><sup class="sup-op" title="object property">op</sup><br /><a href="#hasplacenamingauthority">hasPlaceNamingAuthority</a><sup class="sup-op" title="object property">op</sup><br /><a href="#placenameof">placeNameOf</a><sup class="sup-op" title="object property">op</sup><br />
 In range of |<a href="#hasplacename">hasPlaceName</a><sup class="sup-op" title="object property">op</sup><br />
 ### Place Name Formality <sup>c</sup>
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/placenames/PlaceNameFormality`
+IRI | `https://linked.data.gov.au/def/placenames/PlaceNameFormality`
 Description | The formality of a Place Name: official, historical, informal
 Super-classes |<a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><sup class="sup-c" title="class">c</sup><br />
 In range of |<a href="#hasplacenameformality">hasPlaceNameFormality</a><sup class="sup-op" title="object property">op</sup><br />
 ### Place Type <sup>c</sup>
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/placenames/PlaceType`
+IRI | `https://linked.data.gov.au/def/placenames/PlaceType`
 Description | The classification of a place, from the ICSM Permanent Committee on Place Names classification scheme.
 Super-classes |<a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><sup class="sup-c" title="class">c</sup><br />
 In range of |<a href="#hasplaceclassification">hasPlaceClassification</a><sup class="sup-op" title="object property">op</sup><br />
 ### Point of Interest <sup>c</sup>
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/placenames/PointOfInterest`
+IRI | `https://linked.data.gov.au/def/placenames/PointOfInterest`
 Description | A specific point Location that someone may find useful or interesting.
 Super-classes |<a href="#Place">Place</a><sup class="sup-c" title="class">c</sup><br />
 Restrictions |<a href="#wasnamedby">wasNamedBy</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="http://purl.org/dc/terms/Agent">dcterms:Agent</a><sup class="sup-c" title="class">c</sup><br />
 ### Region <sup>c</sup>
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/placenames/Region`
+IRI | `https://linked.data.gov.au/def/placenames/Region`
 Description | A Region is an area of land that has common features.
 Super-classes |<a href="#Place">Place</a><sup class="sup-c" title="class">c</sup><br />
 ### Status  <sup>c</sup>
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/placenames/Status`
+IRI | `https://linked.data.gov.au/def/placenames/Status`
 Super-classes |<a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><sup class="sup-c" title="class">c</sup><br />
 In range of |<a href="#hasstatus">status</a><sup class="sup-op" title="object property">op</sup><br />
 
@@ -138,7 +138,7 @@ In range of |<a href="#hasstatus">status</a><sup class="sup-op" title="object pr
 ### has place classification <sup>op</sup>
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/placenames/hasPlaceClassification`
+IRI | `https://linked.data.gov.au/def/placenames/hasPlaceClassification`
 Description | A relation between a Place and a classification of its real world phenomena.
 Super-properties |<a href="http://purl.org/dc/terms/type">dcterms:type</a><br />
 Domain(s) |<a href="#Place">Place</a><sup class="sup-c" title="class">c</sup><br />
@@ -147,7 +147,7 @@ Range(s) |<a href="#PlaceType">PlaceType</a><sup class="sup-c" title="class">c</
 ### has place name <sup>op</sup>
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/placenames/hasPlaceName`
+IRI | `https://linked.data.gov.au/def/placenames/hasPlaceName`
 Description | The Feature has a place name (label) assigned to it
 Usage Note | All PlaceName objects names indicated by hasPlaceName should have the role of the name indicated with a Name Type
 Domain(s) |<a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br />
@@ -156,7 +156,7 @@ Range(s) |<a href="#PlaceName">PlaceName</a><sup class="sup-c" title="class">c</
 ### has place name formality <sup>op</sup>
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/placenames/hasPlaceNameFormality`
+IRI | `https://linked.data.gov.au/def/placenames/hasPlaceNameFormality`
 Description | The formality of a Place Name
 Usage Note | Values for this property must be selected from the Place Name Formality vocabulary
 Domain(s) |<a href="#PlaceName">PlaceName</a><sup class="sup-c" title="class">c</sup><br />
@@ -165,7 +165,7 @@ Range(s) |<a href="#PlaceNameFormality">PlaceNameFormality</a><sup class="sup-c"
 ### has place naming authority <sup>op</sup>
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/placenames/hasPlaceNamingAuthority`
+IRI | `https://linked.data.gov.au/def/placenames/hasPlaceNamingAuthority`
 Description | The authority (jurisdiction) responsible for formally gazetting the place name.
 Super-properties |<a href="http://www.w3.org/ns/prov#wasAttributedTo">prov:wasAttributedTo</a><br />
 Domain(s) |<a href="#PlaceName">PlaceName</a><sup class="sup-c" title="class">c</sup><br />
@@ -174,21 +174,21 @@ Range(s) |<a href="#Jurisdiction">Jurisdiction</a><sup class="sup-c" title="clas
 ### place name of <sup>op</sup>
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/placenames/placeNameOf`
+IRI | `https://linked.data.gov.au/def/placenames/placeNameOf`
 Domain(s) |<a href="#PlaceName">PlaceName</a><sup class="sup-c" title="class">c</sup><br />
 Range(s) |<a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br />
 [](hasstatus)
 ### has status <sup>op</sup>
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/placenames/status`
+IRI | `https://linked.data.gov.au/def/placenames/status`
 Usage Note | This property indicates the status of a Place Name in a Gazetteer.
 Range(s) |<a href="#Status">Status</a><sup class="sup-c" title="class">c</sup><br />
 [](wasnamedby)
 ### was named by <sup>op</sup>
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/placenames/wasNamedBy`
+IRI | `https://linked.data.gov.au/def/placenames/wasNamedBy`
 Description | The Agent (person, community, organization) that assigned the name to the Place
 Super-properties |<a href="http://www.w3.org/ns/prov#wasAttributedTo">prov:wasAttributedTo</a><br />
 Domain(s) |<a href="#PlaceName">PlaceName</a><sup class="sup-c" title="class">c</sup><br />
@@ -201,7 +201,7 @@ Range(s) |<a href="http://purl.org/dc/terms/Agent">dcterms:Agent</a><sup class="
 ### pronunciation <sup>dp</sup>
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/placenames/hasPronunciation`
+IRI | `https://linked.data.gov.au/def/placenames/hasPronunciation`
 Description | The pronunciation of a Place Name, indicated by means of a phonetic alphabet string
 Domain(s) |<a href="#PlaceName">PlaceName</a><sup class="sup-c" title="class">c</sup><br />
 Range(s) |<a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br />
@@ -209,7 +209,7 @@ Range(s) |<a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup c
 ### name <sup>dp</sup>
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/placenames/name`
+IRI | `https://linked.data.gov.au/def/placenames/name`
 Range(s) |<a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br />
 
 ## Annotation Properties
@@ -258,15 +258,15 @@ IRI | `https://schema.org/uri`
 
 ## Namespaces
 * **default (:)**
-  * `http://linked.data.gov.au/def/placenames/`
+  * `https://linked.data.gov.au/def/placenames/`
 * **:**
-  * `http://linked.data.gov.au/def/placenames/`
+  * `https://linked.data.gov.au/def/placenames/`
 * **dcterms**
   * `http://purl.org/dc/terms/`
 * **geo**
   * `http://www.opengis.net/ont/geosparql#`
   **loci**
-  * `http://linked.data.gov.au/def/loci#`
+  * `https://linked.data.gov.au/def/loci#`
 * **owl**
   * `http://www.w3.org/2002/07/owl#`
 * **prof**

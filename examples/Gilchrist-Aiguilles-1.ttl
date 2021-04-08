@@ -1,9 +1,9 @@
 # baseURI: http://example.org/Place-Names/examples/Gilchrist-Aiguilles-1.ttl
-# imports: http://linked.data.gov.au/def/placenames
+# imports: https://linked.data.gov.au/def/placenames
 
 @prefix myaws: <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix pn: <http://linked.data.gov.au/def/placenames/> .
+@prefix pn: <https://linked.data.gov.au/def/placenames/> .
 @prefix pt: <http://pid.geoscience.gov.au/def/voc/ga/PlaceType/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -21,7 +21,7 @@
   pn:hasGroup pt:TERRAIN ;
   pn:hasID "AAD_1" ;
   pn:hasName "Gilchrist Aiguilles (Peak)" ;
-  pn:hasNameFormality <http://linked.data.gov.au/def/placenames/nameFormality/Official> ;
+  pn:hasNameFormality <https://linked.data.gov.au/def/placenames/nameFormality/Official> ;
   pn:hasRegister <https://data.aad.gov.au/aadc/gaz/> ;
   pn:latitude -53.01522222 ;
   pn:longitude 73.33641667 ;
@@ -29,9 +29,9 @@
 .
 <http://example.org/Place-Names/examples/Gilchrist-Aiguilles-1.ttl>
   a owl:Ontology ;
-  owl:imports <http://linked.data.gov.au/def/placenames> ;
+  owl:imports <https://linked.data.gov.au/def/placenames> ;
 .
-<http://linked.data.gov.au/def/placenames/nameFormality/Official>
+<https://linked.data.gov.au/def/placenames/nameFormality/Official>
   rdfs:label "Official" ;
 .
 pt:LANDFORM

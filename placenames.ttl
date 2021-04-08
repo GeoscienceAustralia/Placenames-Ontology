@@ -1,17 +1,17 @@
-# baseURI: http://linked.data.gov.au/def/placenames
-# imports: http://linked.data.gov.au/def/geox
+# baseURI: https://linked.data.gov.au/def/placenames
+# imports: https://linked.data.gov.au/def/geox
 # imports: http://www.opengis.net/ont/geosparql
 
-@prefix : <http://linked.data.gov.au/def/placenames/> .
+@prefix : <https://linked.data.gov.au/def/placenames/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ex: <http://linked.data.gov.au/dataset/placename/> .
+@prefix ex: <https://linked.data.gov.au/dataset/placename/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix geox: <http://linked.data.gov.au/def/geox#> .
-@prefix loci: <http://linked.data.gov.au/def/loci#> .
+@prefix geox: <https://linked.data.gov.au/def/geox#> .
+@prefix loci: <https://linked.data.gov.au/def/loci#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prof: <http://www.w3.org/ns/dx/prof/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix pt: <http://linked.data.gov.au/def/placetype/> .
+@prefix pt: <https://linked.data.gov.au/def/placetype/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix reg: <http://purl.org/linked-data/registry#> .
@@ -79,7 +79,7 @@ ex:NT_10532
   dcterms:identifier "10532"^^:ID-AUTH ;
   dcterms:identifier "NT_10532"^^:ID-GAZ ;
   geo:hasGeometry [
-      a <http://linked.data.gov.au/def/auspix#Geometry> ;
+      a <https://linked.data.gov.au/def/auspix#Geometry> ;
       geox:asDGGS "R7430551"^^geox:dggsLiteral ;
       rdfs:seeAlso <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/ausPIX/R7430551> ;
     ] ;
@@ -109,7 +109,7 @@ loci:Dataset
 loci:isMemberOf
   a owl:ObjectProperty ;
 .
-<http://linked.data.gov.au/def/placenames>
+<https://linked.data.gov.au/def/placenames>
   a owl:NamedIndividual ;
   a owl:Ontology ;
   dcterms:contributor <https://orcid.org/0000-0002-4643-7289> ;
@@ -156,22 +156,22 @@ This ontology uses classes and properties from existing vocabularies, in particu
 
 ![](./images/placename-details.png)""" ;
   rdfs:label "Place Names Ontology"@en ;
-  owl:imports <http://linked.data.gov.au/def/geox> ;
+  owl:imports <https://linked.data.gov.au/def/geox> ;
   owl:imports <http://www.opengis.net/ont/geosparql> ;
   prof:hasResource [
       dcterms:format <https://w3id.org/mediatype/text/html> ;
-      prof:hasArtifact <http://linked.data.gov.au/def/placenames> ;
+      prof:hasArtifact <https://linked.data.gov.au/def/placenames> ;
       prof:hasRole <http://www.w3.org/ns/dx/prof/role/specification> ;
     ] ;
   prof:hasResource [
       dcterms:format <https://w3id.org/mediatype/text/turtle> ;
-      prof:hasArtifact <http://linked.data.gov.au/def/placenames.ttl> ;
+      prof:hasArtifact <https://linked.data.gov.au/def/placenames.ttl> ;
       prof:hasRole <http://www.w3.org/ns/dx/prof/role/schema> ;
     ] ;
   prof:isProfileOf <http://www.opengis.net/doc/IS/geosparql/1.0> ;
   schema:codeRepository <https://github.com/GeoscienceAustralia/Placenames-Ontology> ;
 .
-<http://linked.data.gov.au/def/placenames.ttl>
+<https://linked.data.gov.au/def/placenames.ttl>
   a owl:NamedIndividual ;
 .
 :Gazetteer
@@ -351,7 +351,7 @@ ex:Uluru-Ayers-Rock
   dcterms:identifier \"10532\"^^:ID-AUTH ;
   dcterms:identifier \"NT_10532\"^^:ID-GAZ ;
   geo:hasGeometry [
-      rdf:type <http://linked.data.gov.au/def/auspix#Geometry> ;
+      rdf:type <https://linked.data.gov.au/def/auspix#Geometry> ;
       geox:asDGGS \"R7430551\"^^geox:dggsLiteral ;
       rdfs:seeAlso <http://ec2-52-63-73-113.ap-southeast-2.compute.amazonaws.com/AusPIX-DGGS-dataset/ausPIX/R7430551> ;
     ] ;
@@ -599,11 +599,11 @@ For example
 .
 [
   dcterms:format <https://w3id.org/mediatype/text/html> ;
-  prof:hasArtifact <http://linked.data.gov.au/def/placenames> ;
+  prof:hasArtifact <https://linked.data.gov.au/def/placenames> ;
   prof:hasRole <http://www.w3.org/ns/dx/prof/role/specification> ;
 ].
 [
   dcterms:format <https://w3id.org/mediatype/text/turtle> ;
-  prof:hasArtifact <http://linked.data.gov.au/def/placenames.ttl> ;
+  prof:hasArtifact <https://linked.data.gov.au/def/placenames.ttl> ;
   prof:hasRole <http://www.w3.org/ns/dx/prof/role/schema> ;
 ].

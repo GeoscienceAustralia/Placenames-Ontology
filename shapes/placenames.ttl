@@ -5,8 +5,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
-@prefix pn:  <http://linked.data.gov.au/def/placenames/> .
-@prefix :  <http://linked.data.gov.au/def/placenames/shapes/> .
+@prefix pn:  <https://linked.data.gov.au/def/placenames/> .
+@prefix :  <https://linked.data.gov.au/def/placenames/shapes/> .
 
 
 :PlacenameShape
